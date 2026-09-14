@@ -1,0 +1,120 @@
+{
+  "identity": "seampoint.work-class/1.0.0-draft.2",
+  "at": "2026-09-14T04:24:29Z",
+  "status": "SEMANTIC_FREEZE_PRIVATE_CANDIDATE",
+  "meaning": "The draft 2 normative text, schemas and conformance suite are fixed at this pin for review and for white paper revision 3. A change to any normative file or expected result creates a new candidate; results stay attached to the pin that produced them.",
+  "claim_ceiling": "APPARATUS_ONLY",
+  "qualification": "NOT_QUALIFIED",
+  "specification_pin": "sha256:dc925a1473d788e69f8912136e84796b143bc60dfe118ae004ba310a0108f1ea",
+  "suite_manifest": {
+    "path": "suite/manifest.json",
+    "sha256": "49592bd3222dc15e87c2b9bac9c67367c5960e5efb4c01dd8babc0b4663f6b42"
+  },
+  "counts": {
+    "requirements": "80",
+    "cases": "425",
+    "contract_judgments": "296",
+    "specimens": "4"
+  },
+  "register_counts": {
+    "exact_vectors": "295",
+    "judgments": "296",
+    "pending_vectors": "1"
+  },
+  "pending_judgments": [
+    "D2-193"
+  ],
+  "verification": {
+    "commit": "84da38c4",
+    "procedure": "one pass: corpus check, both reference consumers over every case with every actual result compared, the shared specimen verifier, npm run gates",
+    "corpus": "PASS",
+    "typescript": "425 of 425",
+    "python": "425 of 425",
+    "differing_results": "0",
+    "specimens": "PASS",
+    "gates": "681 of 681"
+  },
+  "offline_export": {
+    "path": "review/records/freeze-20260914/offline-export-report.json",
+    "sha256": "ce83977135d8cda9bb0222f4583633d886b733d8fdc72125b7bffb39dbe4ae8a",
+    "status": "PASS",
+    "corpus": {
+      "typescript": {
+        "total": 425,
+        "passed": 425
+      },
+      "python": {
+        "total": 425,
+        "passed": 425
+      },
+      "differing_actual": []
+    },
+    "steps": [
+      {
+        "name": "check-corpus",
+        "exit_code": 0
+      },
+      {
+        "name": "corpus-typescript",
+        "exit_code": 0
+      },
+      {
+        "name": "corpus-python",
+        "exit_code": 0
+      },
+      {
+        "name": "specimens-shared-verifier",
+        "exit_code": 0
+      },
+      {
+        "name": "specimen-roe-engagement",
+        "exit_code": 0
+      },
+      {
+        "name": "specimen-sepsis-surveillance",
+        "exit_code": 0
+      }
+    ]
+  },
+  "review": {
+    "path": "review/records/FREEZE-REVIEW-20260913.md",
+    "sha256": "0f908c7c553445e469a5da7bcfc6fe6de9114fd0966978905da477fc53e43225",
+    "pin_reviewed": "sha256:5a75779d3191c2e8b7b3b0db8533fdcc9e0aabd8fb9d32a6f43e72c1e9c0be21",
+    "findings": {
+      "raised": "34",
+      "refuted": "5",
+      "confirmed": "28",
+      "uncertain": "1"
+    }
+  },
+  "unreviewed_changes": [
+    {
+      "commit": "a141ec4d",
+      "pin": "sha256:571fbbb7d6712eb3418a0ffc1b9fd34aa29df00919940d95374cd66fff0bb456",
+      "summary": "Text-decided fixes from the review round in the affected consumers, a revert of an observed-request name check, five clarifying sentences, eight cases and specimen documentation corrections."
+    },
+    {
+      "commit": "84da38c4",
+      "pin": "sha256:dc925a1473d788e69f8912136e84796b143bc60dfe118ae004ba310a0108f1ea",
+      "summary": "The specification owner's decisions on the round's open questions: deployment binding conditions before availability conditions, admission of a fresh REJECTED attempt on a consumed permit, removal of the failed_checks cap, and the statement that the reservation transition does not compare the observed request with actual fields; five cases."
+    }
+  ],
+  "decisions": {
+    "path": "review/CONTRACT-DECISIONS.md",
+    "sha256": "f4b44b7399c337ba6d9366c640c5bc9798f98d3058d8be4835113b9c4793cdac"
+  },
+  "known_limitations": [
+    "D2-193 has no exact vector.",
+    "No independent review has accepted the access-card correspondence subject (AC-REV-001); every specimen's review acts are labelled synthetic proxies.",
+    "Draft 2 has no mutation catalog, generated-property suite or closed requirement-coverage record.",
+    "The Python consumer's unit tests under python/tests are stale and outside the gates.",
+    "A disputed effect has no attributable human exit in draft 2."
+  ],
+  "draft_3_items": [
+    "CR-02a and CR-02b: disposition of a disputed reservation and lifecycle dispute clearance",
+    "CR-06: business-day boundaries",
+    "CR-07: host conformance profile",
+    "Pre-approved materiality thresholds",
+    "Specimen design inputs recorded in CONTRACT-DECISIONS.md"
+  ]
+}

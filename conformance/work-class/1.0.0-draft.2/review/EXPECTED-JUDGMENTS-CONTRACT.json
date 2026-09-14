@@ -1,0 +1,3575 @@
+{
+  "candidate_identity": "seampoint.work-class/1.0.0-draft.2",
+  "candidate_pin": "sha256:dc925a1473d788e69f8912136e84796b143bc60dfe118ae004ba310a0108f1ea",
+  "identity": "seampoint.work-class.expected-judgments/1.0.0-draft.2/contract-review.7",
+  "judgments": [
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "ACCEPTED",
+      "id": "D2-001",
+      "normative_references": [
+        "WCS2-001",
+        "WCS2-004"
+      ],
+      "operation": "validate",
+      "scenario": "Canonical draft-2 access-card definition",
+      "state_and_budget_consequence": "No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/ARTIFACT_ENCODING_INVALID",
+      "id": "D2-002",
+      "normative_references": [
+        "WCS2-001",
+        "WCS2-012"
+      ],
+      "operation": "validate",
+      "scenario": "Definition bytes contain a duplicate key",
+      "state_and_budget_consequence": "No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/ARTIFACT_NONCANONICAL",
+      "id": "D2-003",
+      "normative_references": [
+        "WCS2-001",
+        "WCS2-003",
+        "WCS2-012"
+      ],
+      "operation": "validate",
+      "scenario": "Definition contains a JSON number token",
+      "state_and_budget_consequence": "No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/SCHEMA_INVALID",
+      "id": "D2-004",
+      "normative_references": [
+        "WCS2-012",
+        "LIFE-002",
+        "LIFE-018"
+      ],
+      "operation": "validate",
+      "scenario": "Definition carries a dynamic fan-out field outside the closed work-class grammar",
+      "state_and_budget_consequence": "No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/UNSUPPORTED_FEATURE",
+      "id": "D2-005",
+      "normative_references": [
+        "LIFE-002",
+        "LIFE-018"
+      ],
+      "operation": "validate",
+      "scenario": "Definition selects repeated expansion pass",
+      "state_and_budget_consequence": "No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/SCHEMA_INVALID",
+      "id": "D2-006",
+      "normative_references": [
+        "WCS2-001",
+        "WCS2-012",
+        "LIFE-001"
+      ],
+      "operation": "validate",
+      "scenario": "Definition contains an extra property in a nested public object",
+      "state_and_budget_consequence": "No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/REFERENCE_INVALID",
+      "id": "D2-007",
+      "normative_references": [
+        "WCS2-002",
+        "WCS2-004",
+        "WCS2-010",
+        "WCS2-013"
+      ],
+      "operation": "validate",
+      "scenario": "Definition uses an undeclared schema reference",
+      "state_and_budget_consequence": "No network or filesystem access; no state."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "DEPLOYED",
+      "id": "D2-008",
+      "normative_references": [
+        "LIFE-003"
+      ],
+      "operation": "deploy",
+      "scenario": "Exact definition, accepted instance-bound deployment authorization, accepted organizational evidence, available authorization clock, and exact root-deadline initial_clocks array",
+      "state_and_budget_consequence": "Initial state revision 0 activates root, retains the complete deployment authorization and organizational evidence with their exact subject, record, and evidence digests plus the authorization clock, and contains no proposal, permit, dispatch, outcome, or reservation."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/DEPENDENCY_MISMATCH",
+      "id": "D2-009",
+      "normative_references": [
+        "LIFE-003"
+      ],
+      "operation": "deploy",
+      "scenario": "Deployment authorization names another instance after its complete record and evidence are otherwise admitted",
+      "state_and_budget_consequence": "No initial state."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/EVIDENCE_UNAVAILABLE",
+      "id": "D2-010",
+      "normative_references": [
+        "LIFE-003",
+        "WCS2-005"
+      ],
+      "operation": "deploy",
+      "scenario": "Deployment authorization is structurally authorized but its supplied organizational-authorization evidence is pending",
+      "state_and_budget_consequence": "No initial state."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/EVIDENCE_UNAVAILABLE",
+      "id": "D2-011",
+      "normative_references": [
+        "LIFE-003",
+        "LIFE-014"
+      ],
+      "operation": "deploy",
+      "scenario": "Deadline root lacks one clock source required by initial_clocks",
+      "state_and_budget_consequence": "No initial state."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/REVISION_CONFLICT",
+      "id": "D2-012",
+      "normative_references": [
+        "LIFE-005",
+        "LIFE-006",
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "Event carries a stale expected state revision",
+      "state_and_budget_consequence": "Exact supplied work and budget states returned unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/BINDING_MISMATCH",
+      "id": "D2-013",
+      "normative_references": [
+        "LIFE-004",
+        "LIFE-006",
+        "LIFE-007"
+      ],
+      "operation": "step",
+      "scenario": "Proposal occurrence and event name an instance other than the admitted work state",
+      "state_and_budget_consequence": "Exact supplied work and budget states returned unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/WITHHELD/AUTHORITY_NOT_ESTABLISHED+AUTHORITY_REQUIRED+ENVELOPE_EXPIRED",
+      "id": "D2-014",
+      "normative_references": [
+        "LIFE-006",
+        "LIFE-007"
+      ],
+      "operation": "step",
+      "scenario": "Complete authority input matches the active step, but current evaluation returns AUTHORITY_NOT_ESTABLISHED because the envelope is expired",
+      "state_and_budget_consequence": "Work decision recorded and revision advances; no permit or reservation; budgets unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/WITHHELD/AUTHORITY_NOT_ESTABLISHED+AUTHORITY_REQUIRED+CREDENTIAL_EXPIRED",
+      "id": "D2-015",
+      "normative_references": [
+        "LIFE-007",
+        "AUTH-005"
+      ],
+      "operation": "step",
+      "scenario": "Proposal executor credential is structurally valid but expired at the current authority clock",
+      "state_and_budget_consequence": "Work decision recorded; no permit or reservation; budgets unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/WITHHELD/AUTHORITY_NOT_ESTABLISHED+AUTHORITY_REQUIRED+REVOKED",
+      "id": "D2-016",
+      "normative_references": [
+        "LIFE-007",
+        "AUTH-005"
+      ],
+      "operation": "step",
+      "scenario": "Proposal relies on revoked authority",
+      "state_and_budget_consequence": "Work decision recorded; no permit or reservation; budgets unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/PERMITTED",
+      "id": "D2-017",
+      "normative_references": [
+        "LIFE-007",
+        "LIFE-008"
+      ],
+      "operation": "step",
+      "scenario": "Proposal has current authority and no required shared budget",
+      "state_and_budget_consequence": "Proposal and permit commit together; work revision advances; no budget result."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/PERMITTED",
+      "id": "D2-018",
+      "normative_references": [
+        "LIFE-005",
+        "LIFE-007"
+      ],
+      "operation": "step",
+      "scenario": "Proposal has current authority and every required budget within its one reservation registry reserves successfully",
+      "state_and_budget_consequence": "Proposal, permit and every reservation commit atomically."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/WITHHELD/BOUND_VIOLATED+BUDGET_WITHHELD",
+      "id": "D2-019",
+      "normative_references": [
+        "LIFE-007",
+        "RES-005"
+      ],
+      "operation": "step",
+      "scenario": "Fresh second 150 payment proposal observes 800 committed plus the first unsettled 150 reservation under cap 1000",
+      "state_and_budget_consequence": "No second permit, reservation, or exposure is added. The registry WITHHELD receipt, next registry revision, one WITHHELD proposal record with the successful authority-result digest and registry receipt digest, and the work WITHHELD decision commit atomically. The proposal record has null permit and prior-permit digests. The first committed transition remains authoritative."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/REVISION_CONFLICT",
+      "id": "D2-020",
+      "normative_references": [
+        "LIFE-005",
+        "LIFE-007"
+      ],
+      "operation": "step",
+      "scenario": "The single required registry state, which contains several required budgets, has a stale revision",
+      "state_and_budget_consequence": "Work state and every supplied budget state remain unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/WITHHELD/BOUND_VIOLATED+BUDGET_WITHHELD",
+      "id": "D2-021",
+      "normative_references": [
+        "LIFE-005",
+        "LIFE-007"
+      ],
+      "operation": "step",
+      "scenario": "One budget in the single required registry violates its bound",
+      "state_and_budget_consequence": "No permit or reservation; the registry WITHHELD receipt and next revision commit atomically with the work WITHHELD decision."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPATCH_RECORDED",
+      "id": "D2-022",
+      "normative_references": [
+        "LIFE-009",
+        "LIFE-015"
+      ],
+      "operation": "step",
+      "scenario": "Dispatch observation supplies exact committed permit and native request, SENT attempt, and acknowledgement NONE",
+      "state_and_budget_consequence": "Dispatch attempt recorded; occurrence remains incomplete; reservations remain charged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPATCH_REFUSED/NATIVE_ARGUMENT_MISMATCH+NATIVE_NOT_SENT",
+      "id": "D2-023",
+      "normative_references": [
+        "LIFE-008",
+        "LIFE-009"
+      ],
+      "operation": "step",
+      "scenario": "Dispatch native arguments differ from the committed permit, and the host reports NOT_SENT with no accepted acknowledgement",
+      "state_and_budget_consequence": "Attempt retained; no permitted dispatch, settlement, or graph progression."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/PREREQUISITE_MISSING",
+      "id": "D2-024",
+      "normative_references": [
+        "LIFE-008",
+        "LIFE-009"
+      ],
+      "operation": "step",
+      "scenario": "Dispatch observation names a permit that is absent from the admitted work state",
+      "state_and_budget_consequence": "State and budgets unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/ACKNOWLEDGED",
+      "id": "D2-025",
+      "normative_references": [
+        "LIFE-009",
+        "LIFE-015"
+      ],
+      "operation": "step",
+      "scenario": "Matching SENT attempt carries connector acknowledgement ACCEPTED",
+      "state_and_budget_consequence": "Acknowledgement retained; occurrence remains incomplete and reservation charged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED",
+      "id": "D2-026",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-015"
+      ],
+      "operation": "step",
+      "scenario": "Exact success effect binds committed permit and dispatch",
+      "state_and_budget_consequence": "Outcome, settlement, completed occurrence, and declared successor commit atomically."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/PREREQUISITE_MISSING",
+      "id": "D2-027",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-015"
+      ],
+      "operation": "step",
+      "scenario": "Governed effect claims success with a permit absent from the admitted work state",
+      "state_and_budget_consequence": "State and budgets unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/BINDING_MISMATCH",
+      "id": "D2-028",
+      "normative_references": [
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "Governed effect supplies a committed permit but a dispatch binding belonging to another permit or occurrence",
+      "state_and_budget_consequence": "State and budgets unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/FAILED",
+      "id": "D2-029",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-015",
+        "WCD-001"
+      ],
+      "operation": "step",
+      "scenario": "Terminal effect has declared failure status and the step declares FAILURE_EDGE with one exact failure relationship",
+      "state_and_budget_consequence": "Actual effect retained, exposure reconciled, and the declared failure route applied."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/UNEXPECTED",
+      "id": "D2-030",
+      "normative_references": [
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "First well-formed attributable effect for a provider-native operation changes the actual account from the permit, with no prior conclusive record for that native operation",
+      "state_and_budget_consequence": "Effect retained as disputed exposure; unsafe progression blocked."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/FOREIGN",
+      "id": "D2-031",
+      "normative_references": [
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "Well-formed foreign effect can be projected to shared budget",
+      "state_and_budget_consequence": "Foreign effect retained; affected budget partition blocked; current occurrence not discharged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/OUTCOME_RETAINED/UNKNOWN",
+      "id": "D2-032",
+      "normative_references": [
+        "LIFE-011"
+      ],
+      "operation": "step",
+      "scenario": "Native outcome remains unknown",
+      "state_and_budget_consequence": "Occurrence unresolved; reservation retained once; graph does not advance."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/OUTCOME_RETAINED/UNKNOWN",
+      "id": "D2-033",
+      "normative_references": [
+        "LIFE-011",
+        "WCS2-006"
+      ],
+      "operation": "step",
+      "scenario": "Timeout occurs without affirmative no-effect evidence",
+      "state_and_budget_consequence": "Reservation remains; no success route or release."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/FAILED/NO_EFFECT_ESTABLISHED",
+      "id": "D2-034",
+      "normative_references": [
+        "LIFE-011"
+      ],
+      "operation": "step",
+      "scenario": "Affirmative no-effect evidence, lifecycle completion authorization, and any budget release administration satisfy a work class whose declared no-effect behavior is its failure edge",
+      "state_and_budget_consequence": "Reservation released; operation remains unsuccessful; declared failure behavior applied."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/OUTCOME_RETAINED/LATE_MATCHED",
+      "id": "D2-035",
+      "normative_references": [
+        "LIFE-012",
+        "LIFE-014"
+      ],
+      "operation": "step",
+      "scenario": "Late exact effect follows deadline expiry",
+      "state_and_budget_consequence": "Historical reservation settles; expiry and route remain; no new permission."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/LATE_AFTER_RELEASE",
+      "id": "D2-036",
+      "normative_references": [
+        "LIFE-012"
+      ],
+      "operation": "step",
+      "scenario": "Effect with a distinct evidence_id arrives after authorized no-effect release for the same budget-backed provider-native operation identity, governed permit and stable dispatch-attempt digest",
+      "state_and_budget_consequence": "Effect retained as disputed exposure and partition blocked; release remains in history."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP with replay true",
+      "id": "D2-037",
+      "normative_references": [
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "Exact admitted event is repeated against later state",
+      "state_and_budget_consequence": "Established decision and current state returned; no revision or budget change."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/REPLAY_CONFLICT",
+      "id": "D2-038",
+      "normative_references": [
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "Same event identifier is reused with altered bytes",
+      "state_and_budget_consequence": "State and budgets unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/CONFLICTING",
+      "id": "D2-039",
+      "normative_references": [
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "Two governed conclusive native records use distinct evidence IDs and the same provider-native operation identity but have different native-evidence-fact digests because their conclusive fact content differs beyond evidence identity and reference",
+      "state_and_budget_consequence": "Both evidence identities retained; dependent progression blocked."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/CLOCK_RECORDED",
+      "id": "D2-040",
+      "normative_references": [
+        "LIFE-014"
+      ],
+      "operation": "step",
+      "scenario": "Available clock advances source revision and time while no deadline is due",
+      "state_and_budget_consequence": "Clock retained and revision advances; no deadline expires."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/CLOCK_INVALID",
+      "id": "D2-041",
+      "normative_references": [
+        "LIFE-014"
+      ],
+      "operation": "step",
+      "scenario": "Clock moves time backward",
+      "state_and_budget_consequence": "State and budgets unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/CLOCK_RECORDED without expiry",
+      "id": "D2-042",
+      "normative_references": [
+        "LIFE-014"
+      ],
+      "operation": "step",
+      "scenario": "Unavailable clock claims expiry",
+      "state_and_budget_consequence": "No deadline expiry established from unavailable time."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED then CLOCK_RECORDED",
+      "id": "D2-043",
+      "normative_references": [
+        "LIFE-014",
+        "LIFE-015"
+      ],
+      "operation": "step",
+      "scenario": "Effect commits immediately before AT_OR_AFTER due clock",
+      "state_and_budget_consequence": "Completion discharges deadline; subsequent clock cannot expire it."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/EXPIRED then late outcome retained",
+      "id": "D2-044",
+      "normative_references": [
+        "LIFE-012",
+        "LIFE-014"
+      ],
+      "operation": "step",
+      "scenario": "AT_OR_AFTER due clock commits before effect",
+      "state_and_budget_consequence": "Expiry route remains; late effect cannot rewind it."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED",
+      "id": "D2-045",
+      "normative_references": [
+        "LIFE-015",
+        "LIFE-016",
+        "COMP-001"
+      ],
+      "operation": "step",
+      "scenario": "Choice success effect supplies admitted label",
+      "state_and_budget_consequence": "Exact mapped target activates."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/LABEL_INVALID",
+      "id": "D2-046",
+      "normative_references": [
+        "LIFE-016",
+        "COMP-001"
+      ],
+      "operation": "step",
+      "scenario": "Choice effect supplies out-of-domain label",
+      "state_and_budget_consequence": "Effect retained; no target invented."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/DEFINITION_INVALID",
+      "id": "D2-047",
+      "normative_references": [
+        "LIFE-016",
+        "COMP-001"
+      ],
+      "operation": "validate",
+      "scenario": "Schema-admitted choice label domain lacks one exact target",
+      "state_and_budget_consequence": "No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED",
+      "id": "D2-048",
+      "normative_references": [
+        "LIFE-016",
+        "COMP-002"
+      ],
+      "operation": "step",
+      "scenario": "Loop effect activates occurrence at exact maximum",
+      "state_and_budget_consequence": "Maximum occurrence activates with new occurrence identity."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/LIMIT_EXCEEDED with LIMIT/STEP_OCCURRENCES",
+      "id": "D2-049",
+      "normative_references": [
+        "LIFE-016",
+        "COMP-002"
+      ],
+      "operation": "step",
+      "scenario": "Loop effect would activate one occurrence beyond maximum",
+      "state_and_budget_consequence": "Effect retained; no successor occurrence. The per-step occurrence limit wins over the simultaneously crossed loop-pass limit."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED",
+      "id": "D2-050",
+      "normative_references": [
+        "LIFE-017",
+        "PAR-001"
+      ],
+      "operation": "step",
+      "scenario": "Parallel split fits all declared limits",
+      "state_and_budget_consequence": "Complete branch obligation set and active branch occurrences commit atomically."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/LIMIT_EXCEEDED",
+      "id": "D2-051",
+      "normative_references": [
+        "LIFE-017",
+        "PAR-001"
+      ],
+      "operation": "step",
+      "scenario": "Admitted effect reaches a parallel split where one branch would exceed an occurrence limit",
+      "state_and_budget_consequence": "No branch obligation or occurrence is created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED for branch",
+      "id": "D2-052",
+      "normative_references": [
+        "LIFE-017",
+        "PAR-001"
+      ],
+      "operation": "step",
+      "scenario": "Only some obligations at a parallel join are discharged",
+      "state_and_budget_consequence": "Join remains inactive; retained obligations unchanged except discharged branch."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED",
+      "id": "D2-053",
+      "normative_references": [
+        "LIFE-017",
+        "PAR-001"
+      ],
+      "operation": "step",
+      "scenario": "All exact parallel obligations are discharged",
+      "state_and_budget_consequence": "Join activates exactly once."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED",
+      "id": "D2-054",
+      "normative_references": [
+        "LIFE-018",
+        "FAN-001"
+      ],
+      "operation": "step",
+      "scenario": "Frozen fan-out effect supplies ordered unique object keys",
+      "state_and_budget_consequence": "Exact set, obligations, and object occurrences commit atomically in source order."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/FANOUT_SET_DUPLICATE",
+      "id": "D2-055",
+      "normative_references": [
+        "LIFE-018",
+        "FAN-001"
+      ],
+      "operation": "step",
+      "scenario": "Frozen fan-out effect supplies duplicate typed object key",
+      "state_and_budget_consequence": "One fanout pass retains the complete source-order key list including the duplicate, with no obligation identifiers and joined false; no fan-out obligation or occurrence is created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED",
+      "id": "D2-056",
+      "normative_references": [
+        "LIFE-018",
+        "FAN-001"
+      ],
+      "operation": "step",
+      "scenario": "Frozen fan-out supplies empty set with ADVANCE policy",
+      "state_and_budget_consequence": "All-done join activates without object obligations."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/FANOUT_EMPTY",
+      "id": "D2-057",
+      "normative_references": [
+        "LIFE-018",
+        "FAN-001"
+      ],
+      "operation": "step",
+      "scenario": "Frozen fan-out supplies empty set with STOP policy",
+      "state_and_budget_consequence": "No join or object occurrence activates."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "Byte-identical D2-022 result",
+      "id": "D2-058",
+      "normative_references": [
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "A complete state returned immediately after D2-018 is supplied with D2-022 to a fresh other-language consumer",
+      "state_and_budget_consequence": "The fresh consumer returns the same decision, dispatch record, state, and digests without process-local history."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/STATE_INVALID",
+      "id": "D2-059",
+      "normative_references": [
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "State digest differs from supplied complete state",
+      "state_and_budget_consequence": "State and budgets unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "HOST_COMMIT/COMMIT_FAILED",
+      "id": "D2-060",
+      "normative_references": [
+        "LIFE-008",
+        "LIFE-020"
+      ],
+      "operation": "host-harness",
+      "scenario": "Host reports commit failure before native dispatch",
+      "state_and_budget_consequence": "Prior authoritative states remain; request is not dispatched."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "EVIDENCE_VALID",
+      "id": "D2-061",
+      "normative_references": [
+        "LIFE-003",
+        "WCS2-005"
+      ],
+      "operation": "check-evidence",
+      "scenario": "Accepted organizational-authorization evidence binds the exact deployment-authorization subject digest",
+      "state_and_budget_consequence": "The evidence binding and accepted status are established mechanically; deploy separately checks candidate, pin, definition, role, instance, organization, and validity."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "EVIDENCE_INVALID/EVIDENCE_NOT_ACCEPTED",
+      "id": "D2-062",
+      "normative_references": [
+        "WCS2-005"
+      ],
+      "operation": "check-evidence",
+      "scenario": "Pending review act is offered as acceptance",
+      "state_and_budget_consequence": "No lifecycle state changes."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/SCHEMA_INVALID",
+      "id": "D2-063",
+      "normative_references": [
+        "BOUND-001",
+        "LIFE-020",
+        "WCS2-012"
+      ],
+      "operation": "validate",
+      "scenario": "Boundary-record artifact omits failure behavior",
+      "state_and_budget_consequence": "No lifecycle state changes."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "READBACK",
+      "id": "D2-064",
+      "normative_references": [
+        "WCS2-005"
+      ],
+      "operation": "readback",
+      "scenario": "Complete work class includes authority, budget, composition and completion fields",
+      "state_and_budget_consequence": "Every operative leaf and empty collection appears in pointer order."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "Distinct occurrence digests",
+      "id": "D2-065",
+      "normative_references": [
+        "WCS2-002",
+        "LIFE-004"
+      ],
+      "operation": "validate vectors",
+      "scenario": "Two equal step paths in different instances",
+      "state_and_budget_consequence": "No state."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "Identical obligation digest",
+      "id": "D2-066",
+      "normative_references": [
+        "WCS2-002",
+        "LIFE-019"
+      ],
+      "operation": "validate vectors",
+      "scenario": "Equal obligation facts in both languages",
+      "state_and_budget_consequence": "No state."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/FOREIGN",
+      "id": "D2-067",
+      "normative_references": [
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "Foreign attributable effect has no permit or dispatch and projects to a budget",
+      "state_and_budget_consequence": "Foreign outcome retained, affected partition blocked, no work occurrence discharged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/FOREIGN",
+      "id": "D2-068",
+      "normative_references": [
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "Foreign effect cannot be projected to an exact partition",
+      "state_and_budget_consequence": "Every named anchor applies its declared fallback block; no route advances."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/REPLAY_CONFLICT",
+      "id": "D2-069",
+      "normative_references": [
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "Replay reuses an admitted proposal event identifier but changes the embedded registry-scoped budget input bytes",
+      "state_and_budget_consequence": "Current work and registry states remain unchanged; changed embedded budget bytes are a different event."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP with replay true",
+      "id": "D2-070",
+      "normative_references": [
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "Exact old event is replayed after several later revisions",
+      "state_and_budget_consequence": "Original decision, permit, budget results, transition-state digest and transaction digest return with current state and digest."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "Byte-identical replay result",
+      "id": "D2-071",
+      "normative_references": [
+        "LIFE-013",
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "Exact old event replay runs in the other language",
+      "state_and_budget_consequence": "Historical transition and current state require no process-local history."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/CONFLICTING",
+      "id": "D2-072",
+      "normative_references": [
+        "LIFE-012",
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "A second governed provider record with a distinct evidence ID conflicts with the first record for the same provider-native operation identity after the first advanced the graph",
+      "state_and_budget_consequence": "Both evidence IDs retained and linked; route is not rewound; dependent progression blocks."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/EXPIRED",
+      "id": "D2-073",
+      "normative_references": [
+        "LIFE-014"
+      ],
+      "operation": "step",
+      "scenario": "One clock event satisfies three deadlines at the same instant on three distinct active occurrences",
+      "state_and_budget_consequence": "The clock and all three ordered expiries commit atomically. The union of expiry closures is preflighted before any successor or obligation is created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/LIMIT_EXCEEDED",
+      "id": "D2-074",
+      "normative_references": [
+        "LIFE-017"
+      ],
+      "operation": "step",
+      "scenario": "Admitted effect reaches a parallel split whose middle child would exceed a declared limit",
+      "state_and_budget_consequence": "Effect retained; zero new branch occurrences and obligations."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/LIMIT_EXCEEDED",
+      "id": "D2-075",
+      "normative_references": [
+        "LIFE-018"
+      ],
+      "operation": "step",
+      "scenario": "Admitted effect reaches a frozen fan-out whose last child would exceed a declared limit",
+      "state_and_budget_consequence": "Effect retained; one fanout pass retains the complete source-order key list with no obligation identifiers and joined false; zero new fan-out occurrences and obligations are created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "Digest changes",
+      "id": "D2-076",
+      "normative_references": [
+        "WCS2-002",
+        "LIFE-019"
+      ],
+      "operation": "validate vectors",
+      "scenario": "State-core input field is mutated",
+      "state_and_budget_consequence": "No state transition."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "Full state digest changes and state-core digest does not",
+      "id": "D2-077",
+      "normative_references": [
+        "WCS2-002",
+        "LIFE-019"
+      ],
+      "operation": "validate vectors",
+      "scenario": "A receipt field or replay field other than transaction_digest is mutated while state core remains unchanged",
+      "state_and_budget_consequence": "No state transition."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "TRANSPORT_ERROR/NO_GOVERNANCE_RESULT",
+      "id": "D2-078",
+      "normative_references": [
+        "WCS2-010",
+        "LIFE-006",
+        "WCS2-013"
+      ],
+      "operation": "transport",
+      "scenario": "A malformed transport line would also have failed authority if it had been admitted",
+      "state_and_budget_consequence": "No state or budget change."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/ROLE_UNSUPPORTED",
+      "id": "D2-079",
+      "normative_references": [
+        "LIFE-006",
+        "WCS2-013"
+      ],
+      "operation": "step",
+      "scenario": "Proposal selects an unsupported runtime role and also has a schema fault",
+      "state_and_budget_consequence": "No state or budget change."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/SCHEMA_INVALID",
+      "id": "D2-080",
+      "normative_references": [
+        "LIFE-006",
+        "WCS2-013"
+      ],
+      "operation": "step",
+      "scenario": "Proposal schema and definition digest faults compete",
+      "state_and_budget_consequence": "No state or budget change."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/DIGEST_MISMATCH",
+      "id": "D2-081",
+      "normative_references": [
+        "LIFE-006",
+        "WCS2-013"
+      ],
+      "operation": "step",
+      "scenario": "Proposal definition and replay faults compete",
+      "state_and_budget_consequence": "No state or budget change."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/REPLAY_CONFLICT",
+      "id": "D2-082",
+      "normative_references": [
+        "LIFE-006",
+        "WCS2-013"
+      ],
+      "operation": "step",
+      "scenario": "Altered replay and occurrence binding faults compete",
+      "state_and_budget_consequence": "No state or budget change."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/BINDING_MISMATCH",
+      "id": "D2-083",
+      "normative_references": [
+        "LIFE-006",
+        "WCS2-013"
+      ],
+      "operation": "step",
+      "scenario": "Occurrence binding and missing event prerequisite compete",
+      "state_and_budget_consequence": "No state or budget change."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/PREREQUISITE_MISSING",
+      "id": "D2-084",
+      "normative_references": [
+        "LIFE-006",
+        "WCS2-013"
+      ],
+      "operation": "step",
+      "scenario": "Missing prerequisite and failed authority compete",
+      "state_and_budget_consequence": "No state or budget change."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/WITHHELD/AUTHORITY_NOT_ESTABLISHED+AUTHORITY_REQUIRED+REVOKED",
+      "id": "D2-085",
+      "normative_references": [
+        "LIFE-006",
+        "WCS2-013"
+      ],
+      "operation": "step",
+      "scenario": "Revoked authority and a stale budget revision compete in one proposal",
+      "state_and_budget_consequence": "Work decision recorded; budgets unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/REVISION_CONFLICT",
+      "id": "D2-086",
+      "normative_references": [
+        "LIFE-006",
+        "WCS2-013"
+      ],
+      "operation": "step",
+      "scenario": "Stale budget and composition limit compete",
+      "state_and_budget_consequence": "No state or budget change."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/LIMIT_EXCEEDED with LIMIT/STEP_OCCURRENCES",
+      "id": "D2-087",
+      "normative_references": [
+        "COMP-002",
+        "LIFE-006",
+        "WCS2-013"
+      ],
+      "operation": "step",
+      "scenario": "A selected structural closure would exceed both the target step occurrence limit and maximum_activations",
+      "state_and_budget_consequence": "Effect retained; no partial route; the canonical limit detail selects STEP_OCCURRENCES before ACTIVATIONS."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "HOST_COMMIT/COMMITTED",
+      "id": "D2-088",
+      "normative_references": [
+        "LIFE-008",
+        "LIFE-020"
+      ],
+      "operation": "host-harness",
+      "scenario": "Reference host commits permitted transition",
+      "state_and_budget_consequence": "Before/after work and budget digests bind transaction; dispatch remains false until connector call."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "HOST_COMMIT/COMMIT_FAILED",
+      "id": "D2-089",
+      "normative_references": [
+        "LIFE-008",
+        "LIFE-020"
+      ],
+      "operation": "host-harness",
+      "scenario": "Reference host commit fails after permit calculation",
+      "state_and_budget_consequence": "Authoritative work and budgets remain their before digests; dispatch_performed is false."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/STATE_INVALID",
+      "id": "D2-090",
+      "normative_references": [
+        "WCS2-002",
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "A retained replay transaction_digest is changed while the work-state identity projection and supplied state_digest remain unchanged",
+      "state_and_budget_consequence": "Supplied work and registry states remain unchanged; independent transaction recomputation detects the altered digest."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/CLOCK_INVALID",
+      "id": "D2-091",
+      "normative_references": [
+        "LIFE-003",
+        "LIFE-014"
+      ],
+      "operation": "deploy",
+      "scenario": "Root absolute deadline is already satisfied by its exact initial clock",
+      "state_and_budget_consequence": "No initial state."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/BINDING_MISMATCH",
+      "id": "D2-092",
+      "normative_references": [
+        "LIFE-007"
+      ],
+      "operation": "step",
+      "scenario": "Authority input source revision or obligation-ID projection differs from the lifecycle source",
+      "state_and_budget_consequence": "Work and registry state unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/BINDING_MISMATCH",
+      "id": "D2-093",
+      "normative_references": [
+        "LIFE-007"
+      ],
+      "operation": "step",
+      "scenario": "Executor actor is not the uniquely declared work-class participant for the active step role",
+      "state_and_budget_consequence": "Work and registry state unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "Distinct lifecycle-reservation-event digests",
+      "id": "D2-094",
+      "normative_references": [
+        "WCS2-002",
+        "LIFE-007"
+      ],
+      "operation": "validate vectors",
+      "scenario": "Two work instances reuse lifecycle event id event-1 for the same registry",
+      "state_and_budget_consequence": "The registry event identities differ because their digest subjects include instance identity."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/LIMIT_EXCEEDED",
+      "id": "D2-095",
+      "normative_references": [
+        "LIFE-006",
+        "LIFE-007",
+        "COMP-002"
+      ],
+      "operation": "step",
+      "scenario": "Current authority succeeds but the next permit would exceed maximum_actuations",
+      "state_and_budget_consequence": "Authority result and stop decision retained; no permit, reservation, or registry receipt."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPATCH_REFUSED/NATIVE_NOT_SENT+PERMIT_EXPIRED",
+      "id": "D2-096",
+      "normative_references": [
+        "LIFE-009"
+      ],
+      "operation": "step",
+      "scenario": "A NOT_SENT dispatch with no accepted acknowledgement is observed at the permit exclusive expiry",
+      "state_and_budget_consequence": "Dispatch observation retained; no native-success claim, settlement, or route."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/BINDING_MISMATCH",
+      "id": "D2-097",
+      "normative_references": [
+        "LIFE-009"
+      ],
+      "operation": "step",
+      "scenario": "Dispatch attempt request_digest differs from the exact event request projection",
+      "state_and_budget_consequence": "Work and registry state unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/INPUT_INVALID",
+      "id": "D2-098",
+      "normative_references": [
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "EFFECT_ESTABLISHED native evidence has null event_time",
+      "state_and_budget_consequence": "Work and registry state unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/FAILED/NO_EFFECT_ESTABLISHED",
+      "id": "D2-099",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-011"
+      ],
+      "operation": "step",
+      "scenario": "Authority-only affirmative no-effect evidence is admitted for a step that declares FAILURE_EDGE with one exact failure relationship",
+      "state_and_budget_consequence": "Occurrence closes at observation time and follows its declared failure edge without a registry transition."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/EVIDENCE_UNAVAILABLE",
+      "id": "D2-100",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-011"
+      ],
+      "operation": "step",
+      "scenario": "Authority-only NO_EFFECT_ESTABLISHED evidence omits completion authorization",
+      "state_and_budget_consequence": "Work state unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/UNEXPECTED",
+      "id": "D2-101",
+      "normative_references": [
+        "LIFE-010",
+        "RES-007"
+      ],
+      "operation": "step",
+      "scenario": "Unexpected established effect for a shared-budget governed occurrence has unprojectable actual fields",
+      "state_and_budget_consequence": "Effect and disputed exposure retained; affected anchor is blocked; no routing."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/OUTCOME_RETAINED/DUPLICATE",
+      "id": "D2-102",
+      "normative_references": [
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "A new event repeats an existing evidence_id with byte-identical native evidence",
+      "state_and_budget_consequence": "No duplicate outcome or exposure; work and any idempotent registry receipt advance once."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/INPUT_INVALID",
+      "id": "D2-103",
+      "normative_references": [
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "A new event reuses an existing evidence_id with changed native-evidence bytes",
+      "state_and_budget_consequence": "Work and registry state unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/OUTCOME_RETAINED/DUPLICATE",
+      "id": "D2-104",
+      "normative_references": [
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "A new evidence_id has the same native-evidence-fact digest as an established effect",
+      "state_and_budget_consequence": "A DUPLICATE outcome retains the new evidence; no repeated completion or exposure."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/OUTCOME_RETAINED/UNKNOWN",
+      "id": "D2-105",
+      "normative_references": [
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "UNKNOWN evidence arrives after a conclusive matched effect",
+      "state_and_budget_consequence": "Evidence retained; earlier completion, route, and settlement unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED",
+      "id": "D2-106",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "First exact matching effect arrives after retained UNKNOWN",
+      "state_and_budget_consequence": "Reservation settles once and the occurrence follows its declared route."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/CONFLICTING",
+      "id": "D2-107",
+      "normative_references": [
+        "LIFE-012",
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "A NO_EFFECT_ESTABLISHED record with null completion authorization and a distinct evidence ID arrives after an already matched effect for the same provider-native operation identity, governed permit and stable dispatch-attempt digest",
+      "state_and_budget_consequence": "Both conclusive records retained; prior route is not rewound."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/ACTIVATION_CLOCK_UNAVAILABLE",
+      "id": "D2-108",
+      "normative_references": [
+        "LIFE-014",
+        "LIFE-015"
+      ],
+      "operation": "step",
+      "scenario": "Established effect would activate a deadline-bearing successor whose source has no retained available clock",
+      "state_and_budget_consequence": "Effect and settlement retained; no successor or obligation created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/EXPIRED",
+      "id": "D2-109",
+      "normative_references": [
+        "LIFE-014"
+      ],
+      "operation": "step",
+      "scenario": "Two simultaneous expiries select the same proposal-capable target and all preflight checks pass",
+      "state_and_budget_consequence": "Two distinct successor occurrences are created in deadline order."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/EXPIRY_STOP",
+      "id": "D2-110",
+      "normative_references": [
+        "LIFE-014"
+      ],
+      "operation": "step",
+      "scenario": "One of several simultaneous deadlines declares stop",
+      "state_and_budget_consequence": "Clock and every original due expiry retained; no expiry-route successor or obligation created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/DEFINITION_INVALID",
+      "id": "D2-111",
+      "normative_references": [
+        "WCD-001",
+        "LIFE-015"
+      ],
+      "operation": "validate",
+      "scenario": "Proposal-capable step declares FAILURE_EDGE but has no matching failure relationship",
+      "state_and_budget_consequence": "No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/DEFINITION_INVALID",
+      "id": "D2-112",
+      "normative_references": [
+        "DEAD-001",
+        "LIFE-014"
+      ],
+      "operation": "validate",
+      "scenario": "Deadline names a declared expiry target but has no exact unique matching expiry relationship",
+      "state_and_budget_consequence": "No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED",
+      "id": "D2-113",
+      "normative_references": [
+        "COMP-002",
+        "LIFE-016"
+      ],
+      "operation": "step",
+      "scenario": "Same loop is entered for the first time under a second frozen fan-out object",
+      "state_and_budget_consequence": "The new outer ancestry context allocates loop pass 1, independent of the first object."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED",
+      "id": "D2-114",
+      "normative_references": [
+        "PAR-001",
+        "LIFE-017"
+      ],
+      "operation": "step",
+      "scenario": "A branch routes from its head to another operation before reaching its join",
+      "state_and_budget_consequence": "Its obligation updates expected occurrence and required operation; it does not discharge yet."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED",
+      "id": "D2-115",
+      "normative_references": [
+        "WCD-001",
+        "FAN-001",
+        "LIFE-018"
+      ],
+      "operation": "step",
+      "scenario": "The same fan-out is entered for the first time under a different exact outer enclosing prefix with a valid set at the per-expansion object maximum",
+      "state_and_budget_consequence": "The new outer context allocates pass 1 and the set is admitted; the instance-wide active-obligation limit still applies."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/STATE_INVALID",
+      "id": "D2-116",
+      "normative_references": [
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "Restart state has a PERMITTED proposal record but no reverse-linked permit",
+      "state_and_budget_consequence": "No event applied and all supplied state returned unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/SCHEMA_INVALID",
+      "id": "D2-117",
+      "normative_references": [
+        "WCS2-010",
+        "WCS2-012"
+      ],
+      "operation": "check-evidence",
+      "scenario": "Malformed check-evidence input lacks specification_pin",
+      "state_and_budget_consequence": "No evidence judgment is created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/FOREIGN",
+      "id": "D2-118",
+      "normative_references": [
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "Well-formed authority-only foreign effect has empty affected anchors and no registry input",
+      "state_and_budget_consequence": "Foreign evidence retained; current occurrences and budgets unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/SCHEMA_INVALID",
+      "id": "D2-119",
+      "normative_references": [
+        "LIFE-007",
+        "WCS2-012"
+      ],
+      "operation": "step",
+      "scenario": "Proposal input supplies two budget_inputs in an attempt to span two reservation registries",
+      "state_and_budget_consequence": "The closed single-registry lifecycle input cannot represent the proposal."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "Distinct lifecycle-reservation-event digests",
+      "id": "D2-120",
+      "normative_references": [
+        "WCS2-002",
+        "LIFE-007",
+        "LIFE-010"
+      ],
+      "operation": "validate vectors",
+      "scenario": "Proposal and effect lifecycle events share one local event id in one instance and registry",
+      "state_and_budget_consequence": "Reservation event identities differ because their digest subjects include both lifecycle and reservation event kinds."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/PERMITTED",
+      "id": "D2-121",
+      "normative_references": [
+        "LIFE-008"
+      ],
+      "operation": "step",
+      "scenario": "Successful reserve returns one reservation and post-transition registry revision",
+      "state_and_budget_consequence": "Permit records that reservation id, exact receipt digest, and committed post-RESERVE revision."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/LIMIT_EXCEEDED",
+      "id": "D2-122",
+      "normative_references": [
+        "WCD-001",
+        "LIFE-006",
+        "LIFE-015"
+      ],
+      "operation": "step",
+      "scenario": "Matched effect follows an ordinary unlabeled success route and then stops on a structural limit",
+      "state_and_budget_consequence": "Decision details appear in fixed order EFFECT, ROUTE, LIMIT."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/PERMITTED",
+      "id": "D2-123",
+      "normative_references": [
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "The admitted PROPOSE decision that raises the retained proposal count to maximum_proposals is otherwise PERMITTED",
+      "state_and_budget_consequence": "Permit and any reservation commit normally; later dispatch, effect, and clock evidence remain admissible after the proposal ceiling."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/LIMIT_EXCEEDED",
+      "id": "D2-124",
+      "normative_references": [
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "A new PROPOSE event is submitted after the retained proposal count equals maximum_proposals",
+      "state_and_budget_consequence": "Work and budget state remain unchanged; exact replay is checked first and non-proposal evidence remains admissible."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/STATE_INVALID",
+      "id": "D2-125",
+      "normative_references": [
+        "LIFE-014",
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "Restart mutates one persisted deadline activation field",
+      "state_and_budget_consequence": "Deadline-activation digest or retained field invariant fails; no event applied."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/FAILED/NO_EFFECT_ESTABLISHED",
+      "id": "D2-126",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-011"
+      ],
+      "operation": "step",
+      "scenario": "Affirmative no-effect completion has null provider event time and the step declares FAILURE_EDGE with one exact failure relationship",
+      "state_and_budget_consequence": "Completed occurrence occurred_at equals native observation time."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/ACKNOWLEDGED",
+      "id": "D2-127",
+      "normative_references": [
+        "LIFE-009"
+      ],
+      "operation": "step",
+      "scenario": "A byte-identical prior dispatch attempt with status SENT and acknowledgement UNKNOWN is updated to acknowledgement ACCEPTED under a new event",
+      "state_and_budget_consequence": "Another dispatch observation is retained; connector is not invoked again and the permit remains consumed."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/ADMINISTRATION_NOT_ESTABLISHED",
+      "id": "D2-128",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-011",
+        "RES-008"
+      ],
+      "operation": "step",
+      "scenario": "Budget-backed no-effect has lifecycle completion authorization but lacks required reservation release administration",
+      "state_and_budget_consequence": "Work and registry states unchanged; lifecycle authorization does not replace registry administration."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/UNEXPECTED",
+      "id": "D2-129",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-018"
+      ],
+      "operation": "step",
+      "scenario": "Fan-out effect is schema-valid but names the wrong completion collection",
+      "state_and_budget_consequence": "No partial fan-out set is created; the effect and any applicable shared exposure remain retained."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "ACCEPTED",
+      "id": "D2-130",
+      "normative_references": [
+        "WCD-001",
+        "LIFE-017"
+      ],
+      "operation": "validate",
+      "scenario": "Parallel branch heads are reachable only through their declared structural split edges",
+      "state_and_budget_consequence": "Normalized construct edges make the complete structured graph reachable."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED",
+      "id": "D2-131",
+      "normative_references": [
+        "LIFE-005",
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "An exact first matching established success effect with a valid route arrives for a committed permit after maximum_proposals has been reached",
+      "state_and_budget_consequence": "The effect is retained, applicable exposure reconciles, and no new proposal is created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/LABEL_INVALID",
+      "id": "D2-132",
+      "normative_references": [
+        "COMP-001",
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "Choice success effect omits the declared route-label field while all request-bound and status fields match",
+      "state_and_budget_consequence": "Effect retained; no target is invented and the effect is not classified as an unexpected request-field mismatch."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/LABEL_INVALID",
+      "id": "D2-133",
+      "normative_references": [
+        "COMP-001",
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "Choice success effect supplies a route label with the wrong declared scalar type",
+      "state_and_budget_consequence": "Effect retained; no target is selected."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/FAILED",
+      "id": "D2-134",
+      "normative_references": [
+        "WCD-001",
+        "COMP-001",
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "Choice step with FAILURE_EDGE and one exact failure relationship establishes a declared failure and supplies no route-label field",
+      "state_and_budget_consequence": "Failure edge is followed; a success label is neither required nor interpreted."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/FAILED",
+      "id": "D2-135",
+      "normative_references": [
+        "WCD-001",
+        "FAN-001",
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "FANOUT_EXPAND step with FAILURE_EDGE and one exact failure relationship establishes a declared failure and supplies no object collection",
+      "state_and_budget_consequence": "Failure behavior is applied; fan-out expansion is not attempted."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/DEFINITION_INVALID",
+      "id": "D2-136",
+      "normative_references": [
+        "WCD-001"
+      ],
+      "operation": "validate",
+      "scenario": "Completion carrier success values disagree with status_type_ref",
+      "state_and_budget_consequence": "No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/SCHEMA_INVALID",
+      "id": "D2-137",
+      "normative_references": [
+        "WCD-001",
+        "WCS2-012"
+      ],
+      "operation": "validate",
+      "scenario": "Work-class source contains an empty obligation list",
+      "state_and_budget_consequence": "No work-class artifact is admitted."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "DEPLOYED",
+      "id": "D2-138",
+      "normative_references": [
+        "LIFE-003",
+        "LIFE-014"
+      ],
+      "operation": "deploy",
+      "scenario": "Root occurrence has one deadline and an admitted initial clock",
+      "state_and_budget_consequence": "Initial state revision and deadline activation_revision are both 0."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/EXPIRED",
+      "id": "D2-139",
+      "normative_references": [
+        "LIFE-014"
+      ],
+      "operation": "step",
+      "scenario": "A CLOCK event accepts a new sample and its expiry route activates a successor with a deadline on the same clock source",
+      "state_and_budget_consequence": "The successor copies the newly accepted sample and uses the resulting work-state revision as activation_revision."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/DEFINITION_INVALID",
+      "id": "D2-140",
+      "normative_references": [
+        "DEAD-001"
+      ],
+      "operation": "validate",
+      "scenario": "Two deadline records name the same proposal-capable step",
+      "state_and_budget_consequence": "No runtime state exists because one occurrence cannot have competing expiry routes in this profile."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED",
+      "id": "D2-141",
+      "normative_references": [
+        "LIFE-015",
+        "PAR-001"
+      ],
+      "operation": "step",
+      "scenario": "A matching effect enters a parallel split with two branches",
+      "state_and_budget_consequence": "ROUTE contains the direct relationship digest and the block identifier; implicit branch activations add no relationship digest."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED",
+      "id": "D2-142",
+      "normative_references": [
+        "LIFE-015",
+        "FAN-001"
+      ],
+      "operation": "step",
+      "scenario": "The final object effect reaches a fan-out join and the join has one outgoing relationship",
+      "state_and_budget_consequence": "ROUTE contains the object-to-join relationship, the join successor relationship, and the fan-out identifier in sorted unique arrays."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED",
+      "id": "D2-143",
+      "normative_references": [
+        "LIFE-015",
+        "FAN-001"
+      ],
+      "operation": "step",
+      "scenario": "Empty fan-out with ADVANCE_TO_JOIN reaches a join with a terminal successor",
+      "state_and_budget_consequence": "One empty joined pass is retained; ROUTE contains the fan-out identifier and the join successor relationship."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/EXPIRED",
+      "id": "D2-144",
+      "normative_references": [
+        "LIFE-014",
+        "LIFE-015",
+        "PAR-001"
+      ],
+      "operation": "step",
+      "scenario": "Two parallel occurrences expire on one accepted clock event and each has an expiry relationship",
+      "state_and_budget_consequence": "The ROUTE detail is the sorted unique union of both expiry closure traces; each discharged or joined obligation retains the exact evidence_digest of the accepted CLOCK record that selected its expiry."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "EFFECT_DISPUTED",
+      "id": "D2-145",
+      "normative_references": [
+        "LIFE-010",
+        "RES-008",
+        "RES-WIRE-004"
+      ],
+      "operation": "aggregate-step",
+      "scenario": "A NO_EFFECT record with null release administration contradicts a SETTLED reservation",
+      "state_and_budget_consequence": "The reservation becomes DISPUTED; committed history remains, pending exposure is restored, and affected partitions are blocked."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "UNKNOWN",
+      "id": "D2-146",
+      "normative_references": [
+        "LIFE-010",
+        "RES-007",
+        "RES-WIRE-004"
+      ],
+      "operation": "aggregate-step",
+      "scenario": "An UNKNOWN record arrives after a reservation is SETTLED",
+      "state_and_budget_consequence": "Evidence is retained; the reservation remains SETTLED and exposure does not change."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "RELEASED",
+      "id": "D2-147",
+      "normative_references": [
+        "LIFE-010",
+        "RES-008",
+        "RES-WIRE-004"
+      ],
+      "operation": "aggregate-step",
+      "scenario": "A same-fact NO_EFFECT record with a new evidence identity and null release administration arrives after RELEASED",
+      "state_and_budget_consequence": "The duplicate is retained without another release or exposure change."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/INSTANCE_NOT_ACTIVE",
+      "id": "D2-148",
+      "normative_references": [
+        "LIFE-005"
+      ],
+      "operation": "step",
+      "scenario": "A new PROPOSE event targets an active sibling occurrence after the instance is STOPPED",
+      "state_and_budget_consequence": "Work and budget state remain unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/OUTCOME_RETAINED/LATE_MATCHED",
+      "id": "D2-149",
+      "normative_references": [
+        "LIFE-005",
+        "LIFE-012"
+      ],
+      "operation": "step",
+      "scenario": "A first matching success effect arrives for a still-active parallel sibling after another branch stopped the instance",
+      "state_and_budget_consequence": "The sibling moves to completed as SUCCEEDED with late true and null route fields; its obligation discharges, applicable exposure settles, no join fires, and the instance remains STOPPED."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/UNEXPECTED",
+      "id": "D2-150",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-018",
+        "FAN-001"
+      ],
+      "operation": "step",
+      "scenario": "FANOUT_EXPAND established evidence contains a schema-valid collection whose element type differs from the declared object type",
+      "state_and_budget_consequence": "Effect is retained; no object occurrence is created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/INSTANCE_NOT_ACTIVE",
+      "id": "D2-151",
+      "normative_references": [
+        "LIFE-005"
+      ],
+      "operation": "step",
+      "scenario": "A new PROPOSE event names a historical occurrence after the instance is COMPLETE",
+      "state_and_budget_consequence": "Work and budget state remain unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/NO_EFFECT_ESTABLISHED",
+      "id": "D2-152",
+      "normative_references": [
+        "LIFE-011"
+      ],
+      "operation": "step",
+      "scenario": "Affirmative no-effect completion is admitted for a step whose declared failure behavior is STOP",
+      "state_and_budget_consequence": "The occurrence completes as NO_EFFECT, no successor is created, and applicable reserved exposure is released."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPATCH_REFUSED/NATIVE_ARGUMENT_MISMATCH+NATIVE_NOT_SENT",
+      "id": "D2-153",
+      "normative_references": [
+        "LIFE-009"
+      ],
+      "operation": "step",
+      "scenario": "A dispatch observation changes native arguments, reports NOT_SENT, and has no accepted acknowledgement",
+      "state_and_budget_consequence": "The exact permit remains dispatchable; the changed request is retained and no connector success is claimed."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/NATIVE_ARGUMENT_MISMATCH",
+      "id": "D2-154",
+      "normative_references": [
+        "LIFE-009"
+      ],
+      "operation": "step",
+      "scenario": "A changed native request is reported with attempt SENT and acknowledgement NONE",
+      "state_and_budget_consequence": "The permit is consumed, the occurrence becomes OUTCOME_UNKNOWN, and the changed request is retained for reconciliation."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/BINDING_MISMATCH",
+      "id": "D2-155",
+      "normative_references": [
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "A governed effect supplies one registry input whose affected anchors differ from the permit budget row",
+      "state_and_budget_consequence": "Work and supplied registry state remain unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED",
+      "id": "D2-156",
+      "normative_references": [
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "An exact first matching established success effect with a valid route supplies current registry state at a revision later than the permit post-RESERVE revision",
+      "state_and_budget_consequence": "The current serialized registry revision is admitted when all current bindings match; the permit revision is historical."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/DEADLINE_TIME_OVERFLOW",
+      "id": "D2-157",
+      "normative_references": [
+        "LIFE-014"
+      ],
+      "operation": "step",
+      "scenario": "An admitted effect would activate an elapsed deadline whose due instant overflows year 9999",
+      "state_and_budget_consequence": "The effect and DEADLINE detail are retained, no successor is created, and no LIMIT detail is emitted."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/UNEXPECTED",
+      "id": "D2-158",
+      "normative_references": [
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "Established effect evidence is attributed to a retained NOT_SENT dispatch with no accepted acknowledgement",
+      "state_and_budget_consequence": "Evidence is retained, applicable exposure is disputed, and no route is selected."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/EXPIRED",
+      "id": "D2-159",
+      "normative_references": [
+        "LIFE-005",
+        "LIFE-014"
+      ],
+      "operation": "step",
+      "scenario": "An available clock expires a still-active parallel sibling after another branch stopped the instance",
+      "state_and_budget_consequence": "The sibling moves to completed as EXPIRED with late true and null route fields; its obligation discharges, no join fires, and the instance remains STOPPED."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "EFFECT_DISPUTED",
+      "id": "D2-160",
+      "normative_references": [
+        "LIFE-013",
+        "RES-WIRE-004"
+      ],
+      "operation": "aggregate-step",
+      "scenario": "A new evidence identity uses the same effect_id as a settled effect but changes its complete conclusive fact",
+      "state_and_budget_consequence": "The reservation becomes DISPUTED; no second committed contribution is added and conservative pending exposure is restored."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/CONFLICTING",
+      "id": "D2-161",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "A contradictory NO_EFFECT record with null completion authorization arrives after the occurrence completed from a matching effect",
+      "state_and_budget_consequence": "The record is retained and the prior route is not changed; a budget-backed occurrence also applies terminal-state reconciliation without granting release."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/OUTCOME_RETAINED/DUPLICATE",
+      "id": "D2-162",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "A same-fact duplicate NO_EFFECT record with null completion authorization arrives after an occurrence completed through authorized no-effect evidence",
+      "state_and_budget_consequence": "No second completion or release occurs and the prior completed occurrence remains unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/DEFINITION_INVALID",
+      "id": "D2-163",
+      "normative_references": [
+        "WCD-001"
+      ],
+      "operation": "validate",
+      "scenario": "Top-level shared_budgets omits an anchor used by one proposal-capable step",
+      "state_and_budget_consequence": "No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/DEFINITION_INVALID",
+      "id": "D2-164",
+      "normative_references": [
+        "WCD-001"
+      ],
+      "operation": "validate",
+      "scenario": "Two work-class steps use the same step identifier",
+      "state_and_budget_consequence": "The duplicate semantic key is rejected before graph evaluation."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/ROLE_UNSUPPORTED",
+      "id": "D2-165",
+      "normative_references": [
+        "LIFE-002",
+        "WCS2-011"
+      ],
+      "operation": "deploy",
+      "scenario": "Profile LINEAR is paired with role DEADLINE_RUNTIME",
+      "state_and_budget_consequence": "No instance state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/BINDING_MISMATCH",
+      "id": "D2-166",
+      "normative_references": [
+        "WCS2-002",
+        "LIFE-009"
+      ],
+      "operation": "step",
+      "scenario": "Dispatch connector binding digest differs from digest(connector-binding,{id,version})",
+      "state_and_budget_consequence": "Work and budget state remain unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/DEFINITION_INVALID",
+      "id": "D2-167",
+      "normative_references": [
+        "WCD-001"
+      ],
+      "operation": "validate",
+      "scenario": "A closed graph can produce an occurrence with 65 enclosing context segments",
+      "state_and_budget_consequence": "No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/PERMIT_EXPIRED",
+      "id": "D2-168",
+      "normative_references": [
+        "LIFE-009"
+      ],
+      "operation": "step",
+      "scenario": "A matching dispatch on an active instance and occurrence has attempt SENT at the permit expiry instant, selects a retained clock at that same instant, and has acknowledgement NONE",
+      "state_and_budget_consequence": "The permit is consumed, the occurrence becomes OUTCOME_UNKNOWN, and the dispatch is retained for effect reconciliation."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/PERMITTED",
+      "id": "D2-169",
+      "normative_references": [
+        "WCD-001",
+        "LIFE-007",
+        "LIFE-008"
+      ],
+      "operation": "step",
+      "scenario": "An initial authority-only proposal succeeds at clock T for a step with permit_seconds 300",
+      "state_and_budget_consequence": "The permit expiry is exactly T plus 300 seconds, is exclusive and nonnull, and no budget transition is created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/PERMITTED",
+      "id": "D2-170",
+      "normative_references": [
+        "LIFE-007",
+        "LIFE-008",
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "An authority-only occurrence reproposes the exact request at the prior permit exclusive expiry with no consuming dispatch and current authority established",
+      "state_and_budget_consequence": "Fresh authority is evaluated; the new finite permit supersedes the prior permit; proposal count advances; activation and actuation counts do not."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/PREREQUISITE_MISSING",
+      "id": "D2-171",
+      "normative_references": [
+        "LIFE-007"
+      ],
+      "operation": "step",
+      "scenario": "An authority-only occurrence attempts permit renewal before the prior permit exclusive expiry",
+      "state_and_budget_consequence": "Work and budget state remain unchanged; the earlier permit is not extended or superseded."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/BINDING_MISMATCH",
+      "id": "D2-172",
+      "normative_references": [
+        "LIFE-007",
+        "LIFE-008"
+      ],
+      "operation": "step",
+      "scenario": "An expired undispatched occurrence proposes changed native request fields as a permit renewal",
+      "state_and_budget_consequence": "Work and budget state remain unchanged; no permit or reservation is changed."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/PERMITTED",
+      "id": "D2-173",
+      "normative_references": [
+        "LIFE-007",
+        "LIFE-008",
+        "RES-006"
+      ],
+      "operation": "step",
+      "scenario": "A budget-backed occurrence renews its exact expired undispatched permit with current authority, complete current histories, and every affected budget still within bound",
+      "state_and_budget_consequence": "Exactly one embedded RENEW updates the same reservation once; the new permit supersedes the old one; no second exposure or actuation is created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/WITHHELD/AUTHORITY_NOT_ESTABLISHED+AUTHORITY_REQUIRED+REVOKED",
+      "id": "D2-174",
+      "normative_references": [
+        "LIFE-007",
+        "RES-006"
+      ],
+      "operation": "step",
+      "scenario": "Current authority is revoked when renewing an expired undispatched permit",
+      "state_and_budget_consequence": "The authority withholding is retained; the prior permit and reservation remain expired and unextended, the registry is unchanged, and the prior permit is not superseded."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPATCH_REFUSED/NATIVE_NOT_SENT+PERMIT_EXPIRED+PERMIT_SUPERSEDED",
+      "id": "D2-175",
+      "normative_references": [
+        "LIFE-008",
+        "LIFE-009"
+      ],
+      "operation": "step",
+      "scenario": "A superseded permit is observed with NOT_SENT and no accepted acknowledgement",
+      "state_and_budget_consequence": "The observation is retained; the expired superseded permit remains nondispatchable; the current permit and all budget state remain unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/LIMIT_EXCEEDED",
+      "id": "D2-176",
+      "normative_references": [
+        "LIFE-006",
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "A prior authority withholding has reached maximum_proposals and the next otherwise bound proposal also supplies invalid current authority",
+      "state_and_budget_consequence": "The proposal-count ceiling precedes authority evaluation; work and budget state remain unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/UNSUPPORTED_RELATION",
+      "id": "D2-177",
+      "normative_references": [
+        "RES-005",
+        "RES-WIRE-003"
+      ],
+      "operation": "aggregate-step",
+      "scenario": "One RESERVE request affects two budgets whose settlement provider or source pairs differ",
+      "state_and_budget_consequence": "The registry remains unchanged and no reservation is created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/CLOCK_INVALID",
+      "id": "D2-178",
+      "normative_references": [
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "An authority-only governed effect supplies a nonnull clock_revision despite carrying no budget input",
+      "state_and_budget_consequence": "Work and budget state remain unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/BINDING_MISMATCH",
+      "id": "D2-179",
+      "normative_references": [
+        "WCD-001",
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "A governed effect provider differs from the exact completion-carrier provider",
+      "state_and_budget_consequence": "Work and budget state remain unchanged; no result field is interpreted."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/FOREIGN",
+      "id": "D2-180",
+      "normative_references": [
+        "LIFE-010",
+        "RES-007",
+        "RES-WIRE-003"
+      ],
+      "operation": "step",
+      "scenario": "A foreign established effect names a known reservation and supplies the exact retained anchor set and deterministic embedded SETTLE projection",
+      "state_and_budget_consequence": "The registry returns EFFECT_DISPUTED and retains disputed exposure; work retains the FOREIGN outcome and exact receipt without completing an occurrence."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/FOREIGN",
+      "id": "D2-181",
+      "normative_references": [
+        "LIFE-010",
+        "RES-007",
+        "RES-WIRE-003"
+      ],
+      "operation": "step",
+      "scenario": "A foreign established effect names a stable unknown reservation and an exact nonempty history and anchor set",
+      "state_and_budget_consequence": "The registry blocks each supplied projectable partition or policy-selected anchor fallback; work retains the foreign outcome and receipt."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/OUTCOME_RETAINED/DUPLICATE",
+      "id": "D2-182",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-013",
+        "RES-WIRE-003"
+      ],
+      "operation": "step",
+      "scenario": "A new evidence ID repeats the complete normalized fact of an earlier foreign effect",
+      "state_and_budget_consequence": "A foreign DUPLICATE outcome remains disputed, adds no exposure or completion, and retains the idempotent registry receipt."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/NATIVE_ARGUMENT_MISMATCH+NATIVE_DISPATCH_REJECTED",
+      "id": "D2-183",
+      "normative_references": [
+        "LIFE-009"
+      ],
+      "operation": "step",
+      "scenario": "A changed native request is observed with attempt REJECTED and no accepted acknowledgement",
+      "state_and_budget_consequence": "The permit is consumed, the occurrence becomes OUTCOME_UNKNOWN, and the changed request is retained for reconciliation."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/DECLARED_FAILURE",
+      "id": "D2-184",
+      "normative_references": [
+        "PAR-001",
+        "LIFE-015",
+        "LIFE-017"
+      ],
+      "operation": "step",
+      "scenario": "A branch operation establishes a failure whose declared failure behavior is STOP",
+      "state_and_budget_consequence": "The triggering occurrence closes, its obligation becomes DISCHARGED without firing the join, and sibling obligations remain visible."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/OUTCOME_RETAINED/NO_EFFECT_ESTABLISHED",
+      "id": "D2-185",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-012",
+        "RES-008"
+      ],
+      "operation": "step",
+      "scenario": "A first affirmative no-effect record arrives for an authority-only governed occurrence after it already expired",
+      "state_and_budget_consequence": "The fact is retained with null lifecycle completion authorization; no completed row or route changes; any budget release still requires reservation administration."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/EVIDENCE_UNAVAILABLE/WITH_PROFILE_AND_ROLE",
+      "id": "D2-186",
+      "normative_references": [
+        "LIFE-003",
+        "WCS2-012"
+      ],
+      "operation": "deploy",
+      "scenario": "Profile and role are admitted, but deployment authorization is unavailable",
+      "state_and_budget_consequence": "No initial state is returned; the closed refusal retains the admitted profile and role."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/STATE_INVALID",
+      "id": "D2-187",
+      "normative_references": [
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "A restart state contains two permits that both supersede the same prior permit for one occurrence",
+      "state_and_budget_consequence": "The forked permit chain is rejected before the event is applied; supplied states remain unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/BINDING_MISMATCH",
+      "id": "D2-188",
+      "normative_references": [
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "A foreign effect names a known reservation but its wrapper affected anchors omit one retained contribution anchor",
+      "state_and_budget_consequence": "Work and registry state remain unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/PERMITTED",
+      "id": "D2-189",
+      "normative_references": [
+        "LIFE-007",
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "A successful renewal occurs after earlier withheld proposals but before maximum_proposals is reached",
+      "state_and_budget_consequence": "The count advances by one decision receipt while maximum_actuations remains unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/PERMITTED",
+      "id": "D2-190",
+      "normative_references": [
+        "LIFE-007",
+        "LIFE-009"
+      ],
+      "operation": "step",
+      "scenario": "An expired permit has only a NOT_SENT attempt with acknowledgement REJECTED before exact renewal",
+      "state_and_budget_consequence": "The safe attempt does not block renewal; fresh authority is evaluated and the new permit supersedes the old one."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/PREREQUISITE_MISSING",
+      "id": "D2-191",
+      "normative_references": [
+        "LIFE-007",
+        "LIFE-009"
+      ],
+      "operation": "step",
+      "scenario": "An expired permit has a prior SENT attempt before an attempted renewal",
+      "state_and_budget_consequence": "Work and budget state remain unchanged; no second permission is created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/INPUT_INVALID",
+      "id": "D2-192",
+      "normative_references": [
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "A foreign effect branch carries NO_EFFECT_ESTABLISHED or OUTCOME_UNKNOWN instead of EFFECT_ESTABLISHED",
+      "state_and_budget_consequence": "Work and budget state remain unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/EXPIRED",
+      "id": "D2-193",
+      "normative_references": [
+        "LIFE-014",
+        "LIFE-015"
+      ],
+      "operation": "step",
+      "scenario": "One clock event expires 64 object occurrences in separate fan-outs nested across a 64-branch parallel block, yielding a legal route-trace union of 65 construct identifiers",
+      "state_and_budget_consequence": "The one ROUTE detail contains the sorted 65 construct identifiers and the complete atomic next state."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/UNSUPPORTED_RELATION",
+      "id": "D2-194",
+      "normative_references": [
+        "LIFE-007",
+        "RES-005"
+      ],
+      "operation": "step",
+      "scenario": "A proposal requires a shared budget whose settlement or no-effect provider/source differs from the active completion carrier",
+      "state_and_budget_consequence": "Work and registry state remain unchanged; no permit or reservation is created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED",
+      "id": "D2-195",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-012",
+        "LIFE-015"
+      ],
+      "operation": "step",
+      "scenario": "A matching effect is observed after permit expiry for an unresolved occurrence whose exact request was dispatched before expiry",
+      "state_and_budget_consequence": "The effect reconciles exposure, completes the occurrence and follows the normal declared route; permit expiry alone does not make the effect late."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/UNEXPECTED",
+      "id": "D2-196",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-013",
+        "RES-WIRE-003"
+      ],
+      "operation": "step",
+      "scenario": "After one conclusive governed effect, another established effect for the same permit and stable dispatch-attempt digest uses a distinct evidence_id and distinct provider-native operation identity",
+      "state_and_budget_consequence": "The additional execution is retained and reconciled conservatively; it creates no second completion and never reroutes the occurrence."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/LATE_AFTER_RELEASE",
+      "id": "D2-197",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-012",
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "A matching effect with a distinct evidence_id arrives after an authorized no-effect release for the same budget-backed provider-native operation identity, governed permit and stable dispatch-attempt digest",
+      "state_and_budget_consequence": "The late effect and earlier no-effect outcomes name one another in symmetric conflict lists; disputed exposure is restored and routing remains unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/FANOUT_EMPTY",
+      "id": "D2-198",
+      "normative_references": [
+        "FAN-001",
+        "LIFE-018"
+      ],
+      "operation": "step",
+      "scenario": "A FANOUT_EXPAND success yields an empty set under empty_set_behavior STOP",
+      "state_and_budget_consequence": "The retained pass has object_keys and obligation_ids empty and joined false; no object occurrence or join successor is created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/ACTIVATION_CLOCK_UNAVAILABLE+EXPIRY_STOP",
+      "id": "D2-199",
+      "normative_references": [
+        "LIFE-014"
+      ],
+      "operation": "step",
+      "scenario": "One clock due set includes an expiry stop and another closure whose successor deadline lacks an activation clock",
+      "state_and_budget_consequence": "The DEADLINE detail names the sorted union of original due deadlines and the failing new deadline; no closure successor is created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED",
+      "id": "D2-200",
+      "normative_references": [
+        "LIFE-015",
+        "LIFE-017",
+        "PAR-001"
+      ],
+      "operation": "step",
+      "scenario": "The final obligations of a nested parallel pass discharge and its join activates a successor",
+      "state_and_budget_consequence": "The successor occurrence removes the joined BRANCH and region-local segments, retains the exact common outer prefix, and names every discharged final occurrence as predecessor."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "EVIDENCE_VALID",
+      "id": "D2-201",
+      "normative_references": [
+        "WCS2-005",
+        "WCS2-012"
+      ],
+      "operation": "check-evidence",
+      "scenario": "An accepted correspondence record accounts for every declared source obligation and every exact work-class readback path and carries an accepted exact-subject review",
+      "state_and_budget_consequence": "The result binds the work-class subject and complete correspondence evidence digest; it makes no semantic-fidelity claim."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "EVIDENCE_INVALID/BINDING_MISMATCH",
+      "id": "D2-202",
+      "normative_references": [
+        "WCS2-005",
+        "WCS2-012"
+      ],
+      "operation": "check-evidence",
+      "scenario": "A correspondence record omits one work-class readback path from both mappings and unsupported provisions",
+      "state_and_budget_consequence": "No coverage acceptance is returned."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "EVIDENCE_VALID",
+      "id": "D2-203",
+      "normative_references": [
+        "WCS2-005",
+        "WCS2-012"
+      ],
+      "operation": "check-evidence",
+      "scenario": "A basic accepted review record exactly matches the supplied external subject digest but its scope sufficiency is not supplied",
+      "state_and_budget_consequence": "The result establishes accepted status and exact subject binding only; scope adequacy remains unclaimed."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "READBACK",
+      "id": "D2-204",
+      "normative_references": [
+        "WCS2-005",
+        "WCS2-012"
+      ],
+      "operation": "readback",
+      "scenario": "Canonical bytes contain a closed accepted evidence record",
+      "state_and_budget_consequence": "Every scalar leaf and empty collection in the evidence record appears in stable JSON-pointer order."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/DEFINITION_INVALID",
+      "id": "D2-205",
+      "normative_references": [
+        "WCD-001",
+        "WCS2-004"
+      ],
+      "operation": "validate",
+      "scenario": "A structural step carries a positive nonnull permit_seconds",
+      "state_and_budget_consequence": "The schema admits the field shape, but semantic validation rejects permit duration on a structural step. No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/SCHEMA_INVALID",
+      "id": "D2-206",
+      "normative_references": [
+        "WCD-001",
+        "WCS2-012"
+      ],
+      "operation": "validate",
+      "scenario": "A proposal-capable completion carrier omits either its effect evidence triple or no-effect evidence triple",
+      "state_and_budget_consequence": "No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/BINDING_MISMATCH",
+      "id": "D2-207",
+      "normative_references": [
+        "WCD-001",
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "A NO_EFFECT_ESTABLISHED record uses the effect provider triple instead of the declared no-effect provider triple",
+      "state_and_budget_consequence": "Work and registry state remain unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/WITHHELD/AUTHORITY_NOT_ESTABLISHED+AUTHORITY_REQUIRED+CLOCK_UNAVAILABLE",
+      "id": "D2-208",
+      "normative_references": [
+        "LIFE-007",
+        "AUTH-005"
+      ],
+      "operation": "step",
+      "scenario": "Retained lifecycle time establishes permit expiry, but the fresh renewal authority input has an unavailable current clock",
+      "state_and_budget_consequence": "The withholding is retained; the prior permit and reservation remain unextended and unsuperseded."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED",
+      "id": "D2-209",
+      "normative_references": [
+        "LIFE-014",
+        "LIFE-017"
+      ],
+      "operation": "step",
+      "scenario": "One simultaneous due set stops during union preflight while due occurrences belong to parallel or fan-out obligations",
+      "state_and_budget_consequence": "Every due occurrence closes and its enclosing obligation is discharged without firing a join; non-due siblings remain open or blocked."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/SCHEMA_INVALID",
+      "id": "D2-210",
+      "normative_references": [
+        "LIFE-009",
+        "WCS2-012"
+      ],
+      "operation": "step",
+      "scenario": "A DISPATCH_OBSERVED event supplies null instead of an exact retained clock revision for permit-expiry evaluation",
+      "state_and_budget_consequence": "Work and every supplied budget state remain unchanged; no dispatch observation is retained."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "EVIDENCE_INVALID/BINDING_MISMATCH",
+      "id": "D2-211",
+      "normative_references": [
+        "WCS2-005",
+        "WCS2-012"
+      ],
+      "operation": "check-evidence",
+      "scenario": "A correspondence record lists one operative readback path both under a source-obligation mapping and in unsupported_provision_paths",
+      "state_and_budget_consequence": "No correspondence acceptance is returned."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "EVIDENCE_INVALID/BINDING_MISMATCH",
+      "id": "D2-212",
+      "normative_references": [
+        "WCS2-005",
+        "WCS2-012"
+      ],
+      "operation": "check-evidence",
+      "scenario": "A correspondence subject pin differs while the top-level input and work-class pins equal the selected candidate",
+      "state_and_budget_consequence": "No correspondence acceptance is returned."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/VERSION_UNSUPPORTED",
+      "id": "D2-213",
+      "normative_references": [
+        "WCS2-002",
+        "WCS2-013"
+      ],
+      "operation": "check-evidence",
+      "scenario": "The top-level correspondence input pin differs from the selected candidate manifest",
+      "state_and_budget_consequence": "No evidence judgment is evaluated."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/STATE_INVALID",
+      "id": "D2-214",
+      "normative_references": [
+        "LIFE-003",
+        "LIFE-019",
+        "WCS2-002"
+      ],
+      "operation": "step",
+      "scenario": "A restarted work state has a correctly recomputed outer state digest, but changes the retained deployment-authorization evidence while preserving its old internal evidence digest or authorization binding",
+      "state_and_budget_consequence": "No event is evaluated and every supplied budget state remains unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/WITHHELD/BOUND_VIOLATED+BUDGET_WITHHELD",
+      "id": "D2-215",
+      "normative_references": [
+        "LIFE-007",
+        "RES-006"
+      ],
+      "operation": "step",
+      "scenario": "Current authority succeeds, but budget policy withholds renewal of an expired undispatched permit because the bound is violated",
+      "state_and_budget_consequence": "The registry withholding receipt, next registry revision, one WITHHELD proposal record with the successful authority-result digest, registry receipt digest, null permit digest and exact prior-permit digest, and the work decision commit together. The prior permit and reservation remain expired, unextended and unsuperseded."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/UNEXPECTED",
+      "id": "D2-216",
+      "normative_references": [
+        "LIFE-009",
+        "LIFE-010",
+        "LIFE-012"
+      ],
+      "operation": "step",
+      "scenario": "Exact success evidence follows the matching-argument dispatch in D2-168 that was observed at the permit expiry instant",
+      "state_and_budget_consequence": "The effect is retained and exposure is reconciled conservatively, but the expired-dispatch occurrence does not route or complete successfully."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "PROPERTY_PASS/RAW_UTF8_ESCAPED_POINTER_ORDER",
+      "id": "D2-217",
+      "normative_references": [
+        "WCS2-001",
+        "WCS2-005",
+        "WCS2-012"
+      ],
+      "operation": "property",
+      "scenario": "The readback property harness receives a generic canonical JSON value containing array positions 2 and 10, object keys containing slash and tilde, and non-ASCII keys",
+      "state_and_budget_consequence": "The property output lines sort by complete escaped pointer bytes rather than numeric index or unescaped-token order, and each value string contains the canonical JSON serialization of its scalar or empty collection. This is a direct algorithm property, not an adapter readback request for an unrecognized artifact kind."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/CLOCK_INVALID",
+      "id": "D2-218",
+      "normative_references": [
+        "LIFE-009",
+        "WCS2-013"
+      ],
+      "operation": "step",
+      "scenario": "A DISPATCH_OBSERVED event selects a retained pre-expiry clock but asserts attempted_at at the later permit-expiry instant",
+      "state_and_budget_consequence": "The future-relative attempt is not retained; work and budget states remain unchanged, so later governed effect evidence has no dispatch binding."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/SCHEMA_INVALID",
+      "id": "D2-219",
+      "normative_references": [
+        "LIFE-009",
+        "WCS2-012"
+      ],
+      "operation": "step",
+      "scenario": "A dispatch acknowledgement has status ACCEPTED but null reference and observation time",
+      "state_and_budget_consequence": "No dispatch observation is retained; work and every supplied budget state remain unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPATCH_RECORDED then STEP/COMPLETED/MATCHED",
+      "id": "D2-220",
+      "normative_references": [
+        "LIFE-009",
+        "LIFE-010",
+        "LIFE-012"
+      ],
+      "operation": "step",
+      "scenario": "A matching SENT dispatch is reported after permit expiry, but its exact attempted_at is before expiry and no supersession or closure applies; exact matching effect evidence follows",
+      "state_and_budget_consequence": "The late dispatch report retains the timely attempt without PERMIT_EXPIRED; later exact evidence may settle exposure and advance the work graph."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/CLOCK_INVALID",
+      "id": "D2-221",
+      "normative_references": [
+        "LIFE-008",
+        "LIFE-009",
+        "WCS2-013"
+      ],
+      "operation": "step",
+      "scenario": "A DISPATCH_OBSERVED event asserts attempted_at before the retained clock that issued its permit",
+      "state_and_budget_consequence": "The backdated attempt is not retained; work and every supplied budget state remain unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/BINDING_MISMATCH",
+      "id": "D2-222",
+      "normative_references": [
+        "LIFE-002",
+        "LIFE-003",
+        "WCS2-012"
+      ],
+      "operation": "deploy",
+      "scenario": "The request supplies an admitted LINEAR and LINEAR_WORK_RUNTIME pair, but the exact work-class definition declares CHOICE_LOOPS",
+      "state_and_budget_consequence": "No initial state is created and the definition is not interpreted under the lower profile."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/BINDING_MISMATCH",
+      "id": "D2-223",
+      "normative_references": [
+        "LIFE-002",
+        "LIFE-005",
+        "WCS2-012"
+      ],
+      "operation": "step",
+      "scenario": "The request supplies an admitted profile-role pair that differs from the supplied definition profile or retained state pair",
+      "state_and_budget_consequence": "Work and every supplied budget state remain unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "EVIDENCE_INVALID/BINDING_MISMATCH",
+      "id": "D2-224",
+      "normative_references": [
+        "LIFE-002",
+        "WCS2-012"
+      ],
+      "operation": "check-evidence",
+      "scenario": "A correspondence input profile differs from the exact supplied work-class profile while its profile value is otherwise admitted",
+      "state_and_budget_consequence": "No correspondence acceptance is returned."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/UNEXPECTED",
+      "id": "D2-225",
+      "normative_references": [
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "A governed EFFECT_ESTABLISHED record claims an event_time before its retained dispatch attempt",
+      "state_and_budget_consequence": "The claimed effect is retained, completion_mismatch is true for conservative reconciliation, and the occurrence does not route."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/UNEXPECTED",
+      "id": "D2-226",
+      "normative_references": [
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "A governed EFFECT_ESTABLISHED record claims event_time after its own observed_at",
+      "state_and_budget_consequence": "The temporally contradictory effect is retained and blocks unsafe progression; it cannot complete the occurrence."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/CLOCK_INVALID",
+      "id": "D2-227",
+      "normative_references": [
+        "LIFE-010",
+        "WCS2-006"
+      ],
+      "operation": "step",
+      "scenario": "A budget-backed effect observation has observed_at later than the selected latest retained registry clock",
+      "state_and_budget_consequence": "Work and registry state remain unchanged; the host must retain the raw evidence and may resubmit after admitting a current clock."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/FOREIGN",
+      "id": "D2-228",
+      "normative_references": [
+        "LIFE-010",
+        "RES-WIRE-004"
+      ],
+      "operation": "step",
+      "scenario": "A schema-valid foreign established effect claims event_time after observed_at",
+      "state_and_budget_consequence": "The record remains attributable and disputed; the embedded observed_request is null, completion_mismatch is true, the anchor fallback applies, and the claimed future event time cannot free capacity."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/CONFLICTING",
+      "id": "D2-229",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "A first affirmative no-effect record with a distinct evidence_id and distinct provider-native operation identity arrives for an already successfully completed authority-only occurrence and binds to the same governed permit and stable dispatch-attempt digest as the earlier effect",
+      "state_and_budget_consequence": "The no-effect record and symmetric conflict identities are retained with no completion authorization. The completed row, route, and terminal instance status remain unchanged, but dependent work is blocked because one governed invocation cannot both have and not have an effect."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/MATCHED/BUDGET_EFFECT_DISPUTED+HISTORY_UNCORROBORATED",
+      "id": "D2-230",
+      "normative_references": [
+        "LIFE-010",
+        "RES-WIRE-003"
+      ],
+      "operation": "step",
+      "scenario": "A governed established effect matches the permit and completion carrier, but the shared-budget journal does not corroborate the committed event required for settlement",
+      "state_and_budget_consequence": "The registry retains disputed exposure; the lifecycle changes the occurrence to BLOCKED_DISPUTE and does not apply the otherwise matching success route."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/EVIDENCE_UNAVAILABLE",
+      "id": "D2-231",
+      "normative_references": [
+        "LIFE-003",
+        "WCS2-012"
+      ],
+      "operation": "deploy",
+      "scenario": "A nonnull deployment-authorization expiry equals or precedes the exact authorization-clock instant",
+      "state_and_budget_consequence": "No initial work state is created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/UNKNOWN/BUDGET_EFFECT_DISPUTED+UNKNOWN_OUTCOME",
+      "id": "D2-232",
+      "normative_references": [
+        "LIFE-006",
+        "LIFE-010",
+        "RES-WIRE-004"
+      ],
+      "operation": "step",
+      "scenario": "A governed UNKNOWN outcome is otherwise exact, but its shared-budget registry is already disputed and returns EFFECT_DISPUTED",
+      "state_and_budget_consequence": "The occurrence remains unresolved, the existing disputed exposure remains charged, and no route is selected."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/OUTCOME_RETAINED/MATCHED+DEPENDENCY_DISPUTED",
+      "id": "D2-233",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-013",
+        "LIFE-017"
+      ],
+      "operation": "step",
+      "scenario": "A descendant was dispatched before its completed ancestor became disputed; exact matching effect evidence later arrives while the descendant occurrence is BLOCKED_DISPUTE, with no shared budget or with an exact required SETTLED budget receipt",
+      "state_and_budget_consequence": "Any required settlement commits and the conclusive result is retained, but the exact descendant remains BLOCKED_DISPUTE and its directly owning obligation, if any, remains BLOCKED while the ancestor dispute is unresolved; no route, join or successor is created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/CONFLICTING/BUDGET_EFFECT_DISPUTED+CONFLICTING_EFFECT+UNEXPECTED_EFFECT",
+      "id": "D2-234",
+      "normative_references": [
+        "LIFE-006",
+        "LIFE-010",
+        "LIFE-013",
+        "RES-WIRE-003"
+      ],
+      "operation": "step",
+      "scenario": "After a governed budget-backed effect settled, a second conclusive record with a distinct evidence_id for the same provider-native operation changes lifecycle evidence content such as record_digest while leaving the narrower reservation-native projection otherwise equal",
+      "state_and_budget_consequence": "The lifecycle forces completion_mismatch true in the embedded settlement, the registry retains disputed exposure instead of treating it as a harmless duplicate, the earlier completed row and route remain unchanged, and dependent active descendants are blocked."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/LATE_MATCHED/BUDGET_EFFECT_DISPUTED+HISTORY_UNCORROBORATED+LATE_EFFECT",
+      "id": "D2-235",
+      "normative_references": [
+        "LIFE-006",
+        "LIFE-010",
+        "LIFE-012",
+        "RES-WIRE-003"
+      ],
+      "operation": "step",
+      "scenario": "A governed budget-backed effect is otherwise LATE_MATCHED after deadline closure, but its supplied journal does not corroborate the settlement and the registry returns EFFECT_DISPUTED",
+      "state_and_budget_consequence": "The expired occurrence and route remain unchanged; the registry retains disputed exposure and the work state retains the late evidence without routing."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/LATE_OR_PROHIBITED_DISPATCH",
+      "id": "D2-236",
+      "normative_references": [
+        "LIFE-006",
+        "LIFE-009",
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "A previously permitted descendant becomes BLOCKED_DISPUTE after an ancestor conflict, then a matching SENT native attempt with acknowledgement status NONE and an otherwise valid timeline is reported against that retained permit",
+      "state_and_budget_consequence": "The possibly-sent attempt consumes the permit and is retained for reconciliation, but the occurrence remains BLOCKED_DISPUTE, its directly owning obligation, if any, remains BLOCKED, and dispatchability is not restored."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/EXPIRED",
+      "id": "D2-237",
+      "normative_references": [
+        "LIFE-006",
+        "LIFE-013",
+        "LIFE-014"
+      ],
+      "operation": "step",
+      "scenario": "An available CLOCK event satisfies an AT_OR_AFTER pending deadline whose occurrence and enclosing obligation are already dependency-blocked",
+      "state_and_budget_consequence": "The deadline becomes EXPIRED as evidence, while the occurrence remains BLOCKED_DISPUTE and its directly owning obligation, if any, remains BLOCKED; no expiry route, join, successor or terminal-status change occurs."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/OUTCOME_RETAINED/DUPLICATE",
+      "id": "D2-238",
+      "normative_references": [
+        "LIFE-006",
+        "LIFE-010",
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "Two retained governed conclusive facts for one provider-native operation already conflict; a new distinct evidence_id repeats exactly the first fact",
+      "state_and_budget_consequence": "The duplicate adds no completion or exposure, inherits disputed true and the other fact group as its conflict set, and every outcome in the other fact group adds the duplicate evidence identity to its symmetric sorted conflict set."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/EXPIRED",
+      "id": "D2-239",
+      "normative_references": [
+        "DEAD-001",
+        "LIFE-014",
+        "LIFE-015",
+        "PAR-001"
+      ],
+      "operation": "step",
+      "scenario": "An eligible AT_OR_AFTER deadline expires and its declared EXPIRY relationship enters a PARALLEL_SPLIT with two branch heads within all limits",
+      "state_and_budget_consequence": "The expired predecessor moves to completed; the clock event atomically creates the parallel pass, both branch obligations and both active branch occurrences. Each obligation names the expired predecessor in source_occurrence_ids and the exact CLOCK event digest as creation_event_digest."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/BINDING_MISMATCH",
+      "id": "D2-240",
+      "normative_references": [
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "A schema-valid foreign EFFECT_OBSERVED resolves to a step with a nonempty shared_budgets set, but supplies null reservation identity, no affected anchors, and no registry input",
+      "state_and_budget_consequence": "The event cannot convert a budget-bearing operation into an authority-only foreign effect. Work and every supplied budget state remain unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/UNKNOWN/BUDGET_EFFECT_DISPUTED+NATIVE_REQUEST_MISMATCH+UNKNOWN_OUTCOME",
+      "id": "D2-241",
+      "normative_references": [
+        "LIFE-010",
+        "RES-WIRE-003"
+      ],
+      "operation": "step",
+      "scenario": "An OUTCOME_UNKNOWN assertion is attributed to a dispatch request that differed from the committed permit for a budget-backed occurrence",
+      "state_and_budget_consequence": "The native fact is retained, the reservation becomes or remains DISPUTED, unresolved pending exposure remains charged, the affected anchors are blocked, and the occurrence does not route or complete."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/UNEXPECTED/BUDGET_EFFECT_DISPUTED+NATIVE_REQUEST_MISMATCH+UNEXPECTED_EFFECT",
+      "id": "D2-242",
+      "normative_references": [
+        "LIFE-010",
+        "RES-WIRE-003"
+      ],
+      "operation": "step",
+      "scenario": "A NO_EFFECT_ESTABLISHED assertion is attributed to a dispatch request that differed from the committed permit for a budget-backed occurrence",
+      "state_and_budget_consequence": "The no-effect fact is retained as UNEXPECTED with null completion authorization. The reservation becomes or remains DISPUTED, unresolved pending exposure remains charged, the affected anchors are blocked, and no release, completion, or route occurs."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED/NESTED_PARALLEL_CREATED",
+      "id": "D2-243",
+      "normative_references": [
+        "LIFE-015",
+        "LIFE-017",
+        "PAR-001"
+      ],
+      "operation": "step",
+      "scenario": "A matching success effect for an eligible directly owned occurrence enters a nested parallel split with two valid branch heads and all structural limits available",
+      "state_and_budget_consequence": "The direct parent obligation becomes WAITING on the exact child-pass reference while both child obligations and active occurrences are created atomically. Any outer ancestor obligation remains waiting on the parent pass."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED/NESTED_CHILD_JOINED",
+      "id": "D2-244",
+      "normative_references": [
+        "LIFE-015",
+        "LIFE-017",
+        "PAR-001"
+      ],
+      "operation": "step",
+      "scenario": "A matching success effect discharges the final child obligation of a nested pass, and the child join closure activates one proposal-capable successor in the parent region",
+      "state_and_budget_consequence": "All child obligations become JOINED; the directly waiting parent obligation becomes OPEN and names the new parent-region occurrence. The new occurrence predecessor list equals the recursive child completion frontier."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/COMPLETED/NESTED_PARENT_DISCHARGED",
+      "id": "D2-245",
+      "normative_references": [
+        "LIFE-015",
+        "LIFE-017",
+        "PAR-001"
+      ],
+      "operation": "step",
+      "scenario": "A matching success effect discharges the final child obligation of a nested pass, and the child join closure immediately reaches the join of its parent obligation",
+      "state_and_budget_consequence": "The child obligations become JOINED and the parent obligation becomes DISCHARGED with a CHILD_PASS completion basis. If that discharge completes another eligible pass, fixed-point joining continues in the same transition."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED",
+      "id": "D2-246",
+      "normative_references": [
+        "LIFE-015",
+        "PAR-001"
+      ],
+      "operation": "step",
+      "scenario": "A directly owned child operation enters a policy stop before its nested child obligation inventory can be created",
+      "state_and_budget_consequence": "No child pass or child obligation is created. The directly owning obligation becomes DISCHARGED with the triggering DIRECT_EVENT basis, no join fires, and every outer waiting ancestor remains WAITING in the stopped instance."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/PERMITTED",
+      "id": "D2-247",
+      "normative_references": [
+        "LIFE-007",
+        "LIFE-019",
+        "PAR-001"
+      ],
+      "operation": "step",
+      "scenario": "A fresh process receives a valid ACTIVE checkpoint whose parent obligation is WAITING on an exact existing incomplete child pass, then receives a proposal for one OPEN child occurrence with current accepted authority and no shared budget",
+      "state_and_budget_consequence": "Restart admits the closed waiting variant because the child-pass identity, outer prefix, obligation inventory, and acyclic nesting all agree. The subsequent child proposal creates one permit and preserves the parent WAITING reference."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/CONFLICTING",
+      "id": "D2-248",
+      "normative_references": [
+        "LIFE-013",
+        "PAR-001"
+      ],
+      "operation": "step",
+      "scenario": "One branch obligation is DISCHARGED, its sibling remains OPEN, and later conflicting conclusive evidence disputes the completed occurrence in the discharged branch",
+      "state_and_budget_consequence": "The completed row and route remain historical, the unjoined DISCHARGED obligation becomes DISPUTED while retaining its completion basis, and the pass cannot join after the sibling later discharges."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/NESTED_DISPUTE_PROPAGATED",
+      "id": "D2-249",
+      "normative_references": [
+        "LIFE-013",
+        "PAR-001"
+      ],
+      "operation": "step",
+      "scenario": "A nested child pass contains an obligation that becomes DISPUTED before its parent pass has joined",
+      "state_and_budget_consequence": "The direct child obligation is DISPUTED. Its WAITING parent becomes the waiting form of DISPUTED with the exact child-pass reference, and the condition propagates through every waiting ancestor. No affected pass is join-eligible."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/OUTCOME_RETAINED/LATE_MATCHED",
+      "id": "D2-250",
+      "normative_references": [
+        "LIFE-012",
+        "LIFE-019",
+        "FAN-001"
+      ],
+      "operation": "step",
+      "scenario": "A one-object fan-out is in a STOPPED instance, and a matching effect reaches its still-active non-BLOCKED_DISPUTE object occurrence with no shared budget or with an exact SETTLED budget receipt",
+      "state_and_budget_consequence": "The pass remains all-DISCHARGED and not JOINED. Restart admits this otherwise complete pass only because the retained stop decision and direct completion basis prove that stopped-instance rules suppressed the join."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/STATE_INVALID",
+      "id": "D2-251",
+      "normative_references": [
+        "LIFE-019",
+        "PAR-001"
+      ],
+      "operation": "step",
+      "scenario": "An ACTIVE checkpoint contains a pass whose complete obligation inventory is DISCHARGED but not JOINED",
+      "state_and_budget_consequence": "The state is rejected because the eligible join should have fired atomically in the transition that discharged the final obligation."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/BINDING_MISMATCH",
+      "id": "D2-252",
+      "normative_references": [
+        "LIFE-007",
+        "FAN-001"
+      ],
+      "operation": "step",
+      "scenario": "A proposal names a valid frozen fan-out occurrence for object A but its declared object-request field contains object B",
+      "state_and_budget_consequence": "The occurrence-to-object check fails before authority or reservation evaluation. Work and every supplied budget state remain unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/PERMITTED",
+      "id": "D2-253",
+      "normative_references": [
+        "LIFE-007",
+        "FAN-001"
+      ],
+      "operation": "step",
+      "scenario": "A proposal inside nested fan-outs supplies distinct declared request fields whose typed values equal the retained outer and inner object keys, has current accepted authority, and requires no shared budget",
+      "state_and_budget_consequence": "Both occurrence-to-object bindings succeed, authority succeeds, no reservation input is required, and the proposal creates one permit under the ordinary atomic proposal rule."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/DEFINITION_INVALID",
+      "id": "D2-254",
+      "normative_references": [
+        "WCD-001",
+        "FAN-001"
+      ],
+      "operation": "validate",
+      "scenario": "Two nested fan-out definitions use the same object-request field name on one descendant path",
+      "state_and_budget_consequence": "The definition is rejected because one native request field cannot carry two independently bound enclosing object identities. No instance is created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/EXPIRED/FIXED_POINT_JOINS",
+      "id": "D2-255",
+      "normative_references": [
+        "LIFE-014",
+        "LIFE-015",
+        "PAR-001"
+      ],
+      "operation": "step",
+      "scenario": "One available CLOCK event supplies a due set that directly discharges the last obligations of several independent and nested passes; every continuing closure is within limits and has no expiry stop, missing activation clock, immediately due deadline, time overflow, or other stop condition",
+      "state_and_budget_consequence": "The consumer applies direct discharges, joins eligible passes from greater depth outward in canonical child-pass order, and commits the complete fixed-point successor state atomically."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/CONFLICTING",
+      "id": "D2-256",
+      "normative_references": [
+        "LIFE-013",
+        "PAR-001"
+      ],
+      "operation": "step",
+      "scenario": "In one unjoined branch, operation A completed and routed to B, B completed and discharged the branch obligation, and later conflicting evidence disputes A while a sibling obligation remains open",
+      "state_and_budget_consequence": "The dependency-affected set contains A and completed descendant B. Because the discharged obligation completion frontier contains B, that obligation becomes DISPUTED and the pass can never join in this candidate. Restart recomputes the same intersection and admits the resulting disputed-completion variant."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/ACKNOWLEDGED",
+      "id": "D2-257",
+      "normative_references": [
+        "LIFE-009"
+      ],
+      "operation": "step",
+      "scenario": "A timely matching SENT attempt was retained with acknowledgement NONE and changed the occurrence to DISPATCHED; a later event reuses the byte-identical attempt and supplies a timely ACCEPTED acknowledgement",
+      "state_and_budget_consequence": "The consumer records the acknowledgement update without invoking the connector, adds no LATE_OR_PROHIBITED_DISPATCH reason, and leaves the occurrence DISPATCHED."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/ACKNOWLEDGED",
+      "id": "D2-258",
+      "normative_references": [
+        "LIFE-009",
+        "LIFE-012",
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "After restart and after the occurrence completed from effect evidence, a later event reuses its earlier timely matching SENT attempt whose acknowledgement was NONE and supplies the first timely ACCEPTED acknowledgement",
+      "state_and_budget_consequence": "The consumer records the late acknowledgement as an update to the original attempt using its original permission facts. It does not invoke the connector, add LATE_OR_PROHIBITED_DISPATCH, recreate the occurrence, or change the completed route or terminal instance status."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/SCHEMA_INVALID",
+      "id": "D2-259",
+      "normative_references": [
+        "WCD-001",
+        "WCS2-012"
+      ],
+      "operation": "validate",
+      "scenario": "A proposal-capable step omits the required permit_seconds field",
+      "state_and_budget_consequence": "The closed step schema rejects the missing required property before semantic definition checks. No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/SCHEMA_INVALID",
+      "id": "D2-260",
+      "normative_references": [
+        "WCD-001",
+        "WCS2-012"
+      ],
+      "operation": "validate",
+      "scenario": "A proposal-capable step supplies permit_seconds as zero",
+      "state_and_budget_consequence": "The closed step schema rejects zero because a permit duration is a canonical positive integer. No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/CONFLICTING",
+      "id": "D2-261",
+      "normative_references": [
+        "LIFE-009",
+        "LIFE-010",
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "An authority-only occurrence completed from conclusive effect evidence bound to a SENT/NONE dispatch record; a later acknowledgement update retains the same permit and dispatch-attempt digest under a new complete dispatch digest, and a no-effect record with a distinct evidence_id and different provider-native operation identity binds to that updated dispatch",
+      "state_and_budget_consequence": "Both conclusive outcomes become disputed with symmetric conflict evidence identities because they concern the same permit and stable native attempt. The completed route remains unchanged, no capacity is released, and the later acknowledgement observation remains separately attributable."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/CONFLICTING",
+      "id": "D2-262",
+      "normative_references": [
+        "LIFE-009",
+        "LIFE-010",
+        "LIFE-012",
+        "LIFE-013"
+      ],
+      "operation": "step",
+      "scenario": "An authority-only occurrence closed from authorized no-effect evidence bound to a SENT/NONE dispatch record; a later acknowledgement update retains the same permit and dispatch-attempt digest under a new complete dispatch digest, and established effect evidence with a distinct evidence_id and different provider-native operation identity binds to that updated dispatch",
+      "state_and_budget_consequence": "Both conclusive outcomes become disputed with symmetric conflict evidence identities because they concern the same permit and stable native attempt. The earlier no-effect closure is not erased, the graph is not rerouted, and the late effect is retained."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/OUTCOME_RETAINED/DUPLICATE",
+      "id": "D2-263",
+      "normative_references": [
+        "LIFE-010",
+        "RES-WIRE-002",
+        "RES-WIRE-004"
+      ],
+      "operation": "step",
+      "scenario": "A budget-backed governed effect duplicates a retained same-fact CONFLICTING outcome under a new evidence identity and reference",
+      "state_and_budget_consequence": "The lifecycle copies the retained embedded reservation-native fact except for the new evidence identity and reference, including completion_mismatch:true. The reservation transition returns the established disputed disposition without adding exposure or creating a different conflict; the completed route and blocked dependencies remain unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "HOST_DEPLOY/INSTALLED",
+      "id": "D2-264",
+      "normative_references": [
+        "LIFE-003",
+        "LIFE-020"
+      ],
+      "operation": "host-harness",
+      "scenario": "The reference host receives a byte-identical successful deploy request and calculated initial state for an organization and instance whose authoritative initial root was already installed from those exact bytes",
+      "state_and_budget_consequence": "The host returns the established authoritative state digest with replay:true, creates no second root, changes no state, and performs no dispatch."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "HOST_DEPLOY/INSTANCE_OCCUPIED",
+      "id": "D2-265",
+      "normative_references": [
+        "LIFE-003",
+        "LIFE-020"
+      ],
+      "operation": "host-harness",
+      "scenario": "The reference host receives a different successful deploy request and calculated initial state for an occupied organization-and-instance namespace",
+      "state_and_budget_consequence": "The response binds the authoritative and proposed state digests, returns replay:false and dispatch_performed:false, and leaves the one authoritative root unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/CLOCK_RECORDED then STEP/PERMITTED",
+      "id": "D2-266",
+      "normative_references": [
+        "LIFE-007",
+        "LIFE-014"
+      ],
+      "operation": "step",
+      "scenario": "An authority-only work class with no deadline deploys with an empty initial_clocks array; a first available CLOCK event introduces the host-selected authority source at a canonical natural revision, then a proposal selects that retained clock and supplies current accepted authority with no shared budget",
+      "state_and_budget_consequence": "The first clock establishes the source baseline. The subsequent proposal uses that exact source and revision, appends one PERMITTED proposal record and permit, and requires no registry input."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/STOPPED/LIMIT_EXCEEDED",
+      "id": "D2-267",
+      "normative_references": [
+        "LIFE-006",
+        "COMP-002",
+        "WCS2-013"
+      ],
+      "operation": "step",
+      "scenario": "An initial proposal has current accepted authority, the work class has exhausted maximum_actuations, and the otherwise shape-valid required registry input also carries a stale expected revision",
+      "state_and_budget_consequence": "The actuation ceiling is evaluated before the cloned reservation transition. The work state retains the successful authority basis and stop receipt, creates no proposal record, permit or reservation, and leaves the supplied registry state unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/CLOCK_RECORDED/CLOCK_UNAVAILABLE then REFUSED/CLOCK_INVALID then STEP/CLOCK_RECORDED",
+      "id": "D2-268",
+      "normative_references": [
+        "LIFE-014",
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "A first CLOCK event introduces source S at revision 5 with status UNAVAILABLE; a new AVAILABLE event for S reuses revision 5; after that refusal, another AVAILABLE event for S uses revision 6 and a valid baseline time",
+      "state_and_budget_consequence": "The unavailable record advances only the revision watermark. The equal-revision available sample leaves state unchanged. The greater revision is accepted as the source's first available time baseline, leaving one uniquely keyed row per retained clock record."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/UNEXPECTED/UNEXPECTED_EFFECT",
+      "id": "D2-269",
+      "normative_references": [
+        "LIFE-010"
+      ],
+      "operation": "step",
+      "scenario": "A first NO_EFFECT_ESTABLISHED assertion is attributed to a changed-argument dispatch that may have reached the connector for an authority-only occurrence",
+      "state_and_budget_consequence": "The no-effect fact is retained with null completion authorization. The unresolved occurrence remains OUTCOME_UNKNOWN, and no completion, route, or release is inferred from the disqualified dispatch."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED/UNEXPECTED/BUDGET_EFFECT_DISPUTED+UNEXPECTED_EFFECT",
+      "id": "D2-270",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-011",
+        "RES-WIRE-003"
+      ],
+      "operation": "step",
+      "scenario": "A budget-backed permit has attempt A recorded as NOT_SENT with no accepted acknowledgement, followed by attempt B recorded as SENT; a first NO_EFFECT_ESTABLISHED assertion with valid completion authorization binds attempt A",
+      "state_and_budget_consequence": "Attempt A is not the last distinct attempt. The no-effect fact is retained with completion_mismatch true, attempt B remains possibly effective, the reservation becomes or remains DISPUTED, pending exposure remains charged, and no completion, route, or release occurs."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/FAILED/NO_EFFECT_ESTABLISHED",
+      "id": "D2-271",
+      "normative_references": [
+        "LIFE-010",
+        "LIFE-011",
+        "RES-008"
+      ],
+      "operation": "step",
+      "scenario": "A budget-backed permit has attempt A recorded as NOT_SENT with no accepted acknowledgement, followed by attempt B recorded as SENT; a first NO_EFFECT_ESTABLISHED assertion with valid completion authorization and release administration binds attempt B",
+      "state_and_budget_consequence": "Attempt B is the last distinct attempt and every other attempt is definitively safe. The reservation is released once, the occurrence completes as NO_EFFECT, and its declared failure edge is followed."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/ROLE_UNSUPPORTED",
+      "id": "D2-272",
+      "normative_references": [
+        "WCS2-010",
+        "WCS2-011",
+        "WCS2-012"
+      ],
+      "operation": "aggregate-step",
+      "scenario": "A structurally admitted aggregate-step request is sent to a consumer whose capability claim omits SHARED_BUDGET_TRANSITIONS",
+      "state_and_budget_consequence": "No reservation transition runs. The protocol-level closed refusal is returned without claiming or changing a reservation state."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/SCHEMA_INVALID",
+      "id": "D2-273",
+      "normative_references": [
+        "WCD-001",
+        "COMP-BIND-001"
+      ],
+      "operation": "validate",
+      "scenario": "A proposal-capable step omits prior_effect_bindings or prior_actor_separations",
+      "state_and_budget_consequence": "No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/REFERENCE_INVALID",
+      "id": "D2-274",
+      "normative_references": [
+        "COMP-BIND-001",
+        "VALID-001"
+      ],
+      "operation": "validate",
+      "scenario": "A prior-effect binding names a source evidence field absent from the source completion carrier",
+      "state_and_budget_consequence": "No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/DEFINITION_INVALID",
+      "id": "D2-275",
+      "normative_references": [
+        "COMP-BIND-001",
+        "VALID-001"
+      ],
+      "operation": "validate",
+      "scenario": "A prior-effect binding connects source and target fields with different nominal type references",
+      "state_and_budget_consequence": "No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/DEFINITION_INVALID",
+      "id": "D2-276",
+      "normative_references": [
+        "WCD-001",
+        "COMP-BIND-001"
+      ],
+      "operation": "validate",
+      "scenario": "A structural step declares a nonempty prior-effect or prior-actor array",
+      "state_and_budget_consequence": "No runtime state exists."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/PREREQUISITE_MISSING",
+      "id": "D2-277",
+      "normative_references": [
+        "LIFE-006",
+        "LIFE-007",
+        "COMP-BIND-001"
+      ],
+      "operation": "step",
+      "scenario": "A current proposal requires a prior effect but no qualifying completed ancestor exists",
+      "state_and_budget_consequence": "Exact supplied work and budget states returned unchanged; current authority is not evaluated."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/BINDING_MISMATCH",
+      "id": "D2-278",
+      "normative_references": [
+        "LIFE-006",
+        "LIFE-007",
+        "COMP-BIND-001"
+      ],
+      "operation": "step",
+      "scenario": "Two qualifying completed ancestors match one UNIQUE_COMPLETED_ANCESTOR prior-effect binding",
+      "state_and_budget_consequence": "Exact supplied work and budget states returned unchanged; no recency, ordinal, or distance tie-break is applied."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/BINDING_MISMATCH",
+      "id": "D2-279",
+      "normative_references": [
+        "LIFE-006",
+        "LIFE-007",
+        "COMP-BIND-001"
+      ],
+      "operation": "step",
+      "scenario": "The unique completed ancestor established destination_account A while the current payment proposal requests destination_account B",
+      "state_and_budget_consequence": "Exact supplied work and budget states returned unchanged; authority and reservation are not evaluated."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/PERMITTED",
+      "id": "D2-280",
+      "normative_references": [
+        "LIFE-007",
+        "LIFE-008",
+        "COMP-BIND-001"
+      ],
+      "operation": "step",
+      "scenario": "The unique completed ancestor supplies every declared prior-effect field with the same nominal type and canonical value as the current proposal",
+      "state_and_budget_consequence": "The permit retains one exact prior-effect basis per declared binding; any required reservation commits atomically with the work state."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/PREREQUISITE_MISSING",
+      "id": "D2-281",
+      "normative_references": [
+        "LIFE-004",
+        "LIFE-007",
+        "COMP-BIND-001"
+      ],
+      "operation": "step",
+      "scenario": "A matching completed effect exists only in another instance, sibling path, or non-predecessor history",
+      "state_and_budget_consequence": "Exact supplied work and budget states returned unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/PERMITTED",
+      "id": "D2-282",
+      "normative_references": [
+        "LIFE-007",
+        "LIFE-008",
+        "COMP-BIND-001"
+      ],
+      "operation": "step",
+      "scenario": "The prior selected VERIFY actor and current selected INSTANCE_DECISION actor have distinct exact identifiers",
+      "state_and_budget_consequence": "The permit retains the complete current authority-act projection and one satisfied separation basis; any required reservation commits atomically."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/WITHHELD/SEPARATION_VIOLATED",
+      "id": "D2-283",
+      "normative_references": [
+        "LIFE-006",
+        "LIFE-007",
+        "COMP-BIND-001"
+      ],
+      "operation": "step",
+      "scenario": "One actor performs the selected prior VERIFY and current INSTANCE_DECISION under different roles and capacities",
+      "state_and_budget_consequence": "The decision retains the exact separation comparison basis; no permit or reservation is created and budgets remain unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/PREREQUISITE_MISSING",
+      "id": "D2-284",
+      "normative_references": [
+        "LIFE-006",
+        "LIFE-007",
+        "COMP-BIND-001"
+      ],
+      "operation": "step",
+      "scenario": "The prior step completed successfully but its establishing permit contains no selected authority act of the declared prior_act_kind",
+      "state_and_budget_consequence": "Exact supplied work and budget states returned unchanged."
+    },
+    {
+      "derivation_status": "AUTHOR_CONSTRUCTED_PENDING_INDEPENDENT_REVIEW",
+      "expected_judgment": "REFUSED/STATE_INVALID",
+      "id": "D2-285",
+      "normative_references": [
+        "AUTH-004",
+        "LIFE-008",
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "A restarted state retains a current or prior permit containing more than one authority-act basis of the separation requirement's declared act kind",
+      "state_and_budget_consequence": "Exact supplied work and budget states returned unchanged; restart integrity rejects the retained permit before evaluating the new event."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/WITHHELD/AUTHORITY_REQUIRED",
+      "id": "D2-286",
+      "normative_references": [
+        "LIFE-006",
+        "LIFE-007"
+      ],
+      "operation": "step",
+      "scenario": "Current authority is withheld and the supplied actor identifiers would also violate a declared prior-actor separation",
+      "state_and_budget_consequence": "The authority withholding takes precedence; no separation decision, permit, or reservation is created."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/WITHHELD/SEPARATION_VIOLATED",
+      "id": "D2-287",
+      "normative_references": [
+        "LIFE-006",
+        "LIFE-007"
+      ],
+      "operation": "step",
+      "scenario": "Actor separation is violated and a supplied required budget input also has a stale revision",
+      "state_and_budget_consequence": "The separation withholding takes precedence; the budget transition is not evaluated and the budget remains unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/CLOCK_RECORDED",
+      "id": "D2-288",
+      "normative_references": [
+        "LIFE-008",
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "A restarted state contains unchanged prior-effect, authority-act, and satisfied-separation permit bases, then receives a greater-revision available clock event with no deadline due",
+      "state_and_budget_consequence": "The next event is evaluated without process-local history. The clock is retained, the state advances once, and every retained permit basis and budget state remains unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/STATE_INVALID",
+      "id": "D2-289",
+      "normative_references": [
+        "LIFE-008",
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "A restarted state omits a required prior-effect, authority-act, or satisfied-separation permit basis, or changes a complete selected act without updating its retained digest commitments",
+      "state_and_budget_consequence": "No new event is evaluated and supplied budget state remains unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/DISPUTED with dependent blocking",
+      "id": "D2-290",
+      "normative_references": [
+        "LIFE-008",
+        "LIFE-013",
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "Later conclusive evidence disputes the source effect used by a retained descendant permit",
+      "state_and_budget_consequence": "The original permit basis remains retained; LIFE-013 blocks affected active descendants and does not rewrite earlier permission or completed routing."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP with replay true",
+      "id": "D2-291",
+      "normative_references": [
+        "LIFE-008",
+        "LIFE-013",
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "An exact proposal with prior-effect and separation bases is replayed after restart",
+      "state_and_budget_consequence": "The original permit and bases are returned with the current state; no state or reservation revision changes."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "CLOSED_DOCUMENTED_BOUNDARY/IDENTITY_AUTHENTICATION",
+      "id": "D2-292",
+      "normative_references": [
+        "LIFE-007",
+        "HOST-003"
+      ],
+      "operation": "boundary",
+      "scenario": "Two syntactically distinct actor identifiers satisfy DISTINCT_ACTOR in the semantic consumer",
+      "state_and_budget_consequence": "Mechanical comparison succeeds, but deployment assurance still requires the host to authenticate that the identifiers name different real actors."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "STEP/WITHHELD/SEPARATION_VIOLATED",
+      "id": "D2-293",
+      "normative_references": [
+        "LIFE-006",
+        "LIFE-007",
+        "COMP-BIND-001"
+      ],
+      "operation": "step",
+      "scenario": "Two prior-actor separations are declared; the first by identifier compares equal actors and a later requirement also lacks a selected act",
+      "state_and_budget_consequence": "The decision retains only the first failing comparison basis; later separation requirements and the budget transition are not evaluated."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/INPUT_INVALID",
+      "id": "D2-294",
+      "normative_references": [
+        "RES-WIRE-003",
+        "RES-WIRE-004"
+      ],
+      "operation": "aggregate-step",
+      "scenario": "A reservation native record supplies completion_mismatch false with a nonnull mismatch_reason, or completion_mismatch true with a null reason",
+      "state_and_budget_consequence": "The exact prior registry state is returned unchanged; no evidence or receipt is retained."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "REFUSED/STATE_INVALID",
+      "id": "D2-295",
+      "normative_references": [
+        "LIFE-007",
+        "LIFE-019"
+      ],
+      "operation": "step",
+      "scenario": "A restarted separation-withholding decision changes the complete current authority act while retaining its prior act digest or authority-result commitment",
+      "state_and_budget_consequence": "No new event is evaluated and supplied budget state remains unchanged."
+    },
+    {
+      "derivation_status": "DERIVED_FROM_NORMATIVE_TEXT_BEFORE_IMPLEMENTATION_OUTPUT",
+      "expected_judgment": "EFFECT_DISPUTED with NATIVE_REQUEST_MISMATCH or UNEXPECTED_EFFECT respectively",
+      "id": "D2-296",
+      "normative_references": [
+        "RES-007",
+        "RES-008",
+        "RES-WIRE-003",
+        "RES-WIRE-004"
+      ],
+      "operation": "aggregate-step",
+      "scenario": "Two completion-mismatched NO_EFFECT records differ only in their declared supported cause: changed or disqualified dispatch versus another unexpected or conflicting lifecycle conclusion",
+      "state_and_budget_consequence": "Both retain disputed exposure and block the affected anchor; each receipt copies its exact closed mismatch reason rather than inferring a cause from the Boolean."
+    }
+  ],
+  "method": "Each expected judgment was derived from the cited draft-2 normative rule and scenario before either draft-2 implementation was run. These lifecycle and contract-delta judgments supplement the independently frozen draft-1 authority, aggregate, reservation, canonicalization, readback, and evidence cases; they do not replace those core cases. Exact fixture bytes and complete outputs are produced and reviewed before suite freeze.",
+  "review_revision": "contract-remediation.44-author-revision",
+  "status": "AUTHOR_REVISION_PENDING_INDEPENDENT_REVIEW"
+}

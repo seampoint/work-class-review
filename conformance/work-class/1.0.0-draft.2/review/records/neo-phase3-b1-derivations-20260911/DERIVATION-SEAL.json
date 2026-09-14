@@ -1,0 +1,17 @@
+{
+  "identity": "seampoint.work-class.b1-precomparison-derivation/1.0.0-draft.2/2026-09-11",
+  "candidate_pin": "sha256:674d2f97e5a6b8f6e812ab140a1f821544fbdd4faa3ec6a03917225a9324c5c0",
+  "path_outside_repository": "/Volumes/ssd/agent-data/claude/neo-phase3-b1-derivations-20260911/DERIVATIONS.md",
+  "sha256": "2b3b80e58bc6ee5662be371dbb98fb9dde1f9edd08981a5293909aa8ba9a767c",
+  "recorded_before_expected_comparison": true,
+  "case_ids": ["D2-173", "D2-174", "D2-189", "D2-208", "D2-215", "D2-227"],
+  "sources_read": [
+    "library/work-class-specification/1.0.0-draft.2/LIFECYCLE.md",
+    "library/work-class-specification/1.0.0-draft.2/RESERVATIONS.md",
+    "library/work-class-specification/1.0.0-draft.2/AUTHORITY.md",
+    "library/work-class-specification/1.0.0-draft.2/Specification.md",
+    "library/work-class-specification/1.0.0-draft.2/requirements.json"
+  ],
+  "implementation_source_or_output_consulted": false,
+  "existing_expected_members_opened": false
+}

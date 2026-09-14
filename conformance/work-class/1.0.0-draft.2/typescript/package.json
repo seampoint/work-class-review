@@ -1,0 +1,21 @@
+{
+  "name": "@seampoint/work-class-draft2-reference",
+  "version": "1.0.0-draft.2",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.10.0"
+  },
+  "scripts": {
+    "start": "node adapter.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test ./*.test.ts"
+  },
+  "dependencies": {
+    "ajv": "8.17.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.7.2",
+    "typescript": "5.9.3"
+  }
+}

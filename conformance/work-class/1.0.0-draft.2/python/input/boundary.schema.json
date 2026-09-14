@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/boundary.schema.json",
+  "$comment": "DRAFT_NOT_ADOPTED; APPARATUS_ONLY. A boundary record closes the specification of an external dependency; it does not establish the external fact.",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9._:/-]{0,127}$"
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "owner": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "POLICY_OWNER",
+            "IDENTITY_PROVIDER",
+            "OBSERVATION_PROVIDER",
+            "CLOCK_PROVIDER",
+            "HOST_OPERATOR",
+            "CONNECTOR_OPERATOR",
+            "DEPLOYER"
+          ]
+        },
+        "party_id": {
+          "$ref": "#/$defs/id"
+        }
+      },
+      "required": [
+        "kind",
+        "party_id"
+      ],
+      "additionalProperties": false
+    },
+    "record": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.2/boundary-record"
+        },
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "candidate_identity": {
+          "const": "seampoint.work-class/1.0.0-draft.2"
+        },
+        "specification_pin": {
+          "$ref": "#/$defs/digest"
+        },
+        "paragraph_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 4096,
+          "uniqueItems": true
+        },
+        "requirement_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 1024,
+          "uniqueItems": true
+        },
+        "external_fact_or_capability": {
+          "type": "string",
+          "minLength": 1
+        },
+        "responsible_party": {
+          "$ref": "#/$defs/owner"
+        },
+        "required_control_or_integration": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_format": {
+          "type": "string",
+          "minLength": 1
+        },
+        "failure_behavior": {
+          "type": "string",
+          "minLength": 1
+        },
+        "deployment_verification": {
+          "type": "string",
+          "minLength": 1
+        },
+        "establishes": {
+          "type": "string",
+          "minLength": 1
+        },
+        "does_not_establish": {
+          "type": "string",
+          "minLength": 1
+        },
+        "residual_limitation": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "schema",
+        "id",
+        "candidate_identity",
+        "specification_pin",
+        "paragraph_ids",
+        "requirement_ids",
+        "external_fact_or_capability",
+        "responsible_party",
+        "required_control_or_integration",
+        "evidence_format",
+        "failure_behavior",
+        "deployment_verification",
+        "establishes",
+        "does_not_establish",
+        "residual_limitation"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$ref": "#/$defs/record"
+}

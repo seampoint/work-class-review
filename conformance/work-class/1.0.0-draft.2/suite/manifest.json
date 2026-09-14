@@ -1,0 +1,4834 @@
+{
+  "identity": "seampoint.work-class.suite/1.0.0-draft.2",
+  "candidate_identity": "seampoint.work-class/1.0.0-draft.2",
+  "specification_pin": "sha256:dc925a1473d788e69f8912136e84796b143bc60dfe118ae004ba310a0108f1ea",
+  "suite_revision": "1",
+  "status": "FROZEN_AUTHOR_DERIVED_EXPECTATIONS",
+  "binding_rule": "Each expected result is derived from the draft 2 normative text and exact input and sealed before either reference consumer runs; the runner only compares canonical bytes.",
+  "expectation_review": "One independent review round ran at pin sha256:5a75779d3191c2e8b7b3b0db8533fdcc9e0aabd8fb9d32a6f43e72c1e9c0be21 over the draft 2 changes; its text-decided findings and the specification owner's decisions on its open questions were applied afterwards and are not independently reviewed.",
+  "mandatory_requirements": [
+    "AGG-001",
+    "AGG-002",
+    "AGG-003",
+    "AGG-004",
+    "AGG-005",
+    "AGG-006",
+    "AGG-007",
+    "AGG-008",
+    "AGG-009",
+    "AUTH-001",
+    "AUTH-002",
+    "AUTH-003",
+    "AUTH-004",
+    "AUTH-005",
+    "AUTH-006",
+    "AUTH-CHECK-001",
+    "AUTH-CHECK-002",
+    "AUTH-CHECK-003",
+    "AUTH-CHECK-004",
+    "BOUND-001",
+    "CLAIM-001",
+    "COMP-001",
+    "COMP-002",
+    "COMP-BIND-001",
+    "CONF-001",
+    "DEAD-001",
+    "FAN-001",
+    "HOST-002",
+    "HOST-003",
+    "LIFE-001",
+    "LIFE-002",
+    "LIFE-003",
+    "LIFE-004",
+    "LIFE-005",
+    "LIFE-006",
+    "LIFE-007",
+    "LIFE-008",
+    "LIFE-009",
+    "LIFE-010",
+    "LIFE-011",
+    "LIFE-012",
+    "LIFE-013",
+    "LIFE-014",
+    "LIFE-015",
+    "LIFE-016",
+    "LIFE-017",
+    "LIFE-018",
+    "LIFE-019",
+    "LIFE-020",
+    "LINEAR-001",
+    "PAR-001",
+    "PROF-001",
+    "RES-001",
+    "RES-002",
+    "RES-003",
+    "RES-004",
+    "RES-005",
+    "RES-006",
+    "RES-007",
+    "RES-008",
+    "RES-009",
+    "RES-WIRE-001",
+    "RES-WIRE-002",
+    "RES-WIRE-003",
+    "RES-WIRE-004",
+    "SCOPE-001",
+    "VALID-001",
+    "WCD-001",
+    "WCS2-001",
+    "WCS2-002",
+    "WCS2-003",
+    "WCS2-004",
+    "WCS2-005",
+    "WCS2-006",
+    "WCS2-010",
+    "WCS2-011",
+    "WCS2-012",
+    "WCS2-013",
+    "WCS2-014",
+    "XPROF-001"
+  ],
+  "mandatory_roles": [
+    "AGGREGATE_EVALUATOR",
+    "AUTHORITY_EVALUATOR",
+    "CHOICE_LOOP_RUNTIME",
+    "DEADLINE_RUNTIME",
+    "LINEAR_WORK_RUNTIME",
+    "PARALLEL_FANOUT_RUNTIME",
+    "REFERENCE_SINGLE_PROCESS_CONTENTION",
+    "REVIEW_EVIDENCE",
+    "SHARED_BUDGET_TRANSITIONS"
+  ],
+  "cases": [
+    {
+      "id": "D2-261",
+      "path": "cases/acknowledgement-conflicts/D2-261.json",
+      "sha256": "3bccd9ab1bcfc58822479688cef8be8f9462201ac35807e453db060500264e5c",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009",
+        "LIFE-010",
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-262",
+      "path": "cases/acknowledgement-conflicts/D2-262.json",
+      "sha256": "c29e06de1d7f2117333897c6438fc2bec5ff155b8b518521f91f146e6e6d0e3e",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009",
+        "LIFE-010",
+        "LIFE-012",
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-069",
+      "path": "cases/additional-precedence/D2-069.json",
+      "sha256": "06a43805ba204e93fd5655d97691faf5f6fb8483aca4973007a265ef7db1809c",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-085",
+      "path": "cases/additional-precedence/D2-085.json",
+      "sha256": "9e33adef15b11bf103abeddb6b71c1da1855512eba9ca7d3e41b80ecd2d25935",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "WCS2-013"
+      ]
+    },
+    {
+      "id": "D2-092",
+      "path": "cases/additional-precedence/D2-092.json",
+      "sha256": "79c386ff05d688915a042e4d444191efe4b7b58d7d20922571b7fcc7b0ede9ac",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007"
+      ]
+    },
+    {
+      "id": "D2-005",
+      "path": "cases/advanced-static/D2-005.json",
+      "sha256": "0c555d817dffae7308f460af0dc3a92d2082edc40668091c31e926bdaef52223",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-002",
+        "LIFE-018"
+      ]
+    },
+    {
+      "id": "D2-167",
+      "path": "cases/advanced-static/D2-167.json",
+      "sha256": "48e7664d5d2fdb87c4f6ea998a709d83ec0231fae770bd7017284bf550e0b512",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001"
+      ]
+    },
+    {
+      "id": "D2-254",
+      "path": "cases/advanced-static/D2-254.json",
+      "sha256": "97857aa330db0873e3247c88d7150e16da95718f9bdab3892e01c34dad5263a3",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "C2-fresh-not-sent-attempt-on-consumed-permit",
+      "path": "cases/amendment-batch-controls/C2-fresh-not-sent-attempt-on-consumed-permit.json",
+      "sha256": "052fc326d7519e68c60d07e25d59c686e7991d58999ee11bfed772eee54961d8",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "C2-fresh-rejected-attempt-on-consumed-permit",
+      "path": "cases/amendment-batch-controls/C2-fresh-rejected-attempt-on-consumed-permit.json",
+      "sha256": "1e9871b6a23912bfe84d450569ca7b302b6a3c95880b3b7a22448aa2261fe745",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "C2-fresh-rejected-changed-attempt-on-consumed-permit",
+      "path": "cases/amendment-batch-controls/C2-fresh-rejected-changed-attempt-on-consumed-permit.json",
+      "sha256": "cef47b5d4778a51faddd9d598a0ccbf869922bd2205cc34a581e51bec6d2204b",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "C2-fresh-sent-attempt-on-consumed-permit",
+      "path": "cases/amendment-batch-controls/C2-fresh-sent-attempt-on-consumed-permit.json",
+      "sha256": "cf69b6aeebd767727394bf42e5bd90b09804f222ec2418a2ab40b743dea0e6fc",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "C2-refuse-stale-correspondence-digest",
+      "path": "cases/amendment-batch-controls/C2-refuse-stale-correspondence-digest.json",
+      "sha256": "8529068e4d23e0f41057f0548c38d3acd875fa47866d589996c8649bc0ed6d5d",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "C2-restart-after-evidence-only-expiry",
+      "path": "cases/amendment-batch-controls/C2-restart-after-evidence-only-expiry.json",
+      "sha256": "2c57fe2f2027a7668e601631435b1a8052c00395a95c569e3abe58c2b732b212",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "C2-restart-disputed-expired-head",
+      "path": "cases/amendment-batch-controls/C2-restart-disputed-expired-head.json",
+      "sha256": "f8f647dbf1d39489de0334699e5925ad5cf987ee4f6d7a6f6d764893cab072b7",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-013",
+        "LIFE-014",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "C2-restart-disputed-obligation-conflicting-record",
+      "path": "cases/amendment-batch-controls/C2-restart-disputed-obligation-conflicting-record.json",
+      "sha256": "ad69858fe318ddd98ed9c6cf62f22068dad23ea63261a821702a77d06110c794",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-013",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "C2-restart-disputed-waiting-ancestor",
+      "path": "cases/amendment-batch-controls/C2-restart-disputed-waiting-ancestor.json",
+      "sha256": "98e51ed5e07c35e32c4c36fec1d21b5ce5367805d68c72eb2308645cae18fba2",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-013",
+        "LIFE-019",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "D2-001",
+      "path": "cases/artifact-admission/D2-001.json",
+      "sha256": "9993695a0c02ee24ca237a9ae4f21bb57d3d498a3810afe5cd3ca5ab6d0f5f81",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-001",
+        "WCS2-004"
+      ]
+    },
+    {
+      "id": "D2-002",
+      "path": "cases/artifact-admission/D2-002.json",
+      "sha256": "ce164d73a69838b836d8579eeed6f6fd078a7ab71f4bad7934b715688e2be669",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-001",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-003",
+      "path": "cases/artifact-admission/D2-003.json",
+      "sha256": "9b5428b9acb51184bace0d67ed50268816b0822a783c248a2c30cec564a27550",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-001",
+        "WCS2-003",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-004",
+      "path": "cases/artifact-admission/D2-004.json",
+      "sha256": "fb039de91dfd765c2906092afec020a90fc1b3115df745d6b0b0ccdaeb3bb869",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-012",
+        "LIFE-002",
+        "LIFE-018"
+      ]
+    },
+    {
+      "id": "D2-006",
+      "path": "cases/artifact-admission/D2-006.json",
+      "sha256": "d6def4b1762e8e77421297b780aa0389e89cc16bb52783ac6a58ef25d64bbc15",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-001",
+        "WCS2-012",
+        "LIFE-001"
+      ]
+    },
+    {
+      "id": "D2-007",
+      "path": "cases/artifact-admission/D2-007.json",
+      "sha256": "1b2a667716651d246e99291ef541f54b2175a427bdf468101c17ff750e5c66f2",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-002",
+        "WCS2-004",
+        "WCS2-010",
+        "WCS2-013"
+      ]
+    },
+    {
+      "id": "D2-047",
+      "path": "cases/artifact-admission/D2-047.json",
+      "sha256": "a0e886a7f5695773cb77d94a72783911b141ef8905b6aa9dc5917b4afc89fbeb",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-016",
+        "COMP-001"
+      ]
+    },
+    {
+      "id": "D2-111",
+      "path": "cases/artifact-admission/D2-111.json",
+      "sha256": "409f426c3930f865d97f5a4ae2c89b64e68948d87b3ad73dd65e34156a01686a",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "LIFE-015"
+      ]
+    },
+    {
+      "id": "D2-112",
+      "path": "cases/artifact-admission/D2-112.json",
+      "sha256": "75eefac55d60bbec126122f9bc204acf625298b6a99a704bb42aa8e75baa0b69",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "DEAD-001",
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-130",
+      "path": "cases/artifact-admission/D2-130.json",
+      "sha256": "50dd3fbb609e076e14ca4da11c6b4ab009a5663f64048b6edf6dc02cb58f43e5",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "LIFE-017"
+      ]
+    },
+    {
+      "id": "D2-136",
+      "path": "cases/artifact-admission/D2-136.json",
+      "sha256": "1f25d09ef3a67ffbc9aba459bbddb17bc2202c18c3adbfd2d7fc9149b2f205db",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001"
+      ]
+    },
+    {
+      "id": "D2-137",
+      "path": "cases/artifact-admission/D2-137.json",
+      "sha256": "fb44c84fa198f6e8c641bc212d1dceaaac64b31636d178288cc6afbf3f51e260",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-140",
+      "path": "cases/artifact-admission/D2-140.json",
+      "sha256": "63f60397de70c8e0cb96f06b7812d479ce6a6dfe5048bcf70daebc3721d38bce",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "DEAD-001"
+      ]
+    },
+    {
+      "id": "D2-163",
+      "path": "cases/artifact-admission/D2-163.json",
+      "sha256": "ae67fe621eea9d1483b160bc01c1ae40e5972b81366e2d8623183ef481ee912c",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001"
+      ]
+    },
+    {
+      "id": "D2-164",
+      "path": "cases/artifact-admission/D2-164.json",
+      "sha256": "98b2eab8cc81f12d20ad46669f756015d7fc0ebad4e894a368a24cbfda79e8f9",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001"
+      ]
+    },
+    {
+      "id": "D2-205",
+      "path": "cases/artifact-admission/D2-205.json",
+      "sha256": "da44b20da460b720e9bb88c601af93812b61f787cd4dc0ac98a660df6f581364",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "WCS2-004"
+      ]
+    },
+    {
+      "id": "D2-206",
+      "path": "cases/artifact-admission/D2-206.json",
+      "sha256": "8ddab784cd209b547e0e1c8269515d8b2a90436912cee73bb6ccc52f57d1a1be",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-259",
+      "path": "cases/artifact-admission/D2-259.json",
+      "sha256": "2f26a8f9901d68214649a18fe7f0876f8f574adc468bae4fe01cbd321cf4cba9",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-260",
+      "path": "cases/artifact-admission/D2-260.json",
+      "sha256": "c531570dba338be8d643b9de3b9da4788078112f1513db355bf22201938c76ae",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-014",
+      "path": "cases/authority-withholding/D2-014.json",
+      "sha256": "f490887dd8d8f8d42110cfa398ebae6e2ba8d2a850e4902f3be8737a7b458617",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-007"
+      ]
+    },
+    {
+      "id": "D2-015",
+      "path": "cases/authority-withholding/D2-015.json",
+      "sha256": "159cb237bbe4a9376d0dcf5f5e571459bd005391fbfcfeb4ca5b4434e038c108",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "AUTH-005"
+      ]
+    },
+    {
+      "id": "D2-016",
+      "path": "cases/authority-withholding/D2-016.json",
+      "sha256": "21d88e7a3312f9d1bcebf9324611e7d6b18bead77d3cffc36aa25231bfc6c240",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "AUTH-005"
+      ]
+    },
+    {
+      "id": "D2-048",
+      "path": "cases/bounded-loops/D2-048.json",
+      "sha256": "49fe3472354ac5dd3c8b3083366fa7ac8c1c9b49af1fe2210e216144b5f65495",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-016",
+        "COMP-002"
+      ]
+    },
+    {
+      "id": "D2-049",
+      "path": "cases/bounded-loops/D2-049.json",
+      "sha256": "65fde8d1590a599c478a6a8bc3d1cfa7b7fe8db5b14588d31c9e8e7927497acf",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-016",
+        "COMP-002"
+      ]
+    },
+    {
+      "id": "D2-087",
+      "path": "cases/bounded-loops/D2-087.json",
+      "sha256": "92c687c6c8f85af5dc5ae134e7092329498b9f18c79ec6de998a1e8cf6b2172c",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "COMP-002",
+        "LIFE-006",
+        "WCS2-013"
+      ]
+    },
+    {
+      "id": "D2-114",
+      "path": "cases/branch-routes/D2-114.json",
+      "sha256": "99d2bcb0be31be6c8d19e2c5186054b28f394900c475533a81d80ccf819369c0",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "PAR-001",
+        "LIFE-017"
+      ]
+    },
+    {
+      "id": "D2-256",
+      "path": "cases/branch-routes/D2-256.json",
+      "sha256": "301f17eabe9919903815e2d561c3768ed0f75cccb5d7e714ce8b4c5f829c1856",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-013",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "D2-197",
+      "path": "cases/budget-effect-disputes/D2-197.json",
+      "sha256": "0b6943f7635639a218b73472cd73c063561145f28a5cb317ff1e79efc034fc4b",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-012",
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-241",
+      "path": "cases/budget-effect-disputes/D2-241.json",
+      "sha256": "4e64ae9749dfb786748954f2ce37d3635af1e1d2f6b0c15cb279a1b48ffb80c5",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "RES-WIRE-003"
+      ]
+    },
+    {
+      "id": "D2-242",
+      "path": "cases/budget-effect-disputes/D2-242.json",
+      "sha256": "0f7dd735850bd0c3e1cdca2eb0a4d128e78f57e547a1088c5493f55bdfd42875",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "RES-WIRE-003"
+      ]
+    },
+    {
+      "id": "D2-270",
+      "path": "cases/budget-effect-disputes/D2-270.json",
+      "sha256": "752c7971ec0ff7f29c5223e8d2c8d196c5437463650fbe0b57f21a587a94c4d5",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-011",
+        "RES-WIRE-003"
+      ]
+    },
+    {
+      "id": "D2-271",
+      "path": "cases/budget-effect-disputes/D2-271.json",
+      "sha256": "e071d6f015dc303ceef73dcff5a0262c4dd4fe70ace3b884c4c1888f60db4dc0",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-011",
+        "RES-008"
+      ]
+    },
+    {
+      "id": "D2-227",
+      "path": "cases/budget-effects/D2-227.json",
+      "sha256": "18e70cf94a24055ddf190ad19eb95b044736f8f3989d187bd37dc4fea6b05a0f",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "WCS2-006"
+      ]
+    },
+    {
+      "id": "C2-001",
+      "path": "cases/canonical-bytes/C2-001.json",
+      "sha256": "e0fd5ff0526ebd95cd2a0d0bbe2b296f6a8a3dd0643a03f972894c25c8660fec",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-001",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "C2-002",
+      "path": "cases/canonical-bytes/C2-002.json",
+      "sha256": "2cd112f5fc7b389e7062eb0e74d5acde50d7e4ad16b651ace3f792afe1818e33",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-001",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "C2-003",
+      "path": "cases/canonical-bytes/C2-003.json",
+      "sha256": "e240baa59f70910ecdfff0a90c2a3925f7afeae11dbcdc5c1e9773b1f1dacfc7",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-001",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "C2-004",
+      "path": "cases/canonical-bytes/C2-004.json",
+      "sha256": "bc3c6ab94e6004a784552bbce8392f13e020d49320e696ccaa0af1f0f8f9c542",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-001",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "C2-005",
+      "path": "cases/canonical-bytes/C2-005.json",
+      "sha256": "bcb81ac48b8fac51537febdb6f469701b1bdd72395abc3f6d24856711b486806",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-001",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "C2-006",
+      "path": "cases/canonical-bytes/C2-006.json",
+      "sha256": "79311b9ea79adb29b839e58789454d55b0fe588bb572f8cd493109bb7a44441e",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-001",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "C2-007",
+      "path": "cases/canonical-bytes/C2-007.json",
+      "sha256": "6e6f172f05e74fa96cfdbb13102b9de30ffb9733fc9093f5c5077ab697d07ad2",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-001",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "C2-008",
+      "path": "cases/canonical-bytes/C2-008.json",
+      "sha256": "ffa88badf579f7d4a55cdcbeb7c40c3a73e959183dac1f232ce257c67affaf1c",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-001",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "C2-009",
+      "path": "cases/canonical-bytes/C2-009.json",
+      "sha256": "5a4d9a074c2284d93b5126e76d56d3148653070fda4675ed7db78d7e7be5026d",
+      "operation": "property",
+      "execution_target": "LOCAL_CONTROL",
+      "requirements": [
+        "WCS2-001"
+      ]
+    },
+    {
+      "id": "D2-045",
+      "path": "cases/choice-routing/D2-045.json",
+      "sha256": "3c383287e1558ffdc608ffdfe6be947fff121b8908ca4523c40e24c2480c1a92",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-015",
+        "LIFE-016",
+        "COMP-001"
+      ]
+    },
+    {
+      "id": "D2-046",
+      "path": "cases/choice-routing/D2-046.json",
+      "sha256": "e0e9432bc597434416f74fd5c24a2fee5cbd8575560a7633b5e8cb64133f8550",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-016",
+        "COMP-001"
+      ]
+    },
+    {
+      "id": "D2-132",
+      "path": "cases/choice-routing/D2-132.json",
+      "sha256": "d4b8c78259a3c6c098b6af44226be9074149866460d02f0f8ca2d1c1bc16733b",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "COMP-001",
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-133",
+      "path": "cases/choice-routing/D2-133.json",
+      "sha256": "242348d5ad02d080e2114634640598b16aa6a2af193de18a1a4e9c11307bf603",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "COMP-001",
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-134",
+      "path": "cases/choice-routing/D2-134.json",
+      "sha256": "0d8e6ba13bfbb0b0c6dd661227d723a2cda67abea63297e8983a82734d7daeec",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "COMP-001",
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "C2-268-reused",
+      "path": "cases/clocks/C2-268-reused.json",
+      "sha256": "79d8bd3680100d0a73d95824416f0a69404e35a316c10e5b7d1ab41ad8c4d5ea",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "C2-268-unavailable",
+      "path": "cases/clocks/C2-268-unavailable.json",
+      "sha256": "4c2e4cd4fc9ef14d7c8d3742e106633053a900e7f9df58a327cdb11d8d848359",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-040",
+      "path": "cases/clocks/D2-040.json",
+      "sha256": "962690ea675cb0308c896161f838593bd13af9581442f562e29885b00a1694ac",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-041",
+      "path": "cases/clocks/D2-041.json",
+      "sha256": "6254f93810f952b73b3de6f193b76d6edb38b329a11e46206c534d135597acda",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-042",
+      "path": "cases/clocks/D2-042.json",
+      "sha256": "92fdc8eeafeab3f206e684e573d91caf064a91dd35bbb650e25b21178fca28b6",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-268",
+      "path": "cases/clocks/D2-268.json",
+      "sha256": "5b02c94345179944befd6bd59f6c380deee065f512c6142a4be9f3d1db7480dd",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "C2-043-effect",
+      "path": "cases/deadline-order/C2-043-effect.json",
+      "sha256": "3e09f93d6c6c095ba4e0716fa3e8ae7baeb0ca610de52b337049df7c52643cb1",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014",
+        "LIFE-015"
+      ]
+    },
+    {
+      "id": "C2-044-expiry",
+      "path": "cases/deadline-order/C2-044-expiry.json",
+      "sha256": "1bf1660062e222dad302ce32f43399d118b522ac91645b3921bd8b02b05067d5",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-012",
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-035",
+      "path": "cases/deadline-order/D2-035.json",
+      "sha256": "6765ae1309674c99e6b2fd565e8511e2c719d8e8926869169002c31a64afff2e",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-012",
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-043",
+      "path": "cases/deadline-order/D2-043.json",
+      "sha256": "68e485f971a037a6ca26cb8c483c84f35d06091b10877c8dc3f5aa2883ccefd3",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014",
+        "LIFE-015"
+      ]
+    },
+    {
+      "id": "D2-044",
+      "path": "cases/deadline-order/D2-044.json",
+      "sha256": "014247047948a750766c3cda163e5ef9c89134f80f71b5459dfc6c04251def9b",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-012",
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-239",
+      "path": "cases/deadline-parallel-entry/D2-239.json",
+      "sha256": "339aeea46c5f3ac8c5a7bdd2875977131aeec7f0e76228253c873f6295a6589d",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "DEAD-001",
+        "LIFE-014",
+        "LIFE-015",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "D2-139",
+      "path": "cases/deadline-successors/D2-139.json",
+      "sha256": "17b1f06b2ca9d3b58fbbdd8cef6b093c67c403b354525abe74da373cb183ba29",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-157",
+      "path": "cases/deadline-successors/D2-157.json",
+      "sha256": "b12f94a458bc57e1f588b9b2818add930e86f8a4907851f933c8dad464372521",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-233",
+      "path": "cases/dependency-disputes/D2-233.json",
+      "sha256": "f825d34a1b3be0a7c9a2a842705074796f8caff186d21d57db65900d189b5f5d",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-013",
+        "LIFE-017"
+      ]
+    },
+    {
+      "id": "D2-236",
+      "path": "cases/dependency-disputes/D2-236.json",
+      "sha256": "e042f6081c37bb02dfd8c34df056f24a5487d2737f8a022911f0810f83cf12f4",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-009",
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-237",
+      "path": "cases/dependency-disputes/D2-237.json",
+      "sha256": "c00b05bb5d36f824a2eec24ada6e1a556c2d75db865a15b8900c9198981a544c",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-013",
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-248",
+      "path": "cases/dependency-disputes/D2-248.json",
+      "sha256": "a0d36360f26915d28c10e3c8e9d2dfcac86110898e25e570c593cb3b37c0cad2",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-013",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "C2-deploy-one-record-two-kinds",
+      "path": "cases/deployment/C2-deploy-one-record-two-kinds.json",
+      "sha256": "93948001af11a5232239987d08bf8f7c7fdf699362db6ba65155c2ff04792a62",
+      "operation": "deploy",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003"
+      ]
+    },
+    {
+      "id": "C2-deploy-pending-correspondence-subject-mismatch",
+      "path": "cases/deployment/C2-deploy-pending-correspondence-subject-mismatch.json",
+      "sha256": "bf4e257f6ce98c3985a806b6edf9d96cb3dcedafcde875aab2ce090cb17ba885",
+      "operation": "deploy",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003"
+      ]
+    },
+    {
+      "id": "C2-deploy-pending-nested-review",
+      "path": "cases/deployment/C2-deploy-pending-nested-review.json",
+      "sha256": "ff6da6230970683d6bb0c71c707645bfa993944aaa7b66fd1fcdd012fb91833b",
+      "operation": "deploy",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003",
+        "WCS2-005"
+      ]
+    },
+    {
+      "id": "C2-deploy-pending-residue",
+      "path": "cases/deployment/C2-deploy-pending-residue.json",
+      "sha256": "7179dc5f3d878339538a5521254d580a1b1976f349534cfdc9e97a32c33e12c8",
+      "operation": "deploy",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003",
+        "WCS2-005"
+      ]
+    },
+    {
+      "id": "C2-deploy-rejected-policy-decision",
+      "path": "cases/deployment/C2-deploy-rejected-policy-decision.json",
+      "sha256": "5dcec4f357222096b4d0ccb280432c9611f7e9c152526d0ade081de75604bda5",
+      "operation": "deploy",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003"
+      ]
+    },
+    {
+      "id": "C2-deploy-source-subject-mismatch-and-pending-policy",
+      "path": "cases/deployment/C2-deploy-source-subject-mismatch-and-pending-policy.json",
+      "sha256": "249c45073087cb6c73ef1e9daef41a362cf67d4383985d2b1c259f61f531a9a3",
+      "operation": "deploy",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003"
+      ]
+    },
+    {
+      "id": "C2-deploy-substituted-definition",
+      "path": "cases/deployment/C2-deploy-substituted-definition.json",
+      "sha256": "0327622a4e78555546274599cf843f3c10491f5924af3aea75bff64d58d3a656",
+      "operation": "deploy",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003",
+        "WCS2-005"
+      ]
+    },
+    {
+      "id": "D2-008",
+      "path": "cases/deployment/D2-008.json",
+      "sha256": "bf0a13e22eca307015639e6275991155eb40e8b693442db27dfe4b29dc503686",
+      "operation": "deploy",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003"
+      ]
+    },
+    {
+      "id": "D2-009",
+      "path": "cases/deployment/D2-009.json",
+      "sha256": "3f1cb2ce68ccdf8d4b117a153c7c6559a50a3dc4ac38ac37431b7daa14043bd4",
+      "operation": "deploy",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003"
+      ]
+    },
+    {
+      "id": "D2-010",
+      "path": "cases/deployment/D2-010.json",
+      "sha256": "f11b9abb82b3263fa0ac85e76716d265dec3df86f5ff05ebd593a2cc7e4b0122",
+      "operation": "deploy",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003",
+        "WCS2-005"
+      ]
+    },
+    {
+      "id": "D2-011",
+      "path": "cases/deployment/D2-011.json",
+      "sha256": "999e4790504c7c20249dcf918ecc4b9818b75ffe7e71824ceb229aca71db30a1",
+      "operation": "deploy",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003",
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-091",
+      "path": "cases/deployment/D2-091.json",
+      "sha256": "361a2bd6d89ae75ebb5fb3c76f8a75d7b5de8b2c00ad5054c5fc88c02f2b91b0",
+      "operation": "deploy",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003",
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-138",
+      "path": "cases/deployment/D2-138.json",
+      "sha256": "4a58a384cedb7893fad975dec9d248cc37696261e5729d45c99153a7ae6c842c",
+      "operation": "deploy",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003",
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-165",
+      "path": "cases/deployment/D2-165.json",
+      "sha256": "18bd47ea9a23084ec3a90ed2aa1fd2bdadf9da6d69b62dc15008b46b9aa02eec",
+      "operation": "deploy",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-002",
+        "WCS2-011"
+      ]
+    },
+    {
+      "id": "D2-186",
+      "path": "cases/deployment/D2-186.json",
+      "sha256": "292b31890f477bc66365f9825bfeae8285602b4043463dcac4e25c40beba75f1",
+      "operation": "deploy",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-222",
+      "path": "cases/deployment/D2-222.json",
+      "sha256": "c22e38bc908ac45e9e6933ad2391111c46eae775025d56f01a0660937ec90e8f",
+      "operation": "deploy",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-002",
+        "LIFE-003",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-231",
+      "path": "cases/deployment/D2-231.json",
+      "sha256": "085be70dfcf25aaa57ce39976eb5536a0dc036c6f9ea2464057e37513372eb6c",
+      "operation": "deploy",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-022",
+      "path": "cases/dispatch/D2-022.json",
+      "sha256": "74a1ee3a2b3d2724eadbc7e97fb02cf21a4031018c396a55bd5b491e5566412c",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009",
+        "LIFE-015"
+      ]
+    },
+    {
+      "id": "D2-023",
+      "path": "cases/dispatch/D2-023.json",
+      "sha256": "a0ad08cca874121163426d700e86e3444c368c9216b847cd3af9b4c5a1c06ed3",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-008",
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "D2-024",
+      "path": "cases/dispatch/D2-024.json",
+      "sha256": "a71abb1f99bb5ba6dfa2c8d178f018f0590003b819611b2099f11c6812a4b9a8",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-008",
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "D2-025",
+      "path": "cases/dispatch/D2-025.json",
+      "sha256": "98b4fe939df13472306fc36b46008d1e1c73d322a8964a0be1208a9bc066fbfd",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009",
+        "LIFE-015"
+      ]
+    },
+    {
+      "id": "D2-096",
+      "path": "cases/dispatch/D2-096.json",
+      "sha256": "223d136f67b88c0cde6e8b79c3b9ddb40982f0b61a1e6172524eb4988658b8a3",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "D2-097",
+      "path": "cases/dispatch/D2-097.json",
+      "sha256": "638acdb24b01e2c3fb764a5fb3e2faede04977bc0b6e424293479c1414eac466",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "D2-153",
+      "path": "cases/dispatch/D2-153.json",
+      "sha256": "5bb81b6f07a8cc2136e480a0004e8671a5a8e645cbf725b5d509f4ba46d0cbd6",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "D2-154",
+      "path": "cases/dispatch/D2-154.json",
+      "sha256": "457587ae1e61fa59e0daa23f1d8b05396a26a46f8744dc5907de67d241cd9fcf",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "D2-166",
+      "path": "cases/dispatch/D2-166.json",
+      "sha256": "4c4fabc1783ad04206258200b7177ca6af23bd26b3432570ebfc850983b735e6",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-002",
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "D2-168",
+      "path": "cases/dispatch/D2-168.json",
+      "sha256": "55b3c7b7f1f4d0cbfa1cdd82de0a6e743cdd3834f9c6463724af9fd8bc8b03c2",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "D2-183",
+      "path": "cases/dispatch/D2-183.json",
+      "sha256": "50a516d82a619e596dc8375c5c7141e7f913409df38e2772d13b0707fc2eab5a",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "D2-210",
+      "path": "cases/dispatch/D2-210.json",
+      "sha256": "0686069d02a7473c53a7cb21b0882bbdda56fc96baf1f06e5789a5fc7d3c87be",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-218",
+      "path": "cases/dispatch/D2-218.json",
+      "sha256": "ac8f78d31eae2e2f0ff3989b95df73615713eff664d096677960528e4d65d488",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009",
+        "WCS2-013"
+      ]
+    },
+    {
+      "id": "D2-219",
+      "path": "cases/dispatch/D2-219.json",
+      "sha256": "5fdaa19891acc4908172ccd66effd87536261fbd2301f0cbdb83b5d95cd1c5b3",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-221",
+      "path": "cases/dispatch/D2-221.json",
+      "sha256": "1b2f76667f257ab1dcc0c4fe9ac93cc79aa6c05928c2e2247fbfdc99526d1744",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-008",
+        "LIFE-009",
+        "WCS2-013"
+      ]
+    },
+    {
+      "id": "DM2-not_sent-accepted",
+      "path": "cases/dispatch/DM2-not_sent-accepted.json",
+      "sha256": "87fd3652a1c622073406cf70ec390de66eb54054824ba1d915fce61e1022a045",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "DM2-not_sent-none",
+      "path": "cases/dispatch/DM2-not_sent-none.json",
+      "sha256": "15c7b6c4a4c764f53b7c84327613fa14bf0e9705541c7756d5467abe5dbd02c8",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "DM2-not_sent-rejected",
+      "path": "cases/dispatch/DM2-not_sent-rejected.json",
+      "sha256": "4f302e418692c4cb404798344a507cccee5aa427d97b1667ab38aee989e6b6c7",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "DM2-not_sent-unknown",
+      "path": "cases/dispatch/DM2-not_sent-unknown.json",
+      "sha256": "b6a81b4c621fcfe113b89fb48a4f91cb427317298bdfdc2e780fb430498841bf",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "DM2-rejected-accepted",
+      "path": "cases/dispatch/DM2-rejected-accepted.json",
+      "sha256": "393f51a6d67033c7a3b29d9dd49c66f4cd1a0fc984bca40d1f0eed1dba5804fb",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "DM2-rejected-none",
+      "path": "cases/dispatch/DM2-rejected-none.json",
+      "sha256": "9a452edde77b9d7e0cdb9e7576f58fc08b73fcdbd7a6ce4185a7903feb0f351f",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "DM2-rejected-rejected",
+      "path": "cases/dispatch/DM2-rejected-rejected.json",
+      "sha256": "56a712016b2684a9bba42091594c4c75330a87f5fd3850a0d55537e1f3f3cbb9",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "DM2-rejected-unknown",
+      "path": "cases/dispatch/DM2-rejected-unknown.json",
+      "sha256": "69034b9472746e590261a594a0bd744fc050c9d905818007b9c15064599406f1",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "DM2-sent-accepted",
+      "path": "cases/dispatch/DM2-sent-accepted.json",
+      "sha256": "6476fe67132066725bed64bd376879078b1308ac38767bf9ea070d49c49905b3",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "DM2-sent-none",
+      "path": "cases/dispatch/DM2-sent-none.json",
+      "sha256": "f455f87f832c393d913bab7c85ede74c12f2c7d212bfa606fa9d5dc36a2b4c65",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "DM2-sent-rejected",
+      "path": "cases/dispatch/DM2-sent-rejected.json",
+      "sha256": "7049562d5204853d26d1fc40c200c5e217715c87622817188642db5ed9faae81",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "DM2-sent-unknown",
+      "path": "cases/dispatch/DM2-sent-unknown.json",
+      "sha256": "6a57cd5a111569f04e6fc60172c261172df4b9236839a283cdc50d3ede937c00",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "DM2-unknown-accepted",
+      "path": "cases/dispatch/DM2-unknown-accepted.json",
+      "sha256": "a1bec203f08d661fcc161579b40e526ea378a1fc15ecc876f8ed1a570627bf76",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "DM2-unknown-none",
+      "path": "cases/dispatch/DM2-unknown-none.json",
+      "sha256": "36422511ad5c82a342335f728839e975080e34243fb5dcd4912f5d0a09a4cb24",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "DM2-unknown-rejected",
+      "path": "cases/dispatch/DM2-unknown-rejected.json",
+      "sha256": "8cfa39eeb761861afc44d6d253277583bc2769fd0843022588c84f695eaeed27",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "DM2-unknown-unknown",
+      "path": "cases/dispatch/DM2-unknown-unknown.json",
+      "sha256": "b536d44ee26d12ca27bb3be7d9e0b77606532002cfcaca0bf93708677bebfe49",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "D2-127",
+      "path": "cases/dispatch-acknowledgement/D2-127.json",
+      "sha256": "4033dc63afc1694311bb2e072fb951b6e7aade9809b963871266718fcde2d718",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "D2-257",
+      "path": "cases/dispatch-acknowledgement/D2-257.json",
+      "sha256": "641a477a5a7ab10cf113524413ac6a2835a470baf8cd3d818d072fc27ea3a802",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "C2-dependent-block-unexpected-completed",
+      "path": "cases/disputed-permit-basis/C2-dependent-block-unexpected-completed.json",
+      "sha256": "5b14a92e3913b25f64698084adbe51f9d7e67ec6df7a8e5a4b947003d5dec8e8",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-010",
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-290",
+      "path": "cases/disputed-permit-basis/D2-290.json",
+      "sha256": "73cc539217b31524a774da0992b6be300a6c32d961730fd7fbd94996597ea9f9",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-008",
+        "LIFE-013",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-028",
+      "path": "cases/effect-bindings/D2-028.json",
+      "sha256": "e15a3ad499ef25776b60b2da5c4c997715192179e2f544509d002079ceec98f3",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-039",
+      "path": "cases/effect-conflicts/D2-039.json",
+      "sha256": "c4c2c17cd5c7664807f06b1e27f146861ab1fc69683f64218f8a000376961a0a",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-072",
+      "path": "cases/effect-conflicts/D2-072.json",
+      "sha256": "49d904517903b63a41c049507355aea271e19b3395efeb3d103d16c735c3ca6f",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-012",
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-103",
+      "path": "cases/effect-conflicts/D2-103.json",
+      "sha256": "71ab9078a3a3fb8b65c1504b61f2579db35789271bf6d8a50a847f7ef40e7ff3",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-107",
+      "path": "cases/effect-conflicts/D2-107.json",
+      "sha256": "6d9915383e6e2fcd31be04171c4a637a150d0ee7b14cf6280eed7f0982a4f416",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-012",
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-161",
+      "path": "cases/effect-conflicts/D2-161.json",
+      "sha256": "dcc41dc06a98242b7bade1b1c69e9e89c7a148932f0de3971346572d09edf285",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-196",
+      "path": "cases/effect-conflicts/D2-196.json",
+      "sha256": "dd14a48b1adb0eeb7c0db2999b02c9786431a4558c25aee9c49eac2aa7fb62a2",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-013",
+        "RES-WIRE-003"
+      ]
+    },
+    {
+      "id": "D2-229",
+      "path": "cases/effect-conflicts/D2-229.json",
+      "sha256": "58dcf3bc4a1abbdb2ab3add23c44befdf66daa1382b96a9c92f75acdcfb30db3",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-238",
+      "path": "cases/effect-conflicts/D2-238.json",
+      "sha256": "5cbca6381315cf9b6ea93d7df9edc6e38eeaf9765e8dfa36c6b0f02b280706e5",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-010",
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-026",
+      "path": "cases/effect-foundation/D2-026.json",
+      "sha256": "e6ea2bc1d9c21254eb3b4ef3a452cfff331b55df3d91f56a601990b0b5839c4e",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-015"
+      ]
+    },
+    {
+      "id": "D2-027",
+      "path": "cases/effect-foundation/D2-027.json",
+      "sha256": "4e34b5ef61e045f25234cb1ffd2784d7976e42b172290fb4e3246f4106375fd5",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-015"
+      ]
+    },
+    {
+      "id": "D2-030",
+      "path": "cases/effect-foundation/D2-030.json",
+      "sha256": "f9adb329599c181ab4ce9372e4790ead257370ec81404ce571eda40e31520966",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-032",
+      "path": "cases/effect-foundation/D2-032.json",
+      "sha256": "f0a5f518550ab6be843ded29f30b6b4b2dac7a316b8f05dece39bdbcb3383bb3",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-011"
+      ]
+    },
+    {
+      "id": "D2-033",
+      "path": "cases/effect-foundation/D2-033.json",
+      "sha256": "44c4216a62556c983455f079885777bd956281dbf85cc5ef15daed31a4c156cb",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-011",
+        "WCS2-006"
+      ]
+    },
+    {
+      "id": "D2-098",
+      "path": "cases/effect-foundation/D2-098.json",
+      "sha256": "6b5a868fa8201d8647f619480ad3666a6a45fa906ca46a744553f8c0baafcb00",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-102",
+      "path": "cases/effect-foundation/D2-102.json",
+      "sha256": "3397f4c88f1ebbd246e4cba6db4c785c21467eb918d9574528d45d9f54c8151d",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-104",
+      "path": "cases/effect-foundation/D2-104.json",
+      "sha256": "e669f2bef6b7485245973de32026a7e38a31ef21a3ab9e0e38a31c3f0edecd0a",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-105",
+      "path": "cases/effect-foundation/D2-105.json",
+      "sha256": "47444a1b15d282891640a9ca29151471bc0d522ffbcbe4b96f43cd874d112bf5",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-106",
+      "path": "cases/effect-foundation/D2-106.json",
+      "sha256": "38e2b22a346bea61c7c1b0853ae369155c01f4cf11418b5a4cd46104fe429710",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-178",
+      "path": "cases/effect-foundation/D2-178.json",
+      "sha256": "af8d48dea5cf33e5d6353ebc0affa09ed89535089d7586f64eaf2dcfc10d77d5",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-179",
+      "path": "cases/effect-foundation/D2-179.json",
+      "sha256": "3ecd5ee5524ea9f87ce51a5e966afd30472a5baeecc534c6d83d49bab2521233",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-207",
+      "path": "cases/effect-foundation/D2-207.json",
+      "sha256": "d109e3c7daf233435f5e9223481ff1664cef72477a0276f8dfbbebd99b1a1927",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-225",
+      "path": "cases/effect-foundation/D2-225.json",
+      "sha256": "d2816e0948ad98f6239aa9e19c0e60b12023a9a75f566259ee1b12f162741720",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-226",
+      "path": "cases/effect-foundation/D2-226.json",
+      "sha256": "d626c1cd797029f35494f9b2a7e19add4705e9a8a10757ad86c005a57a21caa3",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-061",
+      "path": "cases/evidence-readback/D2-061.json",
+      "sha256": "dfe2ec428d9145f011682550fb54299f580ac83d16682de425dbe0f6bd34d40d",
+      "operation": "check-evidence",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003",
+        "WCS2-005"
+      ]
+    },
+    {
+      "id": "D2-062",
+      "path": "cases/evidence-readback/D2-062.json",
+      "sha256": "796c392923df73a3a810ef151b2ecca90caafbbf65ffffb60dd6e674148d2845",
+      "operation": "check-evidence",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-005"
+      ]
+    },
+    {
+      "id": "D2-063",
+      "path": "cases/evidence-readback/D2-063.json",
+      "sha256": "849128aded24f45397cd328a98f68a67db8f230aa4e82aad97aafc15392e6967",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "BOUND-001",
+        "LIFE-020",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-064",
+      "path": "cases/evidence-readback/D2-064.json",
+      "sha256": "a156b60ffac29603e8eca41d961be5d48dc6020d281c80d919de9dfda952f7eb",
+      "operation": "readback",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-005"
+      ]
+    },
+    {
+      "id": "D2-117",
+      "path": "cases/evidence-readback/D2-117.json",
+      "sha256": "8b24e806fdff9e7d3d61e71e4ff8f2af7896c5137dea8f4821af8643a0416329",
+      "operation": "check-evidence",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-010",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-201",
+      "path": "cases/evidence-readback/D2-201.json",
+      "sha256": "6781ae9b973e8a7110438025a3485bc809f3a2dc24e264ad929f4c946c7332e6",
+      "operation": "check-evidence",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-005",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-202",
+      "path": "cases/evidence-readback/D2-202.json",
+      "sha256": "34e3f8aa83e922bfba36408428bb9e97a2c7b29e870e2f18c569e8dd797ae764",
+      "operation": "check-evidence",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-005",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-203",
+      "path": "cases/evidence-readback/D2-203.json",
+      "sha256": "fa172feec7a02a30c441430ba42844f4a0cfa6d08873196f37b39873c987edb8",
+      "operation": "check-evidence",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-005",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-204",
+      "path": "cases/evidence-readback/D2-204.json",
+      "sha256": "7726b1a1c6f6074abc00ab9429151e0f02003f5cf47d6ff9594d6b9d5e320892",
+      "operation": "readback",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-005",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-211",
+      "path": "cases/evidence-readback/D2-211.json",
+      "sha256": "0b72a45563c13975a14249b00fd59ff7cc709342fc6a8c0183c96dc961e9019d",
+      "operation": "check-evidence",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-005",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-212",
+      "path": "cases/evidence-readback/D2-212.json",
+      "sha256": "df764bd770217c403928bdafa15139d1b8aa00c89e1f37b6438d239c1a82af01",
+      "operation": "check-evidence",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-005",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-213",
+      "path": "cases/evidence-readback/D2-213.json",
+      "sha256": "1b12e1a00ec23374af927c3b58fa8d8fab97f6ed807a0899ffd326e1c774af0a",
+      "operation": "check-evidence",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-002",
+        "WCS2-013"
+      ]
+    },
+    {
+      "id": "D2-217",
+      "path": "cases/evidence-readback/D2-217.json",
+      "sha256": "455e6fe5a94956201937404fc852d20573fa5d685931074ee52eb02929f84590",
+      "operation": "property",
+      "execution_target": "LOCAL_CONTROL",
+      "requirements": [
+        "WCS2-001",
+        "WCS2-005",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-224",
+      "path": "cases/evidence-readback/D2-224.json",
+      "sha256": "7bfe02f91848dddd534272d7a350b667d69a9ea3aacc7f8839cda8183d390fba",
+      "operation": "check-evidence",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-002",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-292",
+      "path": "cases/evidence-readback/D2-292.json",
+      "sha256": "a276d33a34300b90e07d1792ff7d698973a99ab7ac327c86aab647e8c287c020",
+      "operation": "boundary",
+      "execution_target": "LOCAL_CONTROL",
+      "requirements": [
+        "LIFE-007",
+        "HOST-003"
+      ]
+    },
+    {
+      "id": "D2-029",
+      "path": "cases/failure-no-effect/D2-029.json",
+      "sha256": "e0cfefc7d75fb0b13d9f2b046ecece64736d2795282059f75384bea2bb1e55fd",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-015",
+        "WCD-001"
+      ]
+    },
+    {
+      "id": "D2-099",
+      "path": "cases/failure-no-effect/D2-099.json",
+      "sha256": "f5ad5f75c4241dfe585113bd974f723343bce69cb9a0741395d313586d75a4b9",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-011"
+      ]
+    },
+    {
+      "id": "D2-100",
+      "path": "cases/failure-no-effect/D2-100.json",
+      "sha256": "c11aff0550109a23d7783e91ee2ebed327b59dd86dcfb3e1c2cdcc6c69b82b8e",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-011"
+      ]
+    },
+    {
+      "id": "D2-126",
+      "path": "cases/failure-no-effect/D2-126.json",
+      "sha256": "0e1c6202afe93ad3eadaab010ca3fbe9283556e1a4257050739a38ff60533a5b",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-011"
+      ]
+    },
+    {
+      "id": "D2-152",
+      "path": "cases/failure-no-effect/D2-152.json",
+      "sha256": "ff4d6dfcaf5758d93b0580daeb5e3c6d24e7fafcd83612563ef5c0144196bd05",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-011"
+      ]
+    },
+    {
+      "id": "D2-184",
+      "path": "cases/failure-no-effect/D2-184.json",
+      "sha256": "2e025669ecd10dcecb3d197938cb71de9cea307e355f71455dc7507f3a9e55a5",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "PAR-001",
+        "LIFE-015",
+        "LIFE-017"
+      ]
+    },
+    {
+      "id": "C2-fanout-first-object-completion",
+      "path": "cases/fanout-completion/C2-fanout-first-object-completion.json",
+      "sha256": "7ef2db371ca2bb53217c2326af734c8c9256822391f168d4da17a6e0a2903e96",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-015",
+        "PAR-001",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "D2-142",
+      "path": "cases/fanout-completion/D2-142.json",
+      "sha256": "43dc3011c716a101d2100ebdcaad8c40a133dd30f3266552a2b6f38d41b2d99e",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-015",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "D2-054",
+      "path": "cases/fanout-expansion/D2-054.json",
+      "sha256": "9261ae8a1354797eb8878c1f328955746fb469891e33398faea1aacf49722086",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-018",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "D2-055",
+      "path": "cases/fanout-expansion/D2-055.json",
+      "sha256": "2e1c0d3d78e0faf659deabd3ff44f73b9831e22a375ec6220c08f6ce8aad0504",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-018",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "D2-056",
+      "path": "cases/fanout-expansion/D2-056.json",
+      "sha256": "71a307687801322d7cbdccaa01e5ae2b1248652f9e95ef02fda45e87b4c74c25",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-018",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "D2-057",
+      "path": "cases/fanout-expansion/D2-057.json",
+      "sha256": "77257a5d2402b63a2e8a62e7382b469f3d2a94a591600618f5bf5311247c672c",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-018",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "D2-075",
+      "path": "cases/fanout-expansion/D2-075.json",
+      "sha256": "b5e4f948c15e2c2a6b34555f0745e54eea02c2212278a9049dde92e5e057c5da",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-018"
+      ]
+    },
+    {
+      "id": "D2-129",
+      "path": "cases/fanout-expansion/D2-129.json",
+      "sha256": "9499a23e861372d67fb8b5d918dc361034aa60f2ebd1d079ade008da4071997c",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-018"
+      ]
+    },
+    {
+      "id": "D2-135",
+      "path": "cases/fanout-expansion/D2-135.json",
+      "sha256": "c8de05ca6cfd5647150e89caa235f2973f3eb49743df56bd80072d2e838880b7",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "FAN-001",
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-143",
+      "path": "cases/fanout-expansion/D2-143.json",
+      "sha256": "0d2d634181a301f7a6c14678956b00052ab3da1fed57e74438710aefca432c30",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-015",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "D2-150",
+      "path": "cases/fanout-expansion/D2-150.json",
+      "sha256": "baf564995e9ed81c620231b26faa861fa4c253bc19cabae2b43dff7336489074",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-018",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "D2-198",
+      "path": "cases/fanout-expansion/D2-198.json",
+      "sha256": "aad2df092d6c7e20a5a82cd34aa9de536a9b2af1f7e8e8f4e636f5d59bf8723b",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "FAN-001",
+        "LIFE-018"
+      ]
+    },
+    {
+      "id": "D2-252",
+      "path": "cases/fanout-expansion/D2-252.json",
+      "sha256": "243d8f225e53dafd2d0754d349e4915ff6b30491be662a4b2d42e3d6bb03d28c",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "D2-113",
+      "path": "cases/fanout-loop-entry/D2-113.json",
+      "sha256": "0123966ac298535afa80bccbbef7192bfb40c2f56b0b4fb7f06281b6ea235415",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "COMP-002",
+        "LIFE-016"
+      ]
+    },
+    {
+      "id": "D2-115",
+      "path": "cases/fanout-outer-prefix/D2-115.json",
+      "sha256": "734ccb7fa565771b0c2a397ab33377df1efaa7d3cbdbb39dec860aac3fc6c83a",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "FAN-001",
+        "LIFE-018"
+      ]
+    },
+    {
+      "id": "D2-180",
+      "path": "cases/foreign-budget-effects/D2-180.json",
+      "sha256": "bbb15630d5eca13142064c781c9598aced112030c95a33eb6336707ff019b0c6",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "RES-007",
+        "RES-WIRE-003"
+      ]
+    },
+    {
+      "id": "D2-181",
+      "path": "cases/foreign-budget-effects/D2-181.json",
+      "sha256": "b58a2f714d9a3661f4307c2b50b84aaae086905e4dddb41e98f9a8c9cbd6e63e",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "RES-007",
+        "RES-WIRE-003"
+      ]
+    },
+    {
+      "id": "D2-188",
+      "path": "cases/foreign-budget-effects/D2-188.json",
+      "sha256": "f36b779f4b9ad19a76d9ea1a6f29f1faa081a4cb436c59e6717f6bb814532c0e",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "C2-foreign-duplicate-evidence-identity",
+      "path": "cases/foreign-effects/C2-foreign-duplicate-evidence-identity.json",
+      "sha256": "6b645e66064d1734e123d772ed4beb7f6f4f6f8a98430bda0532dc72db30da1f",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-118",
+      "path": "cases/foreign-effects/D2-118.json",
+      "sha256": "e94ddb3b8c89d9d07240232f8eae19f1fc37bbd638e40d4c64dc8acc73d79f03",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-182",
+      "path": "cases/foreign-effects/D2-182.json",
+      "sha256": "0b5e5ea6110acd913329360dd8bb5eab468656c3352c1efcb222e94ce3610887",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-013",
+        "RES-WIRE-003"
+      ]
+    },
+    {
+      "id": "D2-192",
+      "path": "cases/foreign-effects/D2-192.json",
+      "sha256": "9a556810a3b067090c4663794982aaefce28b296a7a24a96d52687e1d6a41d9d",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-228",
+      "path": "cases/foreign-effects/D2-228.json",
+      "sha256": "755aa3f9dfa65dbb6c2661e6304cac50faaf5e31905649a99ecfd87ad855be3d",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "D2-240",
+      "path": "cases/foreign-effects/D2-240.json",
+      "sha256": "7ed81bcb5592de48ea51390953bd0e7e0e19fa2f6df0b25f917aa8a736419f9d",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-230",
+      "path": "cases/governed-budget-disputes/D2-230.json",
+      "sha256": "0addf70afecfb52cc0a8f04205789231539135a9992c10a7a816ee3b59bf9d08",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "RES-WIRE-003"
+      ]
+    },
+    {
+      "id": "D2-232",
+      "path": "cases/governed-budget-disputes/D2-232.json",
+      "sha256": "46c258c5232fa3d97b3939f8a3b06f9b9b04e679e337a2d9b0b8dcb476c27fea",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-010",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "D2-235",
+      "path": "cases/governed-budget-disputes/D2-235.json",
+      "sha256": "6d740ace58e4e9f870c329ec6ef8848d0e8d64b394d01e84764b99f79ae3a20d",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-010",
+        "LIFE-012",
+        "RES-WIRE-003"
+      ]
+    },
+    {
+      "id": "D2-234",
+      "path": "cases/governed-conflicting-settles/D2-234.json",
+      "sha256": "2ce7dbc1b249288cf11a0bd9b247f93194c17c227950221c60af51b5dac757e1",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-010",
+        "LIFE-013",
+        "RES-WIRE-003"
+      ]
+    },
+    {
+      "id": "D2-263",
+      "path": "cases/governed-conflicting-settles/D2-263.json",
+      "sha256": "bee7d86678a9c00fd475c15a629bc06fd99e4d9abe9d4482196bb671d9ffdc61",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "RES-WIRE-002",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "D2-060",
+      "path": "cases/host-harness/D2-060.json",
+      "sha256": "d0fbdb6e303fdc8e50cf9d97c37c681de458e1eb1c086fd79cf50f74022ed9f4",
+      "operation": "host-harness",
+      "execution_target": "REFERENCE_HOST",
+      "requirements": [
+        "LIFE-008",
+        "LIFE-020"
+      ]
+    },
+    {
+      "id": "D2-088",
+      "path": "cases/host-harness/D2-088.json",
+      "sha256": "b236c37f692dc567ed4ef228aa95016c2e1626002b3e250adf874b2392982192",
+      "operation": "host-harness",
+      "execution_target": "REFERENCE_HOST",
+      "requirements": [
+        "LIFE-008",
+        "LIFE-020"
+      ]
+    },
+    {
+      "id": "D2-089",
+      "path": "cases/host-harness/D2-089.json",
+      "sha256": "04efbd8a5c424ebcbfa641ef7c1b7dee7e42abe255b4740bec88e5e49586f3c1",
+      "operation": "host-harness",
+      "execution_target": "REFERENCE_HOST",
+      "requirements": [
+        "LIFE-008",
+        "LIFE-020"
+      ]
+    },
+    {
+      "id": "D2-264",
+      "path": "cases/host-harness/D2-264.json",
+      "sha256": "aeb1f9080d7430dd279d726d6e7d5a6375e1b73102b558e8997aba7f73531f71",
+      "operation": "host-harness",
+      "execution_target": "REFERENCE_HOST",
+      "requirements": [
+        "LIFE-003",
+        "LIFE-020"
+      ]
+    },
+    {
+      "id": "D2-265",
+      "path": "cases/host-harness/D2-265.json",
+      "sha256": "c2595653b1110acac442709e56fbdfb5f5192de45b6b0febe8b112f68cab60cb",
+      "operation": "host-harness",
+      "execution_target": "REFERENCE_HOST",
+      "requirements": [
+        "LIFE-003",
+        "LIFE-020"
+      ]
+    },
+    {
+      "id": "C2-220-dispatch",
+      "path": "cases/late-lifecycle/C2-220-dispatch.json",
+      "sha256": "b7a8bcc9608e74371c90185f26816fbdbddda8b723fee6d5fb3bff3268fa7fe9",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009",
+        "LIFE-012"
+      ]
+    },
+    {
+      "id": "D2-158",
+      "path": "cases/late-lifecycle/D2-158.json",
+      "sha256": "df38c830fb02c9509b5e0e0fa059e390950795c8f91cb83f3a8a27e216eb902a",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-195",
+      "path": "cases/late-lifecycle/D2-195.json",
+      "sha256": "6d8dcae1f8eccd132efb2bc198101d7c7fdb379c7bfb9f0bd5dff5856f211e92",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-012",
+        "LIFE-015"
+      ]
+    },
+    {
+      "id": "D2-216",
+      "path": "cases/late-lifecycle/D2-216.json",
+      "sha256": "a243b81e1147bcfbe86004f46dee41a25075026f7dcc7b296446405dfe0857df",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009",
+        "LIFE-010",
+        "LIFE-012"
+      ]
+    },
+    {
+      "id": "D2-220",
+      "path": "cases/late-lifecycle/D2-220.json",
+      "sha256": "0d699f668e27b118609240fb689303a48283f288a758ad3a31b0ef62e4ee95c9",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009",
+        "LIFE-010",
+        "LIFE-012"
+      ]
+    },
+    {
+      "id": "D2-258",
+      "path": "cases/late-lifecycle/D2-258.json",
+      "sha256": "6b94599f89516331ad691aa2081af20446b22af863ef5ca606e92b8cdeffa054",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009",
+        "LIFE-012",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-269",
+      "path": "cases/late-lifecycle/D2-269.json",
+      "sha256": "ea6713e3c93c03fc062b8ad1bbb15c689dd4d0b4cfd8c626485908bca7a59852",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-018",
+      "path": "cases/lifecycle-budget/D2-018.json",
+      "sha256": "3301f66204be60349cbc2d98e10a8be2d047482cc720b986274c950409460c76",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-005",
+        "LIFE-007"
+      ]
+    },
+    {
+      "id": "D2-019",
+      "path": "cases/lifecycle-budget/D2-019.json",
+      "sha256": "d8dfbc38a00bc572e8deef9159d71facfc7bafead6c2cc7d9eddce405fbf7311",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "RES-005"
+      ]
+    },
+    {
+      "id": "D2-021",
+      "path": "cases/lifecycle-budget/D2-021.json",
+      "sha256": "50256127859bb341daf6f15a9a7c0001a51336b6fe2b981ce287fc492d176a55",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-005",
+        "LIFE-007"
+      ]
+    },
+    {
+      "id": "D2-058",
+      "path": "cases/lifecycle-budget/D2-058.json",
+      "sha256": "03c2b6a3fc0c0b76ac2cf37c530795457f936eb01a98d32c55f7c3f2d0a6b56a",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-119",
+      "path": "cases/lifecycle-budget/D2-119.json",
+      "sha256": "11b135b5f4bb61b58353e045c3795aa8256054cd6118e8edb1e7c00bef4e36af",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-121",
+      "path": "cases/lifecycle-budget/D2-121.json",
+      "sha256": "e7fa22e346ec2aa844c82f11bdc7e47a3fc1f34c109986aedb6d2a2fa2884c0f",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-008"
+      ]
+    },
+    {
+      "id": "D2-194",
+      "path": "cases/lifecycle-budget/D2-194.json",
+      "sha256": "b3698f8e06cecbe89adc5c55a4d66dca51907550b8a455e834d3533444840075",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "RES-005"
+      ]
+    },
+    {
+      "id": "D2-012",
+      "path": "cases/lifecycle-foundation/D2-012.json",
+      "sha256": "ce24b24cde8fcbb9aec2f96a8c561f94a539db0bc10fdef850212292e5ce15f1",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-005",
+        "LIFE-006",
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-013",
+      "path": "cases/lifecycle-foundation/D2-013.json",
+      "sha256": "aea50c5fbc300394047f027fbd7011a65d38bd4afd01dc7dd8620bbad32c7910",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-004",
+        "LIFE-006",
+        "LIFE-007"
+      ]
+    },
+    {
+      "id": "D2-017",
+      "path": "cases/lifecycle-foundation/D2-017.json",
+      "sha256": "928898b41665cf75c840c29960b978f719edcb1dc708433f10a015b8a4dc578b",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "LIFE-008"
+      ]
+    },
+    {
+      "id": "D2-059",
+      "path": "cases/lifecycle-foundation/D2-059.json",
+      "sha256": "80beed2b8d9f574321410411625a21e71ab7b66a095dfdf0adb37aeb123a5ff3",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-090",
+      "path": "cases/lifecycle-foundation/D2-090.json",
+      "sha256": "33d1ad6f49c36014df72fc88a3a0d307ef9314127346d7b4a048fb4de90e537a",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-002",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-116",
+      "path": "cases/lifecycle-foundation/D2-116.json",
+      "sha256": "66e0c58e722788601476837ca05fec8f6202ae48e487ef8c60feb65bac8cbd95",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-214",
+      "path": "cases/lifecycle-foundation/D2-214.json",
+      "sha256": "e157d52614d7d3fe778f9ef26c6e3c3bdcac4c7e9a553004a09d91a3b6e7541d",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003",
+        "LIFE-019",
+        "WCS2-002"
+      ]
+    },
+    {
+      "id": "D2-223",
+      "path": "cases/lifecycle-foundation/D2-223.json",
+      "sha256": "c7b4394e7ddfd673994b55dab96e9b8aa78b7751badd304fc23bc14d28f67659",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-002",
+        "LIFE-005",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-266",
+      "path": "cases/lifecycle-foundation/D2-266.json",
+      "sha256": "977080941657c0eb6d0f6741b4d2a7e8d0f91b3415785dd083b5a72a2a4944c4",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-079",
+      "path": "cases/lifecycle-precedence/D2-079.json",
+      "sha256": "90971a70f4006c5579198f68967055ad7b949dbcd654a0a663432ccaee83f7a1",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "WCS2-013"
+      ]
+    },
+    {
+      "id": "D2-083",
+      "path": "cases/lifecycle-precedence/D2-083.json",
+      "sha256": "21c6d82790d4a67385de7e22b3d270116cdf1706ba77ad50fd2f039fe7c4073f",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "WCS2-013"
+      ]
+    },
+    {
+      "id": "D2-093",
+      "path": "cases/lifecycle-precedence/D2-093.json",
+      "sha256": "20e857b5b884c10f25090a392f8c8f783c6cd229e1cf65eb640c0ed4331fe5eb",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007"
+      ]
+    },
+    {
+      "id": "D2-199",
+      "path": "cases/mixed-deadline-stop/D2-199.json",
+      "sha256": "4d347e68e0e7aabe353b8b2887dfb5e19620dbf7865c1f59ec0f5759c5493376",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-020",
+      "path": "cases/morning-vector-batch/D2-020.json",
+      "sha256": "7b78d173da01509346ec8c5b8c1000a3525e0c4cfecbaed984f75c4e66a5ef9e",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-005",
+        "LIFE-007"
+      ]
+    },
+    {
+      "id": "D2-031",
+      "path": "cases/morning-vector-batch/D2-031.json",
+      "sha256": "2ea40888da9ecd96f73b7d3f439249d08bcc55a240e1a8bd7278f232d1ad1706",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-034",
+      "path": "cases/morning-vector-batch/D2-034.json",
+      "sha256": "d07885c5215ae25c9e0dec6a251e5ace99fd4aab000b919a9981d4ea43e3d1b4",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-011"
+      ]
+    },
+    {
+      "id": "D2-036",
+      "path": "cases/morning-vector-batch/D2-036.json",
+      "sha256": "62bc36cc22700c04ee9d9282df53e355f541a1aa6c21063c1eb053d5826b86ca",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-012"
+      ]
+    },
+    {
+      "id": "D2-067",
+      "path": "cases/morning-vector-batch/D2-067.json",
+      "sha256": "98cc653c96dbeae307a053547f5070596ced45b86e7c618cd3f9688c0390f8fe",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-068",
+      "path": "cases/morning-vector-batch/D2-068.json",
+      "sha256": "7790e76786cee00f1d4a75a1e023c767a8897b4be782d536fbf5d31c1449a56e",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-084",
+      "path": "cases/morning-vector-batch/D2-084.json",
+      "sha256": "d710fdf1ffa76912ff078a55cc1c1a1dcfb6c9b30c61f53dc4baa3211acb4224",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "WCS2-013"
+      ]
+    },
+    {
+      "id": "D2-086",
+      "path": "cases/morning-vector-batch/D2-086.json",
+      "sha256": "c6279d547122ce2be3aed93ab959a6e3b9a1f113374e27301ca7bfa83a4040ff",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "WCS2-013"
+      ]
+    },
+    {
+      "id": "D2-101",
+      "path": "cases/morning-vector-batch/D2-101.json",
+      "sha256": "4e4885ac4c2109b22233ecc2ca03cefb3a4035f0a1f3adba5b69f51105fd5ccd",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "RES-007"
+      ]
+    },
+    {
+      "id": "D2-128",
+      "path": "cases/morning-vector-batch/D2-128.json",
+      "sha256": "3a95f902583c51d7d01ccc9e0224779c73032be1407c17fc842915ad5f4a00a1",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-011",
+        "RES-008"
+      ]
+    },
+    {
+      "id": "D2-155",
+      "path": "cases/morning-vector-batch/D2-155.json",
+      "sha256": "7afb539432b6533ea66e498b84907b544dfc9972f1b72063b71762d7723fa6f4",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-156",
+      "path": "cases/morning-vector-batch/D2-156.json",
+      "sha256": "b834e456f7fb847e47ffd566345efba5ccf8df8044baf3dde795e09b380b63ac",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-253",
+      "path": "cases/nested-fanout-binding/D2-253.json",
+      "sha256": "09267076dc5f095518c7b54b6ba2e1aa9b73fe5a834f1b09d322a11fedffe05c",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "D2-200",
+      "path": "cases/nested-parallel-closure/D2-200.json",
+      "sha256": "fff8c56d2f36cdfd9afd6521f7a103712edcfb783e9b9ef78a921efd41a808b0",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-015",
+        "LIFE-017",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "D2-243",
+      "path": "cases/nested-parallel-closure/D2-243.json",
+      "sha256": "ef6dc791288f287629456a32b52a15515db791b3c1555d8904f00cdd823fc76f",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-015",
+        "LIFE-017",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "D2-244",
+      "path": "cases/nested-parallel-closure/D2-244.json",
+      "sha256": "5f0817f3e53469c1a31a714dc52d484c8051d825cc5b40f878bc1b8099eb4853",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-015",
+        "LIFE-017",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "D2-245",
+      "path": "cases/nested-parallel-closure/D2-245.json",
+      "sha256": "6bbebdb1f749c90aea0503f48e0dc41b5a4f40e749a5c91dc0ff380bd738eb18",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-015",
+        "LIFE-017",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "D2-246",
+      "path": "cases/nested-parallel-closure/D2-246.json",
+      "sha256": "4f69be8ecc998dc4c76a6b92403451c4813d60d2f0a6963b0ec8155e0d665d16",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-015",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "D2-249",
+      "path": "cases/nested-parallel-closure/D2-249.json",
+      "sha256": "35166fa37da810c09b69681520a0896ca5965fbef1cf408fc79285fbdb41a934",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-013",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "D2-255",
+      "path": "cases/nested-parallel-closure/D2-255.json",
+      "sha256": "48d219ce150b7e25ce7fffbc42f07271fd8ea8c15bafa2a151cf203a4eb27d05",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014",
+        "LIFE-015",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "D2-052",
+      "path": "cases/parallel-completion/D2-052.json",
+      "sha256": "222e1ecac447a3ead4504967a69a90f03beb3e90db82731ab15b2bc620205c12",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-017",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "D2-053",
+      "path": "cases/parallel-completion/D2-053.json",
+      "sha256": "1c06ad08a9fc9fac7c0866e31c26b5a95b405b56a279c3a62b392235f6470f2a",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-017",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "D2-050",
+      "path": "cases/parallel-entry/D2-050.json",
+      "sha256": "54451444c6292c5e17e95aff9d6711d033f5aae079625bb4deaffd08643f1d2d",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-017",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "D2-051",
+      "path": "cases/parallel-entry/D2-051.json",
+      "sha256": "5291c209fe03d0d49defac3dc9df98871d2ea5c7c3092e6ebf319deb2ae5dd3f",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-017",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "D2-074",
+      "path": "cases/parallel-entry/D2-074.json",
+      "sha256": "da0e36f336b88860e1eb0265ba18f7eac69915899aec5f05941e8d36b8a6774e",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-017"
+      ]
+    },
+    {
+      "id": "D2-141",
+      "path": "cases/parallel-entry/D2-141.json",
+      "sha256": "928ff6cbf29e02976a7af1ff5dd6fd54c1fc8540ada9357b26cf9896bacb185e",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-015",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "D2-169",
+      "path": "cases/permit-renewal/D2-169.json",
+      "sha256": "846540baf084ed02fa0c590689b8f31daf1cc77da2161c3b975a918c6081bdf8",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "LIFE-007",
+        "LIFE-008"
+      ]
+    },
+    {
+      "id": "D2-170",
+      "path": "cases/permit-renewal/D2-170.json",
+      "sha256": "7d684a74ccecc4523d3c755737f433863de762cadced5489bddc039b75e08ca6",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "LIFE-008",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-171",
+      "path": "cases/permit-renewal/D2-171.json",
+      "sha256": "495767f2f7313b1b71c4cb3148bd5bc6f58d12061747b874d78c85607a702691",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007"
+      ]
+    },
+    {
+      "id": "D2-172",
+      "path": "cases/permit-renewal/D2-172.json",
+      "sha256": "8cba2b8a7d62fa14af16b69632a02001bdaf7e864ce2caed62177f7e64b7a24b",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "LIFE-008"
+      ]
+    },
+    {
+      "id": "D2-175",
+      "path": "cases/permit-renewal/D2-175.json",
+      "sha256": "4b0a7993a0db38a42f8ae8442413b21e21d2d651afd8fc34fdc1f40d7fd62ffb",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-008",
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "D2-190",
+      "path": "cases/permit-renewal/D2-190.json",
+      "sha256": "23c7271c0f06eb0ab0d7617c35b6a6248d61d8cfc9fd15703287d830b5d6875f",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "D2-191",
+      "path": "cases/permit-renewal/D2-191.json",
+      "sha256": "e6e305771616769634297d16f088bfbc3b8253e89165bbffdfc6ee64468ac269",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "D2-173",
+      "path": "cases/permit-renewal-budget/D2-173.json",
+      "sha256": "85a6cbc783779276f14a3817728b664b43623c420d26acbe663ba21f30668a8e",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "LIFE-008",
+        "RES-006"
+      ]
+    },
+    {
+      "id": "D2-174",
+      "path": "cases/permit-renewal-budget/D2-174.json",
+      "sha256": "029d789235fb8dd9973c38f9fcad511e2fb37377310db24fbf77e42a23bc16c5",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "RES-006"
+      ]
+    },
+    {
+      "id": "D2-189",
+      "path": "cases/permit-renewal-budget/D2-189.json",
+      "sha256": "6abaeaca18f21cd7d25039a2ab30cb6cc65ec40ccfad5a681b22c4cb2321ea5b",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-208",
+      "path": "cases/permit-renewal-budget/D2-208.json",
+      "sha256": "37d5482114498b34f0e53953d7bd4e109cf784c935c449e0889396f8cdb86d84",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "AUTH-005"
+      ]
+    },
+    {
+      "id": "D2-215",
+      "path": "cases/permit-renewal-budget/D2-215.json",
+      "sha256": "5f67bd0b0457bd4abf5fd18443d0fb7186722e16942a9a8bd97de505576d86be",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "RES-006"
+      ]
+    },
+    {
+      "id": "D2-285",
+      "path": "cases/prior-binding-restart/D2-285.json",
+      "sha256": "1e24855ed4946a9afe9c11912b1620493a114cb155d40cdca9bc0fe717782bff",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "AUTH-004",
+        "LIFE-008",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-288",
+      "path": "cases/prior-binding-restart/D2-288.json",
+      "sha256": "9d1f58967fdd6a695e4987be22c15677115eb1a0b637baa29936e7597712f79d",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-008",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-289",
+      "path": "cases/prior-binding-restart/D2-289.json",
+      "sha256": "7902204bfe6c6607f3d055e4bdf205afe573b9e1aba3059d5573780a414458b7",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-008",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-291",
+      "path": "cases/prior-binding-restart/D2-291.json",
+      "sha256": "b4b1e5b9d91ef21f9c2caff304762066f40ed49e640fa9a12e3cc2777d7a199c",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-008",
+        "LIFE-013",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-295",
+      "path": "cases/prior-binding-restart/D2-295.json",
+      "sha256": "c60e49ac90a87bfdbd8561851ab19e5da0fd9d24f3096059a8b0cdb6d3e1e226",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-277",
+      "path": "cases/prior-binding-runtime/D2-277.json",
+      "sha256": "639b0813725ff1c68c8511acfb29c67e28a23ec5c31abd866e09905733a5e628",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-007",
+        "COMP-BIND-001"
+      ]
+    },
+    {
+      "id": "D2-278",
+      "path": "cases/prior-binding-runtime/D2-278.json",
+      "sha256": "f4746208cdfdb2b8501203d3568fa344991dcf47ca42abdb686e7762a81a0bd7",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-007",
+        "COMP-BIND-001"
+      ]
+    },
+    {
+      "id": "D2-279",
+      "path": "cases/prior-binding-runtime/D2-279.json",
+      "sha256": "e2b645ce0f83da8796a2aef855ed6a91f55fe6ae43106d12835eaf1ef40fc3ea",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-007",
+        "COMP-BIND-001"
+      ]
+    },
+    {
+      "id": "D2-280",
+      "path": "cases/prior-binding-runtime/D2-280.json",
+      "sha256": "af87ff3e62a4f9cad09236a5835eaf7beb47214eb9803c73ee06ebb9582f375a",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "LIFE-008",
+        "COMP-BIND-001"
+      ]
+    },
+    {
+      "id": "D2-281",
+      "path": "cases/prior-binding-runtime/D2-281.json",
+      "sha256": "a38454697dd161e3783f70b694e9f58a059c7ebffd523236f04b297314d38d47",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-004",
+        "LIFE-007",
+        "COMP-BIND-001"
+      ]
+    },
+    {
+      "id": "D2-282",
+      "path": "cases/prior-binding-runtime/D2-282.json",
+      "sha256": "dbd0653ee2f0e3f87c1e78234df40ae9747e14dd904cf1de753f07eff6161121",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "LIFE-008",
+        "COMP-BIND-001"
+      ]
+    },
+    {
+      "id": "D2-283",
+      "path": "cases/prior-binding-runtime/D2-283.json",
+      "sha256": "647cdc13150c5b736999815894b8bf357fc274f39eae233fcc21076036aea0e6",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-007",
+        "COMP-BIND-001"
+      ]
+    },
+    {
+      "id": "D2-284",
+      "path": "cases/prior-binding-runtime/D2-284.json",
+      "sha256": "82fb6ca8000a5775448902ffec338576d3f94a81349db841266fc4c24132fbbf",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-007",
+        "COMP-BIND-001"
+      ]
+    },
+    {
+      "id": "D2-286",
+      "path": "cases/prior-binding-runtime/D2-286.json",
+      "sha256": "cdb21727eb424d777039759afefde1ea90b9e267346e373468f89189447bcbb8",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-007"
+      ]
+    },
+    {
+      "id": "D2-287",
+      "path": "cases/prior-binding-runtime/D2-287.json",
+      "sha256": "acc5821ae92cccff9d3f79b3b69693602ea59b34d5ef2f67b72ea30886a5b524",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-007"
+      ]
+    },
+    {
+      "id": "D2-293",
+      "path": "cases/prior-binding-runtime/D2-293.json",
+      "sha256": "c5dfcbff56948dab17842963f5a03e59f3e6cfd19f8ae012fd68043243351ba2",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-007",
+        "COMP-BIND-001"
+      ]
+    },
+    {
+      "id": "D2-273",
+      "path": "cases/prior-binding-static/D2-273.json",
+      "sha256": "7a2bf185c32e22267f5efc3b02071aac9fec5e041e0e9671cd8fc3e3e44e9dcd",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "COMP-BIND-001"
+      ]
+    },
+    {
+      "id": "D2-274",
+      "path": "cases/prior-binding-static/D2-274.json",
+      "sha256": "33c653afc6027dea06db1f9898a28fbe4caf4960ccbe0887069d245fe04652c0",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "COMP-BIND-001",
+        "VALID-001"
+      ]
+    },
+    {
+      "id": "D2-275",
+      "path": "cases/prior-binding-static/D2-275.json",
+      "sha256": "73f120097f8718f0904c02d546134bbf146d19da58fd3b8629f6905ba1f92357",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "COMP-BIND-001",
+        "VALID-001"
+      ]
+    },
+    {
+      "id": "D2-276",
+      "path": "cases/prior-binding-static/D2-276.json",
+      "sha256": "4c97be6c1255bdf5c7874ff59ffc7a62b76b3d7bf0de10250fe0b2e4eded2a64",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "COMP-BIND-001"
+      ]
+    },
+    {
+      "id": "D2-095",
+      "path": "cases/proposal-limits/D2-095.json",
+      "sha256": "cbfdb94f5eacea611cbbc2c74d06a13beadac0ff8c22d3483b97aeff616eecef",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-007",
+        "COMP-002"
+      ]
+    },
+    {
+      "id": "D2-123",
+      "path": "cases/proposal-limits/D2-123.json",
+      "sha256": "93456b78aa6ac8dc75a4b45ea98f4a3cf97b3aba4224fa5e8e0f92fbe35724e3",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-124",
+      "path": "cases/proposal-limits/D2-124.json",
+      "sha256": "7e0544ccc4a0dc6cc7bda5a70bec0b97afe52beb6bcda42e4ddcfd235434a4ff",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-131",
+      "path": "cases/proposal-limits/D2-131.json",
+      "sha256": "28c12c684037a3ec676958d65793be130598f616a446f2ab0daf0f04c768cb2c",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-005",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-176",
+      "path": "cases/proposal-limits/D2-176.json",
+      "sha256": "3daaccb7ba872b0f28818a068d581de3419bc8edb47d097d9f42d7ba9cc127a4",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-267",
+      "path": "cases/proposal-limits/D2-267.json",
+      "sha256": "24a5f020f472579b2bb8c084a10f362ba056c4b914967a941fbe890ab6531d49",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "COMP-002",
+        "WCS2-013"
+      ]
+    },
+    {
+      "id": "P2-001",
+      "path": "cases/protocol-controls/P2-001.json",
+      "sha256": "381b3101ea28c4e12b86d75260d62803587f4fdb269e03e7f6ab546aa7db3810",
+      "operation": "capabilities",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCS2-004",
+        "WCS2-009",
+        "WCS2-010",
+        "WCS2-011"
+      ]
+    },
+    {
+      "id": "C2-branch-head-loop-entry",
+      "path": "cases/repair-round-composition-controls/C2-branch-head-loop-entry.json",
+      "sha256": "52d6c6cfb091d5350eefe8431b484bb23c8e1268cf7b9acc3586e826300f4460",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-016",
+        "LIFE-017",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "C2-branch-loop-back-edge-keeps-branch",
+      "path": "cases/repair-round-composition-controls/C2-branch-loop-back-edge-keeps-branch.json",
+      "sha256": "91069569fb6ae3bff42985aef9ec9cb5d782c1d91c0311052707b720a472c10e",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-016",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "C2-child-join-into-sibling-split",
+      "path": "cases/repair-round-composition-controls/C2-child-join-into-sibling-split.json",
+      "sha256": "17efd34881ed54c2fc59e78277fdf227448df758de9ce5e5b9bc12bce122ca91",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-015",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "C2-empty-fanout-advance-into-parent-join",
+      "path": "cases/repair-round-composition-controls/C2-empty-fanout-advance-into-parent-join.json",
+      "sha256": "8e29c5e152bb7e080072eca2d05f6047f9aee52339eec1190242ca08267eeec0",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-015",
+        "LIFE-018",
+        "PAR-001",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "C2-fanout-head-loop-entry",
+      "path": "cases/repair-round-composition-controls/C2-fanout-head-loop-entry.json",
+      "sha256": "3d8e7f88d0d1af5db036c0c3df659d1dfb2c35e683bd50158c3e408733d10160",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-016",
+        "LIFE-018",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "C2-join-continuation-limit-stop",
+      "path": "cases/repair-round-composition-controls/C2-join-continuation-limit-stop.json",
+      "sha256": "852761adc562e3e4b7828a61b77632b7d7df41bab1a4ae016d823c013de08d94",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-017",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "C2-join-into-child-split",
+      "path": "cases/repair-round-composition-controls/C2-join-into-child-split.json",
+      "sha256": "6ce0a5f9411b7104fe189e8c6cd2280e744346c2fc6b87d19ef2ff24fff1eae5",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-015",
+        "LIFE-017",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "C2-object-join-into-operation",
+      "path": "cases/repair-round-composition-controls/C2-object-join-into-operation.json",
+      "sha256": "6d16e137029b8dcf41a4165d1decd5d2aaab8e38b02aafeaf4f3c06942c13498",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-001",
+        "LIFE-015",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "C2-restart-after-join-continuation-stop",
+      "path": "cases/repair-round-composition-controls/C2-restart-after-join-continuation-stop.json",
+      "sha256": "8d99b209ca15fa216a7ab95dea923e8df3670a7314e94fc33601a9edc0b98b9c",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-019",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "C2-collection-keeps-observed-request",
+      "path": "cases/repair-round-effect-controls/C2-collection-keeps-observed-request.json",
+      "sha256": "a574bf089d9472db20e1c650314353a68fc6818e20fc232ba1858eb757e0ac4f",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "RES-WIRE-003"
+      ]
+    },
+    {
+      "id": "C2-duplicate-retry-of-duplicate-row",
+      "path": "cases/repair-round-effect-controls/C2-duplicate-retry-of-duplicate-row.json",
+      "sha256": "ddc6f87a64dc45eda4d2c8a1904653966ab87cc3c3375c372002433414a58bdc",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-013",
+        "RES-WIRE-003"
+      ]
+    },
+    {
+      "id": "C2-duplicate-with-newer-history",
+      "path": "cases/repair-round-effect-controls/C2-duplicate-with-newer-history.json",
+      "sha256": "9dfa84ac23e2f017c89518a2c996939d0cf25ebea00cad406bdef1fa98e4fbd6",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-003"
+      ]
+    },
+    {
+      "id": "C2-foreign-duplicate-joins-conflict-group",
+      "path": "cases/repair-round-effect-controls/C2-foreign-duplicate-joins-conflict-group.json",
+      "sha256": "692d26220ca8d20b29fbef32fd2ab73a5c799ac02bd782f710f0b36a0c81835e",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "C2-foreign-effect-conflicts-no-effect",
+      "path": "cases/repair-round-effect-controls/C2-foreign-effect-conflicts-no-effect.json",
+      "sha256": "db2a389e18625ee753454ad077ecc6f6624be6781771cb0b817a37ce7294e28c",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "C2-renew-disputed-reservation-withheld",
+      "path": "cases/repair-round-effect-controls/C2-renew-disputed-reservation-withheld.json",
+      "sha256": "912f93eb10a06c1a1f5e7cc7c61f5dda644d576903f6f4b66c1f73ae2859b271",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "C2-status-outside-lists-keeps-observed-request",
+      "path": "cases/repair-round-effect-controls/C2-status-outside-lists-keeps-observed-request.json",
+      "sha256": "7247549d0dbd947629bdf82b8ac2ca35b0b15da64e9f69c36fb45984e80bd8c3",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "RES-WIRE-003"
+      ]
+    },
+    {
+      "id": "C2-unknown-after-authorized-release",
+      "path": "cases/repair-round-effect-controls/C2-unknown-after-authorized-release.json",
+      "sha256": "6c58bb6029f49276760846e0120772a4c043b41d6860e10557fb6899960e6bf8",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "RES-WIRE-003"
+      ]
+    },
+    {
+      "id": "C2-unknown-keeps-blocked-dispute",
+      "path": "cases/repair-round-effect-controls/C2-unknown-keeps-blocked-dispute.json",
+      "sha256": "b8caeeff4c6e28560883eede89f81c45d6fd0d1de163a13c329e38a8e333324d",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-013",
+        "RES-WIRE-003"
+      ]
+    },
+    {
+      "id": "C2-refuse-outer-obligation-naming-child-occurrence",
+      "path": "cases/repair-round-restart-controls/C2-refuse-outer-obligation-naming-child-occurrence.json",
+      "sha256": "29681e339add2c7bfd29fb5bc01e0b90a8391191e351915fb1532aa3479a4fdf",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-019",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "C2-refuse-stale-last-receipt",
+      "path": "cases/repair-round-restart-controls/C2-refuse-stale-last-receipt.json",
+      "sha256": "6b08f3081f5eb2e20cef2f5ef469e446631ad928d8aa387a7eec520856a986a6",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "C2-restart-nested-child-branch",
+      "path": "cases/repair-round-restart-controls/C2-restart-nested-child-branch.json",
+      "sha256": "2eebcb9ff88494049f3c7d07e4f5cf9269761c05bfdcf7cde4ba00b5db90003a",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-019",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "C2-restart-routed-branch-occurrence",
+      "path": "cases/repair-round-restart-controls/C2-restart-routed-branch-occurrence.json",
+      "sha256": "32b58e17d674cab8396521d36a0a8e1b002ba6c9d400f2d3b375709e399353e8",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-019",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "D2-037",
+      "path": "cases/replay-precedence/D2-037.json",
+      "sha256": "a054ccbb22f097a6d0de47a65f2936ffe3f91d48442242588dc39cdd924c40f9",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-038",
+      "path": "cases/replay-precedence/D2-038.json",
+      "sha256": "c4f7f4ead1c80a2a8a4f8b49259e6ec698a9c77876e29549bbb0e025a0002a30",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-070",
+      "path": "cases/replay-precedence/D2-070.json",
+      "sha256": "df7c463af4d80b313f424ac0b5369aa17708cd88008e6a6af48b4a8549ce40eb",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-071",
+      "path": "cases/replay-precedence/D2-071.json",
+      "sha256": "14f663e19fa5e35ccdfb91d8989fcc9cf1c6f7434ac32b4ab3f22a021dc220cb",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-013",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-080",
+      "path": "cases/replay-precedence/D2-080.json",
+      "sha256": "7c6fb4147953208fd91dbae5b1d021d084c97289c8969898379f6d781b4f5b73",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "WCS2-013"
+      ]
+    },
+    {
+      "id": "D2-081",
+      "path": "cases/replay-precedence/D2-081.json",
+      "sha256": "26c025a3308f3137062d5a3df5152778cea2fad80cbc95ff4aba8e3b6cf42848",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "WCS2-013"
+      ]
+    },
+    {
+      "id": "D2-082",
+      "path": "cases/replay-precedence/D2-082.json",
+      "sha256": "fc918dbffda718bdcac35b573e7071fb7d439d67d9e2efd4e45ef7630c23cfc3",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "WCS2-013"
+      ]
+    },
+    {
+      "id": "D2-145",
+      "path": "cases/reservation-edges/D2-145.json",
+      "sha256": "eb51a320d8b8dd5691edfbb86abed2df5f8c0c34dd8e4fcdbd29120566e64419",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "RES-008",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "D2-146",
+      "path": "cases/reservation-edges/D2-146.json",
+      "sha256": "c7f8bb15bd280e3b6c1311eb7e516f97ffa754260963dfe4d00931f1cb0cb3e2",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "RES-007",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "D2-147",
+      "path": "cases/reservation-edges/D2-147.json",
+      "sha256": "86f1b95861d354fa90352836c8c1ef59eb0f772aab4cf85b101da50430ee4979",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "RES-008",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "D2-160",
+      "path": "cases/reservation-edges/D2-160.json",
+      "sha256": "ae5c1fcf7e0ac95f6ea8e3f647f8a3ddc4c0e41e29aefa43fd732673d367f6f6",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-013",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "D2-177",
+      "path": "cases/reservation-edges/D2-177.json",
+      "sha256": "1c4b75ce914b5fe8228f975856c22b8f4af57abb49eea1ef17f33f1beb071f32",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-005",
+        "RES-WIRE-003"
+      ]
+    },
+    {
+      "id": "D2-272",
+      "path": "cases/reservation-edges/D2-272.json",
+      "sha256": "a02e464dd151f43510881c8fac7f1131a8ff3a294bf4a3b5ea32a52cb071efde",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER_WITHOUT_SHARED_BUDGET_TRANSITIONS",
+      "requirements": [
+        "WCS2-010",
+        "WCS2-011",
+        "WCS2-012"
+      ]
+    },
+    {
+      "id": "D2-294",
+      "path": "cases/reservation-edges/D2-294.json",
+      "sha256": "5dbbd003c6d22711062ae58b6e7c6884b777a9bfae8551261ce6dd5983e700e8",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-003",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "D2-296",
+      "path": "cases/reservation-edges/D2-296.json",
+      "sha256": "31ef6fbf42b2852813ad46d64339a3c543e50145a31a96a734a4e60fab6ee29e",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-007",
+        "RES-008",
+        "RES-WIRE-003",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "R2-294-null-reason",
+      "path": "cases/reservation-edges/R2-294-null-reason.json",
+      "sha256": "c46ae0d236dddedfe47608a28d7e816c55f1dcfa17e16cca6266728b68b30ae0",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-003",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "R2-296-unexpected",
+      "path": "cases/reservation-edges/R2-296-unexpected.json",
+      "sha256": "e85a3b525274d87c99eac0aceeb74d9821acacecf7afeedeec2ec139b1b85ea4",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-007",
+        "RES-008",
+        "RES-WIRE-003",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "C2-refuse-branch-head-source-mismatch",
+      "path": "cases/restart-admission-controls/C2-refuse-branch-head-source-mismatch.json",
+      "sha256": "a011113f530c578a032abf719925bec7d78967d6c01be0ef047a08d54db00543",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-019",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "C2-refuse-waiting-child-pass-source-order",
+      "path": "cases/restart-admission-controls/C2-refuse-waiting-child-pass-source-order.json",
+      "sha256": "5bc7b3888cdfc1b6427679422ba6fc5ef2c11c9368bbe6e7477f7ba44872f0cc",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "C2-restart-disputed-completion-frontier",
+      "path": "cases/restart-admission-controls/C2-restart-disputed-completion-frontier.json",
+      "sha256": "de69ff341c0244f79b743c87e059cde46365cbb0baa20f5d20acc67838594d11",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-013",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "C2-restart-fanout-outer-prefix",
+      "path": "cases/restart-admission-controls/C2-restart-fanout-outer-prefix.json",
+      "sha256": "c0e03c780db0cc3d3963bd3a535c1a0f2933686cba7f0c92a8d26ee2d33b0204",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-019",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "C2-waiting-child-pass-order",
+      "path": "cases/restart-admission-controls/C2-waiting-child-pass-order.json",
+      "sha256": "15fa23efc2f58f90466fb578a7f93b2a9139f7ebdef974eb57c4ac508aa593b0",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-019",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "D2-125",
+      "path": "cases/restart-integrity/D2-125.json",
+      "sha256": "f066911730d326fd1c91c4264ccb3f87045316587831a5799f34923290d5cba8",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-187",
+      "path": "cases/restart-integrity/D2-187.json",
+      "sha256": "d5fc5f066aee67e295b3e4e3caa8610912563ed36486b990efeb9034ff34b5eb",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-073",
+      "path": "cases/simultaneous-deadlines/D2-073.json",
+      "sha256": "04d468693f3b570fce011dd84c7576df50031bcf055e38e2ad5befda505ec165",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-109",
+      "path": "cases/simultaneous-deadlines/D2-109.json",
+      "sha256": "5a64d97ab4760dde96428416e0bb4e84db377dc1839dde92ec16cd96613856f5",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-110",
+      "path": "cases/simultaneous-deadlines/D2-110.json",
+      "sha256": "3f608513f4bef0081d63eff9cdf6eee06b35ce7d918947098068197edddcd188",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-144",
+      "path": "cases/simultaneous-deadlines/D2-144.json",
+      "sha256": "3fee88927c716d1431d1b383164317ba4c32225777c7051752926581b063df16",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014",
+        "LIFE-015",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "D2-209",
+      "path": "cases/simultaneous-deadlines/D2-209.json",
+      "sha256": "cc8d2f226ed267dca2701c23bfeeea05798ab7a71358952fee822ed239a2b9a0",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014",
+        "LIFE-017"
+      ]
+    },
+    {
+      "id": "C2-ancestor-deadline-anchor-loop-member",
+      "path": "cases/step4-controls/C2-ancestor-deadline-anchor-loop-member.json",
+      "sha256": "883799bc3c14426e6530f986a6cfb52a61008a318e3b6f3b6076ea8ab0d1a60b",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "DEAD-001",
+        "WCD-001",
+        "COMP-002"
+      ]
+    },
+    {
+      "id": "C2-ancestor-deadline-anchor-one-branch",
+      "path": "cases/step4-controls/C2-ancestor-deadline-anchor-one-branch.json",
+      "sha256": "5cdee9395d0f90a4addf75dee192ba1e4e981db0b1bc6bb1ff41c90d578a768f",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "DEAD-001",
+        "WCD-001",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "C2-ancestor-deadline-anchor-outside-region",
+      "path": "cases/step4-controls/C2-ancestor-deadline-anchor-outside-region.json",
+      "sha256": "ed06b581194cbba24c62ec4ffb684b64ac55feba9c0139e36ae4356b47686b2c",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "DEAD-001",
+        "WCD-001",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "C2-ancestor-deadline-anchor-same-region",
+      "path": "cases/step4-controls/C2-ancestor-deadline-anchor-same-region.json",
+      "sha256": "6286ee0f0cb6af93b7cc951fb1e834152d540cd81d380ed5f4d95fb606e435ba",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "DEAD-001",
+        "WCD-001",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "C2-ancestor-deadline-due-from-anchor",
+      "path": "cases/step4-controls/C2-ancestor-deadline-due-from-anchor.json",
+      "sha256": "ce4f00b87728675d95c3a2f1f8bea88b389244700a50ece590974b29c9e38cc6",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "DEAD-001",
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "C2-ancestor-deadline-on-root",
+      "path": "cases/step4-controls/C2-ancestor-deadline-on-root.json",
+      "sha256": "cf82df4f23cc36c1dac09e265ba71c7a8967b29c786554fe72c1488ceee06b61",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "DEAD-001",
+        "WCD-001"
+      ]
+    },
+    {
+      "id": "C2-ancestor-deadline-static-admitted",
+      "path": "cases/step4-controls/C2-ancestor-deadline-static-admitted.json",
+      "sha256": "4cb4f5646de0367fbb42e8189337ab121c073f8d36f5ee83d2cdda42fcd329fd",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "DEAD-001",
+        "WCD-001"
+      ]
+    },
+    {
+      "id": "C2-ancestor-deadline-undeclared-anchor",
+      "path": "cases/step4-controls/C2-ancestor-deadline-undeclared-anchor.json",
+      "sha256": "17c07bd543a08ca88adfe1e6a07c1cb05246ab64a73b498fcd3bc63cadd948b9",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "DEAD-001",
+        "WCD-001"
+      ]
+    },
+    {
+      "id": "C2-authority-clock-unavailable-evaluate",
+      "path": "cases/step4-controls/C2-authority-clock-unavailable-evaluate.json",
+      "sha256": "cc8df3df6c51b6e842abdceb1d31d29b34de89bb9c33fe3b5a5e92d156eb758d",
+      "operation": "evaluate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "AUTH-CHECK-002",
+        "AUTH-CHECK-004"
+      ]
+    },
+    {
+      "id": "C2-authority-clock-unavailable-withholding",
+      "path": "cases/step4-controls/C2-authority-clock-unavailable-withholding.json",
+      "sha256": "c1c34fc2cdc492d3a2ad23f7135aee02956b3f08c191dd99711ecdd09f2c8b56",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "AUTH-CHECK-004",
+        "LIFE-007"
+      ]
+    },
+    {
+      "id": "C2-authority-expired-channel-and-pending-grant",
+      "path": "cases/step4-controls/C2-authority-expired-channel-and-pending-grant.json",
+      "sha256": "92afed28dfce19c516a46ae5d3162b7a6f1b6aa0f298c25e9982073012071b49",
+      "operation": "evaluate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "AUTH-CHECK-002",
+        "AUTH-CHECK-004"
+      ]
+    },
+    {
+      "id": "C2-authority-failed-checks-evaluate",
+      "path": "cases/step4-controls/C2-authority-failed-checks-evaluate.json",
+      "sha256": "80f10b7a68e7146193be2ed6a0ea319dbcd391dd33d2bf95e6ccacdf9b091308",
+      "operation": "evaluate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "AUTH-005",
+        "AUTH-CHECK-003",
+        "AUTH-CHECK-004"
+      ]
+    },
+    {
+      "id": "C2-authority-failed-checks-withholding",
+      "path": "cases/step4-controls/C2-authority-failed-checks-withholding.json",
+      "sha256": "6851dd26d91d0065749651345acce62a0784bb7f04eaa175ac6329f354e4711d",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "AUTH-CHECK-004",
+        "LIFE-007"
+      ]
+    },
+    {
+      "id": "C2-authority-missing-return-and-expired-channel",
+      "path": "cases/step4-controls/C2-authority-missing-return-and-expired-channel.json",
+      "sha256": "1e365b346a240d17b3171b26ed4b7608415449d11c963f2f8cd8b801a95829e8",
+      "operation": "evaluate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "AUTH-CHECK-002",
+        "AUTH-CHECK-004"
+      ]
+    },
+    {
+      "id": "C2-authority-observation-after-query",
+      "path": "cases/step4-controls/C2-authority-observation-after-query.json",
+      "sha256": "585bdca259dcf294036f10f47216b5e4cc31cbf373359ed918f8022b6dcdabab",
+      "operation": "evaluate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "AUTH-005"
+      ]
+    },
+    {
+      "id": "C2-authority-return-channel-expired",
+      "path": "cases/step4-controls/C2-authority-return-channel-expired.json",
+      "sha256": "703ade354f8b1b21d0051923d5721e74a59fe86bf986f2166972344b00a37841",
+      "operation": "evaluate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "AUTH-CHECK-002"
+      ]
+    },
+    {
+      "id": "C2-authority-root-expired",
+      "path": "cases/step4-controls/C2-authority-root-expired.json",
+      "sha256": "06122b5a055a6bbca5211e05ac8c9b265983da9988c0da94d26bf82101244c95",
+      "operation": "evaluate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "AUTH-005",
+        "AUTH-CHECK-003",
+        "AUTH-CHECK-004"
+      ]
+    },
+    {
+      "id": "C2-authority-stale-and-revoked-observation",
+      "path": "cases/step4-controls/C2-authority-stale-and-revoked-observation.json",
+      "sha256": "b9c6423223f70fabc68af2cd788f4f57265b228d087d0c72fcf93c384e7cf295",
+      "operation": "evaluate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "AUTH-005",
+        "AUTH-CHECK-003",
+        "AUTH-CHECK-004"
+      ]
+    },
+    {
+      "id": "C2-conflicting-effect-on-blocked-dispute-occurrence",
+      "path": "cases/step4-controls/C2-conflicting-effect-on-blocked-dispute-occurrence.json",
+      "sha256": "60cc5c15b26c1e976074aa00aa222c7d6d47f17caa36bc8d920a05e5cb521b07",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-010",
+        "LIFE-013",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "C2-deadline-under-choice-loops-profile",
+      "path": "cases/step4-controls/C2-deadline-under-choice-loops-profile.json",
+      "sha256": "09f4d607b6108e35b973c84a4488e0106cecf14b1914f9eab0aa2e6ff85d3df8",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "PROF-001"
+      ]
+    },
+    {
+      "id": "C2-disputed-reservation-changed-fact-retained-effect",
+      "path": "cases/step4-controls/C2-disputed-reservation-changed-fact-retained-effect.json",
+      "sha256": "3759dcac71643000abf0785d1595e49d638ef3c1cc9f9cf8cf11752dfd7621ef",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-003",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "C2-disputed-reservation-clean-no-effect",
+      "path": "cases/step4-controls/C2-disputed-reservation-clean-no-effect.json",
+      "sha256": "1749c464e781d93e6d90954c997fac0dc488d9dec57c1d00fb3143fcfa38f45c",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-003",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "C2-disputed-reservation-matched-effect-clean-no-effect",
+      "path": "cases/step4-controls/C2-disputed-reservation-matched-effect-clean-no-effect.json",
+      "sha256": "cafd494d448a96d12639e01bed67cdb79792b2d05aa73889c4a51d81067ff261",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-003",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "C2-disputed-reservation-second-effect-identifier",
+      "path": "cases/step4-controls/C2-disputed-reservation-second-effect-identifier.json",
+      "sha256": "bca808486c696117f3a189b8b835cdfd5ac3c06a9b1918a0aa3e3a99a614f968",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-003",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "C2-disputed-reservation-second-effect-uncorroborated",
+      "path": "cases/step4-controls/C2-disputed-reservation-second-effect-uncorroborated.json",
+      "sha256": "396f593994530d96f34d37e87b939361638b3b41571efeddcfd7eb4d4c372d9b",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-003",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "C2-effect-on-dispatch-evidence-conflict",
+      "path": "cases/step4-controls/C2-effect-on-dispatch-evidence-conflict.json",
+      "sha256": "c0e391cb728a2e604cfc736df0ed03a890e690bb452277c2526efd81c140f862",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-006",
+        "LIFE-010",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "C2-fresh-not-sent-after-not-sent-accepted",
+      "path": "cases/step4-controls/C2-fresh-not-sent-after-not-sent-accepted.json",
+      "sha256": "0bb7f18a83606c1677423f6315846855d686ae75a38a0dda9314c39485a1379d",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-009"
+      ]
+    },
+    {
+      "id": "C2-open-reservation-mismatched-release-attributed-differs",
+      "path": "cases/step4-controls/C2-open-reservation-mismatched-release-attributed-differs.json",
+      "sha256": "9c8cfa9501b48c5c8bc6c027cd33e5c574a34f70399019d9ada343751448b9c7",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-003",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "C2-open-reservation-observed-request-differs",
+      "path": "cases/step4-controls/C2-open-reservation-observed-request-differs.json",
+      "sha256": "e727ab9c49dbd1e3e5dd238ef19bda81e72a68446dbad91a832e8ba62548810c",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-003",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "C2-open-reservation-release-attributed-differs",
+      "path": "cases/step4-controls/C2-open-reservation-release-attributed-differs.json",
+      "sha256": "b3d2c63df1bc41129dfa50374eb2d44f3efbb8b2944f784e0068e98629d6126c",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-003",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "C2-refuse-ancestor-deadline-due-from-activation",
+      "path": "cases/step4-controls/C2-refuse-ancestor-deadline-due-from-activation.json",
+      "sha256": "25558f13c52c1dc132e553b59a188967afe0d1b50a20b0d92b3e74a0e6d42586",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "DEAD-001",
+        "LIFE-014",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "C2-refuse-clean-effect-null-observed-request",
+      "path": "cases/step4-controls/C2-refuse-clean-effect-null-observed-request.json",
+      "sha256": "fdf57094522470cddee66cbbb23024ed51cd8d635a456e42d3f783fb8f0a4904",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-003"
+      ]
+    },
+    {
+      "id": "C2-refuse-state-bound-to-other-pin",
+      "path": "cases/step4-controls/C2-refuse-state-bound-to-other-pin.json",
+      "sha256": "b9b861be0bf972fb94804770d7f8b675e3270a00abbcb3624bc061bffd62ace5",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "C2-released-reservation-mismatched-unknown",
+      "path": "cases/step4-controls/C2-released-reservation-mismatched-unknown.json",
+      "sha256": "d707a0293ffa1638dc11d5f861336989fea930f7030de945fe6a377a375f8510",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-003",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "C2-restart-ancestor-deadline",
+      "path": "cases/step4-controls/C2-restart-ancestor-deadline.json",
+      "sha256": "da77899ad105f3657cf84c093f917aad7db837609bf2ad3e8a7ecd8074882a42",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "DEAD-001",
+        "LIFE-014",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "C2-restart-correspondence-after-authorization-clock",
+      "path": "cases/step4-controls/C2-restart-correspondence-after-authorization-clock.json",
+      "sha256": "7d2decb1f1abd62827472b29742573204c5129bc7c04efc7235f6c5ddf9da037",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "C2-restart-policy-decision-subject-mismatch",
+      "path": "cases/step4-controls/C2-restart-policy-decision-subject-mismatch.json",
+      "sha256": "b6fc212967ffb2f739f856109109abe9d8fa64233454266069ae8c742f6b4fc9",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "C2-restart-source-confirmation-pending",
+      "path": "cases/step4-controls/C2-restart-source-confirmation-pending.json",
+      "sha256": "1f17c63522c111cc3aef64773b479dd3a99ee33f395a80608e7cb0e39a5f0193",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-003",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "C2-settle-renamed-actual-fields",
+      "path": "cases/step4-controls/C2-settle-renamed-actual-fields.json",
+      "sha256": "d282895324344054d4d914199815dd1d10f41472880a9ccfcd8c77b56203c2d4",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-003"
+      ]
+    },
+    {
+      "id": "C2-settled-reservation-changed-fact-retained-effect",
+      "path": "cases/step4-controls/C2-settled-reservation-changed-fact-retained-effect.json",
+      "sha256": "b7ac0fdb51c7d56c2a688011d975483f7b12ab0a29b54824cc077a3e06516378",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-003",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "C2-settled-reservation-clean-unknown-attributed-differs",
+      "path": "cases/step4-controls/C2-settled-reservation-clean-unknown-attributed-differs.json",
+      "sha256": "9b498f67f7ef1f1a4901309faf3a458054dca38440fabdb931181c7853144e00",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-003",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "C2-settled-reservation-second-effect-observed-request-differs",
+      "path": "cases/step4-controls/C2-settled-reservation-second-effect-observed-request-differs.json",
+      "sha256": "bf43bba2579502387500bb22402e44fd1030daa8685c7eeeb4f67041f9a4e904",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-003",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "C2-settled-reservation-second-effect-uncorroborated",
+      "path": "cases/step4-controls/C2-settled-reservation-second-effect-uncorroborated.json",
+      "sha256": "c76e378d474def66a4acf300f219d80f6ce01b27b26219859abc82cb4b4ce1f0",
+      "operation": "aggregate-step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "RES-WIRE-003",
+        "RES-WIRE-004"
+      ]
+    },
+    {
+      "id": "D2-250",
+      "path": "cases/stopped-fanout-late/D2-250.json",
+      "sha256": "ba6591f2acec9c00e1d685217008be9f6bf5f1a44eabf553fcf84ec9f0533367",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-012",
+        "LIFE-019",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "D2-148",
+      "path": "cases/stopped-siblings/D2-148.json",
+      "sha256": "208a01fb54954243ee342cced0112aae127af6b5ffc758665e4e62c5fd0fc40c",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-005"
+      ]
+    },
+    {
+      "id": "D2-149",
+      "path": "cases/stopped-siblings/D2-149.json",
+      "sha256": "becdda41af6a8962adef6fd7fa76e3ec0df865dec43b3e027f732aa1e8ab5823",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-005",
+        "LIFE-012"
+      ]
+    },
+    {
+      "id": "D2-159",
+      "path": "cases/stopped-siblings/D2-159.json",
+      "sha256": "d8af11695fd99a3598ce257088e7ff9a1240fb8ea2dca977d1ce7fa23680ae92",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-005",
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "D2-108",
+      "path": "cases/structural-stops/D2-108.json",
+      "sha256": "27bf0e11dbda6c62e1ae0e04ef9002b33075097a599de946b57e3279889c2d4e",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-014",
+        "LIFE-015"
+      ]
+    },
+    {
+      "id": "D2-122",
+      "path": "cases/structural-stops/D2-122.json",
+      "sha256": "04b322ad3738352347e82ce00d6be6287a443b82624446ca53605cff663e41a1",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "LIFE-006",
+        "LIFE-015"
+      ]
+    },
+    {
+      "id": "C2-restart-fanout-created",
+      "path": "cases/structured-restart/C2-restart-fanout-created.json",
+      "sha256": "90ec06850cf0e8abd37b994a5ab4c732dcde165c6d031fe8863d51bbfea7060f",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-012",
+        "LIFE-019",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "C2-restart-fanout-duplicate-stopped",
+      "path": "cases/structured-restart/C2-restart-fanout-duplicate-stopped.json",
+      "sha256": "afffa616f98228e1a10e09aed4a0308b2892559782f83f4bd2d563c326f9e763",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-012",
+        "LIFE-019",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "C2-restart-parallel-created",
+      "path": "cases/structured-restart/C2-restart-parallel-created.json",
+      "sha256": "c2a0918db732c726b1c0f04df6602f3e389de668d1e95d780937f20d3697eb80",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-012",
+        "LIFE-019",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "C2-static-cross-branch",
+      "path": "cases/structured-static/C2-static-cross-branch.json",
+      "sha256": "588530abcf16bf3a187073c6748f584811214ba141cc806e6620763c5588f1e2",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "C2-static-fanout-field-missing",
+      "path": "cases/structured-static/C2-static-fanout-field-missing.json",
+      "sha256": "6b2b243a1b47e8eca4a85ca682cd2507ec63942fe5fbf3d2a17da7635a362229",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "C2-static-fanout-field-type",
+      "path": "cases/structured-static/C2-static-fanout-field-type.json",
+      "sha256": "62aadadaf1f698d8adfd31f03c2385feb26851e7a0a4a0b0d06c4fda3219d8ed",
+      "operation": "validate",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "WCD-001",
+        "FAN-001"
+      ]
+    },
+    {
+      "id": "T2-001",
+      "path": "cases/temporal-controls/T2-001.json",
+      "sha256": "a215398bd71f947eff7d86fe618ea0cf8491d8ca022a15203adcfafd7a6eb3ea",
+      "operation": "property",
+      "execution_target": "LOCAL_CONTROL",
+      "requirements": [
+        "WCS2-001",
+        "AGG-002",
+        "LIFE-014"
+      ]
+    },
+    {
+      "id": "T2-002",
+      "path": "cases/temporal-controls/T2-002.json",
+      "sha256": "2e5c168fb7f1366c893877a18a8cf501dd1177d5b573cb0a6473b120508996ea",
+      "operation": "property",
+      "execution_target": "LOCAL_CONTROL",
+      "requirements": [
+        "WCS2-001",
+        "AGG-002"
+      ]
+    },
+    {
+      "id": "D2-151",
+      "path": "cases/terminal-reconciliation/D2-151.json",
+      "sha256": "50a12622b99cf5f6cde2d77e43120ccab4973652f40fdfb7b403c874b6e6668d",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-005"
+      ]
+    },
+    {
+      "id": "D2-162",
+      "path": "cases/terminal-reconciliation/D2-162.json",
+      "sha256": "01046adeda6cc38b1032d247ef4cd4ad64f253fec1160e9cd8509fa8c19d6369",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-013"
+      ]
+    },
+    {
+      "id": "D2-185",
+      "path": "cases/terminal-reconciliation/D2-185.json",
+      "sha256": "e8bc72c5eb013d813225fe7fd1eb89747d24f864b3b267f238437a3888a0f842",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-010",
+        "LIFE-012",
+        "RES-008"
+      ]
+    },
+    {
+      "id": "D2-078",
+      "path": "cases/transport-precedence/D2-078.json",
+      "sha256": "f036643898d309603a530006ca88f11cb7add39391d44eece1f6cdbb35ad67e8",
+      "operation": "transport",
+      "execution_target": "RAW_TRANSPORT",
+      "requirements": [
+        "WCS2-010",
+        "LIFE-006",
+        "WCS2-013"
+      ]
+    },
+    {
+      "id": "D2-251",
+      "path": "cases/unjoined-pass-checkpoint/D2-251.json",
+      "sha256": "a91bb3dc417f03bdabfe1b2c3e625ff82e5c2d45485254b14bcda1d5d2cf7afe",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-019",
+        "PAR-001"
+      ]
+    },
+    {
+      "id": "D2-065",
+      "path": "cases/vector-controls/D2-065.json",
+      "sha256": "5460011e35ba6d65bf187dfc1ac771ef5aa00e09e3e30ae1b02c69151889435d",
+      "operation": "validate vectors",
+      "execution_target": "LOCAL_CONTROL",
+      "requirements": [
+        "WCS2-002",
+        "LIFE-004"
+      ]
+    },
+    {
+      "id": "D2-066",
+      "path": "cases/vector-controls/D2-066.json",
+      "sha256": "2d654402d079aa8d2dbc75927f6595870368051c010f5e468754288b2c802fa1",
+      "operation": "validate vectors",
+      "execution_target": "LOCAL_CONTROL",
+      "requirements": [
+        "WCS2-002",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-076",
+      "path": "cases/vector-controls/D2-076.json",
+      "sha256": "f0875faedddd1c2adbee9fcac705c145ebfe7977fe0b4f6fe5067b565c533274",
+      "operation": "validate vectors",
+      "execution_target": "LOCAL_CONTROL",
+      "requirements": [
+        "WCS2-002",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-077",
+      "path": "cases/vector-controls/D2-077.json",
+      "sha256": "a5556b2cba365482c81fc51bd077d3fdee4ec729240d4d80306690ac0fabf513",
+      "operation": "validate vectors",
+      "execution_target": "LOCAL_CONTROL",
+      "requirements": [
+        "WCS2-002",
+        "LIFE-019"
+      ]
+    },
+    {
+      "id": "D2-094",
+      "path": "cases/vector-controls/D2-094.json",
+      "sha256": "ae820c5f2d67061400c8a584b2de0d3cba415dd56bfd587191e6e5b8e5e3e7fa",
+      "operation": "validate vectors",
+      "execution_target": "LOCAL_CONTROL",
+      "requirements": [
+        "WCS2-002",
+        "LIFE-007"
+      ]
+    },
+    {
+      "id": "D2-120",
+      "path": "cases/vector-controls/D2-120.json",
+      "sha256": "1e8c9e6baca4a47184ad722127841123f3a982df650064a4368c918c3bbad55c",
+      "operation": "validate vectors",
+      "execution_target": "LOCAL_CONTROL",
+      "requirements": [
+        "WCS2-002",
+        "LIFE-007",
+        "LIFE-010"
+      ]
+    },
+    {
+      "id": "D2-247",
+      "path": "cases/waiting-parent-proposal/D2-247.json",
+      "sha256": "b279f0c25936820223dd411c80ef9981c641d378865f738f4a60e9353985fb56",
+      "operation": "step",
+      "execution_target": "ADAPTER",
+      "requirements": [
+        "LIFE-007",
+        "LIFE-019",
+        "PAR-001"
+      ]
+    }
+  ],
+  "specimens": [
+    {
+      "id": "access-card",
+      "artifact_index": "specimens/access-card/artifact-index.json",
+      "artifact_index_sha256": "608b50d293a4eccf4251c5a45fbaf407a595902bc2590a4c86568e202d6fb936"
+    },
+    {
+      "id": "roe-engagement",
+      "artifact_index": "specimens/roe-engagement/artifact-index.json",
+      "artifact_index_sha256": "a296169497a8d37992a8ef320a1a1e3d80c113621072395e68039a37a4f3d794"
+    },
+    {
+      "id": "sepsis-surveillance",
+      "artifact_index": "specimens/sepsis-surveillance/artifact-index.json",
+      "artifact_index_sha256": "67f68a500b81f673fbf60183f677beb8f4afbd0c2ad9df390fe8a0a553bb9a39"
+    },
+    {
+      "id": "supplier-payment",
+      "artifact_index": "specimens/supplier-payment/artifact-index.json",
+      "artifact_index_sha256": "651d5af08d1256d4c32c4ddd8be497ca313b0eee35210676822914cdb68f6cdf"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "review/EXPECTED-JUDGMENTS-CONTRACT.json",
+      "sha256": "d7fc29d4858a1259128562c670c9c71eaa063626d284e4203f73af2735c832d4"
+    },
+    {
+      "path": "review/JUDGMENT-CASE-REGISTER.json",
+      "sha256": "2f04d7219a992cd55bf6c31f1fa8877c02bad486ae3f30473d2234a041eddccf"
+    },
+    {
+      "path": "review/CONTRACT-DECISIONS.md",
+      "sha256": "f4b44b7399c337ba6d9366c640c5bc9798f98d3058d8be4835113b9c4793cdac"
+    },
+    {
+      "path": "review/records/FREEZE-REVIEW-20260913.md",
+      "sha256": "0f908c7c553445e469a5da7bcfc6fe6de9114fd0966978905da477fc53e43225"
+    },
+    {
+      "path": "review/records/freeze-review-20260913/result.json",
+      "sha256": "aa96c44a7b050755991136ef85a40afc0eb6337a31b229ba3f764c5dab868a59"
+    }
+  ],
+  "qualification": {
+    "status": "NOT_QUALIFIED",
+    "host_obligations": "documented in EXTERNAL-DEPENDENCIES.md; not qualified by this suite"
+  }
+}

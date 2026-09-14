@@ -1,0 +1,53 @@
+{
+  "candidate_pin": "sha256:674d2f97e5a6b8f6e812ab140a1f821544fbdd4faa3ec6a03917225a9324c5c0",
+  "cases": [
+    {
+      "execution_target": "ADAPTER",
+      "id": "D2-199",
+      "operation": "step",
+      "path": "cases/mixed-deadline-stop/D2-199.json",
+      "requirements": [
+        "LIFE-014"
+      ],
+      "sha256": "9cf67cc5a1def369f7ad42f21dcb907efacf23475b91e9ca58593c05d784396e"
+    },
+    {
+      "execution_target": "ADAPTER",
+      "id": "D2-051",
+      "operation": "step",
+      "path": "cases/parallel-entry/D2-051.json",
+      "requirements": [
+        "LIFE-017",
+        "PAR-001"
+      ],
+      "sha256": "1087662de68df8969e5171930650cc66a66165014f31f4116234b52c35e238ec"
+    },
+    {
+      "execution_target": "ADAPTER",
+      "id": "D2-074",
+      "operation": "step",
+      "path": "cases/parallel-entry/D2-074.json",
+      "requirements": [
+        "LIFE-017"
+      ],
+      "sha256": "f74609642400a7625130ea3dfecd22dee95cc22fe3a8a21651b1512331a72cd0"
+    },
+    {
+      "execution_target": "ADAPTER",
+      "id": "D2-285",
+      "operation": "step",
+      "path": "cases/prior-binding-restart/D2-285.json",
+      "requirements": [
+        "AUTH-004",
+        "LIFE-008",
+        "LIFE-019"
+      ],
+      "sha256": "a94087702bc3dac636989434e1b7b6d8dbe489b712d87133e05f97e8837e0251"
+    }
+  ],
+  "count": "294",
+  "identity": "seampoint.work-class.case-index/1.0.0-draft.2/development",
+  "implementation_or_output_consulted": false,
+  "status": "DEVELOPMENT_NOT_QUALIFYING",
+  "case_count": "4"
+}

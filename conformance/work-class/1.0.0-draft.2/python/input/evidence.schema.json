@@ -1,0 +1,678 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/evidence.schema.json",
+  "$comment": "DRAFT_NOT_ADOPTED; APPARATUS_ONLY. Mechanical binding does not authenticate the people or organizations named by a record.",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9._:/-]{0,127}$"
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "instant": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "SOURCE",
+            "POLICY_DECISION",
+            "WORK_CLASS",
+            "AUTHORIZATION",
+            "REVIEW",
+            "BOUNDARY",
+            "IMPLEMENTATION",
+            "SUITE"
+          ]
+        },
+        "subject_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "candidate_identity": {
+          "const": "seampoint.work-class/1.0.0-draft.2"
+        },
+        "specification_pin": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "kind",
+        "subject_id",
+        "subject_digest",
+        "candidate_identity",
+        "specification_pin"
+      ],
+      "additionalProperties": false
+    },
+    "sourceConfirmation": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.2/evidence-record"
+        },
+        "evidence_id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "const": "SOURCE_CONFIRMATION"
+        },
+        "status": {
+          "enum": [
+            "ACCEPTED",
+            "REJECTED",
+            "PENDING",
+            "DEFERRED"
+          ]
+        },
+        "subject_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "actor_id": {
+          "$ref": "#/$defs/id"
+        },
+        "scope_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 1024,
+          "uniqueItems": true
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/instant"
+        },
+        "provenance_digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "schema",
+        "evidence_id",
+        "kind",
+        "status",
+        "subject_digest",
+        "actor_id",
+        "scope_ids",
+        "recorded_at",
+        "provenance_digest"
+      ],
+      "additionalProperties": false
+    },
+    "policyDecision": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.2/evidence-record"
+        },
+        "evidence_id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "const": "POLICY_DECISION"
+        },
+        "status": {
+          "enum": [
+            "ACCEPTED",
+            "REJECTED",
+            "PENDING",
+            "DEFERRED"
+          ]
+        },
+        "subject_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "decision_maker_id": {
+          "$ref": "#/$defs/id"
+        },
+        "decision_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 1024,
+          "uniqueItems": true
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/instant"
+        },
+        "provenance_digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "schema",
+        "evidence_id",
+        "kind",
+        "status",
+        "subject_digest",
+        "decision_maker_id",
+        "decision_ids",
+        "recorded_at",
+        "provenance_digest"
+      ],
+      "additionalProperties": false
+    },
+    "organizationalAuthorization": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.2/evidence-record"
+        },
+        "evidence_id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "const": "ORGANIZATIONAL_AUTHORIZATION"
+        },
+        "status": {
+          "enum": [
+            "ACCEPTED",
+            "REJECTED",
+            "PENDING",
+            "DEFERRED"
+          ]
+        },
+        "subject_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "organization_id": {
+          "$ref": "#/$defs/id"
+        },
+        "authorizer_id": {
+          "$ref": "#/$defs/id"
+        },
+        "authorization_scope": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 1024,
+          "uniqueItems": true
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/instant"
+        },
+        "expires_at": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/instant"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "provenance_digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "schema",
+        "evidence_id",
+        "kind",
+        "status",
+        "subject_digest",
+        "organization_id",
+        "authorizer_id",
+        "authorization_scope",
+        "recorded_at",
+        "expires_at",
+        "provenance_digest"
+      ],
+      "additionalProperties": false
+    },
+    "review": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.2/evidence-record"
+        },
+        "evidence_id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "const": "REVIEW"
+        },
+        "status": {
+          "enum": [
+            "ACCEPTED",
+            "REJECTED",
+            "PENDING",
+            "DEFERRED"
+          ]
+        },
+        "subject_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "reviewer_id": {
+          "$ref": "#/$defs/id"
+        },
+        "paragraph_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "maxItems": 4096,
+          "uniqueItems": true
+        },
+        "case_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "maxItems": 4096,
+          "uniqueItems": true
+        },
+        "finding_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "maxItems": 4096,
+          "uniqueItems": true
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/instant"
+        },
+        "provenance_digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "schema",
+        "evidence_id",
+        "kind",
+        "status",
+        "subject_digest",
+        "reviewer_id",
+        "paragraph_ids",
+        "case_ids",
+        "finding_ids",
+        "recorded_at",
+        "provenance_digest"
+      ],
+      "additionalProperties": false
+    },
+    "correspondenceMapping": {
+      "type": "object",
+      "properties": {
+        "source_obligation_id": {
+          "$ref": "#/$defs/id"
+        },
+        "provision_paths": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "maxItems": 425869,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "source_obligation_id",
+        "provision_paths"
+      ],
+      "additionalProperties": false
+    },
+    "residue": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "SOURCE_OBLIGATION",
+            "ARTIFACT_PROVISION"
+          ]
+        },
+        "subject": {
+          "type": "string",
+          "minLength": 1
+        },
+        "disposition": {
+          "enum": [
+            "UNSUPPORTED",
+            "EXCLUDED",
+            "PENDING"
+          ]
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "kind",
+        "subject",
+        "disposition",
+        "explanation"
+      ],
+      "additionalProperties": false
+    },
+    "correspondence": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.2/evidence-record"
+        },
+        "evidence_id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "const": "CORRESPONDENCE"
+        },
+        "status": {
+          "enum": [
+            "ACCEPTED",
+            "REJECTED",
+            "PENDING",
+            "DEFERRED"
+          ]
+        },
+        "subject_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "source_id": {
+          "$ref": "#/$defs/id"
+        },
+        "source_revision": {
+          "$ref": "#/$defs/id"
+        },
+        "work_class_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "mappings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/correspondenceMapping"
+          },
+          "minItems": 0,
+          "maxItems": 1024
+        },
+        "uncovered_source_obligation_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "maxItems": 1024,
+          "uniqueItems": true
+        },
+        "unsupported_provision_paths": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "maxItems": 425869,
+          "uniqueItems": true
+        },
+        "residue": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/residue"
+          },
+          "minItems": 0,
+          "maxItems": 426893
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        },
+        "recorded_at": {
+          "$ref": "#/$defs/instant"
+        },
+        "provenance_digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "schema",
+        "evidence_id",
+        "kind",
+        "status",
+        "subject_digest",
+        "source_id",
+        "source_revision",
+        "work_class_digest",
+        "mappings",
+        "uncovered_source_obligation_ids",
+        "unsupported_provision_paths",
+        "residue",
+        "review",
+        "recorded_at",
+        "provenance_digest"
+      ],
+      "additionalProperties": false
+    },
+    "record": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/sourceConfirmation"
+        },
+        {
+          "$ref": "#/$defs/policyDecision"
+        },
+        {
+          "$ref": "#/$defs/organizationalAuthorization"
+        },
+        {
+          "$ref": "#/$defs/review"
+        },
+        {
+          "$ref": "#/$defs/correspondence"
+        }
+      ]
+    },
+    "basicRecord": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/sourceConfirmation"
+        },
+        {
+          "$ref": "#/$defs/policyDecision"
+        },
+        {
+          "$ref": "#/$defs/organizationalAuthorization"
+        },
+        {
+          "$ref": "#/$defs/review"
+        }
+      ]
+    },
+    "basicInput": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "enum": [
+            "LINEAR",
+            "CHOICE_LOOPS",
+            "DEADLINES",
+            "PARALLEL_FANOUT"
+          ]
+        },
+        "role": {
+          "const": "REVIEW_EVIDENCE"
+        },
+        "specification_pin": {
+          "$ref": "#/$defs/digest"
+        },
+        "subject": {
+          "$ref": "#/$defs/subject"
+        },
+        "evidence": {
+          "$ref": "#/$defs/basicRecord"
+        }
+      },
+      "required": [
+        "profile",
+        "role",
+        "specification_pin",
+        "subject",
+        "evidence"
+      ],
+      "additionalProperties": false
+    },
+    "correspondenceInput": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "enum": [
+            "LINEAR",
+            "CHOICE_LOOPS",
+            "DEADLINES",
+            "PARALLEL_FANOUT"
+          ]
+        },
+        "role": {
+          "const": "REVIEW_EVIDENCE"
+        },
+        "specification_pin": {
+          "$ref": "#/$defs/digest"
+        },
+        "subject": {
+          "$ref": "#/$defs/subject"
+        },
+        "work_class": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/work-class.schema.json#/$defs/definition"
+        },
+        "work_class_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "evidence": {
+          "$ref": "#/$defs/correspondence"
+        }
+      },
+      "required": [
+        "profile",
+        "role",
+        "specification_pin",
+        "subject",
+        "work_class",
+        "work_class_digest",
+        "evidence"
+      ],
+      "additionalProperties": false
+    },
+    "input": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/basicInput"
+        },
+        {
+          "$ref": "#/$defs/correspondenceInput"
+        }
+      ]
+    },
+    "result": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "EVIDENCE_VALID"
+        },
+        "profile": {
+          "enum": [
+            "LINEAR",
+            "CHOICE_LOOPS",
+            "DEADLINES",
+            "PARALLEL_FANOUT"
+          ]
+        },
+        "role": {
+          "const": "REVIEW_EVIDENCE"
+        },
+        "subject_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "evidence_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "specification_pin": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "status",
+        "profile",
+        "role",
+        "subject_digest",
+        "evidence_digest",
+        "specification_pin"
+      ],
+      "additionalProperties": false
+    },
+    "refusal": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "EVIDENCE_INVALID"
+        },
+        "profile": {
+          "enum": [
+            "LINEAR",
+            "CHOICE_LOOPS",
+            "DEADLINES",
+            "PARALLEL_FANOUT"
+          ]
+        },
+        "role": {
+          "const": "REVIEW_EVIDENCE"
+        },
+        "code": {
+          "enum": [
+            "BINDING_MISMATCH",
+            "EVIDENCE_NOT_ACCEPTED",
+            "EVIDENCE_UNAVAILABLE",
+            "SCHEMA_INVALID"
+          ]
+        },
+        "path": {
+          "const": ""
+        },
+        "specification_pin": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "status",
+        "profile",
+        "role",
+        "code",
+        "path",
+        "specification_pin"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/subject"
+    },
+    {
+      "$ref": "#/$defs/record"
+    },
+    {
+      "$ref": "#/$defs/input"
+    },
+    {
+      "$ref": "#/$defs/result"
+    },
+    {
+      "$ref": "#/$defs/refusal"
+    }
+  ]
+}

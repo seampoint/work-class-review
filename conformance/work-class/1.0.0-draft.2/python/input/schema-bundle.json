@@ -1,0 +1,47 @@
+{
+  "identity": "seampoint.work-class.schema-bundle/1.0.0-draft.2",
+  "status": "DRAFT_NOT_ADOPTED",
+  "resolution": "Map each exact URI to the listed candidate-relative file. Any other URI is unresolved. No network or undeclared filesystem access is permitted.",
+  "schemas": [
+    {
+      "uri": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/aggregate.schema.json",
+      "path": "aggregate.schema.json",
+      "sha256": "b5ce6cfec0cc415abdb4331eba6e5cb6c8bb10d71c89fe689d6169a7b2183bdb"
+    },
+    {
+      "uri": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/authority.schema.json",
+      "path": "authority.schema.json",
+      "sha256": "2f4a7ecd0113df91f736e1665befca0cb8b6a4e328c520086df9e423c22ee114"
+    },
+    {
+      "uri": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/boundary.schema.json",
+      "path": "boundary.schema.json",
+      "sha256": "c0dfdb12c8d56de8bee896b1121a1e1177358aef14981b45cdc57e9bc25d08ac"
+    },
+    {
+      "uri": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/evidence.schema.json",
+      "path": "evidence.schema.json",
+      "sha256": "a83111e571c86bf89abbdb0070428df21798c66eda37caef45b42653fd018253"
+    },
+    {
+      "uri": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/lifecycle.schema.json",
+      "path": "lifecycle.schema.json",
+      "sha256": "00793114d85eae957023530b7d98b633dc5941f4b6cb9516fa0300219e8bc72d"
+    },
+    {
+      "uri": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/protocol.schema.json",
+      "path": "protocol.schema.json",
+      "sha256": "57a9f8aea572bfb422177b1ab9efbb29d75314fc1806fdc6f2faeba0c814fc05"
+    },
+    {
+      "uri": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/reservation.schema.json",
+      "path": "reservation.schema.json",
+      "sha256": "a80e9375c76f72516619c6da1de21e4f72e03b75e021390b583c1c6d6faad989"
+    },
+    {
+      "uri": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/work-class.schema.json",
+      "path": "work-class.schema.json",
+      "sha256": "f1590559ca1855aab7272d366dfd5224e7c1465835589795ec73af46bd5ad873"
+    }
+  ]
+}

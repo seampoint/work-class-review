@@ -1,0 +1,1248 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/aggregate.schema.json",
+  "$comment": "DRAFT_NOT_ADOPTED; APPARATUS_ONLY. Shape admission does not establish authority, observation truth or host assurance.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/input"
+    },
+    {
+      "$ref": "#/$defs/result"
+    },
+    {
+      "$ref": "#/$defs/refusal"
+    }
+  ],
+  "$defs": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "natural": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$"
+    },
+    "decimal": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]*[1-9])?$"
+    },
+    "instant": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]{9})?Z$"
+    },
+    "type": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "enum": [
+            "IDENTITY",
+            "STRING",
+            "BOOLEAN",
+            "INTEGER",
+            "DECIMAL"
+          ]
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "nonnegative": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "unit",
+        "nonnegative"
+      ],
+      "additionalProperties": false
+    },
+    "value": {
+      "type": "object",
+      "properties": {
+        "type_ref": {
+          "$ref": "#/$defs/id"
+        },
+        "value": {
+          "type": [
+            "string",
+            "boolean"
+          ]
+        }
+      },
+      "required": [
+        "type_ref",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "field": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/id"
+        },
+        "value": {
+          "$ref": "#/$defs/value"
+        }
+      },
+      "required": [
+        "name",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "operand": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "FIELD"
+            },
+            "name": {
+              "$ref": "#/$defs/id"
+            }
+          },
+          "required": [
+            "kind",
+            "name"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "LITERAL"
+            },
+            "value": {
+              "$ref": "#/$defs/value"
+            }
+          },
+          "required": [
+            "kind",
+            "value"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "predicate": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "BOOLEAN"
+            },
+            "value": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "kind",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "EQUAL"
+            },
+            "left": {
+              "$ref": "#/$defs/operand"
+            },
+            "right": {
+              "$ref": "#/$defs/operand"
+            }
+          },
+          "required": [
+            "kind",
+            "left",
+            "right"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "MEMBER"
+            },
+            "value": {
+              "$ref": "#/$defs/operand"
+            },
+            "members": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/value"
+              },
+              "minItems": 0
+            }
+          },
+          "required": [
+            "kind",
+            "value",
+            "members"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "COMPARE"
+            },
+            "left": {
+              "$ref": "#/$defs/operand"
+            },
+            "right": {
+              "$ref": "#/$defs/operand"
+            },
+            "operator": {
+              "enum": [
+                "LT",
+                "LTE",
+                "GT",
+                "GTE"
+              ]
+            }
+          },
+          "required": [
+            "kind",
+            "left",
+            "right",
+            "operator"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "enum": [
+                "ALL",
+                "ANY"
+              ]
+            },
+            "operands": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/predicate"
+              },
+              "minItems": 0
+            }
+          },
+          "required": [
+            "kind",
+            "operands"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "NOT"
+            },
+            "operand": {
+              "$ref": "#/$defs/predicate"
+            }
+          },
+          "required": [
+            "kind",
+            "operand"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "contributionMapping": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "COUNT"
+            }
+          },
+          "required": [
+            "kind"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "enum": [
+                "SUM",
+                "CARDINALITY"
+              ]
+            },
+            "field": {
+              "$ref": "#/$defs/id"
+            }
+          },
+          "required": [
+            "kind",
+            "field"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "mapping": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "step_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1
+        },
+        "qualifier": {
+          "$ref": "#/$defs/predicate"
+        },
+        "key_fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1
+        },
+        "contribution": {
+          "$ref": "#/$defs/contributionMapping"
+        }
+      },
+      "required": [
+        "id",
+        "step_ids",
+        "qualifier",
+        "key_fields",
+        "contribution"
+      ],
+      "additionalProperties": false
+    },
+    "time": {
+      "type": "object",
+      "properties": {
+        "clock_source": {
+          "$ref": "#/$defs/id"
+        },
+        "precision": {
+          "enum": [
+            "SECOND",
+            "NANOSECOND"
+          ]
+        }
+      },
+      "required": [
+        "clock_source",
+        "precision"
+      ],
+      "additionalProperties": false
+    },
+    "window": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "PER_ACTION"
+            }
+          },
+          "required": [
+            "kind"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "ROLLING"
+            },
+            "duration_seconds": {
+              "$ref": "#/$defs/decimal"
+            },
+            "start_inclusive": {
+              "type": "boolean"
+            },
+            "end_inclusive": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "kind",
+            "duration_seconds",
+            "start_inclusive",
+            "end_inclusive"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "CALENDAR"
+            },
+            "period": {
+              "enum": [
+                "DAY",
+                "WEEK",
+                "MONTH",
+                "QUARTER",
+                "YEAR"
+              ]
+            },
+            "timezone": {
+              "$ref": "#/$defs/id"
+            },
+            "tzdb": {
+              "const": "2025a"
+            },
+            "week_start": {
+              "enum": [
+                "MONDAY",
+                "TUESDAY",
+                "WEDNESDAY",
+                "THURSDAY",
+                "FRIDAY",
+                "SATURDAY",
+                "SUNDAY"
+              ]
+            },
+            "fiscal_start_month": {
+              "enum": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12"
+              ]
+            },
+            "ambiguous": {
+              "enum": [
+                "EARLIER_OFFSET",
+                "LATER_OFFSET",
+                "INVALID"
+              ]
+            },
+            "nonexistent": {
+              "enum": [
+                "SHIFT_FORWARD",
+                "SHIFT_BACK",
+                "INVALID"
+              ]
+            },
+            "start_inclusive": {
+              "type": "boolean"
+            },
+            "end_inclusive": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "kind",
+            "period",
+            "timezone",
+            "tzdb",
+            "week_start",
+            "fiscal_start_month",
+            "ambiguous",
+            "nonexistent",
+            "start_inclusive",
+            "end_inclusive"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "freshness": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "NONE"
+            }
+          },
+          "required": [
+            "kind"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "MAX_AGE"
+            },
+            "seconds": {
+              "$ref": "#/$defs/decimal"
+            }
+          },
+          "required": [
+            "kind",
+            "seconds"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "EXACT_REVISION"
+            },
+            "revision": {
+              "$ref": "#/$defs/id"
+            }
+          },
+          "required": [
+            "kind",
+            "revision"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "$ref": "#/$defs/id"
+        },
+        "source": {
+          "$ref": "#/$defs/id"
+        },
+        "freshness": {
+          "$ref": "#/$defs/freshness"
+        },
+        "key_fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1
+        },
+        "qualifier": {
+          "$ref": "#/$defs/predicate"
+        },
+        "contribution": {
+          "$ref": "#/$defs/contributionMapping"
+        }
+      },
+      "required": [
+        "provider",
+        "source",
+        "freshness",
+        "key_fields",
+        "qualifier",
+        "contribution"
+      ],
+      "additionalProperties": false
+    },
+    "aggregate": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "reducer": {
+          "enum": [
+            "COUNT",
+            "SUM",
+            "CARDINALITY"
+          ]
+        },
+        "result_type": {
+          "$ref": "#/$defs/id"
+        },
+        "element_type": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "key_types": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1
+        },
+        "mappings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/mapping"
+          },
+          "minItems": 1
+        },
+        "time": {
+          "$ref": "#/$defs/time"
+        },
+        "window": {
+          "$ref": "#/$defs/window"
+        },
+        "committed_source": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/source"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "pending_policy": {
+          "enum": [
+            "INCLUDE_ALL_RESERVED",
+            "EXCLUDE_RESERVED"
+          ]
+        },
+        "operator": {
+          "enum": [
+            "LT",
+            "LTE",
+            "GT",
+            "GTE"
+          ]
+        },
+        "bound": {
+          "$ref": "#/$defs/value"
+        }
+      },
+      "required": [
+        "id",
+        "reducer",
+        "result_type",
+        "element_type",
+        "key_types",
+        "mappings",
+        "time",
+        "window",
+        "committed_source",
+        "pending_policy",
+        "operator",
+        "bound"
+      ],
+      "additionalProperties": false
+    },
+    "definition": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.2/aggregate-definition"
+        },
+        "types": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/type"
+          },
+          "minItems": 1
+        },
+        "aggregate": {
+          "$ref": "#/$defs/aggregate"
+        }
+      },
+      "required": [
+        "schema",
+        "types",
+        "aggregate"
+      ],
+      "additionalProperties": false
+    },
+    "operation": {
+      "type": "object",
+      "properties": {
+        "occurrence": {
+          "$ref": "#/$defs/id"
+        },
+        "step": {
+          "$ref": "#/$defs/id"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/field"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "occurrence",
+        "step",
+        "fields"
+      ],
+      "additionalProperties": false
+    },
+    "pending": {
+      "type": "object",
+      "properties": {
+        "reservation": {
+          "$ref": "#/$defs/id"
+        },
+        "mapping": {
+          "$ref": "#/$defs/id"
+        },
+        "occurrence": {
+          "$ref": "#/$defs/id"
+        },
+        "key": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/value"
+          },
+          "minItems": 1
+        },
+        "contribution": {
+          "$ref": "#/$defs/value"
+        }
+      },
+      "required": [
+        "reservation",
+        "mapping",
+        "occurrence",
+        "key",
+        "contribution"
+      ],
+      "additionalProperties": false
+    },
+    "clock": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "source": {
+              "$ref": "#/$defs/id"
+            },
+            "status": {
+              "const": "AVAILABLE"
+            },
+            "instant": {
+              "$ref": "#/$defs/instant"
+            }
+          },
+          "required": [
+            "source",
+            "status",
+            "instant"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "source": {
+              "$ref": "#/$defs/id"
+            },
+            "status": {
+              "const": "UNAVAILABLE"
+            },
+            "instant": {
+              "const": null
+            }
+          },
+          "required": [
+            "source",
+            "status",
+            "instant"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "interval": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "$ref": "#/$defs/instant"
+        },
+        "end": {
+          "$ref": "#/$defs/instant"
+        },
+        "start_inclusive": {
+          "type": "boolean"
+        },
+        "end_inclusive": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "start_inclusive",
+        "end_inclusive"
+      ],
+      "additionalProperties": false
+    },
+    "event": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/id"
+            },
+            "state": {
+              "const": "ACTIVE"
+            },
+            "occurred_at": {
+              "$ref": "#/$defs/instant"
+            },
+            "fields": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/field"
+              },
+              "minItems": 0
+            }
+          },
+          "required": [
+            "id",
+            "state",
+            "occurred_at",
+            "fields"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/id"
+            },
+            "state": {
+              "const": "RETRACTED"
+            }
+          },
+          "required": [
+            "id",
+            "state"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "accumulator": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "SCALAR"
+            },
+            "value": {
+              "$ref": "#/$defs/decimal"
+            }
+          },
+          "required": [
+            "kind",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "SET"
+            },
+            "values": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/value"
+              },
+              "minItems": 0
+            }
+          },
+          "required": [
+            "kind",
+            "values"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "statistic": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/value"
+          },
+          "minItems": 1
+        },
+        "accumulator": {
+          "$ref": "#/$defs/accumulator"
+        }
+      },
+      "required": [
+        "key",
+        "accumulator"
+      ],
+      "additionalProperties": false
+    },
+    "observation": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "provider": {
+              "$ref": "#/$defs/id"
+            },
+            "source": {
+              "$ref": "#/$defs/id"
+            },
+            "request_digest": {
+              "$ref": "#/$defs/digest"
+            },
+            "status": {
+              "enum": [
+                "UNAVAILABLE",
+                "INCOMPLETE"
+              ]
+            },
+            "evidence_ref": {
+              "$ref": "#/$defs/id"
+            }
+          },
+          "required": [
+            "provider",
+            "source",
+            "request_digest",
+            "status",
+            "evidence_ref"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "provider": {
+              "$ref": "#/$defs/id"
+            },
+            "source": {
+              "$ref": "#/$defs/id"
+            },
+            "request_digest": {
+              "$ref": "#/$defs/digest"
+            },
+            "status": {
+              "const": "AVAILABLE"
+            },
+            "revision": {
+              "$ref": "#/$defs/id"
+            },
+            "as_of": {
+              "$ref": "#/$defs/instant"
+            },
+            "coverage": {
+              "$ref": "#/$defs/interval"
+            },
+            "kind": {
+              "const": "EVENT_SNAPSHOT"
+            },
+            "events": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/event"
+              },
+              "minItems": 0
+            },
+            "evidence_ref": {
+              "$ref": "#/$defs/id"
+            }
+          },
+          "required": [
+            "provider",
+            "source",
+            "request_digest",
+            "status",
+            "revision",
+            "as_of",
+            "coverage",
+            "kind",
+            "events",
+            "evidence_ref"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "provider": {
+              "$ref": "#/$defs/id"
+            },
+            "source": {
+              "$ref": "#/$defs/id"
+            },
+            "request_digest": {
+              "$ref": "#/$defs/digest"
+            },
+            "status": {
+              "const": "AVAILABLE"
+            },
+            "revision": {
+              "$ref": "#/$defs/id"
+            },
+            "as_of": {
+              "$ref": "#/$defs/instant"
+            },
+            "coverage": {
+              "$ref": "#/$defs/interval"
+            },
+            "kind": {
+              "const": "STATISTIC"
+            },
+            "statistics": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/statistic"
+              },
+              "minItems": 0
+            },
+            "evidence_ref": {
+              "$ref": "#/$defs/id"
+            }
+          },
+          "required": [
+            "provider",
+            "source",
+            "request_digest",
+            "status",
+            "revision",
+            "as_of",
+            "coverage",
+            "kind",
+            "statistics",
+            "evidence_ref"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "input": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.2/aggregate-input"
+        },
+        "specification_pin": {
+          "$ref": "#/$defs/digest"
+        },
+        "definition": {
+          "$ref": "#/$defs/definition"
+        },
+        "definition_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "operations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/operation"
+          },
+          "minItems": 0
+        },
+        "pending": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/pending"
+          },
+          "minItems": 0
+        },
+        "clock": {
+          "$ref": "#/$defs/clock"
+        },
+        "observations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/observation"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "schema",
+        "specification_pin",
+        "definition",
+        "definition_digest",
+        "operations",
+        "pending",
+        "clock",
+        "observations"
+      ],
+      "additionalProperties": false
+    },
+    "partition": {
+      "type": "object",
+      "properties": {
+        "occurrence": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "key": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/value"
+          },
+          "minItems": 1
+        },
+        "status": {
+          "enum": [
+            "SATISFIED",
+            "VIOLATED",
+            "INDETERMINATE"
+          ]
+        },
+        "accumulator": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/accumulator"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "result": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/decimal"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "occurrence",
+        "key",
+        "status",
+        "accumulator",
+        "result",
+        "reasons"
+      ],
+      "additionalProperties": false
+    },
+    "result": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.2/aggregate-result"
+        },
+        "specification_pin": {
+          "$ref": "#/$defs/digest"
+        },
+        "definition_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "status": {
+          "enum": [
+            "SATISFIED",
+            "VIOLATED",
+            "INDETERMINATE"
+          ]
+        },
+        "partitions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/partition"
+          },
+          "minItems": 0
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "schema",
+        "specification_pin",
+        "definition_digest",
+        "status",
+        "partitions",
+        "reasons"
+      ],
+      "additionalProperties": false
+    },
+    "refusal": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "REFUSED"
+        },
+        "code": {
+          "enum": [
+            "SCHEMA_INVALID",
+            "VERSION_UNSUPPORTED",
+            "REFERENCE_INVALID",
+            "TYPE_INVALID",
+            "INPUT_INVALID",
+            "LIMIT_EXCEEDED"
+          ]
+        },
+        "path": {
+          "const": ""
+        }
+      },
+      "required": [
+        "status",
+        "code",
+        "path"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

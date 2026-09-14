@@ -1,0 +1,95 @@
+{
+  "claim_ceiling": "APPARATUS_ONLY",
+  "files": [
+    {
+      "path": "AGGREGATES.md",
+      "sha256": "5847e166f7e6f38d2d44461da4431c03030e5ac7459113d2ed2485d711e773f3"
+    },
+    {
+      "path": "AUTHORITY-CHECKS.md",
+      "sha256": "70f4e2b681629a423efae7f52a42265119c6f95eb86bef9033e6518ed464c803"
+    },
+    {
+      "path": "AUTHORITY.md",
+      "sha256": "a549ead8e17b2b9c12a462b24cab005847aaeb2f6d6ad93edfaa9b478956af0f"
+    },
+    {
+      "path": "COMPOSITION.md",
+      "sha256": "6ab89348b24272515e2a2925679acebcf4bd6247ebd3ad0ff0da67a592fa4bd7"
+    },
+    {
+      "path": "EXTERNAL-DEPENDENCIES.md",
+      "sha256": "afd78d0cef4965048fd907f797c27deb43efe03da6b780cacf462fd01db8c6c2"
+    },
+    {
+      "path": "LIFECYCLE.md",
+      "sha256": "089c5cbf1e18307800dc954e65ee8d90130cd6cdd0d50a79720d648c7b6f1f7a"
+    },
+    {
+      "path": "PROTOCOL.md",
+      "sha256": "de3802b22b80e20a10442d03387f45f84bbf371866615e2e640ec5083b2e4ae6"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e9b9fc1dfcdfa3a4384a2ac7ec8908642b20b000b9962f5c4e4ae21dee5174e5"
+    },
+    {
+      "path": "RESERVATION-RECORDS.md",
+      "sha256": "3803696cff1fd629e94e08e4a03e70c8eac374a8afd265238f081d6f5d7e0e60"
+    },
+    {
+      "path": "RESERVATIONS.md",
+      "sha256": "1ff66eba843b1b2bffbd0720c0a89d46bc55554a2d0a57578502d1bf34f6d802"
+    },
+    {
+      "path": "SCOPE-AND-BOUNDARY.md",
+      "sha256": "08296d9fff10b8818dda8d4ad22cf166cff13e083fcb15bfaca0963d55f6f4c4"
+    },
+    {
+      "path": "Specification.md",
+      "sha256": "48470078d954ce1a0ed4238894311edb7fb5cceff111bb37299480b26b3bcd73"
+    },
+    {
+      "path": "aggregate.schema.json",
+      "sha256": "b5ce6cfec0cc415abdb4331eba6e5cb6c8bb10d71c89fe689d6169a7b2183bdb"
+    },
+    {
+      "path": "authority.schema.json",
+      "sha256": "2f4a7ecd0113df91f736e1665befca0cb8b6a4e328c520086df9e423c22ee114"
+    },
+    {
+      "path": "boundary.schema.json",
+      "sha256": "c0dfdb12c8d56de8bee896b1121a1e1177358aef14981b45cdc57e9bc25d08ac"
+    },
+    {
+      "path": "evidence.schema.json",
+      "sha256": "a83111e571c86bf89abbdb0070428df21798c66eda37caef45b42653fd018253"
+    },
+    {
+      "path": "lifecycle.schema.json",
+      "sha256": "00793114d85eae957023530b7d98b633dc5941f4b6cb9516fa0300219e8bc72d"
+    },
+    {
+      "path": "protocol.schema.json",
+      "sha256": "57a9f8aea572bfb422177b1ab9efbb29d75314fc1806fdc6f2faeba0c814fc05"
+    },
+    {
+      "path": "requirements.json",
+      "sha256": "97a3c9af062d8aab0082a0da5f37eda404d47b78fa714d49279d8dfa3c6978e8"
+    },
+    {
+      "path": "reservation.schema.json",
+      "sha256": "a80e9375c76f72516619c6da1de21e4f72e03b75e021390b583c1c6d6faad989"
+    },
+    {
+      "path": "schema-bundle.json",
+      "sha256": "bc250d77e33fc9e34bff341f8a1e50eaa2587b170e45c6ba762ce49acd355cc0"
+    },
+    {
+      "path": "work-class.schema.json",
+      "sha256": "f1590559ca1855aab7272d366dfd5224e7c1465835589795ec73af46bd5ad873"
+    }
+  ],
+  "identity": "seampoint.work-class/1.0.0-draft.2",
+  "status": "DRAFT_NOT_ADOPTED"
+}

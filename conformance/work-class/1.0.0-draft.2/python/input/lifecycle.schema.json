@@ -1,0 +1,3775 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/lifecycle.schema.json",
+  "$comment": "DRAFT_NOT_ADOPTED; APPARATUS_ONLY. All lifecycle records are closed protocol objects.",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9._:/-]{0,127}$"
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "natural": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$"
+    },
+    "instant": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "profile": {
+      "enum": [
+        "LINEAR",
+        "CHOICE_LOOPS",
+        "DEADLINES",
+        "PARALLEL_FANOUT"
+      ]
+    },
+    "runtimeRole": {
+      "enum": [
+        "LINEAR_WORK_RUNTIME",
+        "CHOICE_LOOP_RUNTIME",
+        "DEADLINE_RUNTIME",
+        "PARALLEL_FANOUT_RUNTIME"
+      ]
+    },
+    "typedValue": {
+      "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/aggregate.schema.json#/$defs/value"
+    },
+    "field": {
+      "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/aggregate.schema.json#/$defs/field"
+    },
+    "loopSegment": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "LOOP"
+        },
+        "construct_id": {
+          "$ref": "#/$defs/id"
+        },
+        "pass": {
+          "$ref": "#/$defs/natural"
+        },
+        "branch_id": {
+          "type": "null"
+        },
+        "object_key": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "kind",
+        "construct_id",
+        "pass",
+        "branch_id",
+        "object_key"
+      ],
+      "additionalProperties": false
+    },
+    "branchSegment": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "BRANCH"
+        },
+        "construct_id": {
+          "$ref": "#/$defs/id"
+        },
+        "pass": {
+          "$ref": "#/$defs/natural"
+        },
+        "branch_id": {
+          "$ref": "#/$defs/id"
+        },
+        "object_key": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "kind",
+        "construct_id",
+        "pass",
+        "branch_id",
+        "object_key"
+      ],
+      "additionalProperties": false
+    },
+    "fanoutSegment": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "FANOUT"
+        },
+        "construct_id": {
+          "$ref": "#/$defs/id"
+        },
+        "pass": {
+          "$ref": "#/$defs/natural"
+        },
+        "branch_id": {
+          "type": "null"
+        },
+        "object_key": {
+          "$ref": "#/$defs/typedValue"
+        }
+      },
+      "required": [
+        "kind",
+        "construct_id",
+        "pass",
+        "branch_id",
+        "object_key"
+      ],
+      "additionalProperties": false
+    },
+    "enclosingSegment": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/loopSegment"
+        },
+        {
+          "$ref": "#/$defs/branchSegment"
+        },
+        {
+          "$ref": "#/$defs/fanoutSegment"
+        }
+      ]
+    },
+    "occurrence": {
+      "type": "object",
+      "properties": {
+        "occurrence_id": {
+          "$ref": "#/$defs/digest"
+        },
+        "specification_pin": {
+          "$ref": "#/$defs/digest"
+        },
+        "work_class_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "instance_id": {
+          "$ref": "#/$defs/id"
+        },
+        "step_id": {
+          "$ref": "#/$defs/id"
+        },
+        "ordinal": {
+          "$ref": "#/$defs/natural"
+        },
+        "predecessor_occurrence_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/digest"
+          },
+          "minItems": 0,
+          "maxItems": 4096,
+          "uniqueItems": true
+        },
+        "enclosing": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/enclosingSegment"
+          },
+          "minItems": 0,
+          "maxItems": 64
+        },
+        "object_key": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/typedValue"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "occurrence_id",
+        "specification_pin",
+        "work_class_digest",
+        "instance_id",
+        "step_id",
+        "ordinal",
+        "predecessor_occurrence_ids",
+        "enclosing",
+        "object_key"
+      ],
+      "additionalProperties": false
+    },
+    "deploymentAuthorization": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.2/deployment-authorization"
+        },
+        "authorization_id": {
+          "$ref": "#/$defs/id"
+        },
+        "specification_pin": {
+          "$ref": "#/$defs/digest"
+        },
+        "work_class_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "profile": {
+          "$ref": "#/$defs/profile"
+        },
+        "role": {
+          "$ref": "#/$defs/runtimeRole"
+        },
+        "instance_id": {
+          "$ref": "#/$defs/id"
+        },
+        "organization_id": {
+          "$ref": "#/$defs/id"
+        },
+        "status": {
+          "const": "AUTHORIZED"
+        },
+        "authorization_evidence_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "correspondence_evidence_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "source_confirmation_evidence_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "policy_decision_evidence_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "authorized_at": {
+          "$ref": "#/$defs/instant"
+        },
+        "expires_at": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/instant"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "schema",
+        "authorization_id",
+        "specification_pin",
+        "work_class_digest",
+        "profile",
+        "role",
+        "instance_id",
+        "organization_id",
+        "status",
+        "authorization_evidence_digest",
+        "correspondence_evidence_digest",
+        "source_confirmation_evidence_digest",
+        "policy_decision_evidence_digest",
+        "authorized_at",
+        "expires_at"
+      ],
+      "additionalProperties": false
+    },
+    "clockAvailable": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/id"
+        },
+        "revision": {
+          "$ref": "#/$defs/natural"
+        },
+        "status": {
+          "const": "AVAILABLE"
+        },
+        "observed_time": {
+          "$ref": "#/$defs/instant"
+        },
+        "evidence_digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "source",
+        "revision",
+        "status",
+        "observed_time",
+        "evidence_digest"
+      ],
+      "additionalProperties": false
+    },
+    "clockUnavailable": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/id"
+        },
+        "revision": {
+          "$ref": "#/$defs/natural"
+        },
+        "status": {
+          "enum": [
+            "UNAVAILABLE",
+            "CONFLICTING"
+          ]
+        },
+        "observed_time": {
+          "type": "null"
+        },
+        "evidence_digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "source",
+        "revision",
+        "status",
+        "observed_time",
+        "evidence_digest"
+      ],
+      "additionalProperties": false
+    },
+    "clock": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/clockAvailable"
+        },
+        {
+          "$ref": "#/$defs/clockUnavailable"
+        }
+      ]
+    },
+    "budgetInput": {
+      "type": "object",
+      "properties": {
+        "registry_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "affected_anchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true
+        },
+        "expected_revision": {
+          "$ref": "#/$defs/natural"
+        },
+        "request": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/reservation.schema.json#/$defs/input"
+        }
+      },
+      "required": [
+        "registry_digest",
+        "affected_anchors",
+        "expected_revision",
+        "request"
+      ],
+      "additionalProperties": false
+    },
+    "executor": {
+      "type": "object",
+      "properties": {
+        "participant_id": {
+          "$ref": "#/$defs/id"
+        },
+        "role": {
+          "$ref": "#/$defs/id"
+        },
+        "binding_digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "participant_id",
+        "role",
+        "binding_digest"
+      ],
+      "additionalProperties": false
+    },
+    "nativeRequest": {
+      "type": "object",
+      "properties": {
+        "interface": {
+          "$ref": "#/$defs/id"
+        },
+        "operation": {
+          "$ref": "#/$defs/id"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/field"
+          },
+          "minItems": 0,
+          "maxItems": 64
+        }
+      },
+      "required": [
+        "interface",
+        "operation",
+        "fields"
+      ],
+      "additionalProperties": false
+    },
+    "propose": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.2/runtime-event"
+        },
+        "event_id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "const": "PROPOSE"
+        },
+        "instance_id": {
+          "$ref": "#/$defs/id"
+        },
+        "expected_state_revision": {
+          "$ref": "#/$defs/natural"
+        },
+        "expected_state_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "occurrence": {
+          "$ref": "#/$defs/occurrence"
+        },
+        "native_request": {
+          "$ref": "#/$defs/nativeRequest"
+        },
+        "executor": {
+          "$ref": "#/$defs/executor"
+        },
+        "credential_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "maxItems": 64,
+          "uniqueItems": true
+        },
+        "authority_input": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/authority.schema.json#/$defs/input"
+        },
+        "budget_inputs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/budgetInput"
+          },
+          "minItems": 0,
+          "maxItems": 1
+        },
+        "clock_revision": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/natural"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "observation_digests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/digest"
+          },
+          "minItems": 0,
+          "maxItems": 256,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "schema",
+        "event_id",
+        "kind",
+        "instance_id",
+        "expected_state_revision",
+        "expected_state_digest",
+        "occurrence",
+        "native_request",
+        "executor",
+        "credential_ids",
+        "authority_input",
+        "budget_inputs",
+        "clock_revision",
+        "observation_digests"
+      ],
+      "additionalProperties": false
+    },
+    "connector": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "version": {
+          "$ref": "#/$defs/id"
+        },
+        "binding_digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "binding_digest"
+      ],
+      "additionalProperties": false
+    },
+    "attempt": {
+      "type": "object",
+      "properties": {
+        "attempt_id": {
+          "$ref": "#/$defs/id"
+        },
+        "status": {
+          "enum": [
+            "NOT_SENT",
+            "SENT",
+            "REJECTED",
+            "UNKNOWN"
+          ]
+        },
+        "request_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "attempted_at": {
+          "$ref": "#/$defs/instant"
+        }
+      },
+      "required": [
+        "attempt_id",
+        "status",
+        "request_digest",
+        "attempted_at"
+      ],
+      "additionalProperties": false
+    },
+    "acknowledgementNone": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "NONE"
+        },
+        "reference": {
+          "type": "null"
+        },
+        "observed_at": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "status",
+        "reference",
+        "observed_at"
+      ],
+      "additionalProperties": false
+    },
+    "acknowledgementRecorded": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "ACCEPTED",
+            "REJECTED",
+            "UNKNOWN"
+          ]
+        },
+        "reference": {
+          "$ref": "#/$defs/id"
+        },
+        "observed_at": {
+          "$ref": "#/$defs/instant"
+        }
+      },
+      "required": [
+        "status",
+        "reference",
+        "observed_at"
+      ],
+      "additionalProperties": false
+    },
+    "acknowledgement": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/acknowledgementNone"
+        },
+        {
+          "$ref": "#/$defs/acknowledgementRecorded"
+        }
+      ]
+    },
+    "dispatchObserved": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.2/runtime-event"
+        },
+        "event_id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "const": "DISPATCH_OBSERVED"
+        },
+        "instance_id": {
+          "$ref": "#/$defs/id"
+        },
+        "expected_state_revision": {
+          "$ref": "#/$defs/natural"
+        },
+        "expected_state_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "permit": {
+          "$ref": "#/$defs/permit"
+        },
+        "native_request": {
+          "$ref": "#/$defs/nativeRequest"
+        },
+        "connector": {
+          "$ref": "#/$defs/connector"
+        },
+        "attempt": {
+          "$ref": "#/$defs/attempt"
+        },
+        "acknowledgement": {
+          "$ref": "#/$defs/acknowledgement"
+        },
+        "clock_revision": {
+          "$ref": "#/$defs/natural"
+        }
+      },
+      "required": [
+        "schema",
+        "event_id",
+        "kind",
+        "instance_id",
+        "expected_state_revision",
+        "expected_state_digest",
+        "permit",
+        "native_request",
+        "connector",
+        "attempt",
+        "acknowledgement",
+        "clock_revision"
+      ],
+      "additionalProperties": false
+    },
+    "nativeEvidence": {
+      "type": "object",
+      "properties": {
+        "evidence_id": {
+          "$ref": "#/$defs/id"
+        },
+        "native_operation_id": {
+          "$ref": "#/$defs/id"
+        },
+        "provider": {
+          "$ref": "#/$defs/id"
+        },
+        "source": {
+          "$ref": "#/$defs/id"
+        },
+        "record_type": {
+          "$ref": "#/$defs/id"
+        },
+        "record_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "evidence_ref": {
+          "$ref": "#/$defs/id"
+        },
+        "attributed_request": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/reservation.schema.json#/$defs/nativeRequest"
+        },
+        "native_request_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "status": {
+          "enum": [
+            "EFFECT_ESTABLISHED",
+            "OUTCOME_UNKNOWN",
+            "NO_EFFECT_ESTABLISHED"
+          ]
+        },
+        "actual_fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/field"
+          },
+          "minItems": 0,
+          "maxItems": 66
+        },
+        "collections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nativeCollection"
+          },
+          "minItems": 0,
+          "maxItems": 64
+        },
+        "event_time": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/instant"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "observed_at": {
+          "$ref": "#/$defs/instant"
+        },
+        "rules_out_past_and_future_effects": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "native_operation_id",
+        "provider",
+        "source",
+        "record_type",
+        "record_digest",
+        "evidence_ref",
+        "attributed_request",
+        "native_request_digest",
+        "status",
+        "actual_fields",
+        "collections",
+        "event_time",
+        "observed_at",
+        "rules_out_past_and_future_effects"
+      ],
+      "additionalProperties": false
+    },
+    "nativeCollection": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/id"
+        },
+        "element_type_ref": {
+          "$ref": "#/$defs/id"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/typedValue"
+          },
+          "minItems": 0,
+          "maxItems": 1024
+        }
+      },
+      "required": [
+        "name",
+        "element_type_ref",
+        "values"
+      ],
+      "additionalProperties": false
+    },
+    "governedEffectObserved": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.2/runtime-event"
+        },
+        "event_id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "const": "EFFECT_OBSERVED"
+        },
+        "instance_id": {
+          "$ref": "#/$defs/id"
+        },
+        "expected_state_revision": {
+          "$ref": "#/$defs/natural"
+        },
+        "expected_state_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "permit": {
+          "$ref": "#/$defs/permit"
+        },
+        "dispatch_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "native_evidence": {
+          "$ref": "#/$defs/nativeEvidence"
+        },
+        "completion_authorization": {
+          "oneOf": [
+            {
+              "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/evidence.schema.json#/$defs/organizationalAuthorization"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "budget_inputs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/budgetInput"
+          },
+          "minItems": 0,
+          "maxItems": 1
+        },
+        "clock_revision": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/natural"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "activation_clocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/clockAvailable"
+          },
+          "minItems": 0,
+          "maxItems": 256
+        }
+      },
+      "required": [
+        "schema",
+        "event_id",
+        "kind",
+        "instance_id",
+        "expected_state_revision",
+        "expected_state_digest",
+        "permit",
+        "dispatch_digest",
+        "native_evidence",
+        "completion_authorization",
+        "budget_inputs",
+        "clock_revision",
+        "activation_clocks"
+      ],
+      "additionalProperties": false
+    },
+    "foreignEffectObserved": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.2/runtime-event"
+        },
+        "event_id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "const": "EFFECT_OBSERVED"
+        },
+        "instance_id": {
+          "$ref": "#/$defs/id"
+        },
+        "expected_state_revision": {
+          "$ref": "#/$defs/natural"
+        },
+        "expected_state_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "permit": {
+          "type": "null"
+        },
+        "dispatch_digest": {
+          "type": "null"
+        },
+        "native_evidence": {
+          "$ref": "#/$defs/nativeEvidence"
+        },
+        "completion_authorization": {
+          "type": "null"
+        },
+        "reservation_id": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "affected_budget_anchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "maxItems": 64,
+          "uniqueItems": true
+        },
+        "budget_inputs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/budgetInput"
+          },
+          "minItems": 0,
+          "maxItems": 1
+        },
+        "clock_revision": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/natural"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "activation_clocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/clockAvailable"
+          },
+          "minItems": 0,
+          "maxItems": 256
+        }
+      },
+      "required": [
+        "schema",
+        "event_id",
+        "kind",
+        "instance_id",
+        "expected_state_revision",
+        "expected_state_digest",
+        "permit",
+        "dispatch_digest",
+        "native_evidence",
+        "completion_authorization",
+        "reservation_id",
+        "affected_budget_anchors",
+        "budget_inputs",
+        "clock_revision",
+        "activation_clocks"
+      ],
+      "additionalProperties": false
+    },
+    "effectObserved": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/governedEffectObserved"
+        },
+        {
+          "$ref": "#/$defs/foreignEffectObserved"
+        }
+      ]
+    },
+    "clockEvent": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.2/runtime-event"
+        },
+        "event_id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "const": "CLOCK"
+        },
+        "instance_id": {
+          "$ref": "#/$defs/id"
+        },
+        "expected_state_revision": {
+          "$ref": "#/$defs/natural"
+        },
+        "expected_state_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "clock": {
+          "$ref": "#/$defs/clock"
+        },
+        "activation_clocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/clockAvailable"
+          },
+          "minItems": 0,
+          "maxItems": 256
+        }
+      },
+      "required": [
+        "schema",
+        "event_id",
+        "kind",
+        "instance_id",
+        "expected_state_revision",
+        "expected_state_digest",
+        "clock",
+        "activation_clocks"
+      ],
+      "additionalProperties": false
+    },
+    "event": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/propose"
+        },
+        {
+          "$ref": "#/$defs/dispatchObserved"
+        },
+        {
+          "$ref": "#/$defs/effectObserved"
+        },
+        {
+          "$ref": "#/$defs/clockEvent"
+        }
+      ]
+    },
+    "activeOccurrence": {
+      "type": "object",
+      "properties": {
+        "occurrence": {
+          "$ref": "#/$defs/occurrence"
+        },
+        "activation_event_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "status": {
+          "enum": [
+            "ACTIVE",
+            "PERMITTED",
+            "DISPATCHED",
+            "OUTCOME_UNKNOWN",
+            "BLOCKED_DISPUTE"
+          ]
+        },
+        "deadline_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "maxItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "occurrence",
+        "activation_event_digest",
+        "status",
+        "deadline_ids"
+      ],
+      "additionalProperties": false
+    },
+    "completedOccurrence": {
+      "type": "object",
+      "properties": {
+        "occurrence": {
+          "$ref": "#/$defs/occurrence"
+        },
+        "disposition": {
+          "enum": [
+            "SUCCEEDED",
+            "FAILED",
+            "NO_EFFECT",
+            "EXPIRED"
+          ]
+        },
+        "evidence_digest": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/digest"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "occurred_at": {
+          "$ref": "#/$defs/instant"
+        },
+        "route_label": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/typedValue"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "selected_relationship_digest": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/digest"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "late": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "occurrence",
+        "disposition",
+        "evidence_digest",
+        "occurred_at",
+        "route_label",
+        "selected_relationship_digest",
+        "late"
+      ],
+      "additionalProperties": false
+    },
+    "stepCounter": {
+      "type": "object",
+      "properties": {
+        "step_id": {
+          "$ref": "#/$defs/id"
+        },
+        "activations": {
+          "$ref": "#/$defs/natural"
+        },
+        "actuations": {
+          "$ref": "#/$defs/natural"
+        }
+      },
+      "required": [
+        "step_id",
+        "activations",
+        "actuations"
+      ],
+      "additionalProperties": false
+    },
+    "childPass": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "PARALLEL",
+            "FANOUT"
+          ]
+        },
+        "construct_id": {
+          "$ref": "#/$defs/id"
+        },
+        "pass": {
+          "$ref": "#/$defs/natural"
+        },
+        "outer_enclosing": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/enclosingSegment"
+          },
+          "minItems": 0,
+          "maxItems": 63
+        },
+        "obligation_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/digest"
+          },
+          "minItems": 1,
+          "maxItems": 1024,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "kind",
+        "construct_id",
+        "pass",
+        "outer_enclosing",
+        "obligation_ids"
+      ],
+      "additionalProperties": false
+    },
+    "obligationCompletionDirect": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "DIRECT_EVENT"
+        },
+        "event_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "occurrence_id": {
+          "$ref": "#/$defs/digest"
+        },
+        "operation": {
+          "$ref": "#/$defs/id"
+        },
+        "evidence_digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "kind",
+        "event_digest",
+        "occurrence_id",
+        "operation",
+        "evidence_digest"
+      ],
+      "additionalProperties": false
+    },
+    "obligationCompletionChild": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "CHILD_PASS"
+        },
+        "event_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "child_pass": {
+          "$ref": "#/$defs/childPass"
+        }
+      },
+      "required": [
+        "kind",
+        "event_digest",
+        "child_pass"
+      ],
+      "additionalProperties": false
+    },
+    "obligationCompletion": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/obligationCompletionDirect"
+        },
+        {
+          "$ref": "#/$defs/obligationCompletionChild"
+        }
+      ]
+    },
+    "obligationExpecting": {
+      "type": "object",
+      "properties": {
+        "obligation_id": {
+          "$ref": "#/$defs/digest"
+        },
+        "kind": {
+          "enum": [
+            "PARALLEL_BRANCH",
+            "FANOUT_OBJECT"
+          ]
+        },
+        "construct_id": {
+          "$ref": "#/$defs/id"
+        },
+        "pass": {
+          "$ref": "#/$defs/natural"
+        },
+        "source_occurrence_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/digest"
+          },
+          "minItems": 1,
+          "maxItems": 4096,
+          "uniqueItems": true
+        },
+        "branch_id": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "object_key": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/typedValue"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "join_step_id": {
+          "$ref": "#/$defs/id"
+        },
+        "creation_event_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "status": {
+          "enum": [
+            "OPEN",
+            "BLOCKED"
+          ]
+        },
+        "expected_occurrence_id": {
+          "$ref": "#/$defs/digest"
+        },
+        "required_operation": {
+          "$ref": "#/$defs/id"
+        },
+        "waiting_on": {
+          "type": "null"
+        },
+        "completion_basis": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "obligation_id",
+        "kind",
+        "construct_id",
+        "pass",
+        "source_occurrence_ids",
+        "branch_id",
+        "object_key",
+        "join_step_id",
+        "creation_event_digest",
+        "status",
+        "expected_occurrence_id",
+        "required_operation",
+        "waiting_on",
+        "completion_basis"
+      ],
+      "additionalProperties": false
+    },
+    "obligationWaiting": {
+      "type": "object",
+      "properties": {
+        "obligation_id": {
+          "$ref": "#/$defs/digest"
+        },
+        "kind": {
+          "enum": [
+            "PARALLEL_BRANCH",
+            "FANOUT_OBJECT"
+          ]
+        },
+        "construct_id": {
+          "$ref": "#/$defs/id"
+        },
+        "pass": {
+          "$ref": "#/$defs/natural"
+        },
+        "source_occurrence_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/digest"
+          },
+          "minItems": 1,
+          "maxItems": 4096,
+          "uniqueItems": true
+        },
+        "branch_id": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "object_key": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/typedValue"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "join_step_id": {
+          "$ref": "#/$defs/id"
+        },
+        "creation_event_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "status": {
+          "const": "WAITING"
+        },
+        "expected_occurrence_id": {
+          "type": "null"
+        },
+        "required_operation": {
+          "type": "null"
+        },
+        "waiting_on": {
+          "$ref": "#/$defs/childPass"
+        },
+        "completion_basis": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "obligation_id",
+        "kind",
+        "construct_id",
+        "pass",
+        "source_occurrence_ids",
+        "branch_id",
+        "object_key",
+        "join_step_id",
+        "creation_event_digest",
+        "status",
+        "expected_occurrence_id",
+        "required_operation",
+        "waiting_on",
+        "completion_basis"
+      ],
+      "additionalProperties": false
+    },
+    "obligationTerminal": {
+      "type": "object",
+      "properties": {
+        "obligation_id": {
+          "$ref": "#/$defs/digest"
+        },
+        "kind": {
+          "enum": [
+            "PARALLEL_BRANCH",
+            "FANOUT_OBJECT"
+          ]
+        },
+        "construct_id": {
+          "$ref": "#/$defs/id"
+        },
+        "pass": {
+          "$ref": "#/$defs/natural"
+        },
+        "source_occurrence_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/digest"
+          },
+          "minItems": 1,
+          "maxItems": 4096,
+          "uniqueItems": true
+        },
+        "branch_id": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "object_key": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/typedValue"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "join_step_id": {
+          "$ref": "#/$defs/id"
+        },
+        "creation_event_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "status": {
+          "enum": [
+            "DISCHARGED",
+            "JOINED"
+          ]
+        },
+        "expected_occurrence_id": {
+          "type": "null"
+        },
+        "required_operation": {
+          "type": "null"
+        },
+        "waiting_on": {
+          "type": "null"
+        },
+        "completion_basis": {
+          "$ref": "#/$defs/obligationCompletion"
+        }
+      },
+      "required": [
+        "obligation_id",
+        "kind",
+        "construct_id",
+        "pass",
+        "source_occurrence_ids",
+        "branch_id",
+        "object_key",
+        "join_step_id",
+        "creation_event_digest",
+        "status",
+        "expected_occurrence_id",
+        "required_operation",
+        "waiting_on",
+        "completion_basis"
+      ],
+      "additionalProperties": false
+    },
+    "obligationDisputedCompletion": {
+      "type": "object",
+      "properties": {
+        "obligation_id": {
+          "$ref": "#/$defs/digest"
+        },
+        "kind": {
+          "enum": [
+            "PARALLEL_BRANCH",
+            "FANOUT_OBJECT"
+          ]
+        },
+        "construct_id": {
+          "$ref": "#/$defs/id"
+        },
+        "pass": {
+          "$ref": "#/$defs/natural"
+        },
+        "source_occurrence_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/digest"
+          },
+          "minItems": 1,
+          "maxItems": 4096,
+          "uniqueItems": true
+        },
+        "branch_id": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "object_key": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/typedValue"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "join_step_id": {
+          "$ref": "#/$defs/id"
+        },
+        "creation_event_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "status": {
+          "const": "DISPUTED"
+        },
+        "expected_occurrence_id": {
+          "type": "null"
+        },
+        "required_operation": {
+          "type": "null"
+        },
+        "waiting_on": {
+          "type": "null"
+        },
+        "completion_basis": {
+          "$ref": "#/$defs/obligationCompletion"
+        }
+      },
+      "required": [
+        "obligation_id",
+        "kind",
+        "construct_id",
+        "pass",
+        "source_occurrence_ids",
+        "branch_id",
+        "object_key",
+        "join_step_id",
+        "creation_event_digest",
+        "status",
+        "expected_occurrence_id",
+        "required_operation",
+        "waiting_on",
+        "completion_basis"
+      ],
+      "additionalProperties": false
+    },
+    "obligationDisputedWaiting": {
+      "type": "object",
+      "properties": {
+        "obligation_id": {
+          "$ref": "#/$defs/digest"
+        },
+        "kind": {
+          "enum": [
+            "PARALLEL_BRANCH",
+            "FANOUT_OBJECT"
+          ]
+        },
+        "construct_id": {
+          "$ref": "#/$defs/id"
+        },
+        "pass": {
+          "$ref": "#/$defs/natural"
+        },
+        "source_occurrence_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/digest"
+          },
+          "minItems": 1,
+          "maxItems": 4096,
+          "uniqueItems": true
+        },
+        "branch_id": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "object_key": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/typedValue"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "join_step_id": {
+          "$ref": "#/$defs/id"
+        },
+        "creation_event_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "status": {
+          "const": "DISPUTED"
+        },
+        "expected_occurrence_id": {
+          "type": "null"
+        },
+        "required_operation": {
+          "type": "null"
+        },
+        "waiting_on": {
+          "$ref": "#/$defs/childPass"
+        },
+        "completion_basis": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "obligation_id",
+        "kind",
+        "construct_id",
+        "pass",
+        "source_occurrence_ids",
+        "branch_id",
+        "object_key",
+        "join_step_id",
+        "creation_event_digest",
+        "status",
+        "expected_occurrence_id",
+        "required_operation",
+        "waiting_on",
+        "completion_basis"
+      ],
+      "additionalProperties": false
+    },
+    "obligation": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/obligationExpecting"
+        },
+        {
+          "$ref": "#/$defs/obligationWaiting"
+        },
+        {
+          "$ref": "#/$defs/obligationTerminal"
+        },
+        {
+          "$ref": "#/$defs/obligationDisputedCompletion"
+        },
+        {
+          "$ref": "#/$defs/obligationDisputedWaiting"
+        }
+      ]
+    },
+    "proposalRecord": {
+      "type": "object",
+      "properties": {
+        "event_id": {
+          "$ref": "#/$defs/id"
+        },
+        "event_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "proposal_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "occurrence_id": {
+          "$ref": "#/$defs/digest"
+        },
+        "disposition": {
+          "enum": [
+            "WITHHELD",
+            "PERMITTED"
+          ]
+        },
+        "permit_digest": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/digest"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "authority_result_digest": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/digest"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reservation_receipt_digests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/digest"
+          },
+          "minItems": 0,
+          "maxItems": 1,
+          "uniqueItems": true
+        },
+        "prior_permit_digest": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/digest"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "event_id",
+        "event_digest",
+        "proposal_digest",
+        "occurrence_id",
+        "disposition",
+        "permit_digest",
+        "authority_result_digest",
+        "reservation_receipt_digests",
+        "prior_permit_digest"
+      ],
+      "additionalProperties": false
+    },
+    "authorityActBasis": {
+      "type": "object",
+      "properties": {
+        "act_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "act": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/authority.schema.json#/$defs/act"
+        }
+      },
+      "required": [
+        "act_digest",
+        "act"
+      ],
+      "additionalProperties": false
+    },
+    "priorEffectBasis": {
+      "type": "object",
+      "properties": {
+        "binding_id": {
+          "$ref": "#/$defs/id"
+        },
+        "source_occurrence_id": {
+          "$ref": "#/$defs/digest"
+        },
+        "source_permit_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "source_native_evidence_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "source_field": {
+          "$ref": "#/$defs/id"
+        },
+        "target_field": {
+          "$ref": "#/$defs/id"
+        },
+        "value": {
+          "$ref": "#/$defs/typedValue"
+        }
+      },
+      "required": [
+        "binding_id",
+        "source_occurrence_id",
+        "source_permit_digest",
+        "source_native_evidence_digest",
+        "source_field",
+        "target_field",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "actorSeparationBasis": {
+      "type": "object",
+      "properties": {
+        "requirement_id": {
+          "$ref": "#/$defs/id"
+        },
+        "relation": {
+          "const": "DISTINCT_ACTOR"
+        },
+        "prior_occurrence_id": {
+          "$ref": "#/$defs/digest"
+        },
+        "current_occurrence_id": {
+          "$ref": "#/$defs/digest"
+        },
+        "prior_act": {
+          "$ref": "#/$defs/authorityActBasis"
+        },
+        "current_act": {
+          "$ref": "#/$defs/authorityActBasis"
+        }
+      },
+      "required": [
+        "requirement_id",
+        "relation",
+        "prior_occurrence_id",
+        "current_occurrence_id",
+        "prior_act",
+        "current_act"
+      ],
+      "additionalProperties": false
+    },
+    "permit": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.2/permit"
+        },
+        "permit_id": {
+          "$ref": "#/$defs/digest"
+        },
+        "instance_id": {
+          "$ref": "#/$defs/id"
+        },
+        "work_class_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "profile": {
+          "$ref": "#/$defs/profile"
+        },
+        "role": {
+          "$ref": "#/$defs/runtimeRole"
+        },
+        "occurrence": {
+          "$ref": "#/$defs/occurrence"
+        },
+        "proposal_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "native_request": {
+          "$ref": "#/$defs/nativeRequest"
+        },
+        "executor": {
+          "$ref": "#/$defs/executor"
+        },
+        "credential_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "maxItems": 64,
+          "uniqueItems": true
+        },
+        "authority_result": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/authority.schema.json#/$defs/result"
+        },
+        "authority_result_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "authority_evidence_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "authority_act_bases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/authorityActBasis"
+          },
+          "minItems": 1,
+          "maxItems": 1024
+        },
+        "prior_effect_bases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/priorEffectBasis"
+          },
+          "minItems": 0,
+          "maxItems": 64
+        },
+        "separation_bases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/actorSeparationBasis"
+          },
+          "minItems": 0,
+          "maxItems": 64
+        },
+        "observation_digests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/digest"
+          },
+          "minItems": 0,
+          "maxItems": 256,
+          "uniqueItems": true
+        },
+        "supersedes_permit_digest": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/digest"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "budget_revisions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "registry_digest": {
+                "$ref": "#/$defs/digest"
+              },
+              "affected_anchors": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/id"
+                },
+                "minItems": 1,
+                "maxItems": 64,
+                "uniqueItems": true
+              },
+              "revision": {
+                "$ref": "#/$defs/natural"
+              },
+              "reservation_id": {
+                "$ref": "#/$defs/id"
+              },
+              "receipt_digest": {
+                "$ref": "#/$defs/digest"
+              }
+            },
+            "required": [
+              "registry_digest",
+              "affected_anchors",
+              "revision",
+              "reservation_id",
+              "receipt_digest"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 1
+        },
+        "clock_source": {
+          "$ref": "#/$defs/id"
+        },
+        "clock_revision": {
+          "$ref": "#/$defs/natural"
+        },
+        "expires_at": {
+          "$ref": "#/$defs/instant"
+        }
+      },
+      "required": [
+        "schema",
+        "permit_id",
+        "instance_id",
+        "work_class_digest",
+        "profile",
+        "role",
+        "occurrence",
+        "proposal_digest",
+        "native_request",
+        "executor",
+        "credential_ids",
+        "authority_result",
+        "authority_result_digest",
+        "authority_evidence_digest",
+        "authority_act_bases",
+        "prior_effect_bases",
+        "separation_bases",
+        "observation_digests",
+        "supersedes_permit_digest",
+        "budget_revisions",
+        "clock_source",
+        "clock_revision",
+        "expires_at"
+      ],
+      "additionalProperties": false
+    },
+    "dispatchRecord": {
+      "type": "object",
+      "properties": {
+        "dispatch_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "dispatch_attempt_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "event_id": {
+          "$ref": "#/$defs/id"
+        },
+        "event_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "permit_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "native_request": {
+          "$ref": "#/$defs/nativeRequest"
+        },
+        "connector": {
+          "$ref": "#/$defs/connector"
+        },
+        "attempt": {
+          "$ref": "#/$defs/attempt"
+        },
+        "acknowledgement": {
+          "$ref": "#/$defs/acknowledgement"
+        },
+        "clock_revision": {
+          "$ref": "#/$defs/natural"
+        }
+      },
+      "required": [
+        "dispatch_digest",
+        "dispatch_attempt_digest",
+        "event_id",
+        "event_digest",
+        "permit_digest",
+        "native_request",
+        "connector",
+        "attempt",
+        "acknowledgement",
+        "clock_revision"
+      ],
+      "additionalProperties": false
+    },
+    "governedOutcomeRecord": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "GOVERNED"
+        },
+        "outcome_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "event_id": {
+          "$ref": "#/$defs/id"
+        },
+        "event_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "permit_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "dispatch_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "dispatch_attempt_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "native_evidence": {
+          "$ref": "#/$defs/nativeEvidence"
+        },
+        "classification": {
+          "enum": [
+            "MATCHED",
+            "FAILED",
+            "UNKNOWN",
+            "NO_EFFECT_ESTABLISHED",
+            "UNEXPECTED",
+            "CONFLICTING",
+            "LATE_MATCHED",
+            "LATE_AFTER_RELEASE",
+            "DUPLICATE"
+          ]
+        },
+        "reservation_receipt_digests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/digest"
+          },
+          "minItems": 0,
+          "maxItems": 1,
+          "uniqueItems": true
+        },
+        "conflicts_with_evidence_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "disputed": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "kind",
+        "outcome_digest",
+        "event_id",
+        "event_digest",
+        "permit_digest",
+        "dispatch_digest",
+        "dispatch_attempt_digest",
+        "native_evidence",
+        "classification",
+        "reservation_receipt_digests",
+        "conflicts_with_evidence_ids",
+        "disputed"
+      ],
+      "additionalProperties": false
+    },
+    "foreignOutcomeRecord": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "FOREIGN"
+        },
+        "outcome_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "event_id": {
+          "$ref": "#/$defs/id"
+        },
+        "event_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "permit_digest": {
+          "type": "null"
+        },
+        "dispatch_digest": {
+          "type": "null"
+        },
+        "dispatch_attempt_digest": {
+          "type": "null"
+        },
+        "native_evidence": {
+          "$ref": "#/$defs/nativeEvidence"
+        },
+        "classification": {
+          "enum": [
+            "FOREIGN",
+            "DUPLICATE",
+            "CONFLICTING"
+          ]
+        },
+        "affected_budget_anchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "maxItems": 64,
+          "uniqueItems": true
+        },
+        "reservation_receipt_digests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/digest"
+          },
+          "minItems": 0,
+          "maxItems": 1,
+          "uniqueItems": true
+        },
+        "conflicts_with_evidence_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "disputed": {
+          "const": true
+        }
+      },
+      "required": [
+        "kind",
+        "outcome_digest",
+        "event_id",
+        "event_digest",
+        "permit_digest",
+        "dispatch_digest",
+        "dispatch_attempt_digest",
+        "native_evidence",
+        "classification",
+        "affected_budget_anchors",
+        "reservation_receipt_digests",
+        "conflicts_with_evidence_ids",
+        "disputed"
+      ],
+      "additionalProperties": false
+    },
+    "outcomeRecord": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/governedOutcomeRecord"
+        },
+        {
+          "$ref": "#/$defs/foreignOutcomeRecord"
+        }
+      ]
+    },
+    "deadlineState": {
+      "type": "object",
+      "properties": {
+        "deadline_id": {
+          "$ref": "#/$defs/id"
+        },
+        "occurrence_id": {
+          "$ref": "#/$defs/digest"
+        },
+        "source": {
+          "$ref": "#/$defs/id"
+        },
+        "activation_revision": {
+          "$ref": "#/$defs/natural"
+        },
+        "activation_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "trigger_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "activation_clock_revision": {
+          "$ref": "#/$defs/natural"
+        },
+        "activation_instant": {
+          "$ref": "#/$defs/instant"
+        },
+        "activation_clock_evidence_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "due": {
+          "$ref": "#/$defs/instant"
+        },
+        "boundary": {
+          "enum": [
+            "AT_OR_AFTER",
+            "AFTER"
+          ]
+        },
+        "status": {
+          "enum": [
+            "PENDING",
+            "DISCHARGED",
+            "EXPIRED"
+          ]
+        },
+        "expiry_event_digest": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/digest"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "deadline_id",
+        "occurrence_id",
+        "source",
+        "activation_revision",
+        "activation_digest",
+        "trigger_digest",
+        "activation_clock_revision",
+        "activation_instant",
+        "activation_clock_evidence_digest",
+        "due",
+        "boundary",
+        "status",
+        "expiry_event_digest"
+      ],
+      "additionalProperties": false
+    },
+    "fanoutPass": {
+      "type": "object",
+      "properties": {
+        "fanout_id": {
+          "$ref": "#/$defs/id"
+        },
+        "pass": {
+          "$ref": "#/$defs/natural"
+        },
+        "expand_occurrence_id": {
+          "$ref": "#/$defs/digest"
+        },
+        "object_keys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/typedValue"
+          },
+          "minItems": 0,
+          "maxItems": 1024
+        },
+        "obligation_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/digest"
+          },
+          "minItems": 0,
+          "maxItems": 1024,
+          "uniqueItems": true
+        },
+        "joined": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "fanout_id",
+        "pass",
+        "expand_occurrence_id",
+        "object_keys",
+        "obligation_ids",
+        "joined"
+      ],
+      "additionalProperties": false
+    },
+    "decisionDetailAuthority": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "AUTHORITY"
+        },
+        "authority_result_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "code": {
+          "$ref": "#/$defs/id"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "maxItems": 64,
+          "uniqueItems": true
+        },
+        "failed_checks": {
+          "type": "array",
+          "items": {
+            "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/authority.schema.json#/$defs/failedCheck"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "kind",
+        "authority_result_digest",
+        "code",
+        "reasons",
+        "failed_checks"
+      ],
+      "additionalProperties": false
+    },
+    "decisionDetailSeparation": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "SEPARATION"
+        },
+        "authority_result": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/authority.schema.json#/$defs/result"
+        },
+        "basis": {
+          "$ref": "#/$defs/actorSeparationBasis"
+        }
+      },
+      "required": [
+        "kind",
+        "authority_result",
+        "basis"
+      ],
+      "additionalProperties": false
+    },
+    "decisionDetailBudget": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "BUDGET"
+        },
+        "registry_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "receipt_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "maxItems": 64,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "kind",
+        "registry_digest",
+        "receipt_digest",
+        "reasons"
+      ],
+      "additionalProperties": false
+    },
+    "decisionDetailDispatch": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "DISPATCH"
+        },
+        "attempt_id": {
+          "$ref": "#/$defs/id"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "NATIVE_ARGUMENT_MISMATCH",
+              "NATIVE_NOT_SENT",
+              "NATIVE_DISPATCH_REJECTED",
+              "ACKNOWLEDGEMENT_REJECTED",
+              "DISPATCH_STATUS_UNKNOWN",
+              "DISPATCH_EVIDENCE_CONFLICT",
+              "LATE_OR_PROHIBITED_DISPATCH",
+              "PERMIT_EXPIRED",
+              "PERMIT_SUPERSEDED"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 9,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "kind",
+        "attempt_id",
+        "reasons"
+      ],
+      "additionalProperties": false
+    },
+    "decisionDetailEffect": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "EFFECT"
+        },
+        "classification": {
+          "enum": [
+            "MATCHED",
+            "FAILED",
+            "UNKNOWN",
+            "NO_EFFECT_ESTABLISHED",
+            "UNEXPECTED",
+            "CONFLICTING",
+            "FOREIGN",
+            "LATE_MATCHED",
+            "LATE_AFTER_RELEASE",
+            "DUPLICATE"
+          ]
+        },
+        "evidence_id": {
+          "$ref": "#/$defs/id"
+        }
+      },
+      "required": [
+        "kind",
+        "classification",
+        "evidence_id"
+      ],
+      "additionalProperties": false
+    },
+    "decisionDetailRoute": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "ROUTE"
+        },
+        "relationship_digests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/digest"
+          },
+          "minItems": 0,
+          "maxItems": 1024,
+          "uniqueItems": true
+        },
+        "construct_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "maxItems": 128,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "kind",
+        "relationship_digests",
+        "construct_ids"
+      ],
+      "additionalProperties": false
+    },
+    "decisionDetailLabel": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "LABEL"
+        },
+        "step_id": {
+          "$ref": "#/$defs/id"
+        },
+        "observed_value": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/typedValue"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "step_id",
+        "observed_value"
+      ],
+      "additionalProperties": false
+    },
+    "decisionDetailLimit": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "LIMIT"
+        },
+        "limit_kind": {
+          "enum": [
+            "ACTIVATIONS",
+            "ACTUATIONS",
+            "STEP_OCCURRENCES",
+            "LOOP_PASSES",
+            "ACTIVE_OBLIGATIONS",
+            "FANOUT_OBJECTS"
+          ]
+        },
+        "limit": {
+          "$ref": "#/$defs/natural"
+        },
+        "current": {
+          "$ref": "#/$defs/natural"
+        },
+        "step_id": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "relationship_digest": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/digest"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "limit_kind",
+        "limit",
+        "current",
+        "step_id",
+        "relationship_digest"
+      ],
+      "additionalProperties": false
+    },
+    "decisionDetailDeadline": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "DEADLINE"
+        },
+        "deadline_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 256,
+          "uniqueItems": true
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "ACTIVATION_CLOCK_UNAVAILABLE",
+              "DEADLINE_ALREADY_DUE",
+              "DEADLINE_TIME_OVERFLOW",
+              "EXPIRY_STOP"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 4,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "kind",
+        "deadline_ids",
+        "reasons"
+      ],
+      "additionalProperties": false
+    },
+    "decisionDetailClock": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "CLOCK"
+        },
+        "source": {
+          "$ref": "#/$defs/id"
+        },
+        "revision": {
+          "$ref": "#/$defs/natural"
+        },
+        "status": {
+          "enum": [
+            "AVAILABLE",
+            "UNAVAILABLE",
+            "CONFLICTING"
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "source",
+        "revision",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "decisionDetail": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/decisionDetailAuthority"
+        },
+        {
+          "$ref": "#/$defs/decisionDetailSeparation"
+        },
+        {
+          "$ref": "#/$defs/decisionDetailBudget"
+        },
+        {
+          "$ref": "#/$defs/decisionDetailDispatch"
+        },
+        {
+          "$ref": "#/$defs/decisionDetailEffect"
+        },
+        {
+          "$ref": "#/$defs/decisionDetailClock"
+        },
+        {
+          "$ref": "#/$defs/decisionDetailRoute"
+        },
+        {
+          "$ref": "#/$defs/decisionDetailLabel"
+        },
+        {
+          "$ref": "#/$defs/decisionDetailLimit"
+        },
+        {
+          "$ref": "#/$defs/decisionDetailDeadline"
+        }
+      ]
+    },
+    "decisionReceipt": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.2/decision-receipt"
+        },
+        "decision_id": {
+          "$ref": "#/$defs/digest"
+        },
+        "instance_id": {
+          "$ref": "#/$defs/id"
+        },
+        "sequence": {
+          "$ref": "#/$defs/natural"
+        },
+        "event_id": {
+          "$ref": "#/$defs/id"
+        },
+        "event_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "event_kind": {
+          "enum": [
+            "PROPOSE",
+            "DISPATCH_OBSERVED",
+            "EFFECT_OBSERVED",
+            "CLOCK"
+          ]
+        },
+        "disposition": {
+          "enum": [
+            "WITHHELD",
+            "PERMITTED",
+            "DISPATCH_RECORDED",
+            "DISPATCH_REFUSED",
+            "ACKNOWLEDGED",
+            "OUTCOME_RETAINED",
+            "COMPLETED",
+            "FAILED",
+            "EXPIRED",
+            "STOPPED",
+            "DISPUTED",
+            "CLOCK_RECORDED"
+          ]
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "maxItems": 64,
+          "uniqueItems": true
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/decisionDetail"
+          },
+          "minItems": 0,
+          "maxItems": 10,
+          "uniqueItems": true
+        },
+        "permit_digest": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/digest"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "authority_result_digest": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/digest"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reservation_receipt_digests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/digest"
+          },
+          "minItems": 0,
+          "maxItems": 1,
+          "uniqueItems": true
+        },
+        "state_before_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "state_after_core_digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "schema",
+        "decision_id",
+        "instance_id",
+        "sequence",
+        "event_id",
+        "event_digest",
+        "event_kind",
+        "disposition",
+        "reason_codes",
+        "details",
+        "permit_digest",
+        "authority_result_digest",
+        "reservation_receipt_digests",
+        "state_before_digest",
+        "state_after_core_digest"
+      ],
+      "additionalProperties": false
+    },
+    "replayRecord": {
+      "type": "object",
+      "properties": {
+        "event_id": {
+          "$ref": "#/$defs/id"
+        },
+        "event_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "decision": {
+          "$ref": "#/$defs/decisionReceipt"
+        },
+        "decision_receipt_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "permit": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/permit"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "budget_results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/budgetTransitionResult"
+          },
+          "minItems": 0,
+          "maxItems": 1
+        },
+        "transition_state_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "transaction_digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "event_id",
+        "event_digest",
+        "decision",
+        "decision_receipt_digest",
+        "permit",
+        "budget_results",
+        "transition_state_digest",
+        "transaction_digest"
+      ],
+      "additionalProperties": false
+    },
+    "state": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.2/work-state"
+        },
+        "specification_pin": {
+          "$ref": "#/$defs/digest"
+        },
+        "work_class_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "profile": {
+          "$ref": "#/$defs/profile"
+        },
+        "role": {
+          "$ref": "#/$defs/runtimeRole"
+        },
+        "instance_id": {
+          "$ref": "#/$defs/id"
+        },
+        "deployment_authorization": {
+          "$ref": "#/$defs/deploymentAuthorization"
+        },
+        "deployment_authorization_subject_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "deployment_authorization_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "deployment_authorization_evidence": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/evidence.schema.json#/$defs/organizationalAuthorization"
+        },
+        "deployment_authorization_evidence_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "deployment_correspondence_evidence": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/evidence.schema.json#/$defs/correspondence"
+        },
+        "deployment_correspondence_evidence_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "deployment_source_confirmation_evidence": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/evidence.schema.json#/$defs/sourceConfirmation"
+        },
+        "deployment_source_confirmation_evidence_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "deployment_policy_decision_evidence": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/evidence.schema.json#/$defs/policyDecision"
+        },
+        "deployment_policy_decision_evidence_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "deployment_authorization_clock": {
+          "$ref": "#/$defs/clockAvailable"
+        },
+        "deployment_organization_id": {
+          "$ref": "#/$defs/id"
+        },
+        "revision": {
+          "$ref": "#/$defs/natural"
+        },
+        "status": {
+          "enum": [
+            "ACTIVE",
+            "COMPLETE",
+            "STOPPED"
+          ]
+        },
+        "total_activations": {
+          "$ref": "#/$defs/natural"
+        },
+        "total_actuations": {
+          "$ref": "#/$defs/natural"
+        },
+        "step_counters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/stepCounter"
+          },
+          "minItems": 1,
+          "maxItems": 256
+        },
+        "active": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/activeOccurrence"
+          },
+          "minItems": 0,
+          "maxItems": 4096
+        },
+        "completed": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/completedOccurrence"
+          },
+          "minItems": 0,
+          "maxItems": 4096
+        },
+        "obligations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/obligation"
+          },
+          "minItems": 0,
+          "maxItems": 4096
+        },
+        "proposals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/proposalRecord"
+          },
+          "minItems": 0,
+          "maxItems": 4096
+        },
+        "permits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/permit"
+          },
+          "minItems": 0,
+          "maxItems": 4096
+        },
+        "dispatches": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/dispatchRecord"
+          },
+          "minItems": 0
+        },
+        "outcomes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/outcomeRecord"
+          },
+          "minItems": 0
+        },
+        "clocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/clock"
+          },
+          "minItems": 0
+        },
+        "deadlines": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/deadlineState"
+          },
+          "minItems": 0,
+          "maxItems": 4096
+        },
+        "fanout_passes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/fanoutPass"
+          },
+          "minItems": 0,
+          "maxItems": 4096
+        },
+        "receipts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/decisionReceipt"
+          },
+          "minItems": 0
+        },
+        "replays": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/replayRecord"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "schema",
+        "specification_pin",
+        "work_class_digest",
+        "profile",
+        "role",
+        "instance_id",
+        "deployment_authorization",
+        "deployment_authorization_subject_digest",
+        "deployment_authorization_digest",
+        "deployment_authorization_evidence",
+        "deployment_authorization_evidence_digest",
+        "deployment_correspondence_evidence",
+        "deployment_correspondence_evidence_digest",
+        "deployment_source_confirmation_evidence",
+        "deployment_source_confirmation_evidence_digest",
+        "deployment_policy_decision_evidence",
+        "deployment_policy_decision_evidence_digest",
+        "deployment_authorization_clock",
+        "deployment_organization_id",
+        "revision",
+        "status",
+        "total_activations",
+        "total_actuations",
+        "step_counters",
+        "active",
+        "completed",
+        "obligations",
+        "proposals",
+        "permits",
+        "dispatches",
+        "outcomes",
+        "clocks",
+        "deadlines",
+        "fanout_passes",
+        "receipts",
+        "replays"
+      ],
+      "additionalProperties": false
+    },
+    "budgetTransitionResult": {
+      "type": "object",
+      "properties": {
+        "registry_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "affected_anchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true
+        },
+        "result": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/reservation.schema.json#/$defs/result"
+        }
+      },
+      "required": [
+        "registry_digest",
+        "affected_anchors",
+        "result"
+      ],
+      "additionalProperties": false
+    },
+    "deployInput": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "$ref": "#/$defs/profile"
+        },
+        "role": {
+          "$ref": "#/$defs/runtimeRole"
+        },
+        "specification_pin": {
+          "$ref": "#/$defs/digest"
+        },
+        "definition": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/work-class.schema.json#/$defs/definition"
+        },
+        "definition_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "instance_id": {
+          "$ref": "#/$defs/id"
+        },
+        "deployment_authorization": {
+          "$ref": "#/$defs/deploymentAuthorization"
+        },
+        "authorization_evidence": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/evidence.schema.json#/$defs/organizationalAuthorization"
+        },
+        "correspondence_evidence": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/evidence.schema.json#/$defs/correspondence"
+        },
+        "source_confirmation_evidence": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/evidence.schema.json#/$defs/sourceConfirmation"
+        },
+        "policy_decision_evidence": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/evidence.schema.json#/$defs/policyDecision"
+        },
+        "authorization_clock": {
+          "$ref": "#/$defs/clockAvailable"
+        },
+        "initial_clocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/clockAvailable"
+          },
+          "minItems": 0,
+          "maxItems": 256
+        }
+      },
+      "required": [
+        "profile",
+        "role",
+        "specification_pin",
+        "definition",
+        "definition_digest",
+        "instance_id",
+        "deployment_authorization",
+        "authorization_evidence",
+        "correspondence_evidence",
+        "source_confirmation_evidence",
+        "policy_decision_evidence",
+        "authorization_clock",
+        "initial_clocks"
+      ],
+      "additionalProperties": false
+    },
+    "deployResult": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "DEPLOYED"
+        },
+        "profile": {
+          "$ref": "#/$defs/profile"
+        },
+        "role": {
+          "$ref": "#/$defs/runtimeRole"
+        },
+        "instance_id": {
+          "$ref": "#/$defs/id"
+        },
+        "work_class_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "deployment_authorization_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "state": {
+          "$ref": "#/$defs/state"
+        },
+        "state_digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "status",
+        "profile",
+        "role",
+        "instance_id",
+        "work_class_digest",
+        "deployment_authorization_digest",
+        "state",
+        "state_digest"
+      ],
+      "additionalProperties": false
+    },
+    "deployRefusal": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "REFUSED"
+        },
+        "profile": {
+          "$ref": "#/$defs/profile"
+        },
+        "role": {
+          "$ref": "#/$defs/runtimeRole"
+        },
+        "code": {
+          "enum": [
+            "ADMINISTRATION_NOT_ESTABLISHED",
+            "ARTIFACT_ENCODING_INVALID",
+            "ARTIFACT_NONCANONICAL",
+            "BINDING_MISMATCH",
+            "CLOCK_INVALID",
+            "DEFINITION_INVALID",
+            "DEFINITION_CONFLICT",
+            "DEPENDENCY_MISMATCH",
+            "DIGEST_MISMATCH",
+            "EVIDENCE_UNAVAILABLE",
+            "INPUT_INVALID",
+            "LIMIT_EXCEEDED",
+            "INSTANCE_NOT_ACTIVE",
+            "OCCURRENCE_NOT_ACTIVE",
+            "OCCURRENCE_CONFLICT",
+            "PREREQUISITE_MISSING",
+            "PROTOCOL_INVALID",
+            "REFERENCE_INVALID",
+            "RESERVATION_NOT_FOUND",
+            "REPLAY_CONFLICT",
+            "REVISION_CONFLICT",
+            "ROLE_UNSUPPORTED",
+            "SCHEMA_INVALID",
+            "STATE_INVALID",
+            "TYPE_INVALID",
+            "UNSUPPORTED_FEATURE",
+            "UNSUPPORTED_RELATION",
+            "VERSION_UNSUPPORTED"
+          ]
+        },
+        "path": {
+          "const": ""
+        }
+      },
+      "required": [
+        "status",
+        "profile",
+        "role",
+        "code",
+        "path"
+      ],
+      "additionalProperties": false
+    },
+    "stepInput": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "$ref": "#/$defs/profile"
+        },
+        "role": {
+          "$ref": "#/$defs/runtimeRole"
+        },
+        "specification_pin": {
+          "$ref": "#/$defs/digest"
+        },
+        "definition": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/work-class.schema.json#/$defs/definition"
+        },
+        "definition_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "state": {
+          "$ref": "#/$defs/state"
+        },
+        "state_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "event": {
+          "$ref": "#/$defs/event"
+        }
+      },
+      "required": [
+        "profile",
+        "role",
+        "specification_pin",
+        "definition",
+        "definition_digest",
+        "state",
+        "state_digest",
+        "event"
+      ],
+      "additionalProperties": false
+    },
+    "stepResult": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "STEP"
+        },
+        "profile": {
+          "$ref": "#/$defs/profile"
+        },
+        "role": {
+          "$ref": "#/$defs/runtimeRole"
+        },
+        "decision": {
+          "$ref": "#/$defs/decisionReceipt"
+        },
+        "decision_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "permit": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/permit"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "budget_results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/budgetTransitionResult"
+          },
+          "minItems": 0,
+          "maxItems": 1
+        },
+        "state": {
+          "$ref": "#/$defs/state"
+        },
+        "state_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "transition_state_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "transaction_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "replay": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "status",
+        "profile",
+        "role",
+        "decision",
+        "decision_digest",
+        "permit",
+        "budget_results",
+        "state",
+        "state_digest",
+        "transition_state_digest",
+        "transaction_digest",
+        "replay"
+      ],
+      "additionalProperties": false
+    },
+    "statefulRefusal": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "REFUSED"
+        },
+        "profile": {
+          "$ref": "#/$defs/profile"
+        },
+        "role": {
+          "$ref": "#/$defs/runtimeRole"
+        },
+        "code": {
+          "enum": [
+            "ADMINISTRATION_NOT_ESTABLISHED",
+            "ARTIFACT_ENCODING_INVALID",
+            "ARTIFACT_NONCANONICAL",
+            "BINDING_MISMATCH",
+            "CLOCK_INVALID",
+            "DEFINITION_INVALID",
+            "DEFINITION_CONFLICT",
+            "DEPENDENCY_MISMATCH",
+            "DIGEST_MISMATCH",
+            "EVIDENCE_UNAVAILABLE",
+            "INPUT_INVALID",
+            "LIMIT_EXCEEDED",
+            "INSTANCE_NOT_ACTIVE",
+            "OCCURRENCE_NOT_ACTIVE",
+            "OCCURRENCE_CONFLICT",
+            "PREREQUISITE_MISSING",
+            "PROTOCOL_INVALID",
+            "REFERENCE_INVALID",
+            "RESERVATION_NOT_FOUND",
+            "REPLAY_CONFLICT",
+            "REVISION_CONFLICT",
+            "ROLE_UNSUPPORTED",
+            "SCHEMA_INVALID",
+            "STATE_INVALID",
+            "TYPE_INVALID",
+            "UNSUPPORTED_FEATURE",
+            "UNSUPPORTED_RELATION",
+            "VERSION_UNSUPPORTED"
+          ]
+        },
+        "path": {
+          "const": ""
+        },
+        "state": {
+          "$ref": "#/$defs/state"
+        },
+        "state_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "budget_states": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "registry_digest": {
+                "$ref": "#/$defs/digest"
+              },
+              "affected_anchors": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/id"
+                },
+                "minItems": 1,
+                "maxItems": 64,
+                "uniqueItems": true
+              },
+              "state": {
+                "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/reservation.schema.json#/$defs/state"
+              },
+              "state_digest": {
+                "$ref": "#/$defs/digest"
+              }
+            },
+            "required": [
+              "registry_digest",
+              "affected_anchors",
+              "state",
+              "state_digest"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 1
+        }
+      },
+      "required": [
+        "status",
+        "profile",
+        "role",
+        "code",
+        "path",
+        "state",
+        "state_digest",
+        "budget_states"
+      ],
+      "additionalProperties": false
+    },
+    "hostBudgetDigest": {
+      "type": "object",
+      "properties": {
+        "registry_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "affected_anchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true
+        },
+        "state_digest": {
+          "$ref": "#/$defs/digest"
+        }
+      },
+      "required": [
+        "registry_digest",
+        "affected_anchors",
+        "state_digest"
+      ],
+      "additionalProperties": false
+    },
+    "hostCommitSuccess": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "HOST_COMMIT"
+        },
+        "disposition": {
+          "const": "COMMITTED"
+        },
+        "transaction_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "state_before_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "state_after_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "budget_before": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/hostBudgetDigest"
+          },
+          "minItems": 0,
+          "maxItems": 1
+        },
+        "budget_after": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/hostBudgetDigest"
+          },
+          "minItems": 0,
+          "maxItems": 1
+        },
+        "dispatch_performed": {
+          "const": false
+        }
+      },
+      "required": [
+        "status",
+        "disposition",
+        "transaction_digest",
+        "state_before_digest",
+        "state_after_digest",
+        "budget_before",
+        "budget_after",
+        "dispatch_performed"
+      ],
+      "additionalProperties": false
+    },
+    "hostCommitFailure": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "HOST_COMMIT"
+        },
+        "disposition": {
+          "const": "COMMIT_FAILED"
+        },
+        "transaction_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "state_before_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "authoritative_state_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "budget_before": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/hostBudgetDigest"
+          },
+          "minItems": 0,
+          "maxItems": 1
+        },
+        "authoritative_budgets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/hostBudgetDigest"
+          },
+          "minItems": 0,
+          "maxItems": 1
+        },
+        "failure_reference": {
+          "$ref": "#/$defs/id"
+        },
+        "dispatch_performed": {
+          "const": false
+        }
+      },
+      "required": [
+        "status",
+        "disposition",
+        "transaction_digest",
+        "state_before_digest",
+        "authoritative_state_digest",
+        "budget_before",
+        "authoritative_budgets",
+        "failure_reference",
+        "dispatch_performed"
+      ],
+      "additionalProperties": false
+    },
+    "hostCommitResult": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/hostCommitSuccess"
+        },
+        {
+          "$ref": "#/$defs/hostCommitFailure"
+        }
+      ]
+    },
+    "hostDeploymentInstalled": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "HOST_DEPLOY"
+        },
+        "disposition": {
+          "const": "INSTALLED"
+        },
+        "organization": {
+          "$ref": "#/$defs/id"
+        },
+        "instance_id": {
+          "$ref": "#/$defs/id"
+        },
+        "state_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "replay": {
+          "type": "boolean"
+        },
+        "dispatch_performed": {
+          "const": false
+        }
+      },
+      "required": [
+        "status",
+        "disposition",
+        "organization",
+        "instance_id",
+        "state_digest",
+        "replay",
+        "dispatch_performed"
+      ],
+      "additionalProperties": false
+    },
+    "hostDeploymentOccupied": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "HOST_DEPLOY"
+        },
+        "disposition": {
+          "const": "INSTANCE_OCCUPIED"
+        },
+        "organization": {
+          "$ref": "#/$defs/id"
+        },
+        "instance_id": {
+          "$ref": "#/$defs/id"
+        },
+        "authoritative_state_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "proposed_state_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "replay": {
+          "const": false
+        },
+        "dispatch_performed": {
+          "const": false
+        }
+      },
+      "required": [
+        "status",
+        "disposition",
+        "organization",
+        "instance_id",
+        "authoritative_state_digest",
+        "proposed_state_digest",
+        "replay",
+        "dispatch_performed"
+      ],
+      "additionalProperties": false
+    },
+    "hostDeploymentResult": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/hostDeploymentInstalled"
+        },
+        {
+          "$ref": "#/$defs/hostDeploymentOccupied"
+        }
+      ]
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/deploymentAuthorization"
+    },
+    {
+      "$ref": "#/$defs/event"
+    },
+    {
+      "$ref": "#/$defs/state"
+    },
+    {
+      "$ref": "#/$defs/permit"
+    },
+    {
+      "$ref": "#/$defs/decisionReceipt"
+    },
+    {
+      "$ref": "#/$defs/hostDeploymentResult"
+    },
+    {
+      "$ref": "#/$defs/hostCommitResult"
+    }
+  ]
+}

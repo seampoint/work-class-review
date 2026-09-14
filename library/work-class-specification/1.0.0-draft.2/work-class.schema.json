@@ -1,0 +1,1094 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/work-class.schema.json",
+  "$comment": "DRAFT_NOT_ADOPTED; APPARATUS_ONLY. Shape admission does not establish authority or host assurance.",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9._:/-]{0,127}$"
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "natural": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$"
+    },
+    "profile": {
+      "enum": [
+        "LINEAR",
+        "CHOICE_LOOPS",
+        "DEADLINES",
+        "PARALLEL_FANOUT"
+      ]
+    },
+    "runtimeRole": {
+      "enum": [
+        "LINEAR_WORK_RUNTIME",
+        "CHOICE_LOOP_RUNTIME",
+        "DEADLINE_RUNTIME",
+        "PARALLEL_FANOUT_RUNTIME"
+      ]
+    },
+    "type": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "enum": [
+            "IDENTITY",
+            "STRING",
+            "BOOLEAN",
+            "INTEGER",
+            "DECIMAL",
+            "INSTANT"
+          ]
+        },
+        "nonnegative": {
+          "type": "boolean"
+        },
+        "unit": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "nonnegative",
+        "unit"
+      ],
+      "additionalProperties": false
+    },
+    "fieldDeclaration": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/id"
+        },
+        "type_ref": {
+          "$ref": "#/$defs/id"
+        }
+      },
+      "required": [
+        "name",
+        "type_ref"
+      ],
+      "additionalProperties": false
+    },
+    "scopeFields": {
+      "type": "object",
+      "properties": {
+        "subjects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true
+        },
+        "resources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "subjects",
+        "resources"
+      ],
+      "additionalProperties": false
+    },
+    "participant": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "role": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "enum": [
+            "PERSON",
+            "ORGANIZATION",
+            "AGENT",
+            "SYSTEM",
+            "CONNECTOR"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "role",
+        "kind"
+      ],
+      "additionalProperties": false
+    },
+    "objectDeclaration": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "type_ref": {
+          "$ref": "#/$defs/id"
+        }
+      },
+      "required": [
+        "id",
+        "type_ref"
+      ],
+      "additionalProperties": false
+    },
+    "evidenceBinding": {
+      "type": "object",
+      "properties": {
+        "request_field": {
+          "$ref": "#/$defs/id"
+        },
+        "evidence_field": {
+          "$ref": "#/$defs/id"
+        }
+      },
+      "required": [
+        "request_field",
+        "evidence_field"
+      ],
+      "additionalProperties": false
+    },
+    "completionCarrier": {
+      "type": "object",
+      "properties": {
+        "effect_provider": {
+          "$ref": "#/$defs/id"
+        },
+        "effect_source": {
+          "$ref": "#/$defs/id"
+        },
+        "effect_record_type": {
+          "$ref": "#/$defs/id"
+        },
+        "no_effect_provider": {
+          "$ref": "#/$defs/id"
+        },
+        "no_effect_source": {
+          "$ref": "#/$defs/id"
+        },
+        "no_effect_record_type": {
+          "$ref": "#/$defs/id"
+        },
+        "status_field": {
+          "$ref": "#/$defs/id"
+        },
+        "status_type_ref": {
+          "$ref": "#/$defs/id"
+        },
+        "success_values": {
+          "type": "array",
+          "items": {
+            "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/aggregate.schema.json#/$defs/value"
+          },
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true
+        },
+        "failure_values": {
+          "type": "array",
+          "items": {
+            "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/aggregate.schema.json#/$defs/value"
+          },
+          "minItems": 0,
+          "maxItems": 64,
+          "uniqueItems": true
+        },
+        "route_label_field": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "route_label_type_ref": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence_bindings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidenceBinding"
+          },
+          "minItems": 0,
+          "maxItems": 64
+        }
+      },
+      "required": [
+        "effect_provider",
+        "effect_source",
+        "effect_record_type",
+        "no_effect_provider",
+        "no_effect_source",
+        "no_effect_record_type",
+        "status_field",
+        "status_type_ref",
+        "success_values",
+        "failure_values",
+        "route_label_field",
+        "route_label_type_ref",
+        "evidence_bindings"
+      ],
+      "additionalProperties": false
+    },
+    "priorEffectBinding": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "selection": {
+          "const": "UNIQUE_COMPLETED_ANCESTOR"
+        },
+        "source_step_id": {
+          "$ref": "#/$defs/id"
+        },
+        "source_evidence_field": {
+          "$ref": "#/$defs/id"
+        },
+        "target_request_field": {
+          "$ref": "#/$defs/id"
+        }
+      },
+      "required": [
+        "id",
+        "selection",
+        "source_step_id",
+        "source_evidence_field",
+        "target_request_field"
+      ],
+      "additionalProperties": false
+    },
+    "priorActorSeparation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "relation": {
+          "const": "DISTINCT_ACTOR"
+        },
+        "selection": {
+          "const": "UNIQUE_COMPLETED_ANCESTOR"
+        },
+        "prior_step_id": {
+          "$ref": "#/$defs/id"
+        },
+        "prior_act_kind": {
+          "enum": [
+            "VERIFY",
+            "INSTANCE_DECISION"
+          ]
+        },
+        "current_act_kind": {
+          "enum": [
+            "VERIFY",
+            "INSTANCE_DECISION"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "relation",
+        "selection",
+        "prior_step_id",
+        "prior_act_kind",
+        "current_act_kind"
+      ],
+      "additionalProperties": false
+    },
+    "step": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "enum": [
+            "OPERATION",
+            "PARALLEL_SPLIT",
+            "PARALLEL_JOIN",
+            "FANOUT_EXPAND",
+            "FANOUT_JOIN",
+            "TERMINAL"
+          ]
+        },
+        "executor_role": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "interface": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "operation": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/fieldDeclaration"
+          },
+          "minItems": 0,
+          "maxItems": 64
+        },
+        "scope_fields": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/scopeFields"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "required_credentials": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "maxItems": 64,
+          "uniqueItems": true
+        },
+        "authority_requirements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "maxItems": 1,
+          "uniqueItems": true
+        },
+        "shared_budgets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "maxItems": 64,
+          "uniqueItems": true
+        },
+        "prior_effect_bindings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/priorEffectBinding"
+          },
+          "minItems": 0,
+          "maxItems": 64
+        },
+        "prior_actor_separations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/priorActorSeparation"
+          },
+          "minItems": 0,
+          "maxItems": 64
+        },
+        "permit_seconds": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[1-9][0-9]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "failure_behavior": {
+          "oneOf": [
+            {
+              "enum": [
+                "FAILURE_EDGE",
+                "STOP"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "completion": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/completionCarrier"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "executor_role",
+        "interface",
+        "operation",
+        "fields",
+        "scope_fields",
+        "required_credentials",
+        "authority_requirements",
+        "shared_budgets",
+        "prior_effect_bindings",
+        "prior_actor_separations",
+        "permit_seconds",
+        "failure_behavior",
+        "completion"
+      ],
+      "additionalProperties": false
+    },
+    "sequenceEdge": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "SEQUENCE"
+        },
+        "from": {
+          "$ref": "#/$defs/id"
+        },
+        "to": {
+          "$ref": "#/$defs/id"
+        }
+      },
+      "required": [
+        "kind",
+        "from",
+        "to"
+      ],
+      "additionalProperties": false
+    },
+    "failureEdge": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "FAILURE"
+        },
+        "from": {
+          "$ref": "#/$defs/id"
+        },
+        "to": {
+          "$ref": "#/$defs/id"
+        }
+      },
+      "required": [
+        "kind",
+        "from",
+        "to"
+      ],
+      "additionalProperties": false
+    },
+    "labelEdge": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "LABEL"
+        },
+        "from": {
+          "$ref": "#/$defs/id"
+        },
+        "to": {
+          "$ref": "#/$defs/id"
+        },
+        "label": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/aggregate.schema.json#/$defs/value"
+        }
+      },
+      "required": [
+        "kind",
+        "from",
+        "to",
+        "label"
+      ],
+      "additionalProperties": false
+    },
+    "expiryEdge": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "EXPIRY"
+        },
+        "from": {
+          "$ref": "#/$defs/id"
+        },
+        "to": {
+          "$ref": "#/$defs/id"
+        },
+        "deadline_ref": {
+          "$ref": "#/$defs/id"
+        }
+      },
+      "required": [
+        "kind",
+        "from",
+        "to",
+        "deadline_ref"
+      ],
+      "additionalProperties": false
+    },
+    "relationship": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/sequenceEdge"
+        },
+        {
+          "$ref": "#/$defs/failureEdge"
+        },
+        {
+          "$ref": "#/$defs/labelEdge"
+        },
+        {
+          "$ref": "#/$defs/expiryEdge"
+        }
+      ]
+    },
+    "choice": {
+      "type": "object",
+      "properties": {
+        "step_id": {
+          "$ref": "#/$defs/id"
+        },
+        "label_type_ref": {
+          "$ref": "#/$defs/id"
+        },
+        "label_values": {
+          "type": "array",
+          "items": {
+            "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.2/aggregate.schema.json#/$defs/value"
+          },
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "step_id",
+        "label_type_ref",
+        "label_values"
+      ],
+      "additionalProperties": false
+    },
+    "occurrenceLimit": {
+      "type": "object",
+      "properties": {
+        "step_id": {
+          "$ref": "#/$defs/id"
+        },
+        "maximum": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)$"
+        }
+      },
+      "required": [
+        "step_id",
+        "maximum"
+      ],
+      "additionalProperties": false
+    },
+    "loop": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "entry_step_id": {
+          "$ref": "#/$defs/id"
+        },
+        "member_step_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 256,
+          "uniqueItems": true
+        },
+        "back_edge_from_step_id": {
+          "$ref": "#/$defs/id"
+        },
+        "maximum_passes": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        }
+      },
+      "required": [
+        "id",
+        "entry_step_id",
+        "member_step_ids",
+        "back_edge_from_step_id",
+        "maximum_passes"
+      ],
+      "additionalProperties": false
+    },
+    "absoluteDue": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "ABSOLUTE_INSTANT"
+        },
+        "instant": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        }
+      },
+      "required": [
+        "kind",
+        "instant"
+      ],
+      "additionalProperties": false
+    },
+    "elapsedDue": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "ELAPSED_DURATION"
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        },
+        "unit": {
+          "enum": [
+            "SECOND",
+            "MINUTE",
+            "HOUR",
+            "DAY"
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "value",
+        "unit"
+      ],
+      "additionalProperties": false
+    },
+    "ancestorDue": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "ELAPSED_FROM_ANCESTOR"
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        },
+        "unit": {
+          "enum": [
+            "SECOND",
+            "MINUTE",
+            "HOUR",
+            "DAY"
+          ]
+        },
+        "anchor_step_id": {
+          "$ref": "#/$defs/id"
+        }
+      },
+      "required": [
+        "kind",
+        "value",
+        "unit",
+        "anchor_step_id"
+      ],
+      "additionalProperties": false
+    },
+    "deadline": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "step_id": {
+          "$ref": "#/$defs/id"
+        },
+        "clock_source": {
+          "$ref": "#/$defs/id"
+        },
+        "due": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/absoluteDue"
+            },
+            {
+              "$ref": "#/$defs/elapsedDue"
+            },
+            {
+              "$ref": "#/$defs/ancestorDue"
+            }
+          ]
+        },
+        "boundary": {
+          "enum": [
+            "AT_OR_AFTER",
+            "AFTER"
+          ]
+        },
+        "expiry_target": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "step_id",
+        "clock_source",
+        "due",
+        "boundary",
+        "expiry_target"
+      ],
+      "additionalProperties": false
+    },
+    "parallelBranch": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "head_step_id": {
+          "$ref": "#/$defs/id"
+        }
+      },
+      "required": [
+        "id",
+        "head_step_id"
+      ],
+      "additionalProperties": false
+    },
+    "parallelBlock": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "split_step_id": {
+          "$ref": "#/$defs/id"
+        },
+        "branches": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/parallelBranch"
+          },
+          "minItems": 2,
+          "maxItems": 64
+        },
+        "join_step_id": {
+          "$ref": "#/$defs/id"
+        }
+      },
+      "required": [
+        "id",
+        "split_step_id",
+        "branches",
+        "join_step_id"
+      ],
+      "additionalProperties": false
+    },
+    "fanout": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "expand_step_id": {
+          "$ref": "#/$defs/id"
+        },
+        "region_head_step_id": {
+          "$ref": "#/$defs/id"
+        },
+        "join_step_id": {
+          "$ref": "#/$defs/id"
+        },
+        "object_field": {
+          "$ref": "#/$defs/id"
+        },
+        "object_request_field": {
+          "$ref": "#/$defs/id"
+        },
+        "object_type_ref": {
+          "$ref": "#/$defs/id"
+        },
+        "empty_set_behavior": {
+          "enum": [
+            "ADVANCE_TO_JOIN",
+            "STOP"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "expand_step_id",
+        "region_head_step_id",
+        "join_step_id",
+        "object_field",
+        "object_request_field",
+        "object_type_ref",
+        "empty_set_behavior"
+      ],
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "revision": {
+          "$ref": "#/$defs/id"
+        },
+        "obligations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 1024,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "revision",
+        "obligations"
+      ],
+      "additionalProperties": false
+    },
+    "limits": {
+      "type": "object",
+      "properties": {
+        "maximum_proposals": {
+          "$ref": "#/$defs/natural"
+        },
+        "maximum_activations": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        },
+        "maximum_actuations": {
+          "$ref": "#/$defs/natural"
+        },
+        "maximum_active_obligations": {
+          "$ref": "#/$defs/natural"
+        },
+        "maximum_fanout_objects": {
+          "$ref": "#/$defs/natural"
+        }
+      },
+      "required": [
+        "maximum_proposals",
+        "maximum_activations",
+        "maximum_actuations",
+        "maximum_active_obligations",
+        "maximum_fanout_objects"
+      ],
+      "additionalProperties": false
+    },
+    "definition": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.2/work-class-definition"
+        },
+        "specification_pin": {
+          "$ref": "#/$defs/digest"
+        },
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "revision": {
+          "$ref": "#/$defs/id"
+        },
+        "profile": {
+          "$ref": "#/$defs/profile"
+        },
+        "root": {
+          "$ref": "#/$defs/id"
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/participant"
+          },
+          "minItems": 1,
+          "maxItems": 256
+        },
+        "objects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/objectDeclaration"
+          },
+          "minItems": 0,
+          "maxItems": 256
+        },
+        "types": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/type"
+          },
+          "minItems": 1,
+          "maxItems": 64
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/step"
+          },
+          "minItems": 1,
+          "maxItems": 256
+        },
+        "relationships": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relationship"
+          },
+          "minItems": 0,
+          "maxItems": 1024
+        },
+        "choices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/choice"
+          },
+          "minItems": 0,
+          "maxItems": 64
+        },
+        "occurrence_limits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/occurrenceLimit"
+          },
+          "minItems": 0,
+          "maxItems": 256
+        },
+        "loops": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/loop"
+          },
+          "minItems": 0,
+          "maxItems": 64
+        },
+        "deadlines": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/deadline"
+          },
+          "minItems": 0,
+          "maxItems": 256
+        },
+        "parallel_blocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/parallelBlock"
+          },
+          "minItems": 0,
+          "maxItems": 64
+        },
+        "fanouts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/fanout"
+          },
+          "minItems": 0,
+          "maxItems": 64
+        },
+        "shared_budgets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "maxItems": 64,
+          "uniqueItems": true
+        },
+        "limits": {
+          "$ref": "#/$defs/limits"
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        }
+      },
+      "required": [
+        "schema",
+        "specification_pin",
+        "id",
+        "revision",
+        "profile",
+        "root",
+        "participants",
+        "objects",
+        "types",
+        "steps",
+        "relationships",
+        "choices",
+        "occurrence_limits",
+        "loops",
+        "deadlines",
+        "parallel_blocks",
+        "fanouts",
+        "shared_budgets",
+        "limits",
+        "source"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$ref": "#/$defs/definition"
+}
