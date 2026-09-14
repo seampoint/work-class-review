@@ -2,8 +2,8 @@
 
 - Candidate: `seampoint.work-class/1.0.0-draft.2`
 - Pin: `sha256:5442ee3b55675d849e388981487b806c0be29f686df6df8520b488508f86ceec`
-- Source state: `seampoint/work-class-specification@0f289e9a6064f3cde2e7e88515afcc0e054a51f6`
-- Generated: `2026-09-14T19:54:08Z`
+- Source state: `seampoint/work-class-specification@50ca5a3a1af962300205e69685ddc9749e35262a`
+- Generated: `2026-09-14T20:02:31Z`
 - Files from the source: 1528
 
 ## Included

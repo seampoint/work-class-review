@@ -43,7 +43,10 @@ urlcolor: blue
 
 **Keywords:** agentic AI governance; deterministic governance; work-class specification; business authority; conformance testing; shared reservations
 
-*Open review preprint. Candidate `seampoint.work-class/1.0.0-draft.2`, pin `sha256:5442ee3b55675d849e388981487b806c0be29f686df6df8520b488508f86ceec`. Not posted to arXiv.*
+*Open review preprint. Not posted to arXiv.*
+
+**Candidate:** `seampoint.work-class/1.0.0-draft.2`\\
+**Pin:** `5442ee3b`
 
 """
 
