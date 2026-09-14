@@ -1,8 +1,12 @@
-# Reviewer packet: `seampoint.work-class/1.0.0-draft.2`, pre-freeze candidate
+# Reviewer packet: `seampoint.work-class/1.0.0-draft.2`
 
-Prepared 2026-09-14 for readers who want the current draft 2 text before its semantic freeze. It supersedes `REVIEWER-PACKET-PROVISIONAL-20260913.md`. Status: pre-freeze, claim ceiling `APPARATUS_ONLY`. Nothing in this packet is adopted or qualified. One independent review round has run over the draft 2 changes. Its text-decided findings and the specification owner's decisions on the questions it raised are applied at this pin; those corrections have not themselves been independently reviewed.
+Prepared 2026-09-14. Status: `SEMANTIC_FREEZE_OPEN_REVIEW_CANDIDATE`, claim ceiling `APPARATUS_ONLY`. Nothing in this packet is adopted or qualified. One independent review round has run over the draft 2 changes. Its text-decided findings and the specification owner's decisions on the questions it raised are applied at this pin; those corrections have not themselves been independently reviewed. A later README-only identity bump removed product names from the informative index; it does not change a requirement.
 
-Commit `84da38c4` (this packet is added in the commit after it) on branch `codex/work-class-specification`. Candidate pin (SHA-256 of `contract-manifest.json`): `sha256:dc925a1473d788e69f8912136e84796b143bc60dfe118ae004ba310a0108f1ea`.
+Specification candidate `1.0.0-draft.2` is called draft 2 below. References to later work mean a future specification candidate, not a revision of the accompanying paper.
+
+The normative specification is available under the Community Specification License 1.0. The conformance apparatus and reference code are available under Apache 2.0. The paper is available under Creative Commons Attribution 4.0. `LICENSE.md`, `Scope.md` and `Notices.md` define the boundaries and current patent disclosure.
+
+Candidate pin (SHA-256 of `contract-manifest.json`): `sha256:5442ee3b55675d849e388981487b806c0be29f686df6df8520b488508f86ceec`.
 
 ## What to read
 
@@ -20,13 +24,13 @@ Four non-normative application specimens exercise the text end to end under both
 
 ## Evidence at this pin
 
-425 conformance cases; 295 of the 296 contract judgments have exact vectors (D2-193 pending). Both reference consumers, TypeScript and Python with no shared evaluator, reproduce all 425 byte for byte with zero differing results. The four specimens pass under both consumers. Repository gates: 681 of 681. Expected judgments are derived from the text before either consumer runs. These are apparatus results. The independent review round ran at `sha256:5a75779d...`; the corrections and decisions applied since then have not been independently reviewed.
+425 conformance cases; 295 of the 296 contract judgments have exact vectors (D2-193 pending). Both reference consumers, TypeScript and Python with no shared evaluator, reproduce all 425 byte for byte with zero differing results. The four specimens pass under both consumers. `scripts/verify.sh licensing-ratification-20260914` passed every step. Expected judgments are derived from the text before either consumer runs. These are apparatus results. The independent review round ran at `sha256:5a75779d...`. A focused 2026-09-14 review of the two correction commits (`260c24a`, `6257ee6`) accepted them with notes: CR-02 remains for a later specification candidate, and the unbounded `failed_checks` list has no case above 256 rows. Neither note is freeze-breaking. The current pin differs from `b3642113` in publication-status wording and the mechanical identity ripple that change requires; no runtime rule or expected judgment changed.
 
 ## Known gaps
 
-Recorded limitations: no accepted independent review exists for the access-card correspondence subject (blocker AC-REV-001), and every specimen's review acts remain labelled synthetic proxies; the sepsis specimen's two timing approximations (time zero is the alert's delivery, and the attending's window runs from the page step's activation) are draft 3 design inputs; a disputed effect has no attributable human exit in draft 2 (CR-02); the rules-of-engagement specimen records a required escalation with no runtime trace, no operator-initiated stop and no age bound on the operator's decision act, all draft 3 design inputs; the Python consumer's unit tests under `python/tests/` are stale and outside the gates.
+Recorded limitations: no accepted independent review exists for the access-card correspondence subject (blocker AC-REV-001), and every specimen's review acts remain labelled synthetic proxies; the sepsis specimen's two timing approximations (time zero is the alert's delivery, and the attending's window runs from the page step's activation) remain for a later specification candidate; a disputed reservation and a blocked shared-budget anchor stay blocked, and draft 2 defines no clearance operation (CR-02); the rules-of-engagement specimen records a required escalation with no runtime trace, no operator-initiated stop and no age bound on the operator's decision act, all for a later specification candidate; the Python consumer's unit tests under `python/tests/` are stale, outside the gates, and omitted from the reviewer snapshot.
 
-Draft 3 items: CR-02a and CR-02b (disposition of a disputed reservation and lifecycle dispute clearance), CR-06 (business-day boundaries), CR-07 (host conformance profile), pre-approved materiality thresholds, and the specimen design inputs listed in `CONTRACT-DECISIONS.md`.
+Later-candidate items: CR-02a and CR-02b (disposition of a disputed reservation and lifecycle dispute clearance), CR-06 (business-day boundaries), CR-07 (host conformance profile), pre-approved materiality thresholds, and the specimen design inputs listed in `CONTRACT-DECISIONS.md`.
 
 ## Manifest
 
@@ -39,7 +43,7 @@ Draft 3 items: CR-02a and CR-02b (disposition of a disputed reservation and life
 | `EXTERNAL-DEPENDENCIES.md` | `afd78d0cef496504...` |
 | `LIFECYCLE.md` | `089c5cbf1e183078...` |
 | `PROTOCOL.md` | `de3802b22b80e20a...` |
-| `README.md` | `e9b9fc1dfcdfa3a4...` |
+| `README.md` | `5f114ba63af32c09...` |
 | `RESERVATION-RECORDS.md` | `3803696cff1fd629...` |
 | `RESERVATIONS.md` | `1ff66eba843b1b2b...` |
 | `SCOPE-AND-BOUNDARY.md` | `08296d9fff10b881...` |

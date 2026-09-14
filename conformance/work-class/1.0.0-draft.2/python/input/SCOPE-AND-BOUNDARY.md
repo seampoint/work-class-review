@@ -1,6 +1,6 @@
 # Work-class 1.0 scope and boundary
 
-Identity: `seampoint.work-class/1.0.0-draft.2`. This private candidate defines a portable contract for deterministic governance of bounded work. It is a draft for technical review and does not qualify a production deployment.
+Identity: `seampoint.work-class/1.0.0-draft.2`. This open review candidate defines a portable contract for deterministic governance of bounded work. It is a draft for technical review and does not qualify a production deployment.
 
 The candidate includes four executable profiles:
 

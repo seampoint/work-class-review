@@ -15,7 +15,7 @@
     },
     {
       "path": "COMPOSITION.md",
-      "sha256": "6ab89348b24272515e2a2925679acebcf4bd6247ebd3ad0ff0da67a592fa4bd7"
+      "sha256": "eaa41a3df216412c54000e4206380238f8bee89994fcfe3f290dd080f883e6a4"
     },
     {
       "path": "EXTERNAL-DEPENDENCIES.md",
@@ -31,7 +31,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "e9b9fc1dfcdfa3a4384a2ac7ec8908642b20b000b9962f5c4e4ae21dee5174e5"
+      "sha256": "26819bc185db2c7c75777d88b21c0b49a7aaf7bc99be32d0a28e2c12ac84a0a5"
     },
     {
       "path": "RESERVATION-RECORDS.md",
@@ -43,11 +43,11 @@
     },
     {
       "path": "SCOPE-AND-BOUNDARY.md",
-      "sha256": "08296d9fff10b8818dda8d4ad22cf166cff13e083fcb15bfaca0963d55f6f4c4"
+      "sha256": "9ad7bd7d3803da499a4d9b189d12f1a0e13a6e37d1ac3059b4d86a4d5a9fb77a"
     },
     {
       "path": "Specification.md",
-      "sha256": "48470078d954ce1a0ed4238894311edb7fb5cceff111bb37299480b26b3bcd73"
+      "sha256": "bd81af6fd6bee7e6fc22ef84875517a35ff4acf67b2cb5070ac724bf5d49cde5"
     },
     {
       "path": "aggregate.schema.json",
@@ -75,7 +75,7 @@
     },
     {
       "path": "requirements.json",
-      "sha256": "97a3c9af062d8aab0082a0da5f37eda404d47b78fa714d49279d8dfa3c6978e8"
+      "sha256": "50dcba6670d3aa9a821cdce7fe89bf590e1e01d0218db7bcabda2a5d2a873024"
     },
     {
       "path": "reservation.schema.json",

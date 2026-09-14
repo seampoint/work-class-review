@@ -2,7 +2,7 @@
 
 Candidate: `seampoint.work-class/1.0.0-draft.2/composition`
 
-Status: `DRAFT_NOT_ADOPTED`, `APPARATUS_ONLY`. This private technical-review draft replaces the draft-1 composition text for the `LINEAR`, `CHOICE_LOOPS`, `DEADLINES`, and `PARALLEL_FANOUT` profiles. It defines the admitted graph, occurrence identities, route selection, loop bounds, deadline activation, structured parallel obligations, and frozen fan-out. The lifecycle operation in `LIFECYCLE.md` applies these rules to events and state. Authority, aggregate, and shared reservation semantics remain those of `AUTHORITY.md`, `AGGREGATES.md`, `RESERVATIONS.md`, and `RESERVATION-RECORDS.md`.
+Status: `DRAFT_NOT_ADOPTED`, `APPARATUS_ONLY`. This open technical-review draft replaces the draft-1 composition text for the `LINEAR`, `CHOICE_LOOPS`, `DEADLINES`, and `PARALLEL_FANOUT` profiles. It defines the admitted graph, occurrence identities, route selection, loop bounds, deadline activation, structured parallel obligations, and frozen fan-out. The lifecycle operation in `LIFECYCLE.md` applies these rules to events and state. Authority, aggregate, and shared reservation semantics remain those of `AUTHORITY.md`, `AGGREGATES.md`, `RESERVATIONS.md`, and `RESERVATION-RECORDS.md`.
 
 ## 1. Profile family
 

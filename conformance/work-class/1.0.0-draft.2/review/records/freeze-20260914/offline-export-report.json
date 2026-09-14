@@ -1,8 +1,8 @@
 {
   "candidate": "seampoint.work-class/1.0.0-draft.2",
-  "export_root": "/Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2",
-  "specification_pin": "sha256:dc925a1473d788e69f8912136e84796b143bc60dfe118ae004ba310a0108f1ea",
-  "suite_manifest_sha256": "49592bd3222dc15e87c2b9bac9c67367c5960e5efb4c01dd8babc0b4663f6b42",
+  "export_root": "/Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914",
+  "specification_pin": "sha256:5442ee3b55675d849e388981487b806c0be29f686df6df8520b488508f86ceec",
+  "suite_manifest_sha256": "a7f91b10c85e49a57629c42e76011d789d6d197e7b99ef5657ea1924f74bd33c",
   "external_symlinks": [],
   "files_naming_the_source_checkout": [],
   "steps": [
@@ -10,78 +10,78 @@
       "name": "check-corpus",
       "command": [
         "/opt/homebrew/bin/node",
-        "/Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/conformance/work-class/1.0.0-draft.2/runner/check-corpus.mjs"
+        "/Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/conformance/work-class/1.0.0-draft.2/runner/check-corpus.mjs"
       ],
       "exit_code": 0,
-      "log": "/Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/scratch/logs/check-corpus.log"
+      "log": "/Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/scratch/logs/check-corpus.log"
     },
     {
       "name": "corpus-typescript",
       "command": [
         "/opt/homebrew/opt/python@3.14/bin/python3.14",
-        "/Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/conformance/work-class/1.0.0-draft.2/runner/run-development.py",
+        "/Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/conformance/work-class/1.0.0-draft.2/runner/run-development.py",
         "--adapter-command",
-        "/opt/homebrew/bin/node /Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/conformance/work-class/1.0.0-draft.2/typescript/adapter.ts",
+        "/opt/homebrew/bin/node /Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/conformance/work-class/1.0.0-draft.2/typescript/adapter.ts",
         "--adapter-without-shared-budget-command",
-        "env WORK_CLASS_ADAPTER_ROLES=AGGREGATE_EVALUATOR,AUTHORITY_EVALUATOR,CHOICE_LOOP_RUNTIME,DEADLINE_RUNTIME,LINEAR_WORK_RUNTIME,PARALLEL_FANOUT_RUNTIME,REFERENCE_SINGLE_PROCESS_CONTENTION,REVIEW_EVIDENCE /opt/homebrew/bin/node /Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/conformance/work-class/1.0.0-draft.2/typescript/adapter.ts",
+        "env WORK_CLASS_ADAPTER_ROLES=AGGREGATE_EVALUATOR,AUTHORITY_EVALUATOR,CHOICE_LOOP_RUNTIME,DEADLINE_RUNTIME,LINEAR_WORK_RUNTIME,PARALLEL_FANOUT_RUNTIME,REFERENCE_SINGLE_PROCESS_CONTENTION,REVIEW_EVIDENCE /opt/homebrew/bin/node /Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/conformance/work-class/1.0.0-draft.2/typescript/adapter.ts",
         "--host-command",
-        "/opt/homebrew/bin/node /Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/conformance/work-class/1.0.0-draft.2/typescript/host.ts",
+        "/opt/homebrew/bin/node /Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/conformance/work-class/1.0.0-draft.2/typescript/host.ts",
         "--scratch-root",
-        "/Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/scratch/typescript-scratch",
+        "/Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/scratch/typescript-scratch",
         "--report",
-        "/Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/scratch/typescript-run.json"
+        "/Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/scratch/typescript-run.json"
       ],
       "exit_code": 0,
-      "log": "/Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/scratch/logs/corpus-typescript.log"
+      "log": "/Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/scratch/logs/corpus-typescript.log"
     },
     {
       "name": "corpus-python",
       "command": [
         "/opt/homebrew/opt/python@3.14/bin/python3.14",
-        "/Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/conformance/work-class/1.0.0-draft.2/runner/run-development.py",
+        "/Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/conformance/work-class/1.0.0-draft.2/runner/run-development.py",
         "--adapter-command",
-        "/opt/homebrew/opt/python@3.14/bin/python3.14 /Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/conformance/work-class/1.0.0-draft.2/python/adapter.py",
+        "/opt/homebrew/opt/python@3.14/bin/python3.14 /Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/conformance/work-class/1.0.0-draft.2/python/adapter.py",
         "--adapter-without-shared-budget-command",
-        "env WORK_CLASS_ADAPTER_ROLES=AGGREGATE_EVALUATOR,AUTHORITY_EVALUATOR,CHOICE_LOOP_RUNTIME,DEADLINE_RUNTIME,LINEAR_WORK_RUNTIME,PARALLEL_FANOUT_RUNTIME,REFERENCE_SINGLE_PROCESS_CONTENTION,REVIEW_EVIDENCE /opt/homebrew/opt/python@3.14/bin/python3.14 /Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/conformance/work-class/1.0.0-draft.2/python/adapter.py",
+        "env WORK_CLASS_ADAPTER_ROLES=AGGREGATE_EVALUATOR,AUTHORITY_EVALUATOR,CHOICE_LOOP_RUNTIME,DEADLINE_RUNTIME,LINEAR_WORK_RUNTIME,PARALLEL_FANOUT_RUNTIME,REFERENCE_SINGLE_PROCESS_CONTENTION,REVIEW_EVIDENCE /opt/homebrew/opt/python@3.14/bin/python3.14 /Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/conformance/work-class/1.0.0-draft.2/python/adapter.py",
         "--host-command",
-        "/opt/homebrew/opt/python@3.14/bin/python3.14 /Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/conformance/work-class/1.0.0-draft.2/python/host_adapter.py",
+        "/opt/homebrew/opt/python@3.14/bin/python3.14 /Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/conformance/work-class/1.0.0-draft.2/python/host_adapter.py",
         "--scratch-root",
-        "/Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/scratch/python-scratch",
+        "/Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/scratch/python-scratch",
         "--report",
-        "/Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/scratch/python-run.json"
+        "/Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/scratch/python-run.json"
       ],
       "exit_code": 0,
-      "log": "/Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/scratch/logs/corpus-python.log"
+      "log": "/Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/scratch/logs/corpus-python.log"
     },
     {
       "name": "specimens-shared-verifier",
       "command": [
         "/opt/homebrew/opt/python@3.14/bin/python3.14",
-        "/Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/conformance/work-class/1.0.0-draft.2/review/verify-cross-language-specimens.py",
+        "/Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/conformance/work-class/1.0.0-draft.2/review/verify-cross-language-specimens.py",
         "--report",
-        "/Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/scratch/specimen-verification.json"
+        "/Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/scratch/specimen-verification.json"
       ],
       "exit_code": 0,
-      "log": "/Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/scratch/logs/specimens.log"
+      "log": "/Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/scratch/logs/specimens.log"
     },
     {
       "name": "specimen-roe-engagement",
       "command": [
         "/opt/homebrew/opt/python@3.14/bin/python3.14",
-        "/Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/conformance/work-class/1.0.0-draft.2/specimens/roe-engagement/verify-specimen.py"
+        "/Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/conformance/work-class/1.0.0-draft.2/specimens/roe-engagement/verify-specimen.py"
       ],
       "exit_code": 0,
-      "log": "/Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/scratch/logs/roe.log"
+      "log": "/Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/scratch/logs/roe.log"
     },
     {
       "name": "specimen-sepsis-surveillance",
       "command": [
         "/opt/homebrew/opt/python@3.14/bin/python3.14",
-        "/Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/conformance/work-class/1.0.0-draft.2/specimens/sepsis-surveillance/compare-consumers.py",
+        "/Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/conformance/work-class/1.0.0-draft.2/specimens/sepsis-surveillance/compare-consumers.py",
         "--fresh"
       ],
       "exit_code": 0,
-      "log": "/Volumes/ssd/neo-draft2-reviewer-export/freeze-dc925a14-r2/scratch/logs/sepsis.log"
+      "log": "/Volumes/ssd/agent-data/workbench-projects/sag-development/runs/open-license-offline-export-20260914/scratch/logs/sepsis.log"
     }
   ],
   "corpus": {

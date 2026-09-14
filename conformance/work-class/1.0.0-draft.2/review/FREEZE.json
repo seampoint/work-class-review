@@ -1,14 +1,14 @@
 {
   "identity": "seampoint.work-class/1.0.0-draft.2",
-  "at": "2026-09-14T04:24:29Z",
-  "status": "SEMANTIC_FREEZE_PRIVATE_CANDIDATE",
-  "meaning": "The draft 2 normative text, schemas and conformance suite are fixed at this pin for review and for white paper revision 3. A change to any normative file or expected result creates a new candidate; results stay attached to the pin that produced them.",
+  "at": "2026-09-14T19:52:29Z",
+  "status": "SEMANTIC_FREEZE_OPEN_REVIEW_CANDIDATE",
+  "meaning": "The draft 2 normative text, schemas and conformance suite are fixed at this pin for open review and for white paper revision 3. A change to any normative file or expected result creates a new candidate; results stay attached to the pin that produced them.",
   "claim_ceiling": "APPARATUS_ONLY",
   "qualification": "NOT_QUALIFIED",
-  "specification_pin": "sha256:dc925a1473d788e69f8912136e84796b143bc60dfe118ae004ba310a0108f1ea",
+  "specification_pin": "sha256:5442ee3b55675d849e388981487b806c0be29f686df6df8520b488508f86ceec",
   "suite_manifest": {
     "path": "suite/manifest.json",
-    "sha256": "49592bd3222dc15e87c2b9bac9c67367c5960e5efb4c01dd8babc0b4663f6b42"
+    "sha256": "a7f91b10c85e49a57629c42e76011d789d6d197e7b99ef5657ea1924f74bd33c"
   },
   "counts": {
     "requirements": "80",
@@ -25,7 +25,7 @@
     "D2-193"
   ],
   "verification": {
-    "commit": "84da38c4",
+    "commit": "e35879d84acb3c1a5828f4d48f63f1bae65f8102",
     "procedure": "one pass: corpus check, both reference consumers over every case with every actual result compared, the shared specimen verifier, npm run gates",
     "corpus": "PASS",
     "typescript": "425 of 425",
@@ -36,7 +36,7 @@
   },
   "offline_export": {
     "path": "review/records/freeze-20260914/offline-export-report.json",
-    "sha256": "ce83977135d8cda9bb0222f4583633d886b733d8fdc72125b7bffb39dbe4ae8a",
+    "sha256": "a01ecd27618ab00760cbf61278399643d4e94b3f64b12793c355244e10af6a2f",
     "status": "PASS",
     "corpus": {
       "typescript": {
@@ -95,13 +95,13 @@
     },
     {
       "commit": "84da38c4",
-      "pin": "sha256:dc925a1473d788e69f8912136e84796b143bc60dfe118ae004ba310a0108f1ea",
+      "pin": "sha256:5442ee3b55675d849e388981487b806c0be29f686df6df8520b488508f86ceec",
       "summary": "The specification owner's decisions on the round's open questions: deployment binding conditions before availability conditions, admission of a fresh REJECTED attempt on a consumed permit, removal of the failed_checks cap, and the statement that the reservation transition does not compare the observed request with actual fields; five cases."
     }
   ],
   "decisions": {
     "path": "review/CONTRACT-DECISIONS.md",
-    "sha256": "f4b44b7399c337ba6d9366c640c5bc9798f98d3058d8be4835113b9c4793cdac"
+    "sha256": "fd38edc5853f3910f3ed24077ce8bdfe621fd05435afa605e7e8b7d4be7cabed"
   },
   "known_limitations": [
     "D2-193 has no exact vector.",
@@ -110,7 +110,7 @@
     "The Python consumer's unit tests under python/tests are stale and outside the gates.",
     "A disputed effect has no attributable human exit in draft 2."
   ],
-  "draft_3_items": [
+  "later_candidate_items": [
     "CR-02a and CR-02b: disposition of a disputed reservation and lifecycle dispute clearance",
     "CR-06: business-day boundaries",
     "CR-07: host conformance profile",

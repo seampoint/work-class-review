@@ -1,13 +1,20 @@
-# Work-class standard: reviewer snapshot
+# Work-Class Governance Specification: review candidate
 
-Private technical-review snapshot of `seampoint.work-class/1.0.0-draft.2`, frozen at pin `sha256:dc925a1473d788e69f8912136e84796b143bc60dfe118ae004ba310a0108f1ea`. Claim ceiling `APPARATUS_ONLY`: see [CLAIM-CARD.md](CLAIM-CARD.md).
+Open technical-review snapshot of `seampoint.work-class/1.0.0-draft.2`, frozen at pin `sha256:5442ee3b55675d849e388981487b806c0be29f686df6df8520b488508f86ceec`. Claim ceiling `APPARATUS_ONLY`: see [CLAIM-CARD.md](CLAIM-CARD.md).
 
 ## Start here
 
-1. [Reviewer packet](conformance/work-class/1.0.0-draft.2/review/REVIEWER-PACKET-20260914.md): what the candidate is, what changed in draft 2, the evidence and the known gaps.
-2. [Specification](library/work-class-specification/1.0.0-draft.2/README.md).
-3. The four application specimens under [conformance/work-class/1.0.0-draft.2/specimens/](conformance/work-class/1.0.0-draft.2/specimens/), each with its own README and claim boundary.
-4. The [freeze record](conformance/work-class/1.0.0-draft.2/review/FREEZE.json) and the [independent review round](conformance/work-class/1.0.0-draft.2/review/records/FREEZE-REVIEW-20260913.md).
+1. [Preprint](conformance/work-class/1.0.0-draft.2/review/paper/preprint.pdf), with [Markdown](conformance/work-class/1.0.0-draft.2/review/paper/preprint.md) and [TeX](conformance/work-class/1.0.0-draft.2/review/paper/preprint.tex) sources: the argument, architecture, evidence and limits.
+2. [Reviewer packet](conformance/work-class/1.0.0-draft.2/review/REVIEWER-PACKET-20260914.md): what the candidate is, what changed in draft 2, the evidence and the known gaps.
+3. [Specification](library/work-class-specification/1.0.0-draft.2/README.md).
+4. The four application specimens under [conformance/work-class/1.0.0-draft.2/specimens/](conformance/work-class/1.0.0-draft.2/specimens/), each with its own README and claim boundary.
+5. The [freeze record](conformance/work-class/1.0.0-draft.2/review/FREEZE.json) and the [independent review round](conformance/work-class/1.0.0-draft.2/review/records/FREEZE-REVIEW-20260913.md).
+
+## Rights and review
+
+The normative specification uses the [Community Specification License 1.0](LICENSE-SPECIFICATION.md). The conformance apparatus and reference code use [Apache 2.0](LICENSE-CODE). The paper uses [Creative Commons Attribution 4.0](LICENSE-PAPER). [LICENSE.md](LICENSE.md) defines the path boundaries; [Scope.md](Scope.md) and [Notices.md](Notices.md) record the Necessary Claims scope and current patent disclosure.
+
+This phase requests technical findings, not contributed text or code. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Verify
 

@@ -1,6 +1,6 @@
 # Work-class specification: deterministic governance for bounded work
 
-Identity: `seampoint.work-class/1.0.0-draft.2`. Status: DRAFT_NOT_ADOPTED, APPARATUS_ONLY. This independent private candidate defines the shared contract for deterministic governance of bounded work. A document in this directory does not establish a production deployment. The maintained historical candidates keep their original identities and results.
+Identity: `seampoint.work-class/1.0.0-draft.2`. Status: DRAFT_NOT_ADOPTED, APPARATUS_ONLY. This independent open review candidate defines the shared contract for deterministic governance of bounded work. A document in this directory does not establish a production deployment. The maintained historical candidates keep their original identities and results.
 
 ## Contract and supported roles
 
