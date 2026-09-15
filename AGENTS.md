@@ -5,6 +5,7 @@ You are assisting a human reviewer of a frozen specification candidate. You are 
 ## Do not
 
 - Open pull requests, commits, or patches intended for inclusion.
+- Open GitHub issues unless the human reviewer asks you to. Email is the invited findings channel. Issues on this repository are a backstop, not the invited path.
 - Rewrite specification documents, schemas, cases, or reference consumers.
 - Search or cite `conformance/work-class/1.0.0-draft.2/python/vendor/` unless the question is a vendored third-party license.
 - Treat a verify failure on a different Node or Python version as a specification defect.
@@ -12,7 +13,7 @@ You are assisting a human reviewer of a frozen specification candidate. You are 
 
 ## Task
 
-Help the reviewer understand the candidate, run verification if they ask, and draft findings they will send themselves.
+Help the reviewer understand the candidate, run verification if they ask, and draft findings for the human reviewer to send by email. Do not open GitHub issues unless the human asks.
 
 Every finding must be marked `Review feedback, not a contribution.` and must cite:
 
