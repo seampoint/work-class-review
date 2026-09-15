@@ -1,0 +1,7 @@
+conformance/work-class/1.0.0-draft.2/python/vendor/
+node_modules/
+**/node_modules/
+runs/
+__pycache__/
+*.pyc
+.DS_Store

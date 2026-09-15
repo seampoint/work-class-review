@@ -1,0 +1,54 @@
+name: Review finding
+description: Technical finding about the frozen candidate. Not a contribution.
+title: "[finding] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Mark the report Review feedback, not a contribution. Do not attach replacement specification text or code intended for inclusion. See CONTRIBUTING.md.
+  - type: checkboxes
+    id: not-contribution
+    attributes:
+      label: This report
+      options:
+        - label: This is review feedback, not a contribution.
+          required: true
+  - type: dropdown
+    id: finding-class
+    attributes:
+      label: Finding class
+      options:
+        - specification gap
+        - implementation defect
+        - evidence gap
+        - host obligation
+    validations:
+      required: true
+  - type: input
+    id: pin
+    attributes:
+      label: Candidate pin
+      description: SHA-256 of the contract manifest.
+      placeholder: sha256:5442ee3b55675d849e388981487b806c0be29f686df6df8520b488508f86ceec
+    validations:
+      required: true
+  - type: input
+    id: document
+    attributes:
+      label: Document and paragraph
+      placeholder: LIFECYCLE.md LIFE-006
+    validations:
+      required: true
+  - type: textarea
+    id: input
+    attributes:
+      label: Exact input
+    validations:
+      required: true
+  - type: textarea
+    id: rule
+    attributes:
+      label: Governing rule, expected result, and practical effect
+    validations:
+      required: true

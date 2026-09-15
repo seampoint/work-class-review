@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: How to report a finding
+    url: https://github.com/seampoint/work-class-review/blob/main/CONTRIBUTING.md
+    about: This phase accepts technical findings only. Do not send replacement text or code.

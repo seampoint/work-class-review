@@ -18,7 +18,7 @@ This phase requests technical findings, not contributed text or code. See [CONTR
 
 ## Verify
 
-Requires Node.js 24.10.0 and CPython 3.14.6.
+Requires Node.js 24.10.0 and CPython 3.14.6. Those are the recorded versions for a passing run. A failure on another Node or Python version is not a specification defect; match the recorded versions before reporting a verify failure.
 
 ```sh
 npm ci --ignore-scripts

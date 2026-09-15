@@ -31,6 +31,14 @@
 - `package.json`
 - `scripts/verify.sh`
 
+## Added for agent-assisted review (not from the source snapshot)
+
+- `AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md`
+- `.cursorignore`, `.claudeignore`
+- `.github/ISSUE_TEMPLATE/`
+
+These files instruct coding agents assisting a reviewer. They do not change the candidate pin.
+
 ## Intentionally omitted
 
 - Earlier drafts' normative text and conformance trees: Superseded candidates; their results stay attached to their own pins.
