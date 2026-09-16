@@ -3,6 +3,7 @@ rpds/__init__.pyi,sha256=am7x6oMa_pu_kv1NlolqJbPr6_UvCvoyxGKrDGSMKEk,2602
 rpds/__pycache__/__init__.cpython-314.pyc,,
 rpds/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
 rpds/rpds.cpython-314-darwin.so,sha256=t8TjeXGz_FP1BZA4C-Y9yfNAnBPdcsaen8Q35ugiWu8,897312
+rpds/rpds.cpython-314-x86_64-linux-gnu.so,sha256=eWPEA2yKxRxwM_0IydRgvP9hTbLpheQGMGCKeR80aO4,971288
 rpds_py-2026.6.3.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
 rpds_py-2026.6.3.dist-info/METADATA,sha256=-L57F9o5gLLEhZaUFBGkPHCsQbHi1TCqUx8sFeqy6xw,4147
 rpds_py-2026.6.3.dist-info/RECORD,,
