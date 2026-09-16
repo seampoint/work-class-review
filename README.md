@@ -4,6 +4,8 @@ Open technical-review snapshot of `seampoint.work-class/1.0.0-draft.2`, frozen a
 
 ## Start here
 
+The [FAQ](FAQ.md) covers scope, evidence, dispute handling, and human review.
+
 1. [Preprint](conformance/work-class/1.0.0-draft.2/review/paper/preprint.pdf), with [Markdown](conformance/work-class/1.0.0-draft.2/review/paper/preprint.md) and [TeX](conformance/work-class/1.0.0-draft.2/review/paper/preprint.tex) sources: the argument, architecture, evidence and limits.
 2. [Reviewer packet](conformance/work-class/1.0.0-draft.2/review/REVIEWER-PACKET-20260914.md): what the candidate is, what changed in draft 2, the evidence and the known gaps.
 3. [Specification](library/work-class-specification/1.0.0-draft.2/README.md).

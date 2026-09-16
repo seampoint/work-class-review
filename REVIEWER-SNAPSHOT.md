@@ -39,6 +39,10 @@
 
 These files instruct coding agents assisting a reviewer. They do not change the candidate pin.
 
+## Reviewer FAQ added September 16, 2026
+
+`FAQ.md` was added from the approved source-repository FAQ and linked from the README. It explains the candidate's scope, evidence, dispute handling, and human-review requirements. This addition changes no frozen specification, conformance case, or reference implementation.
+
 ## Intentionally omitted
 
 - Earlier drafts' normative text and conformance trees: Superseded candidates; their results stay attached to their own pins.
