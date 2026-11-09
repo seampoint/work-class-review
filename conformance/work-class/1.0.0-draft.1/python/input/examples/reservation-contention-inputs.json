@@ -1,0 +1,1605 @@
+{
+  "configuration": {
+    "schema": "seampoint.work-class/1.0.0-draft.1/reservation-registry",
+    "id": "license-registry",
+    "principal": "access-card-owner",
+    "clock_source": "authority-clock",
+    "administration_provider": "organization-provider",
+    "administration_source": "budget-administration",
+    "administration_role": "budget-administrator",
+    "slots": [
+      {
+        "anchor": "license-spend",
+        "exposure_domain": "issuer-global-usd"
+      }
+    ]
+  },
+  "clock": {
+    "source": "authority-clock",
+    "status": "AVAILABLE",
+    "instant": "2026-09-10T04:30:00Z"
+  },
+  "budget": {
+    "schema": "seampoint.work-class/1.0.0-draft.1/budget-definition",
+    "anchor": "license-spend",
+    "exposure_domain": "issuer-global-usd",
+    "principal": "access-card-owner",
+    "aggregate": {
+      "aggregate": {
+        "bound": {
+          "type_ref": "amount",
+          "value": "1000"
+        },
+        "committed_source": {
+          "contribution": {
+            "field": "amount",
+            "kind": "SUM"
+          },
+          "freshness": {
+            "kind": "MAX_AGE",
+            "seconds": "60"
+          },
+          "key_fields": [
+            "beneficiary"
+          ],
+          "provider": "ledger-provider",
+          "qualifier": {
+            "kind": "BOOLEAN",
+            "value": true
+          },
+          "source": "payments"
+        },
+        "element_type": null,
+        "id": "beneficiary-exposure",
+        "key_types": [
+          "beneficiary"
+        ],
+        "mappings": [
+          {
+            "contribution": {
+              "field": "amount",
+              "kind": "SUM"
+            },
+            "id": "pay",
+            "key_fields": [
+              "beneficiary"
+            ],
+            "qualifier": {
+              "kind": "BOOLEAN",
+              "value": true
+            },
+            "step_ids": [
+              "issue"
+            ]
+          }
+        ],
+        "operator": "LTE",
+        "pending_policy": "INCLUDE_ALL_RESERVED",
+        "reducer": "SUM",
+        "result_type": "amount",
+        "time": {
+          "clock_source": "authority-clock",
+          "precision": "SECOND"
+        },
+        "window": {
+          "duration_seconds": "86400",
+          "end_inclusive": true,
+          "kind": "ROLLING",
+          "start_inclusive": false
+        }
+      },
+      "schema": "seampoint.work-class/1.0.0-draft.1/aggregate-definition",
+      "types": [
+        {
+          "id": "amount",
+          "kind": "DECIMAL",
+          "nonnegative": true,
+          "unit": "USD"
+        },
+        {
+          "id": "beneficiary",
+          "kind": "IDENTITY",
+          "nonnegative": false,
+          "unit": null
+        },
+        {
+          "id": "count",
+          "kind": "INTEGER",
+          "nonnegative": true,
+          "unit": null
+        },
+        {
+          "id": "item",
+          "kind": "STRING",
+          "nonnegative": false,
+          "unit": null
+        }
+      ]
+    },
+    "contributor_classes": [
+      "card-issuance"
+    ],
+    "reservation_policy": {
+      "permit_seconds": "300",
+      "pending_across_windows": true,
+      "unexpected_effect": "BLOCK_AFFECTED_PARTITIONS",
+      "unprojectable_effect": "BLOCK_ANCHOR",
+      "settlement": {
+        "provider": "native-provider",
+        "source": "card-ledger"
+      },
+      "no_effect": {
+        "provider": "native-provider",
+        "source": "card-no-effect"
+      }
+    }
+  },
+  "authorizations": [
+    {
+      "id": "license-class-authorization",
+      "budget_digest": "sha256:9698c09131697c1c1f9fce63217774eb192ee9e6b3cfb310826102f4a97f4ba8",
+      "work_class": "card-issuance",
+      "work_class_digest": "sha256:f8af04d91c39c3038951ff15085ea9f5792f5363ef9f7be357ee1081380fd03d",
+      "envelope_digest": "sha256:c7f5201f620023e7a1a004e05ee3fe55ae7205f6e06e13f36455b0648fcadbab",
+      "principal": "access-card-owner",
+      "step": "issue",
+      "authority_definition": {
+        "schema": "seampoint.work-class/1.0.0-draft.1/authority-definition",
+        "source": {
+          "schema": "seampoint.work-class/1.0.0-draft.1/authority-source",
+          "id": "access-card-policy",
+          "revision": "r1",
+          "obligations": [
+            {
+              "id": "issue-card",
+              "text": "Card issuance requires the declared business authority and shared committed plus unsettled USD exposure at most 1000 over the trailing 24 hours."
+            }
+          ]
+        },
+        "work_class": {
+          "schema": "seampoint.work-class/1.0.0-draft.1/authority-work-class",
+          "id": "card-issuance",
+          "revision": "r1",
+          "types": [
+            {
+              "id": "IDENTITY",
+              "kind": "IDENTITY",
+              "nonnegative": false,
+              "unit": null
+            },
+            {
+              "id": "STRING",
+              "kind": "STRING",
+              "nonnegative": false,
+              "unit": null
+            },
+            {
+              "id": "amount",
+              "kind": "DECIMAL",
+              "unit": "USD",
+              "nonnegative": true
+            }
+          ],
+          "steps": [
+            {
+              "id": "issue",
+              "operation": "issue-card",
+              "interface": "card-system",
+              "executor_role": "card-issuer",
+              "fields": [
+                {
+                  "name": "amount",
+                  "type_ref": "amount"
+                },
+                {
+                  "name": "beneficiary",
+                  "type_ref": "IDENTITY"
+                },
+                {
+                  "name": "card_id",
+                  "type_ref": "IDENTITY"
+                }
+              ],
+              "scope_fields": {
+                "subjects": [
+                  "beneficiary"
+                ],
+                "resources": [
+                  "card_id"
+                ]
+              },
+              "required_credentials": [
+                "card-issuer-credential"
+              ]
+            }
+          ]
+        },
+        "envelope": {
+          "schema": "seampoint.work-class/1.0.0-draft.1/authority-envelope",
+          "id": "access-card-envelope",
+          "source_digest": "sha256:387f513c8f1a30c74e4dd8278545a5b3f77b803c95fdf9f72ef4291211e1722c",
+          "work_class_digest": "sha256:f8af04d91c39c3038951ff15085ea9f5792f5363ef9f7be357ee1081380fd03d",
+          "source_obligations": [
+            "issue-card"
+          ],
+          "principal": "access-card-owner",
+          "grantor_role": "access-card-grantor",
+          "executor_role": "card-issuer",
+          "attester_role": "access-card-attester",
+          "grant_ref": "grant-1",
+          "clock_source": "authority-clock",
+          "bindings": [
+            {
+              "id": "beneficiary-binding",
+              "step": "issue",
+              "field": "beneficiary",
+              "type_ref": "IDENTITY"
+            },
+            {
+              "id": "card-binding",
+              "step": "issue",
+              "field": "card_id",
+              "type_ref": "IDENTITY"
+            }
+          ],
+          "scope": {
+            "id": "access-card-scope",
+            "subjects": [
+              {
+                "kind": "BINDING",
+                "binding": "beneficiary-binding"
+              }
+            ],
+            "resources": [
+              {
+                "kind": "BINDING",
+                "binding": "card-binding"
+              }
+            ]
+          },
+          "operations": [
+            {
+              "step": "issue",
+              "operation": "issue-card",
+              "interface": "card-system"
+            }
+          ],
+          "limits": {
+            "per_action": [],
+            "shared_budgets": [
+              "license-spend"
+            ]
+          },
+          "conditions": [
+            {
+              "id": "issue-condition",
+              "step": "issue",
+              "predicate": {
+                "kind": "BOOLEAN",
+                "value": true
+              }
+            }
+          ],
+          "enforcement": {
+            "mechanisms": [
+              "ATOMIC_SHARED_RESERVATION",
+              "AUTHORITY_BEFORE_RESERVATION"
+            ],
+            "safe_state": "NO_NEW_DISPATCH",
+            "out_of_envelope": "REFUSE"
+          },
+          "escalation": {
+            "kind": "DECLARED_NONE"
+          },
+          "revocation": {
+            "provider": "identity-provider",
+            "source": "authority-revocations",
+            "max_age_seconds": "3600"
+          },
+          "temporal_validity": {
+            "valid_from": "2026-09-01T00:00:00Z",
+            "valid_until": "2026-10-01T00:00:00Z"
+          },
+          "gate": {
+            "materiality": "LOW",
+            "reversibility": "HIGH",
+            "kind": "NONE",
+            "role": null,
+            "criteria": []
+          },
+          "limitations": []
+        }
+      },
+      "projection": [
+        {
+          "native_field": "amount",
+          "native_type": "amount",
+          "budget_field": "amount",
+          "budget_type": "amount"
+        },
+        {
+          "native_field": "beneficiary",
+          "native_type": "IDENTITY",
+          "budget_field": "beneficiary",
+          "budget_type": "beneficiary"
+        }
+      ]
+    }
+  ],
+  "history": {
+    "budget_digest": "sha256:9698c09131697c1c1f9fce63217774eb192ee9e6b3cfb310826102f4a97f4ba8",
+    "provider": "ledger-provider",
+    "source": "payments",
+    "status": "AVAILABLE",
+    "as_of": "2026-09-10T04:30:00Z",
+    "complete": true,
+    "revision": "1",
+    "journal": [
+      {
+        "sequence": "1",
+        "event": {
+          "id": "opening-800",
+          "state": "ACTIVE",
+          "occurred_at": "2026-09-10T04:00:00Z",
+          "fields": [
+            {
+              "name": "amount",
+              "value": {
+                "type_ref": "amount",
+                "value": "800"
+              }
+            },
+            {
+              "name": "beneficiary",
+              "value": {
+                "type_ref": "beneficiary",
+                "value": "employee-7"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "evidence_ref": "complete-opening-history"
+  },
+  "authority_a": {
+    "schema": "seampoint.work-class/1.0.0-draft.1/authority-input",
+    "specification_pin": "sha256:668b7622967767d65c382f94c7d8bca24c49f365962ea19128dece246ec1ef26",
+    "source": {
+      "schema": "seampoint.work-class/1.0.0-draft.1/authority-source",
+      "id": "access-card-policy",
+      "revision": "r1",
+      "obligations": [
+        {
+          "id": "issue-card",
+          "text": "Card issuance requires the declared business authority and shared committed plus unsettled USD exposure at most 1000 over the trailing 24 hours."
+        }
+      ]
+    },
+    "work_class": {
+      "schema": "seampoint.work-class/1.0.0-draft.1/authority-work-class",
+      "id": "card-issuance",
+      "revision": "r1",
+      "types": [
+        {
+          "id": "IDENTITY",
+          "kind": "IDENTITY",
+          "nonnegative": false,
+          "unit": null
+        },
+        {
+          "id": "STRING",
+          "kind": "STRING",
+          "nonnegative": false,
+          "unit": null
+        },
+        {
+          "id": "amount",
+          "kind": "DECIMAL",
+          "unit": "USD",
+          "nonnegative": true
+        }
+      ],
+      "steps": [
+        {
+          "id": "issue",
+          "operation": "issue-card",
+          "interface": "card-system",
+          "executor_role": "card-issuer",
+          "fields": [
+            {
+              "name": "amount",
+              "type_ref": "amount"
+            },
+            {
+              "name": "beneficiary",
+              "type_ref": "IDENTITY"
+            },
+            {
+              "name": "card_id",
+              "type_ref": "IDENTITY"
+            }
+          ],
+          "scope_fields": {
+            "subjects": [
+              "beneficiary"
+            ],
+            "resources": [
+              "card_id"
+            ]
+          },
+          "required_credentials": [
+            "card-issuer-credential"
+          ]
+        }
+      ]
+    },
+    "envelope": {
+      "schema": "seampoint.work-class/1.0.0-draft.1/authority-envelope",
+      "id": "access-card-envelope",
+      "source_digest": "sha256:387f513c8f1a30c74e4dd8278545a5b3f77b803c95fdf9f72ef4291211e1722c",
+      "work_class_digest": "sha256:f8af04d91c39c3038951ff15085ea9f5792f5363ef9f7be357ee1081380fd03d",
+      "source_obligations": [
+        "issue-card"
+      ],
+      "principal": "access-card-owner",
+      "grantor_role": "access-card-grantor",
+      "executor_role": "card-issuer",
+      "attester_role": "access-card-attester",
+      "grant_ref": "grant-1",
+      "clock_source": "authority-clock",
+      "bindings": [
+        {
+          "id": "beneficiary-binding",
+          "step": "issue",
+          "field": "beneficiary",
+          "type_ref": "IDENTITY"
+        },
+        {
+          "id": "card-binding",
+          "step": "issue",
+          "field": "card_id",
+          "type_ref": "IDENTITY"
+        }
+      ],
+      "scope": {
+        "id": "access-card-scope",
+        "subjects": [
+          {
+            "kind": "BINDING",
+            "binding": "beneficiary-binding"
+          }
+        ],
+        "resources": [
+          {
+            "kind": "BINDING",
+            "binding": "card-binding"
+          }
+        ]
+      },
+      "operations": [
+        {
+          "step": "issue",
+          "operation": "issue-card",
+          "interface": "card-system"
+        }
+      ],
+      "limits": {
+        "per_action": [],
+        "shared_budgets": [
+          "license-spend"
+        ]
+      },
+      "conditions": [
+        {
+          "id": "issue-condition",
+          "step": "issue",
+          "predicate": {
+            "kind": "BOOLEAN",
+            "value": true
+          }
+        }
+      ],
+      "enforcement": {
+        "mechanisms": [
+          "ATOMIC_SHARED_RESERVATION",
+          "AUTHORITY_BEFORE_RESERVATION"
+        ],
+        "safe_state": "NO_NEW_DISPATCH",
+        "out_of_envelope": "REFUSE"
+      },
+      "escalation": {
+        "kind": "DECLARED_NONE"
+      },
+      "revocation": {
+        "provider": "identity-provider",
+        "source": "authority-revocations",
+        "max_age_seconds": "3600"
+      },
+      "temporal_validity": {
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2026-10-01T00:00:00Z"
+      },
+      "gate": {
+        "materiality": "LOW",
+        "reversibility": "HIGH",
+        "kind": "NONE",
+        "role": null,
+        "criteria": []
+      },
+      "limitations": []
+    },
+    "proposal": {
+      "schema": "seampoint.work-class/1.0.0-draft.1/authority-proposal",
+      "work_class_digest": "sha256:f8af04d91c39c3038951ff15085ea9f5792f5363ef9f7be357ee1081380fd03d",
+      "work_class": "card-issuance",
+      "instance": "instance-1",
+      "occurrence": "issue:1",
+      "step": "issue",
+      "operation": "issue-card",
+      "interface": "card-system",
+      "executor": {
+        "actor": "card-machine",
+        "role": "card-issuer",
+        "principal": "access-card-owner",
+        "occupancy": "occ-card-machine"
+      },
+      "fields": [
+        {
+          "name": "amount",
+          "value": {
+            "type_ref": "amount",
+            "value": "150"
+          }
+        },
+        {
+          "name": "beneficiary",
+          "value": {
+            "type_ref": "IDENTITY",
+            "value": "employee-7"
+          }
+        },
+        {
+          "name": "card_id",
+          "value": {
+            "type_ref": "IDENTITY",
+            "value": "card-802"
+          }
+        }
+      ]
+    },
+    "clock": {
+      "source": "authority-clock",
+      "status": "AVAILABLE",
+      "instant": "2026-09-10T04:30:00Z"
+    },
+    "host_selection": {
+      "root": {
+        "schema": "seampoint.work-class/1.0.0-draft.1/authority-root",
+        "id": "root-1",
+        "revision": "r1",
+        "designator": "access-card-root",
+        "principal": "access-card-owner",
+        "source_digest": "sha256:387f513c8f1a30c74e4dd8278545a5b3f77b803c95fdf9f72ef4291211e1722c",
+        "work_class_digest": "sha256:f8af04d91c39c3038951ff15085ea9f5792f5363ef9f7be357ee1081380fd03d",
+        "envelope_digest": "sha256:c7f5201f620023e7a1a004e05ee3fe55ae7205f6e06e13f36455b0648fcadbab",
+        "capacity_ids": [
+          "capacity-attester",
+          "capacity-grantor"
+        ],
+        "occupancy_ids": [
+          "occ-attester",
+          "occ-card-machine",
+          "occ-grantor"
+        ],
+        "providers": [
+          "identity-provider"
+        ],
+        "channels": [
+          {
+            "id": "identity-channel",
+            "provider": "identity-provider",
+            "validity": {
+              "valid_from": "2026-09-01T00:00:00Z",
+              "valid_until": "2026-10-01T00:00:00Z"
+            },
+            "prior_returns_survive_expiry": false
+          }
+        ],
+        "validity": {
+          "valid_from": "2026-09-01T00:00:00Z",
+          "valid_until": "2026-10-01T00:00:00Z"
+        },
+        "revocation": {
+          "provider": "identity-provider",
+          "source": "authority-revocations",
+          "max_age_seconds": "3600"
+        },
+        "prior_acts_survive_expiry": false,
+        "allow_self_attestation": false,
+        "limitations": []
+      },
+      "selection_evidence": "root-selection-evidence",
+      "authenticated_records": [
+        {
+          "kind": "RETURN",
+          "record_digest": "sha256:614699f630e4801c16284245b3f0ae34d5983d0b7dfc1d3022ac88637bcd0b5f",
+          "provider": "identity-provider",
+          "channel": "identity-channel"
+        },
+        {
+          "kind": "RETURN",
+          "record_digest": "sha256:a8bd4a1be1a4aa1185ac6389b99c102ddd23cba184e62124ecadd618cad56469",
+          "provider": "identity-provider",
+          "channel": "identity-channel"
+        },
+        {
+          "kind": "CAPACITY",
+          "record_digest": "sha256:6bf32246c41f4c2f9b6c4e335b1cd0d28bba3f0420bd7f01fbf59e90a0792244",
+          "provider": "identity-provider",
+          "channel": null
+        },
+        {
+          "kind": "CAPACITY",
+          "record_digest": "sha256:f60cdd098289ca3effa236ec17b3c12b32be9fdf4106af3adc477dcfad328bc6",
+          "provider": "identity-provider",
+          "channel": null
+        },
+        {
+          "kind": "CREDENTIAL",
+          "record_digest": "sha256:63ceff56573f2ddc53558828fad42d0b28aaded06e925234a7587735eda94eba",
+          "provider": "identity-provider",
+          "channel": null
+        },
+        {
+          "kind": "OCCUPANCY",
+          "record_digest": "sha256:21bf5cfcd4cc0e9196e5871191330207c75bd8f0394d1c5efee310490a25e555",
+          "provider": "identity-provider",
+          "channel": null
+        },
+        {
+          "kind": "OCCUPANCY",
+          "record_digest": "sha256:299e394b63be89611a9bdd08e1bbdefc9ff0a95e1e9e9442a428d3dd7c550504",
+          "provider": "identity-provider",
+          "channel": null
+        },
+        {
+          "kind": "OCCUPANCY",
+          "record_digest": "sha256:9c985bab44a2ab76e2b5f30af52181e96ae29eda3b146cd2d07439ab72bd29cb",
+          "provider": "identity-provider",
+          "channel": null
+        }
+      ]
+    },
+    "occupancies": [
+      {
+        "id": "occ-attester",
+        "actor": "person-attester",
+        "role": "access-card-attester",
+        "principal": "access-card-owner",
+        "kind": "HUMAN",
+        "validity": {
+          "valid_from": "2026-09-01T00:00:00Z",
+          "valid_until": "2026-10-01T00:00:00Z"
+        },
+        "provider": "identity-provider",
+        "evidence_ref": "occ-attester-evidence"
+      },
+      {
+        "id": "occ-card-machine",
+        "actor": "card-machine",
+        "role": "card-issuer",
+        "principal": "access-card-owner",
+        "kind": "MACHINE",
+        "validity": {
+          "valid_from": "2026-09-01T00:00:00Z",
+          "valid_until": "2026-10-01T00:00:00Z"
+        },
+        "provider": "identity-provider",
+        "evidence_ref": "occ-machine-evidence"
+      },
+      {
+        "id": "occ-grantor",
+        "actor": "person-grantor",
+        "role": "access-card-grantor",
+        "principal": "access-card-owner",
+        "kind": "HUMAN",
+        "validity": {
+          "valid_from": "2026-09-01T00:00:00Z",
+          "valid_until": "2026-10-01T00:00:00Z"
+        },
+        "provider": "identity-provider",
+        "evidence_ref": "occ-grantor-evidence"
+      }
+    ],
+    "capacities": [
+      {
+        "id": "capacity-attester",
+        "root_digest": "sha256:1618722e1cf7011163914856425fd24ca05c825f99df86040c6aadf0e0d10663",
+        "envelope_digest": "sha256:c7f5201f620023e7a1a004e05ee3fe55ae7205f6e06e13f36455b0648fcadbab",
+        "actor": "person-attester",
+        "role": "access-card-attester",
+        "principal": "access-card-owner",
+        "occupancy": "occ-attester",
+        "act_kinds": [
+          "ORGANISATIONAL_ATTESTATION"
+        ],
+        "validity": {
+          "valid_from": "2026-09-01T00:00:00Z",
+          "valid_until": "2026-10-01T00:00:00Z"
+        },
+        "revocation": {
+          "provider": "identity-provider",
+          "source": "authority-revocations",
+          "max_age_seconds": "3600"
+        },
+        "reliance": {
+          "kind": "CURRENT_ONLY"
+        },
+        "may_self_attest": false,
+        "provider": "identity-provider",
+        "evidence_ref": "capacity-attester-evidence"
+      },
+      {
+        "id": "capacity-grantor",
+        "root_digest": "sha256:1618722e1cf7011163914856425fd24ca05c825f99df86040c6aadf0e0d10663",
+        "envelope_digest": "sha256:c7f5201f620023e7a1a004e05ee3fe55ae7205f6e06e13f36455b0648fcadbab",
+        "actor": "person-grantor",
+        "role": "access-card-grantor",
+        "principal": "access-card-owner",
+        "occupancy": "occ-grantor",
+        "act_kinds": [
+          "GRANT"
+        ],
+        "validity": {
+          "valid_from": "2026-09-01T00:00:00Z",
+          "valid_until": "2026-10-01T00:00:00Z"
+        },
+        "revocation": {
+          "provider": "identity-provider",
+          "source": "authority-revocations",
+          "max_age_seconds": "3600"
+        },
+        "reliance": {
+          "kind": "CURRENT_ONLY"
+        },
+        "may_self_attest": false,
+        "provider": "identity-provider",
+        "evidence_ref": "capacity-grantor-evidence"
+      }
+    ],
+    "credentials": [
+      {
+        "id": "credential-1",
+        "actor": "card-machine",
+        "occupancy": "occ-card-machine",
+        "kind": "card-issuer-credential",
+        "step": "issue",
+        "operation": "issue-card",
+        "interface": "card-system",
+        "validity": {
+          "valid_from": "2026-09-01T00:00:00Z",
+          "valid_until": "2026-10-01T00:00:00Z"
+        },
+        "revocation": {
+          "provider": "identity-provider",
+          "source": "authority-revocations",
+          "max_age_seconds": "3600"
+        },
+        "provider": "identity-provider",
+        "evidence_ref": "credential-1-evidence"
+      }
+    ],
+    "acts": [
+      {
+        "id": "attest-1",
+        "kind": "ORGANISATIONAL_ATTESTATION",
+        "actor": "person-attester",
+        "role": "access-card-attester",
+        "principal": "access-card-owner",
+        "occupancy": "occ-attester",
+        "capacity": "capacity-attester",
+        "recorder": "authority-recorder",
+        "occurred_at": "2026-09-08T10:01:00Z",
+        "disposition": "ACCEPT",
+        "subject_digest": "sha256:a9a905059d0c65a4534d6fb8ba12ab73d42fa99e06b69d54c35e7ff42524f0dd",
+        "attested_actor": "person-grantor",
+        "criteria": []
+      },
+      {
+        "id": "grant-1",
+        "kind": "GRANT",
+        "actor": "person-grantor",
+        "role": "access-card-grantor",
+        "principal": "access-card-owner",
+        "occupancy": "occ-grantor",
+        "capacity": "capacity-grantor",
+        "recorder": "authority-recorder",
+        "occurred_at": "2026-09-08T10:00:00Z",
+        "disposition": "ACCEPT",
+        "subject_digest": "sha256:c7f5201f620023e7a1a004e05ee3fe55ae7205f6e06e13f36455b0648fcadbab",
+        "attested_actor": null,
+        "criteria": []
+      }
+    ],
+    "returns": [
+      {
+        "id": "return-attest-1",
+        "actor": "person-attester",
+        "provider": "identity-provider",
+        "channel": "identity-channel",
+        "act_digest": "sha256:12e2a1096fab4f1ff03ff0a301c76155bb83c2432c5194e6b25f2aa790201bc8",
+        "act_bytes_base64": "eyJhY3RvciI6InBlcnNvbi1hdHRlc3RlciIsImF0dGVzdGVkX2FjdG9yIjoicGVyc29uLWdyYW50b3IiLCJjYXBhY2l0eSI6ImNhcGFjaXR5LWF0dGVzdGVyIiwiY3JpdGVyaWEiOltdLCJkaXNwb3NpdGlvbiI6IkFDQ0VQVCIsImlkIjoiYXR0ZXN0LTEiLCJraW5kIjoiT1JHQU5JU0FUSU9OQUxfQVRURVNUQVRJT04iLCJvY2N1cGFuY3kiOiJvY2MtYXR0ZXN0ZXIiLCJvY2N1cnJlZF9hdCI6IjIwMjYtMDktMDhUMTA6MDE6MDBaIiwicHJpbmNpcGFsIjoiYWNjZXNzLWNhcmQtb3duZXIiLCJyZWNvcmRlciI6ImF1dGhvcml0eS1yZWNvcmRlciIsInJvbGUiOiJhY2Nlc3MtY2FyZC1hdHRlc3RlciIsInN1YmplY3RfZGlnZXN0Ijoic2hhMjU2OmE5YTkwNTA1OWQwYzY1YTQ1MzRkNmZiOGJhMTJhYjczZDQyZmE5OWUwNmI2OWQ1NGMzNWU3ZmY0MjUyNGYwZGQifQ==",
+        "returned_at": "2026-09-08T10:01:00Z",
+        "evidence_ref": "returned-attest-1"
+      },
+      {
+        "id": "return-grant-1",
+        "actor": "person-grantor",
+        "provider": "identity-provider",
+        "channel": "identity-channel",
+        "act_digest": "sha256:a9a905059d0c65a4534d6fb8ba12ab73d42fa99e06b69d54c35e7ff42524f0dd",
+        "act_bytes_base64": "eyJhY3RvciI6InBlcnNvbi1ncmFudG9yIiwiYXR0ZXN0ZWRfYWN0b3IiOm51bGwsImNhcGFjaXR5IjoiY2FwYWNpdHktZ3JhbnRvciIsImNyaXRlcmlhIjpbXSwiZGlzcG9zaXRpb24iOiJBQ0NFUFQiLCJpZCI6ImdyYW50LTEiLCJraW5kIjoiR1JBTlQiLCJvY2N1cGFuY3kiOiJvY2MtZ3JhbnRvciIsIm9jY3VycmVkX2F0IjoiMjAyNi0wOS0wOFQxMDowMDowMFoiLCJwcmluY2lwYWwiOiJhY2Nlc3MtY2FyZC1vd25lciIsInJlY29yZGVyIjoiYXV0aG9yaXR5LXJlY29yZGVyIiwicm9sZSI6ImFjY2Vzcy1jYXJkLWdyYW50b3IiLCJzdWJqZWN0X2RpZ2VzdCI6InNoYTI1NjpjN2Y1MjAxZjYyMDAyM2U3YTFhMDA0ZTA1ZWUzZmU1NWFlNzIwNWY2ZTA2ZTEzZjM2NDU1YjA2NDhmY2FkYmFiIn0=",
+        "returned_at": "2026-09-08T10:00:00Z",
+        "evidence_ref": "returned-grant-1"
+      }
+    ],
+    "observations": [
+      {
+        "query": {
+          "purpose": "REVOCATION",
+          "subject_digest": "sha256:c7f5201f620023e7a1a004e05ee3fe55ae7205f6e06e13f36455b0648fcadbab",
+          "at": "2026-09-10T04:30:00Z",
+          "provider": "identity-provider",
+          "source": "authority-revocations"
+        },
+        "query_digest": "sha256:3e822f7a19686185a33a1cadd9f0d92c89c3b7be6541ef21b0f4548e26bf3e18",
+        "status": "AVAILABLE",
+        "as_of": "2026-09-10T04:30:00Z",
+        "revision": "revision-1",
+        "revoked": false,
+        "evidence_ref": "observation-sha256:3e822f7a19686185a33a1cadd9f0d92c89c3b7be6541ef21b0f4548e26bf3e18"
+      },
+      {
+        "query": {
+          "purpose": "REVOCATION",
+          "subject_digest": "sha256:f60cdd098289ca3effa236ec17b3c12b32be9fdf4106af3adc477dcfad328bc6",
+          "at": "2026-09-10T04:30:00Z",
+          "provider": "identity-provider",
+          "source": "authority-revocations"
+        },
+        "query_digest": "sha256:4a25b1a0c49bd97cea9f1113932c6938970a8a57f752c7e234f10425beae6f6b",
+        "status": "AVAILABLE",
+        "as_of": "2026-09-10T04:30:00Z",
+        "revision": "revision-1",
+        "revoked": false,
+        "evidence_ref": "observation-sha256:4a25b1a0c49bd97cea9f1113932c6938970a8a57f752c7e234f10425beae6f6b"
+      },
+      {
+        "query": {
+          "purpose": "REVOCATION",
+          "subject_digest": "sha256:63ceff56573f2ddc53558828fad42d0b28aaded06e925234a7587735eda94eba",
+          "at": "2026-09-10T04:30:00Z",
+          "provider": "identity-provider",
+          "source": "authority-revocations"
+        },
+        "query_digest": "sha256:5965dcd2321ed11669a1ea71a487905a8cb92ca6869769ec6454ca30bf610a32",
+        "status": "AVAILABLE",
+        "as_of": "2026-09-10T04:30:00Z",
+        "revision": "revision-1",
+        "revoked": false,
+        "evidence_ref": "observation-sha256:5965dcd2321ed11669a1ea71a487905a8cb92ca6869769ec6454ca30bf610a32"
+      },
+      {
+        "query": {
+          "purpose": "REVOCATION",
+          "subject_digest": "sha256:1618722e1cf7011163914856425fd24ca05c825f99df86040c6aadf0e0d10663",
+          "at": "2026-09-08T10:01:00Z",
+          "provider": "identity-provider",
+          "source": "authority-revocations"
+        },
+        "query_digest": "sha256:6aadcfa4c3e3033321b97f9c7fa34f4d7a748ec420c929a1bef3a232dc69464c",
+        "status": "AVAILABLE",
+        "as_of": "2026-09-08T10:01:00Z",
+        "revision": "revision-1",
+        "revoked": false,
+        "evidence_ref": "observation-sha256:6aadcfa4c3e3033321b97f9c7fa34f4d7a748ec420c929a1bef3a232dc69464c"
+      },
+      {
+        "query": {
+          "purpose": "REVOCATION",
+          "subject_digest": "sha256:1618722e1cf7011163914856425fd24ca05c825f99df86040c6aadf0e0d10663",
+          "at": "2026-09-10T04:30:00Z",
+          "provider": "identity-provider",
+          "source": "authority-revocations"
+        },
+        "query_digest": "sha256:81537c9eb9f22e6b5fab1dbabe37ea62eae53ba7da98e08e29ab88e3ac32ce02",
+        "status": "AVAILABLE",
+        "as_of": "2026-09-10T04:30:00Z",
+        "revision": "revision-1",
+        "revoked": false,
+        "evidence_ref": "observation-sha256:81537c9eb9f22e6b5fab1dbabe37ea62eae53ba7da98e08e29ab88e3ac32ce02"
+      },
+      {
+        "query": {
+          "purpose": "REVOCATION",
+          "subject_digest": "sha256:6bf32246c41f4c2f9b6c4e335b1cd0d28bba3f0420bd7f01fbf59e90a0792244",
+          "at": "2026-09-08T10:00:00Z",
+          "provider": "identity-provider",
+          "source": "authority-revocations"
+        },
+        "query_digest": "sha256:94a3b216608451436c565f1aa475d3e14fda3c552e35f0566f9ee3dcababc7f6",
+        "status": "AVAILABLE",
+        "as_of": "2026-09-08T10:00:00Z",
+        "revision": "revision-1",
+        "revoked": false,
+        "evidence_ref": "observation-sha256:94a3b216608451436c565f1aa475d3e14fda3c552e35f0566f9ee3dcababc7f6"
+      },
+      {
+        "query": {
+          "purpose": "REVOCATION",
+          "subject_digest": "sha256:6bf32246c41f4c2f9b6c4e335b1cd0d28bba3f0420bd7f01fbf59e90a0792244",
+          "at": "2026-09-10T04:30:00Z",
+          "provider": "identity-provider",
+          "source": "authority-revocations"
+        },
+        "query_digest": "sha256:9f36c3861ac6633f5c8561d1cf3ba4b4b44953646e91db795a2861f6f54fc1f8",
+        "status": "AVAILABLE",
+        "as_of": "2026-09-10T04:30:00Z",
+        "revision": "revision-1",
+        "revoked": false,
+        "evidence_ref": "observation-sha256:9f36c3861ac6633f5c8561d1cf3ba4b4b44953646e91db795a2861f6f54fc1f8"
+      },
+      {
+        "query": {
+          "purpose": "REVOCATION",
+          "subject_digest": "sha256:1618722e1cf7011163914856425fd24ca05c825f99df86040c6aadf0e0d10663",
+          "at": "2026-09-08T10:00:00Z",
+          "provider": "identity-provider",
+          "source": "authority-revocations"
+        },
+        "query_digest": "sha256:ace29a59ed6f77b3ac6874e643c7fc95cea4385d3f1ea25a6d385d7ce61757c8",
+        "status": "AVAILABLE",
+        "as_of": "2026-09-08T10:00:00Z",
+        "revision": "revision-1",
+        "revoked": false,
+        "evidence_ref": "observation-sha256:ace29a59ed6f77b3ac6874e643c7fc95cea4385d3f1ea25a6d385d7ce61757c8"
+      },
+      {
+        "query": {
+          "purpose": "REVOCATION",
+          "subject_digest": "sha256:f60cdd098289ca3effa236ec17b3c12b32be9fdf4106af3adc477dcfad328bc6",
+          "at": "2026-09-08T10:01:00Z",
+          "provider": "identity-provider",
+          "source": "authority-revocations"
+        },
+        "query_digest": "sha256:b981611609ff48989e3788ea0df66f4c335d55153f94ac0f90900b3ed26bdca4",
+        "status": "AVAILABLE",
+        "as_of": "2026-09-08T10:01:00Z",
+        "revision": "revision-1",
+        "revoked": false,
+        "evidence_ref": "observation-sha256:b981611609ff48989e3788ea0df66f4c335d55153f94ac0f90900b3ed26bdca4"
+      }
+    ]
+  },
+  "authority_b": {
+    "schema": "seampoint.work-class/1.0.0-draft.1/authority-input",
+    "specification_pin": "sha256:668b7622967767d65c382f94c7d8bca24c49f365962ea19128dece246ec1ef26",
+    "source": {
+      "schema": "seampoint.work-class/1.0.0-draft.1/authority-source",
+      "id": "access-card-policy",
+      "revision": "r1",
+      "obligations": [
+        {
+          "id": "issue-card",
+          "text": "Card issuance requires the declared business authority and shared committed plus unsettled USD exposure at most 1000 over the trailing 24 hours."
+        }
+      ]
+    },
+    "work_class": {
+      "schema": "seampoint.work-class/1.0.0-draft.1/authority-work-class",
+      "id": "card-issuance",
+      "revision": "r1",
+      "types": [
+        {
+          "id": "IDENTITY",
+          "kind": "IDENTITY",
+          "nonnegative": false,
+          "unit": null
+        },
+        {
+          "id": "STRING",
+          "kind": "STRING",
+          "nonnegative": false,
+          "unit": null
+        },
+        {
+          "id": "amount",
+          "kind": "DECIMAL",
+          "unit": "USD",
+          "nonnegative": true
+        }
+      ],
+      "steps": [
+        {
+          "id": "issue",
+          "operation": "issue-card",
+          "interface": "card-system",
+          "executor_role": "card-issuer",
+          "fields": [
+            {
+              "name": "amount",
+              "type_ref": "amount"
+            },
+            {
+              "name": "beneficiary",
+              "type_ref": "IDENTITY"
+            },
+            {
+              "name": "card_id",
+              "type_ref": "IDENTITY"
+            }
+          ],
+          "scope_fields": {
+            "subjects": [
+              "beneficiary"
+            ],
+            "resources": [
+              "card_id"
+            ]
+          },
+          "required_credentials": [
+            "card-issuer-credential"
+          ]
+        }
+      ]
+    },
+    "envelope": {
+      "schema": "seampoint.work-class/1.0.0-draft.1/authority-envelope",
+      "id": "access-card-envelope",
+      "source_digest": "sha256:387f513c8f1a30c74e4dd8278545a5b3f77b803c95fdf9f72ef4291211e1722c",
+      "work_class_digest": "sha256:f8af04d91c39c3038951ff15085ea9f5792f5363ef9f7be357ee1081380fd03d",
+      "source_obligations": [
+        "issue-card"
+      ],
+      "principal": "access-card-owner",
+      "grantor_role": "access-card-grantor",
+      "executor_role": "card-issuer",
+      "attester_role": "access-card-attester",
+      "grant_ref": "grant-1",
+      "clock_source": "authority-clock",
+      "bindings": [
+        {
+          "id": "beneficiary-binding",
+          "step": "issue",
+          "field": "beneficiary",
+          "type_ref": "IDENTITY"
+        },
+        {
+          "id": "card-binding",
+          "step": "issue",
+          "field": "card_id",
+          "type_ref": "IDENTITY"
+        }
+      ],
+      "scope": {
+        "id": "access-card-scope",
+        "subjects": [
+          {
+            "kind": "BINDING",
+            "binding": "beneficiary-binding"
+          }
+        ],
+        "resources": [
+          {
+            "kind": "BINDING",
+            "binding": "card-binding"
+          }
+        ]
+      },
+      "operations": [
+        {
+          "step": "issue",
+          "operation": "issue-card",
+          "interface": "card-system"
+        }
+      ],
+      "limits": {
+        "per_action": [],
+        "shared_budgets": [
+          "license-spend"
+        ]
+      },
+      "conditions": [
+        {
+          "id": "issue-condition",
+          "step": "issue",
+          "predicate": {
+            "kind": "BOOLEAN",
+            "value": true
+          }
+        }
+      ],
+      "enforcement": {
+        "mechanisms": [
+          "ATOMIC_SHARED_RESERVATION",
+          "AUTHORITY_BEFORE_RESERVATION"
+        ],
+        "safe_state": "NO_NEW_DISPATCH",
+        "out_of_envelope": "REFUSE"
+      },
+      "escalation": {
+        "kind": "DECLARED_NONE"
+      },
+      "revocation": {
+        "provider": "identity-provider",
+        "source": "authority-revocations",
+        "max_age_seconds": "3600"
+      },
+      "temporal_validity": {
+        "valid_from": "2026-09-01T00:00:00Z",
+        "valid_until": "2026-10-01T00:00:00Z"
+      },
+      "gate": {
+        "materiality": "LOW",
+        "reversibility": "HIGH",
+        "kind": "NONE",
+        "role": null,
+        "criteria": []
+      },
+      "limitations": []
+    },
+    "proposal": {
+      "schema": "seampoint.work-class/1.0.0-draft.1/authority-proposal",
+      "work_class_digest": "sha256:f8af04d91c39c3038951ff15085ea9f5792f5363ef9f7be357ee1081380fd03d",
+      "work_class": "card-issuance",
+      "instance": "instance-2",
+      "occurrence": "issue:1",
+      "step": "issue",
+      "operation": "issue-card",
+      "interface": "card-system",
+      "executor": {
+        "actor": "card-machine",
+        "role": "card-issuer",
+        "principal": "access-card-owner",
+        "occupancy": "occ-card-machine"
+      },
+      "fields": [
+        {
+          "name": "amount",
+          "value": {
+            "type_ref": "amount",
+            "value": "150"
+          }
+        },
+        {
+          "name": "beneficiary",
+          "value": {
+            "type_ref": "IDENTITY",
+            "value": "employee-7"
+          }
+        },
+        {
+          "name": "card_id",
+          "value": {
+            "type_ref": "IDENTITY",
+            "value": "card-803"
+          }
+        }
+      ]
+    },
+    "clock": {
+      "source": "authority-clock",
+      "status": "AVAILABLE",
+      "instant": "2026-09-10T04:30:00Z"
+    },
+    "host_selection": {
+      "root": {
+        "schema": "seampoint.work-class/1.0.0-draft.1/authority-root",
+        "id": "root-1",
+        "revision": "r1",
+        "designator": "access-card-root",
+        "principal": "access-card-owner",
+        "source_digest": "sha256:387f513c8f1a30c74e4dd8278545a5b3f77b803c95fdf9f72ef4291211e1722c",
+        "work_class_digest": "sha256:f8af04d91c39c3038951ff15085ea9f5792f5363ef9f7be357ee1081380fd03d",
+        "envelope_digest": "sha256:c7f5201f620023e7a1a004e05ee3fe55ae7205f6e06e13f36455b0648fcadbab",
+        "capacity_ids": [
+          "capacity-attester",
+          "capacity-grantor"
+        ],
+        "occupancy_ids": [
+          "occ-attester",
+          "occ-card-machine",
+          "occ-grantor"
+        ],
+        "providers": [
+          "identity-provider"
+        ],
+        "channels": [
+          {
+            "id": "identity-channel",
+            "provider": "identity-provider",
+            "validity": {
+              "valid_from": "2026-09-01T00:00:00Z",
+              "valid_until": "2026-10-01T00:00:00Z"
+            },
+            "prior_returns_survive_expiry": false
+          }
+        ],
+        "validity": {
+          "valid_from": "2026-09-01T00:00:00Z",
+          "valid_until": "2026-10-01T00:00:00Z"
+        },
+        "revocation": {
+          "provider": "identity-provider",
+          "source": "authority-revocations",
+          "max_age_seconds": "3600"
+        },
+        "prior_acts_survive_expiry": false,
+        "allow_self_attestation": false,
+        "limitations": []
+      },
+      "selection_evidence": "root-selection-evidence",
+      "authenticated_records": [
+        {
+          "kind": "RETURN",
+          "record_digest": "sha256:614699f630e4801c16284245b3f0ae34d5983d0b7dfc1d3022ac88637bcd0b5f",
+          "provider": "identity-provider",
+          "channel": "identity-channel"
+        },
+        {
+          "kind": "RETURN",
+          "record_digest": "sha256:a8bd4a1be1a4aa1185ac6389b99c102ddd23cba184e62124ecadd618cad56469",
+          "provider": "identity-provider",
+          "channel": "identity-channel"
+        },
+        {
+          "kind": "CAPACITY",
+          "record_digest": "sha256:6bf32246c41f4c2f9b6c4e335b1cd0d28bba3f0420bd7f01fbf59e90a0792244",
+          "provider": "identity-provider",
+          "channel": null
+        },
+        {
+          "kind": "CAPACITY",
+          "record_digest": "sha256:f60cdd098289ca3effa236ec17b3c12b32be9fdf4106af3adc477dcfad328bc6",
+          "provider": "identity-provider",
+          "channel": null
+        },
+        {
+          "kind": "CREDENTIAL",
+          "record_digest": "sha256:63ceff56573f2ddc53558828fad42d0b28aaded06e925234a7587735eda94eba",
+          "provider": "identity-provider",
+          "channel": null
+        },
+        {
+          "kind": "OCCUPANCY",
+          "record_digest": "sha256:21bf5cfcd4cc0e9196e5871191330207c75bd8f0394d1c5efee310490a25e555",
+          "provider": "identity-provider",
+          "channel": null
+        },
+        {
+          "kind": "OCCUPANCY",
+          "record_digest": "sha256:299e394b63be89611a9bdd08e1bbdefc9ff0a95e1e9e9442a428d3dd7c550504",
+          "provider": "identity-provider",
+          "channel": null
+        },
+        {
+          "kind": "OCCUPANCY",
+          "record_digest": "sha256:9c985bab44a2ab76e2b5f30af52181e96ae29eda3b146cd2d07439ab72bd29cb",
+          "provider": "identity-provider",
+          "channel": null
+        }
+      ]
+    },
+    "occupancies": [
+      {
+        "id": "occ-attester",
+        "actor": "person-attester",
+        "role": "access-card-attester",
+        "principal": "access-card-owner",
+        "kind": "HUMAN",
+        "validity": {
+          "valid_from": "2026-09-01T00:00:00Z",
+          "valid_until": "2026-10-01T00:00:00Z"
+        },
+        "provider": "identity-provider",
+        "evidence_ref": "occ-attester-evidence"
+      },
+      {
+        "id": "occ-card-machine",
+        "actor": "card-machine",
+        "role": "card-issuer",
+        "principal": "access-card-owner",
+        "kind": "MACHINE",
+        "validity": {
+          "valid_from": "2026-09-01T00:00:00Z",
+          "valid_until": "2026-10-01T00:00:00Z"
+        },
+        "provider": "identity-provider",
+        "evidence_ref": "occ-machine-evidence"
+      },
+      {
+        "id": "occ-grantor",
+        "actor": "person-grantor",
+        "role": "access-card-grantor",
+        "principal": "access-card-owner",
+        "kind": "HUMAN",
+        "validity": {
+          "valid_from": "2026-09-01T00:00:00Z",
+          "valid_until": "2026-10-01T00:00:00Z"
+        },
+        "provider": "identity-provider",
+        "evidence_ref": "occ-grantor-evidence"
+      }
+    ],
+    "capacities": [
+      {
+        "id": "capacity-attester",
+        "root_digest": "sha256:1618722e1cf7011163914856425fd24ca05c825f99df86040c6aadf0e0d10663",
+        "envelope_digest": "sha256:c7f5201f620023e7a1a004e05ee3fe55ae7205f6e06e13f36455b0648fcadbab",
+        "actor": "person-attester",
+        "role": "access-card-attester",
+        "principal": "access-card-owner",
+        "occupancy": "occ-attester",
+        "act_kinds": [
+          "ORGANISATIONAL_ATTESTATION"
+        ],
+        "validity": {
+          "valid_from": "2026-09-01T00:00:00Z",
+          "valid_until": "2026-10-01T00:00:00Z"
+        },
+        "revocation": {
+          "provider": "identity-provider",
+          "source": "authority-revocations",
+          "max_age_seconds": "3600"
+        },
+        "reliance": {
+          "kind": "CURRENT_ONLY"
+        },
+        "may_self_attest": false,
+        "provider": "identity-provider",
+        "evidence_ref": "capacity-attester-evidence"
+      },
+      {
+        "id": "capacity-grantor",
+        "root_digest": "sha256:1618722e1cf7011163914856425fd24ca05c825f99df86040c6aadf0e0d10663",
+        "envelope_digest": "sha256:c7f5201f620023e7a1a004e05ee3fe55ae7205f6e06e13f36455b0648fcadbab",
+        "actor": "person-grantor",
+        "role": "access-card-grantor",
+        "principal": "access-card-owner",
+        "occupancy": "occ-grantor",
+        "act_kinds": [
+          "GRANT"
+        ],
+        "validity": {
+          "valid_from": "2026-09-01T00:00:00Z",
+          "valid_until": "2026-10-01T00:00:00Z"
+        },
+        "revocation": {
+          "provider": "identity-provider",
+          "source": "authority-revocations",
+          "max_age_seconds": "3600"
+        },
+        "reliance": {
+          "kind": "CURRENT_ONLY"
+        },
+        "may_self_attest": false,
+        "provider": "identity-provider",
+        "evidence_ref": "capacity-grantor-evidence"
+      }
+    ],
+    "credentials": [
+      {
+        "id": "credential-1",
+        "actor": "card-machine",
+        "occupancy": "occ-card-machine",
+        "kind": "card-issuer-credential",
+        "step": "issue",
+        "operation": "issue-card",
+        "interface": "card-system",
+        "validity": {
+          "valid_from": "2026-09-01T00:00:00Z",
+          "valid_until": "2026-10-01T00:00:00Z"
+        },
+        "revocation": {
+          "provider": "identity-provider",
+          "source": "authority-revocations",
+          "max_age_seconds": "3600"
+        },
+        "provider": "identity-provider",
+        "evidence_ref": "credential-1-evidence"
+      }
+    ],
+    "acts": [
+      {
+        "id": "attest-1",
+        "kind": "ORGANISATIONAL_ATTESTATION",
+        "actor": "person-attester",
+        "role": "access-card-attester",
+        "principal": "access-card-owner",
+        "occupancy": "occ-attester",
+        "capacity": "capacity-attester",
+        "recorder": "authority-recorder",
+        "occurred_at": "2026-09-08T10:01:00Z",
+        "disposition": "ACCEPT",
+        "subject_digest": "sha256:a9a905059d0c65a4534d6fb8ba12ab73d42fa99e06b69d54c35e7ff42524f0dd",
+        "attested_actor": "person-grantor",
+        "criteria": []
+      },
+      {
+        "id": "grant-1",
+        "kind": "GRANT",
+        "actor": "person-grantor",
+        "role": "access-card-grantor",
+        "principal": "access-card-owner",
+        "occupancy": "occ-grantor",
+        "capacity": "capacity-grantor",
+        "recorder": "authority-recorder",
+        "occurred_at": "2026-09-08T10:00:00Z",
+        "disposition": "ACCEPT",
+        "subject_digest": "sha256:c7f5201f620023e7a1a004e05ee3fe55ae7205f6e06e13f36455b0648fcadbab",
+        "attested_actor": null,
+        "criteria": []
+      }
+    ],
+    "returns": [
+      {
+        "id": "return-attest-1",
+        "actor": "person-attester",
+        "provider": "identity-provider",
+        "channel": "identity-channel",
+        "act_digest": "sha256:12e2a1096fab4f1ff03ff0a301c76155bb83c2432c5194e6b25f2aa790201bc8",
+        "act_bytes_base64": "eyJhY3RvciI6InBlcnNvbi1hdHRlc3RlciIsImF0dGVzdGVkX2FjdG9yIjoicGVyc29uLWdyYW50b3IiLCJjYXBhY2l0eSI6ImNhcGFjaXR5LWF0dGVzdGVyIiwiY3JpdGVyaWEiOltdLCJkaXNwb3NpdGlvbiI6IkFDQ0VQVCIsImlkIjoiYXR0ZXN0LTEiLCJraW5kIjoiT1JHQU5JU0FUSU9OQUxfQVRURVNUQVRJT04iLCJvY2N1cGFuY3kiOiJvY2MtYXR0ZXN0ZXIiLCJvY2N1cnJlZF9hdCI6IjIwMjYtMDktMDhUMTA6MDE6MDBaIiwicHJpbmNpcGFsIjoiYWNjZXNzLWNhcmQtb3duZXIiLCJyZWNvcmRlciI6ImF1dGhvcml0eS1yZWNvcmRlciIsInJvbGUiOiJhY2Nlc3MtY2FyZC1hdHRlc3RlciIsInN1YmplY3RfZGlnZXN0Ijoic2hhMjU2OmE5YTkwNTA1OWQwYzY1YTQ1MzRkNmZiOGJhMTJhYjczZDQyZmE5OWUwNmI2OWQ1NGMzNWU3ZmY0MjUyNGYwZGQifQ==",
+        "returned_at": "2026-09-08T10:01:00Z",
+        "evidence_ref": "returned-attest-1"
+      },
+      {
+        "id": "return-grant-1",
+        "actor": "person-grantor",
+        "provider": "identity-provider",
+        "channel": "identity-channel",
+        "act_digest": "sha256:a9a905059d0c65a4534d6fb8ba12ab73d42fa99e06b69d54c35e7ff42524f0dd",
+        "act_bytes_base64": "eyJhY3RvciI6InBlcnNvbi1ncmFudG9yIiwiYXR0ZXN0ZWRfYWN0b3IiOm51bGwsImNhcGFjaXR5IjoiY2FwYWNpdHktZ3JhbnRvciIsImNyaXRlcmlhIjpbXSwiZGlzcG9zaXRpb24iOiJBQ0NFUFQiLCJpZCI6ImdyYW50LTEiLCJraW5kIjoiR1JBTlQiLCJvY2N1cGFuY3kiOiJvY2MtZ3JhbnRvciIsIm9jY3VycmVkX2F0IjoiMjAyNi0wOS0wOFQxMDowMDowMFoiLCJwcmluY2lwYWwiOiJhY2Nlc3MtY2FyZC1vd25lciIsInJlY29yZGVyIjoiYXV0aG9yaXR5LXJlY29yZGVyIiwicm9sZSI6ImFjY2Vzcy1jYXJkLWdyYW50b3IiLCJzdWJqZWN0X2RpZ2VzdCI6InNoYTI1NjpjN2Y1MjAxZjYyMDAyM2U3YTFhMDA0ZTA1ZWUzZmU1NWFlNzIwNWY2ZTA2ZTEzZjM2NDU1YjA2NDhmY2FkYmFiIn0=",
+        "returned_at": "2026-09-08T10:00:00Z",
+        "evidence_ref": "returned-grant-1"
+      }
+    ],
+    "observations": [
+      {
+        "query": {
+          "purpose": "REVOCATION",
+          "subject_digest": "sha256:c7f5201f620023e7a1a004e05ee3fe55ae7205f6e06e13f36455b0648fcadbab",
+          "at": "2026-09-10T04:30:00Z",
+          "provider": "identity-provider",
+          "source": "authority-revocations"
+        },
+        "query_digest": "sha256:3e822f7a19686185a33a1cadd9f0d92c89c3b7be6541ef21b0f4548e26bf3e18",
+        "status": "AVAILABLE",
+        "as_of": "2026-09-10T04:30:00Z",
+        "revision": "revision-1",
+        "revoked": false,
+        "evidence_ref": "observation-sha256:3e822f7a19686185a33a1cadd9f0d92c89c3b7be6541ef21b0f4548e26bf3e18"
+      },
+      {
+        "query": {
+          "purpose": "REVOCATION",
+          "subject_digest": "sha256:f60cdd098289ca3effa236ec17b3c12b32be9fdf4106af3adc477dcfad328bc6",
+          "at": "2026-09-10T04:30:00Z",
+          "provider": "identity-provider",
+          "source": "authority-revocations"
+        },
+        "query_digest": "sha256:4a25b1a0c49bd97cea9f1113932c6938970a8a57f752c7e234f10425beae6f6b",
+        "status": "AVAILABLE",
+        "as_of": "2026-09-10T04:30:00Z",
+        "revision": "revision-1",
+        "revoked": false,
+        "evidence_ref": "observation-sha256:4a25b1a0c49bd97cea9f1113932c6938970a8a57f752c7e234f10425beae6f6b"
+      },
+      {
+        "query": {
+          "purpose": "REVOCATION",
+          "subject_digest": "sha256:63ceff56573f2ddc53558828fad42d0b28aaded06e925234a7587735eda94eba",
+          "at": "2026-09-10T04:30:00Z",
+          "provider": "identity-provider",
+          "source": "authority-revocations"
+        },
+        "query_digest": "sha256:5965dcd2321ed11669a1ea71a487905a8cb92ca6869769ec6454ca30bf610a32",
+        "status": "AVAILABLE",
+        "as_of": "2026-09-10T04:30:00Z",
+        "revision": "revision-1",
+        "revoked": false,
+        "evidence_ref": "observation-sha256:5965dcd2321ed11669a1ea71a487905a8cb92ca6869769ec6454ca30bf610a32"
+      },
+      {
+        "query": {
+          "purpose": "REVOCATION",
+          "subject_digest": "sha256:1618722e1cf7011163914856425fd24ca05c825f99df86040c6aadf0e0d10663",
+          "at": "2026-09-08T10:01:00Z",
+          "provider": "identity-provider",
+          "source": "authority-revocations"
+        },
+        "query_digest": "sha256:6aadcfa4c3e3033321b97f9c7fa34f4d7a748ec420c929a1bef3a232dc69464c",
+        "status": "AVAILABLE",
+        "as_of": "2026-09-08T10:01:00Z",
+        "revision": "revision-1",
+        "revoked": false,
+        "evidence_ref": "observation-sha256:6aadcfa4c3e3033321b97f9c7fa34f4d7a748ec420c929a1bef3a232dc69464c"
+      },
+      {
+        "query": {
+          "purpose": "REVOCATION",
+          "subject_digest": "sha256:1618722e1cf7011163914856425fd24ca05c825f99df86040c6aadf0e0d10663",
+          "at": "2026-09-10T04:30:00Z",
+          "provider": "identity-provider",
+          "source": "authority-revocations"
+        },
+        "query_digest": "sha256:81537c9eb9f22e6b5fab1dbabe37ea62eae53ba7da98e08e29ab88e3ac32ce02",
+        "status": "AVAILABLE",
+        "as_of": "2026-09-10T04:30:00Z",
+        "revision": "revision-1",
+        "revoked": false,
+        "evidence_ref": "observation-sha256:81537c9eb9f22e6b5fab1dbabe37ea62eae53ba7da98e08e29ab88e3ac32ce02"
+      },
+      {
+        "query": {
+          "purpose": "REVOCATION",
+          "subject_digest": "sha256:6bf32246c41f4c2f9b6c4e335b1cd0d28bba3f0420bd7f01fbf59e90a0792244",
+          "at": "2026-09-08T10:00:00Z",
+          "provider": "identity-provider",
+          "source": "authority-revocations"
+        },
+        "query_digest": "sha256:94a3b216608451436c565f1aa475d3e14fda3c552e35f0566f9ee3dcababc7f6",
+        "status": "AVAILABLE",
+        "as_of": "2026-09-08T10:00:00Z",
+        "revision": "revision-1",
+        "revoked": false,
+        "evidence_ref": "observation-sha256:94a3b216608451436c565f1aa475d3e14fda3c552e35f0566f9ee3dcababc7f6"
+      },
+      {
+        "query": {
+          "purpose": "REVOCATION",
+          "subject_digest": "sha256:6bf32246c41f4c2f9b6c4e335b1cd0d28bba3f0420bd7f01fbf59e90a0792244",
+          "at": "2026-09-10T04:30:00Z",
+          "provider": "identity-provider",
+          "source": "authority-revocations"
+        },
+        "query_digest": "sha256:9f36c3861ac6633f5c8561d1cf3ba4b4b44953646e91db795a2861f6f54fc1f8",
+        "status": "AVAILABLE",
+        "as_of": "2026-09-10T04:30:00Z",
+        "revision": "revision-1",
+        "revoked": false,
+        "evidence_ref": "observation-sha256:9f36c3861ac6633f5c8561d1cf3ba4b4b44953646e91db795a2861f6f54fc1f8"
+      },
+      {
+        "query": {
+          "purpose": "REVOCATION",
+          "subject_digest": "sha256:1618722e1cf7011163914856425fd24ca05c825f99df86040c6aadf0e0d10663",
+          "at": "2026-09-08T10:00:00Z",
+          "provider": "identity-provider",
+          "source": "authority-revocations"
+        },
+        "query_digest": "sha256:ace29a59ed6f77b3ac6874e643c7fc95cea4385d3f1ea25a6d385d7ce61757c8",
+        "status": "AVAILABLE",
+        "as_of": "2026-09-08T10:00:00Z",
+        "revision": "revision-1",
+        "revoked": false,
+        "evidence_ref": "observation-sha256:ace29a59ed6f77b3ac6874e643c7fc95cea4385d3f1ea25a6d385d7ce61757c8"
+      },
+      {
+        "query": {
+          "purpose": "REVOCATION",
+          "subject_digest": "sha256:f60cdd098289ca3effa236ec17b3c12b32be9fdf4106af3adc477dcfad328bc6",
+          "at": "2026-09-08T10:01:00Z",
+          "provider": "identity-provider",
+          "source": "authority-revocations"
+        },
+        "query_digest": "sha256:b981611609ff48989e3788ea0df66f4c335d55153f94ac0f90900b3ed26bdca4",
+        "status": "AVAILABLE",
+        "as_of": "2026-09-08T10:01:00Z",
+        "revision": "revision-1",
+        "revoked": false,
+        "evidence_ref": "observation-sha256:b981611609ff48989e3788ea0df66f4c335d55153f94ac0f90900b3ed26bdca4"
+      }
+    ]
+  }
+}

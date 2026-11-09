@@ -1,0 +1,11 @@
+{
+  "package": "rpds-py",
+  "version": "2026.6.3",
+  "platform": "CPython3.14 manylinux_2_17_aarch64",
+  "wheel": "rpds_py-2026.6.3-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+  "wheel_sha256": "bcfbcf66006befb9fd2aeaa9e01feaf881b4dc330a02ba07d2322b1c11be7b5d",
+  "member": "rpds/rpds.cpython-314-aarch64-linux-gnu.so",
+  "member_sha256": "9430592fb7609000ab7c71855dc1f248bbe94fe477de40c0ec9eff389536d0af",
+  "purpose": "Native Linux ARM64 reproduction with same existing dependency version; package Python sources and existing platform binaries unchanged.",
+  "retrieval": "python -m pip download --no-deps --only-binary=:all: --platform manylinux_2_17_aarch64 --implementation cp --python-version 314 --abi cp314 rpds-py==2026.6.3"
+}

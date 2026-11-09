@@ -1,0 +1,6 @@
+{"code":"SCHEMA_INVALID","path":"","status":"REFUSED"}
+{"code":"EVIDENCE_UNAVAILABLE","path":"","profile":"LINEAR","role":"REVIEW_EVIDENCE","specification_pin":"sha256:fd52d69dd3c3546bff2cec9d46fb8d6b942fd57b77b0a3ab8377a592e80d00b6","status":"EVIDENCE_INVALID"}
+{"code":"BINDING_MISMATCH","path":"","profile":"LINEAR","role":"REVIEW_EVIDENCE","specification_pin":"sha256:fd52d69dd3c3546bff2cec9d46fb8d6b942fd57b77b0a3ab8377a592e80d00b6","status":"EVIDENCE_INVALID"}
+{"code":"BINDING_MISMATCH","path":"","profile":"LINEAR","role":"REVIEW_EVIDENCE","specification_pin":"sha256:fd52d69dd3c3546bff2cec9d46fb8d6b942fd57b77b0a3ab8377a592e80d00b6","status":"EVIDENCE_INVALID"}
+{"code":"BINDING_MISMATCH","path":"","profile":"LINEAR","role":"REVIEW_EVIDENCE","specification_pin":"sha256:fd52d69dd3c3546bff2cec9d46fb8d6b942fd57b77b0a3ab8377a592e80d00b6","status":"EVIDENCE_INVALID"}
+{"code":"BINDING_MISMATCH","path":"","profile":"LINEAR","role":"REVIEW_EVIDENCE","specification_pin":"sha256:fd52d69dd3c3546bff2cec9d46fb8d6b942fd57b77b0a3ab8377a592e80d00b6","status":"EVIDENCE_INVALID"}

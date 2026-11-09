@@ -1,0 +1,242 @@
+{
+  "choices": [],
+  "deadlines": [],
+  "fanouts": [],
+  "id": "synthetic-records-work",
+  "limits": {
+    "maximum_activations": "2",
+    "maximum_active_obligations": "0",
+    "maximum_actuations": "2",
+    "maximum_fanout_objects": "0",
+    "maximum_proposals": "2"
+  },
+  "loops": [],
+  "objects": [],
+  "occurrence_limits": [
+    {
+      "maximum": "1",
+      "step_id": "index-dossier"
+    },
+    {
+      "maximum": "1",
+      "step_id": "seal-dossier"
+    }
+  ],
+  "parallel_blocks": [],
+  "participants": [
+    {
+      "id": "clerk-1",
+      "kind": "AGENT",
+      "role": "clerk"
+    }
+  ],
+  "profile": "LINEAR",
+  "relationships": [
+    {
+      "from": "index-dossier",
+      "kind": "SEQUENCE",
+      "to": "seal-dossier"
+    },
+    {
+      "from": "seal-dossier",
+      "kind": "SEQUENCE",
+      "to": "zz-complete"
+    }
+  ],
+  "revision": "r1",
+  "root": "index-dossier",
+  "schema": "seampoint.work-class/1.0.0-draft.3/work-class-definition",
+  "shared_budgets": [],
+  "source": {
+    "id": "synthetic-records-procedure",
+    "obligations": [
+      "completion-policy",
+      "ordered-work",
+      "permit-duration"
+    ],
+    "revision": "r1"
+  },
+  "specification_pin": "sha256:552bc40d5b810942c07fdfe2a1cbcadcbd6319926bb40eeda97e6c260819d379",
+  "steps": [
+    {
+      "authority_requirements": [
+        "authority-index-dossier"
+      ],
+      "completion": {
+        "effect_provider": "synthetic-records-provider",
+        "effect_record_type": "record-operation",
+        "effect_source": "synthetic-records-ledger",
+        "evidence_bindings": [
+          {
+            "evidence_field": "document_id",
+            "request_field": "document_id"
+          },
+          {
+            "evidence_field": "workspace_id",
+            "request_field": "workspace_id"
+          }
+        ],
+        "failure_values": [
+          {
+            "type_ref": "t.status",
+            "value": "FAILED"
+          }
+        ],
+        "no_effect_provider": "synthetic-records-provider",
+        "no_effect_record_type": "record-operation-no-effect",
+        "no_effect_source": "synthetic-records-ledger",
+        "route_label_field": null,
+        "route_label_type_ref": null,
+        "status_field": "status",
+        "status_type_ref": "t.status",
+        "success_values": [
+          {
+            "type_ref": "t.status",
+            "value": "SUCCEEDED"
+          }
+        ],
+        "terminal_policy": "LEGACY_NONTERMINAL"
+      },
+      "exclusive_keys": [],
+      "executor_role": "clerk",
+      "failure_behavior": "STOP",
+      "fields": [
+        {
+          "name": "document_id",
+          "type_ref": "t.identity"
+        },
+        {
+          "name": "workspace_id",
+          "type_ref": "t.identity"
+        }
+      ],
+      "id": "index-dossier",
+      "interface": "records-system",
+      "kind": "OPERATION",
+      "operation": "index-dossier",
+      "permit_seconds": "45",
+      "prior_actor_separations": [],
+      "prior_effect_bindings": [],
+      "quantity_mode": "NONE",
+      "required_credentials": [],
+      "scope_fields": {
+        "resources": [
+          "document_id"
+        ],
+        "subjects": [
+          "workspace_id"
+        ]
+      },
+      "shared_budgets": []
+    },
+    {
+      "authority_requirements": [
+        "authority-seal-dossier"
+      ],
+      "completion": {
+        "effect_provider": "synthetic-records-provider",
+        "effect_record_type": "record-operation",
+        "effect_source": "synthetic-records-ledger",
+        "evidence_bindings": [
+          {
+            "evidence_field": "document_id",
+            "request_field": "document_id"
+          },
+          {
+            "evidence_field": "workspace_id",
+            "request_field": "workspace_id"
+          }
+        ],
+        "failure_values": [
+          {
+            "type_ref": "t.status",
+            "value": "FAILED"
+          }
+        ],
+        "no_effect_provider": "synthetic-records-provider",
+        "no_effect_record_type": "record-operation-no-effect",
+        "no_effect_source": "synthetic-records-ledger",
+        "route_label_field": null,
+        "route_label_type_ref": null,
+        "status_field": "status",
+        "status_type_ref": "t.status",
+        "success_values": [
+          {
+            "type_ref": "t.status",
+            "value": "SUCCEEDED"
+          }
+        ],
+        "terminal_policy": "LEGACY_NONTERMINAL"
+      },
+      "exclusive_keys": [],
+      "executor_role": "clerk",
+      "failure_behavior": "STOP",
+      "fields": [
+        {
+          "name": "document_id",
+          "type_ref": "t.identity"
+        },
+        {
+          "name": "workspace_id",
+          "type_ref": "t.identity"
+        }
+      ],
+      "id": "seal-dossier",
+      "interface": "records-system",
+      "kind": "OPERATION",
+      "operation": "seal-dossier",
+      "permit_seconds": "45",
+      "prior_actor_separations": [],
+      "prior_effect_bindings": [],
+      "quantity_mode": "NONE",
+      "required_credentials": [],
+      "scope_fields": {
+        "resources": [
+          "document_id"
+        ],
+        "subjects": [
+          "workspace_id"
+        ]
+      },
+      "shared_budgets": []
+    },
+    {
+      "authority_requirements": [],
+      "completion": null,
+      "exclusive_keys": [],
+      "executor_role": null,
+      "failure_behavior": null,
+      "fields": [],
+      "id": "zz-complete",
+      "interface": null,
+      "kind": "TERMINAL",
+      "operation": null,
+      "permit_seconds": null,
+      "prior_actor_separations": [],
+      "prior_effect_bindings": [],
+      "required_credentials": [],
+      "scope_fields": null,
+      "shared_budgets": []
+    }
+  ],
+  "types": [
+    {
+      "id": "t.identity",
+      "kind": "IDENTITY",
+      "nonnegative": false,
+      "unit": null
+    },
+    {
+      "id": "t.instant",
+      "kind": "INSTANT",
+      "nonnegative": false,
+      "unit": null
+    },
+    {
+      "id": "t.status",
+      "kind": "STRING",
+      "nonnegative": false,
+      "unit": null
+    }
+  ]
+}

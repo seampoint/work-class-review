@@ -1,0 +1,1168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/holdings.schema.json",
+  "$comment": "DRAFT_NOT_ADOPTED; APPARATUS_ONLY. Host authentication and latest-state selection remain external obligations.",
+  "$defs": {
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.3/holdings-configuration"
+        },
+        "specification_pin": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        },
+        "id": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "principal": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "policy_revision": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "provider": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "source": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "protected_channel": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "clock_source": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "administration_role": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "actor_namespace": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "identity_provider": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "identity_revision": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "permissions": {
+          "type": "array",
+          "items": {
+            "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 64
+        },
+        "conflicts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "left": {
+                "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+              },
+              "right": {
+                "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+              }
+            },
+            "required": [
+              "left",
+              "right"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 128
+        }
+      },
+      "required": [
+        "schema",
+        "specification_pin",
+        "id",
+        "principal",
+        "policy_revision",
+        "provider",
+        "source",
+        "protected_channel",
+        "clock_source",
+        "administration_role",
+        "actor_namespace",
+        "identity_provider",
+        "identity_revision",
+        "permissions",
+        "conflicts"
+      ],
+      "additionalProperties": false
+    },
+    "initialGrant": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "actor": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "permission": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "valid_from": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        },
+        "valid_until": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "actor",
+        "permission",
+        "valid_from",
+        "valid_until"
+      ],
+      "additionalProperties": false
+    },
+    "grant": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "actor": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "permission": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "valid_from": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        },
+        "valid_until": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "revoked_at": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "actor",
+        "permission",
+        "valid_from",
+        "valid_until",
+        "revoked_at"
+      ],
+      "additionalProperties": false
+    },
+    "adminBasis": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "configuration_digest": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        },
+        "principal": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "role": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "actor": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "actor_kind": {
+          "const": "HUMAN"
+        },
+        "allowed_operations": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "INITIALIZE",
+              "GRANT",
+              "REVOKE"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 3
+        },
+        "provider": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "source": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "observed_at": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        },
+        "valid_from": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        },
+        "valid_until": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "revoked_at": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence_ref": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        }
+      },
+      "required": [
+        "id",
+        "configuration_digest",
+        "principal",
+        "role",
+        "actor",
+        "actor_kind",
+        "allowed_operations",
+        "provider",
+        "source",
+        "observed_at",
+        "valid_from",
+        "valid_until",
+        "revoked_at",
+        "evidence_ref"
+      ],
+      "additionalProperties": false
+    },
+    "adminAct": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "basis_id": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "actor": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "principal": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "role": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "kind": {
+          "enum": [
+            "INITIALIZE",
+            "GRANT",
+            "REVOKE"
+          ]
+        },
+        "subject_digest": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        },
+        "occurred_at": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        },
+        "status": {
+          "enum": [
+            "ACCEPTED",
+            "REJECTED"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "basis_id",
+        "actor",
+        "principal",
+        "role",
+        "kind",
+        "subject_digest",
+        "occurred_at",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "adminReturn": {
+      "type": "object",
+      "properties": {
+        "actor": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "provider": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "source": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "channel": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "observed_at": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        },
+        "act_digest": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        },
+        "act_bytes_base64": {
+          "type": "string",
+          "maxLength": 349528,
+          "pattern": "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$"
+        },
+        "evidence_ref": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "provenance_digest": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        }
+      },
+      "required": [
+        "actor",
+        "provider",
+        "source",
+        "channel",
+        "observed_at",
+        "act_digest",
+        "act_bytes_base64",
+        "evidence_ref",
+        "provenance_digest"
+      ],
+      "additionalProperties": false
+    },
+    "administration": {
+      "type": "object",
+      "properties": {
+        "basis": {
+          "$ref": "#/$defs/adminBasis"
+        },
+        "act": {
+          "$ref": "#/$defs/adminAct"
+        },
+        "return": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/adminReturn"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "basis",
+        "act",
+        "return"
+      ],
+      "additionalProperties": false
+    },
+    "hostEvidence": {
+      "type": "object",
+      "properties": {
+        "configuration_digest": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        },
+        "selection_evidence": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "authenticated_records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "enum": [
+                  "ADMIN_BASIS",
+                  "ADMIN_RETURN"
+                ]
+              },
+              "record_digest": {
+                "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+              },
+              "provider": {
+                "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+              },
+              "source": {
+                "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+              },
+              "channel": {
+                "oneOf": [
+                  {
+                    "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "kind",
+              "record_digest",
+              "provider",
+              "source",
+              "channel"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "maxItems": 2
+        },
+        "seed_inventory": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "inventory_digest": {
+                  "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+                },
+                "evidence_ref": {
+                  "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+                }
+              },
+              "required": [
+                "inventory_digest",
+                "evidence_ref"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "configuration_digest",
+        "selection_evidence",
+        "authenticated_records",
+        "seed_inventory"
+      ],
+      "additionalProperties": false
+    },
+    "event": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "schema": {
+              "const": "seampoint.work-class/1.0.0-draft.3/holdings-event"
+            },
+            "id": {
+              "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+            },
+            "expected_revision": {
+              "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/natural"
+            },
+            "expected_state_digest": {
+              "oneOf": [
+                {
+                  "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "clock": {
+              "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/authority.schema.json#/$defs/clock"
+            },
+            "administration": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/administration"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "kind": {
+              "const": "INITIALIZE"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "grants": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/initialGrant"
+                  },
+                  "minItems": 0,
+                  "maxItems": 256
+                }
+              },
+              "required": [
+                "grants"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "schema",
+            "id",
+            "expected_revision",
+            "expected_state_digest",
+            "clock",
+            "administration",
+            "kind",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema": {
+              "const": "seampoint.work-class/1.0.0-draft.3/holdings-event"
+            },
+            "id": {
+              "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+            },
+            "expected_revision": {
+              "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/natural"
+            },
+            "expected_state_digest": {
+              "oneOf": [
+                {
+                  "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "clock": {
+              "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/authority.schema.json#/$defs/clock"
+            },
+            "administration": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/administration"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "kind": {
+              "const": "GRANT"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "grant_id": {
+                  "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+                },
+                "actor": {
+                  "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+                },
+                "permission": {
+                  "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+                },
+                "valid_until": {
+                  "oneOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "grant_id",
+                "actor",
+                "permission",
+                "valid_until"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "schema",
+            "id",
+            "expected_revision",
+            "expected_state_digest",
+            "clock",
+            "administration",
+            "kind",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema": {
+              "const": "seampoint.work-class/1.0.0-draft.3/holdings-event"
+            },
+            "id": {
+              "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+            },
+            "expected_revision": {
+              "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/natural"
+            },
+            "expected_state_digest": {
+              "oneOf": [
+                {
+                  "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "clock": {
+              "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/authority.schema.json#/$defs/clock"
+            },
+            "administration": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/administration"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "kind": {
+              "const": "REVOKE"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "grant_id": {
+                  "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+                },
+                "actor": {
+                  "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+                },
+                "permission": {
+                  "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+                }
+              },
+              "required": [
+                "grant_id",
+                "actor",
+                "permission"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "schema",
+            "id",
+            "expected_revision",
+            "expected_state_digest",
+            "clock",
+            "administration",
+            "kind",
+            "payload"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "core": {
+      "type": "object",
+      "properties": {
+        "configuration_digest": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        },
+        "revision": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/natural"
+        },
+        "last_clock": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        },
+        "grants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/grant"
+          },
+          "minItems": 0,
+          "maxItems": 256
+        }
+      },
+      "required": [
+        "configuration_digest",
+        "revision",
+        "last_clock",
+        "grants"
+      ],
+      "additionalProperties": false
+    },
+    "receipt": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.3/holdings-receipt"
+        },
+        "event_id": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "event_digest": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        },
+        "state_before_digest": {
+          "oneOf": [
+            {
+              "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "revision": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/natural"
+        },
+        "core_after_digest": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        },
+        "decision": {
+          "enum": [
+            "INITIALIZED",
+            "GRANTED",
+            "REVOKED",
+            "UNCHANGED",
+            "WITHHELD"
+          ]
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "ALREADY_HELD",
+              "CONFLICTING_HOLDING",
+              "NOT_ACTIVE"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 1
+        },
+        "protected_channel": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        }
+      },
+      "required": [
+        "schema",
+        "event_id",
+        "event_digest",
+        "state_before_digest",
+        "revision",
+        "core_after_digest",
+        "decision",
+        "reasons",
+        "protected_channel"
+      ],
+      "additionalProperties": false
+    },
+    "record": {
+      "type": "object",
+      "properties": {
+        "event": {
+          "$ref": "#/$defs/event"
+        },
+        "host_evidence": {
+          "$ref": "#/$defs/hostEvidence"
+        },
+        "event_digest": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        },
+        "receipt": {
+          "$ref": "#/$defs/receipt"
+        },
+        "receipt_digest": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        }
+      },
+      "required": [
+        "event",
+        "host_evidence",
+        "event_digest",
+        "receipt",
+        "receipt_digest"
+      ],
+      "additionalProperties": false
+    },
+    "state": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.3/holdings-state"
+        },
+        "specification_pin": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        },
+        "core": {
+          "$ref": "#/$defs/core"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/record"
+          },
+          "minItems": 1,
+          "maxItems": 64
+        }
+      },
+      "required": [
+        "schema",
+        "specification_pin",
+        "core",
+        "records"
+      ],
+      "additionalProperties": false
+    },
+    "input": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "const": "seampoint.work-class/1.0.0-draft.3/holdings-input"
+        },
+        "specification_pin": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        },
+        "configuration": {
+          "$ref": "#/$defs/configuration"
+        },
+        "state": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/state"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "state_digest": {
+          "oneOf": [
+            {
+              "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "event": {
+          "$ref": "#/$defs/event"
+        },
+        "host_evidence": {
+          "$ref": "#/$defs/hostEvidence"
+        }
+      },
+      "required": [
+        "schema",
+        "specification_pin",
+        "configuration",
+        "state",
+        "state_digest",
+        "event",
+        "host_evidence"
+      ],
+      "additionalProperties": false
+    },
+    "result": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "TRANSITION"
+        },
+        "receipt": {
+          "$ref": "#/$defs/receipt"
+        },
+        "receipt_digest": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        },
+        "state": {
+          "$ref": "#/$defs/state"
+        },
+        "state_digest": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        },
+        "replay": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "status",
+        "receipt",
+        "receipt_digest",
+        "state",
+        "state_digest",
+        "replay"
+      ],
+      "additionalProperties": false
+    },
+    "refusal": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "REFUSED"
+        },
+        "code": {
+          "enum": [
+            "ADMINISTRATION_NOT_ESTABLISHED",
+            "ARTIFACT_ENCODING_INVALID",
+            "ARTIFACT_NONCANONICAL",
+            "BINDING_MISMATCH",
+            "CLOCK_INVALID",
+            "DEFINITION_CONFLICT",
+            "DEFINITION_INVALID",
+            "DEPENDENCY_MISMATCH",
+            "DIGEST_MISMATCH",
+            "EVIDENCE_UNAVAILABLE",
+            "LIMIT_EXCEEDED",
+            "REPLAY_CONFLICT",
+            "REVISION_CONFLICT",
+            "SCHEMA_INVALID",
+            "STATE_INVALID",
+            "VERSION_UNSUPPORTED"
+          ]
+        },
+        "path": {
+          "const": ""
+        },
+        "state": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/state"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "state_digest": {
+          "oneOf": [
+            {
+              "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "code",
+        "path",
+        "state",
+        "state_digest"
+      ],
+      "additionalProperties": false
+    },
+    "selection": {
+      "type": "object",
+      "properties": {
+        "configuration_digest": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        },
+        "state_digest": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        },
+        "revision": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/natural"
+        },
+        "provider": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "source": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "channel": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "at": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        },
+        "status": {
+          "enum": [
+            "AVAILABLE",
+            "UNAVAILABLE",
+            "CONFLICTING"
+          ]
+        },
+        "selection_evidence": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        }
+      },
+      "required": [
+        "configuration_digest",
+        "state_digest",
+        "revision",
+        "provider",
+        "source",
+        "channel",
+        "at",
+        "status",
+        "selection_evidence"
+      ],
+      "additionalProperties": false
+    },
+    "authorityBasis": {
+      "type": "object",
+      "properties": {
+        "configuration": {
+          "$ref": "#/$defs/configuration"
+        },
+        "state": {
+          "$ref": "#/$defs/state"
+        },
+        "state_digest": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        },
+        "selection": {
+          "$ref": "#/$defs/selection"
+        }
+      },
+      "required": [
+        "configuration",
+        "state",
+        "state_digest",
+        "selection"
+      ],
+      "additionalProperties": false
+    },
+    "requirement": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "step": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "configuration_digest": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        },
+        "permission": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "actor": {
+          "enum": [
+            "EXECUTOR",
+            "GATE_ACTOR"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "step",
+        "configuration_digest",
+        "permission",
+        "actor"
+      ],
+      "additionalProperties": false
+    },
+    "fenceHolding": {
+      "type": "object",
+      "properties": {
+        "requirement_id": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "configuration_digest": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        },
+        "state_digest": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/digest"
+        },
+        "revision": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/natural"
+        },
+        "actor": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "permission": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "grant_id": {
+          "$ref": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json#/$defs/id"
+        },
+        "valid_until": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "requirement_id",
+        "configuration_digest",
+        "state_digest",
+        "revision",
+        "actor",
+        "permission",
+        "grant_id",
+        "valid_until"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/input"
+    },
+    {
+      "$ref": "#/$defs/result"
+    },
+    {
+      "$ref": "#/$defs/refusal"
+    }
+  ]
+}

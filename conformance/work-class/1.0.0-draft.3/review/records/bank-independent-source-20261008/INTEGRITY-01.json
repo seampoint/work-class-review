@@ -1,0 +1,80 @@
+{
+  "schema": "bank-independent-source-integrity/1",
+  "status": "PASS",
+  "verified_at": "2026-10-08T20:03:48.879569+00:00",
+  "seal_sha256": "f5947b2faeeb5d532d7495aa3673a52c7a00d04ff8de7e4e65874ffdd5c9920e",
+  "candidate_pin": "sha256:120242f6e3a9cc67348932386460144ace5924d9b02852b878093b74a7af82a3",
+  "checks_by_category": {
+    "frozen_input": 54,
+    "mechanical_dependency": 39,
+    "normative_file": 35,
+    "original_complete_case": 54,
+    "postseal_comparison": 1,
+    "published_source": 5,
+    "sealed_complete_expected": 54,
+    "sealed_constructor": 6,
+    "sealed_metadata": 5,
+    "sealed_provenance": 2,
+    "sealed_source": 5
+  },
+  "constructors_imports": {
+    "derive_and_seal.py": [
+      "argparse",
+      "datetime",
+      "hashlib",
+      "independent_authority",
+      "independent_common",
+      "independent_flow",
+      "independent_holdings",
+      "independent_lifecycle",
+      "json",
+      "os",
+      "pathlib",
+      "sys"
+    ],
+    "independent_authority.py": [
+      "independent_common",
+      "independent_flow",
+      "independent_holdings"
+    ],
+    "independent_common.py": [
+      "base64",
+      "copy",
+      "datetime",
+      "decimal",
+      "hashlib",
+      "json",
+      "jsonschema",
+      "os",
+      "pathlib",
+      "re",
+      "referencing",
+      "sys"
+    ],
+    "independent_flow.py": [
+      "independent_authority",
+      "independent_common"
+    ],
+    "independent_holdings.py": [
+      "independent_common"
+    ],
+    "independent_lifecycle.py": [
+      "functools",
+      "independent_authority",
+      "independent_common",
+      "json"
+    ]
+  },
+  "mechanical_dependency_count": 39,
+  "binary_dependencies": [
+    "rpds/rpds.cpython-314-darwin.so"
+  ],
+  "all_sealed_metadata_hashes_match": true,
+  "all_54_inputs_and_expected_hashes_match": true,
+  "all_54_original_case_hashes_and_input_extractions_match": true,
+  "all_recorded_mechanical_dependencies_match": true,
+  "original_source_tree_existing_file_hashes_unchanged": true,
+  "enumerated_inputs_unchanged": true,
+  "privacy_pattern_hits": [],
+  "scope": "Seal integrity and unchanged packaging only. No consumer executed and no new source-fidelity or deployment claim."
+}

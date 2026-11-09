@@ -1,0 +1,192 @@
+{
+  "identity": "seampoint.work-class.reviewer-evidence-overlay/20261108",
+  "status": "PUBLIC_REVIEW_EVIDENCE_NOT_QUALIFICATION",
+  "candidate_pin": "sha256:fd52d69dd3c3546bff2cec9d46fb8d6b942fd57b77b0a3ab8377a592e80d00b6",
+  "canonical_suite_path": "conformance/work-class/1.0.0-draft.3/suite/manifest.json",
+  "canonical_suite_sha256": "a768361794a33d70be0808dbe1f119d0828e612f011d5532e19c7917b8d76eee",
+  "case_index_path": "conformance/work-class/1.0.0-draft.3/cases/index.json",
+  "case_index_sha256": "364cdbc395a98404d1108e43a7cecf35c7047f24edaa54017dfb7fc8f1f569e6",
+  "included_evidence": [
+    {
+      "path": "review/EXPECTED-JUDGMENTS-CONTRACT.json",
+      "sha256": "297e9949f09d98b8f53a1e9b9783ab879a1635df3113034999b913f686e0059c"
+    },
+    {
+      "path": "review/JUDGMENT-CASE-REGISTER.json",
+      "sha256": "9cdb157046d64cc181cef18050301eac851ecebb6812923aa41bea73fa685df2"
+    },
+    {
+      "path": "review/fixtures/source-approved-finite-snapshot-revision1-source.md",
+      "sha256": "507ed710a5b0f5cb6a291105048caf85501483e1f7e6f1f51ec4876d0f7e3036"
+    },
+    {
+      "path": "review/SNAPSHOT-ELIGIBILITY-SOURCE-REVIEW-20261009.md",
+      "sha256": "45d6824f5a7c63cbfa14f7a14c4577afff5a7db5386a06ac6c506f3f319043bf"
+    },
+    {
+      "path": "review/fixtures/finite-snapshot-dispatch-refresh-counterexample-source.md",
+      "sha256": "ff539fae86563e66b05681e9df209e55683291bb8a27906052a7009530242015"
+    },
+    {
+      "path": "review/SNAPSHOT-ELIGIBILITY-DOCUMENTARY-BOUNDARY-20261009.md",
+      "sha256": "6238d87aad54fc5d8be52e65961f5d5225c12594cd3a296c1e2a7155ca766bf8"
+    },
+    {
+      "path": "review/EQUIPMENT-SOURCE-MAPPING.md",
+      "sha256": "eacd9db2ceaee9ad4e3fe6e2ab12716535e399cbffcf06185713131f423be71b"
+    },
+    {
+      "path": "review/RECOVERY-EXPECTED-JUDGMENTS.json",
+      "sha256": "0f96e065c0b8e65e1bafd5eb6ac81f9df98c0442fe6cc6929b9edbf166bfe812"
+    },
+    {
+      "path": "review/RECOVERY-SOURCE-COVERAGE.md",
+      "sha256": "65b613944d22e467418caeb13911776684edbe7663e459068000521eea63d2f3"
+    },
+    {
+      "path": "review/RECOVERY-WIRE.md",
+      "sha256": "0140e0e6447e96281daf8a8a4562ff21529a6eb852debe613c74d20c9cfd3bcc"
+    },
+    {
+      "path": "review/TIMING-SOURCE-COVERAGE.md",
+      "sha256": "d99b193f0bbbe7287eaa169930c6b5b86566baf3183b7f5e8ded2c5b1af18fd9"
+    },
+    {
+      "path": "review/TIMING-WIRE.md",
+      "sha256": "2f1840dfcf3714cf29d449df1f6082aa96a6c13c64edf6a37cc7c84fe54f100f"
+    },
+    {
+      "path": "review/HOLDINGS-SOURCE-COVERAGE.md",
+      "sha256": "a162f4bd844de4689156bb2654921fc262f09ab0d18e1bb6c29c3331aac79ce8"
+    },
+    {
+      "path": "review/HOLDINGS-HOST-EXPECTED-JUDGMENTS.json",
+      "sha256": "60753a0ae030d1ce8d42d137c1a8cff92b2fb553e4f8ac57c87ed666975235c4"
+    },
+    {
+      "path": "review/fixtures/permission-holdings-revision1-source.md",
+      "sha256": "b2bfd7362e7c2b59a12b6044d1d4c7f8e15661d758969d67f44c86551aa243ce"
+    },
+    {
+      "path": "review/fixtures/INFORMATION-FLOW-SOURCE-COVERAGE.md",
+      "sha256": "7dd7120beb68e7b8817c6733b356d02cbdbd5bb4db63be8d15cc172b61c4aef1"
+    },
+    {
+      "path": "review/ASSESSMENT-SOURCE-COVERAGE.md",
+      "sha256": "c9275e1fe334d9c2da9cf4ca49aaab9fb278116ecf694f6651cc95bf0dc90859"
+    },
+    {
+      "path": "review/ASSESSMENT-HOST-EXPECTED-JUDGMENTS.json",
+      "sha256": "d047e13acb3d5172f7d9cec883c462089d98e7b9b3ad5468da88c9f6723a5eef"
+    },
+    {
+      "path": "review/fixtures/factual-customer-message-review-revision1-source.md",
+      "sha256": "3fd749f89e66ff71b439641c3e317595c95922613c5695605ad52e4be00adce4"
+    },
+    {
+      "path": "review/fixtures/factual-customer-message-review-revision1-selector-clarification.md",
+      "sha256": "c2e39b6d5b160e7e68d8becf65d7d9fc663fbfd1c14f76831de5ccf061d0c321"
+    },
+    {
+      "path": "review/CDMO-SOURCE-COVERAGE.md",
+      "sha256": "de2013c0edac41ebeac7f1ee6e77ae882dc217a0abd26090add8f9db83e45c81"
+    },
+    {
+      "path": "review/CDMO-HOST-EXPECTED-JUDGMENTS.json",
+      "sha256": "bf0fda6cf7a21e5a5164c5c0097f0fbc1c8f10ce30e5a468cdbcd05d0e0835b9"
+    }
+  ],
+  "omitted_internal_evidence": [
+    {
+      "path": "review/CONTRACT-DECISIONS.md",
+      "sha256": "18d985e56458d35bee13a9517de6b8df8b6bdc33dccda721fb04182864731280",
+      "reason": "Internal historical development or adjudication evidence; original bytes retained and hash verified before export"
+    },
+    {
+      "path": "review/records/EQUIPMENT-FOUNDATION-20261006.md",
+      "sha256": "1137d4bc776c0c027976edb8a7f0d0c94227dff0c1820811625a28939e1b1473",
+      "reason": "Internal historical development or adjudication evidence; original bytes retained and hash verified before export"
+    },
+    {
+      "path": "review/records/EQUIPMENT-COMPLETE-20261006.md",
+      "sha256": "a568ff9db5609c592d60f54e5db0b92171a3f65ea2726e266c93359ec1fa3457",
+      "reason": "Internal historical development or adjudication evidence; original bytes retained and hash verified before export"
+    },
+    {
+      "path": "review/records/recovery-source2-20261007/verification-record.json",
+      "sha256": "2299ddb3ae03bd51e18e0345c6b24810e06066ffe7ace6837cd4c0d60622dc50",
+      "reason": "Internal historical development or adjudication evidence; original bytes retained and hash verified before export"
+    },
+    {
+      "path": "review/records/RECOVERY-DEVELOPMENT-20261007.md",
+      "sha256": "ee66ae9ca49300a4f31fe20b51e02996d776b64eee61eab9844c3eed03e4625d",
+      "reason": "Internal historical development or adjudication evidence; original bytes retained and hash verified before export"
+    },
+    {
+      "path": "review/records/recovery-development-20261007.json",
+      "sha256": "b2d537a17a28ec23cfdd6a07ee8823b3f8aa1273ceccc13ae3efd73ac4249b61",
+      "reason": "Internal historical development or adjudication evidence; original bytes retained and hash verified before export"
+    },
+    {
+      "path": "review/records/TIMING-DEVELOPMENT-20261007.md",
+      "sha256": "70b71ec162d1548625878920adbdfa5ead0a052ec8604873c8d2c2827568d82e",
+      "reason": "Internal historical development or adjudication evidence; original bytes retained and hash verified before export"
+    },
+    {
+      "path": "review/records/timing-development-20261007.json",
+      "sha256": "316d6b504e57c00e0500a2b9577c51cb62bad0c5da577ab1cab7a16a3680c385",
+      "reason": "Internal historical development or adjudication evidence; original bytes retained and hash verified before export"
+    },
+    {
+      "path": "review/records/timing-source-20261007/verification-record.json",
+      "sha256": "a5c06c3b679d9379ad023bafb05a64e36df899cc615aeba42c6867c00d26b940",
+      "reason": "Internal historical development or adjudication evidence; original bytes retained and hash verified before export"
+    },
+    {
+      "path": "review/records/HOLDINGS-DEVELOPMENT-20261008.md",
+      "sha256": "e7d1aa76cc5cb324ccec811e013739475a233a30be28a4bd88379639b09033d4",
+      "reason": "Internal historical development or adjudication evidence; original bytes retained and hash verified before export"
+    },
+    {
+      "path": "review/records/holdings-development-20261008.json",
+      "sha256": "f9ee548b727b096d5cdaaaf7222c1b2531d8d8a497b632bfe86b5e1f89616043",
+      "reason": "Internal historical development or adjudication evidence; original bytes retained and hash verified before export"
+    },
+    {
+      "path": "review/records/ASSESSMENT-DEVELOPMENT-20261008.md",
+      "sha256": "42d06ada76ee1dbbfa472264df4612534142de788335cd6a200aed48617abcb2",
+      "reason": "Internal historical development or adjudication evidence; original bytes retained and hash verified before export"
+    },
+    {
+      "path": "review/records/assessment-development-20261008.json",
+      "sha256": "9995c0fcd013e7ab7de903b6e8d5aaa14d868c81b7b9887d10bf77f27d944faf",
+      "reason": "Internal historical development or adjudication evidence; original bytes retained and hash verified before export"
+    },
+    {
+      "path": "review/records/CDMO-DEVELOPMENT-20261007.md",
+      "sha256": "ab547e6b5aaefe50f533db70123e628d0d87cb346ee1febe1b252ed7496058ef",
+      "reason": "Internal historical development or adjudication evidence; original bytes retained and hash verified before export"
+    },
+    {
+      "path": "review/records/cdmo-development-20261007.json",
+      "sha256": "9dc4ca1f31c206cdc4f9c18b2e2930a6e348177202c5d883c0fd70b131ee237c",
+      "reason": "Internal historical development or adjudication evidence; original bytes retained and hash verified before export"
+    },
+    {
+      "path": "review/records/cdmo-source3-20261007/verification-record.json",
+      "sha256": "e0ee9826c3498c2eff35f0eb11d6ad64fa2c92c2743ba0965d474ccb200223c6",
+      "reason": "Internal historical development or adjudication evidence; original bytes retained and hash verified before export"
+    },
+    {
+      "path": "review/records/cdmo-source3-20261007/python-full-result-hashes.json",
+      "sha256": "ba716a352a9bd834462e70636bdd82edf0297e3fecbbb01f7b9b6c0b18fd5f6e",
+      "reason": "Internal historical development or adjudication evidence; original bytes retained and hash verified before export"
+    },
+    {
+      "path": "review/records/cdmo-source3-20261007/typescript-full-result-hashes.json",
+      "sha256": "50682d7637d6319466d0b3a77fbe3a9ab02f5ab200afe47992ee4630ffd1ec25",
+      "reason": "Internal historical development or adjudication evidence; original bytes retained and hash verified before export"
+    }
+  ],
+  "boundary": "The canonical suite is unchanged. Only the separately named reviewer evidence view omits the explicit internal records."
+}

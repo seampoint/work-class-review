@@ -1,0 +1,215 @@
+{
+  "candidate_pin": "sha256:232cd91f34b5bafa5085cc0500b7485f3a7cd892c8beb0a281be796622babd52",
+  "status": "SOURCE_DERIVED_FROZEN_BEFORE_HOST_EXECUTION",
+  "scope": "SEMANTIC_HOST_SCENARIOS_NOT_ADAPTER_PROTOCOL_OR_FULL_INDUSTRY_PROOF",
+  "consumer_outputs_seen": false,
+  "rows": [
+    {
+      "id": "HOLD-HOST-001",
+      "scenario": "Current exact selected state and authorization before expiry; commit first.",
+      "expected": {
+        "decision": "COMMITTED",
+        "native_invocations": 1,
+        "native_effect": "ESTABLISHED",
+        "retained_invocation": "ESTABLISHED",
+        "exact_retry": "RETAINED_RESULT_NO_REINVOKE"
+      },
+      "derivation": "HOLD-007/008: conditional native acceptance under the all-demonstrated-writers coordinator."
+    },
+    {
+      "id": "HOLD-HOST-002",
+      "scenario": "Selected permission revoke commits before native commitment.",
+      "expected": {
+        "decision": "WITHHELD",
+        "native_invocations": 0,
+        "native_effect": "NONE",
+        "retained_invocation": "NONE",
+        "exact_retry": "FRESH_AUTHORIZATION_REQUIRED"
+      },
+      "derivation": "HOLD-007: changed revision and current absence block the old authorization."
+    },
+    {
+      "id": "HOLD-HOST-003",
+      "scenario": "Native commitment precedes selected permission revoke.",
+      "expected": {
+        "decision": "COMMITTED_THEN_REVOKED",
+        "native_invocations": 1,
+        "native_effect": "ESTABLISHED",
+        "retained_invocation": "ESTABLISHED",
+        "exact_retry": "RETAINED_RESULT_NO_REINVOKE"
+      },
+      "derivation": "HOLD-004/007: revocation blocks later work and does not erase a committed historical effect."
+    },
+    {
+      "id": "HOLD-HOST-004",
+      "scenario": "Unrelated admitted registry decision precedes native commitment.",
+      "expected": {
+        "decision": "WITHHELD",
+        "native_invocations": 0,
+        "native_effect": "NONE",
+        "retained_invocation": "NONE",
+        "exact_retry": "FRESH_AUTHORIZATION_REQUIRED"
+      },
+      "derivation": "HOLD-007: any intervening registry decision changes exact selected revision, even without membership loss."
+    },
+    {
+      "id": "HOLD-HOST-005",
+      "scenario": "Exclusive permission end reached without a registry writer.",
+      "expected": {
+        "decision": "WITHHELD",
+        "native_invocations": 0,
+        "native_effect": "NONE",
+        "retained_invocation": "NONE",
+        "exact_retry": "FRESH_AUTHORIZATION_REQUIRED"
+      },
+      "derivation": "HOLD-004/007: time changes current membership while state digest remains unchanged; authorization is capped by exclusive grant end."
+    },
+    {
+      "id": "HOLD-HOST-006",
+      "scenario": "Failure before invocation-intent retention.",
+      "expected": {
+        "decision": "COMMIT_FAILED",
+        "native_invocations": 0,
+        "native_effect": "NONE",
+        "retained_invocation": "NONE",
+        "exact_retry": "NEW_ADMISSION_MAY_BE_ATTEMPTED"
+      },
+      "derivation": "HOLD-008: unchanged authoritative state and no invocation before retained intent."
+    },
+    {
+      "id": "HOLD-HOST-007",
+      "scenario": "Failure after retained intent and before native invocation.",
+      "expected": {
+        "decision": "PENDING_RECONCILIATION",
+        "native_invocations": 0,
+        "native_effect": "NONE",
+        "retained_invocation": "PENDING",
+        "exact_retry": "RETAINED_PENDING_NO_REINVOKE"
+      },
+      "derivation": "HOLD-008: pending intent is retained; recording intent proves no effect and does not authorize blind retry."
+    },
+    {
+      "id": "HOLD-HOST-008",
+      "scenario": "Stop/crash after possible native acceptance.",
+      "expected": {
+        "decision": "PENDING_RECONCILIATION",
+        "native_invocations": 1,
+        "native_effect": "POSSIBLE",
+        "retained_invocation": "PENDING_OR_UNCERTAIN",
+        "exact_retry": "RETAINED_PENDING_NO_REINVOKE"
+      },
+      "derivation": "HOLD-008: possible acceptance requires protected reconciliation, not inferred absence."
+    },
+    {
+      "id": "HOLD-HOST-009",
+      "scenario": "Native acceptance followed by outcome-write failure.",
+      "expected": {
+        "decision": "PENDING_RECONCILIATION",
+        "native_invocations": 1,
+        "native_effect": "POSSIBLE",
+        "retained_invocation": "PENDING_OR_UNCERTAIN",
+        "exact_retry": "RETAINED_PENDING_NO_REINVOKE"
+      },
+      "derivation": "HOLD-008: inability to establish the retained result leaves possible effect and prohibits blind reinvocation."
+    },
+    {
+      "id": "HOLD-HOST-010",
+      "scenario": "Protected process checkpoint restart of retained pending intent.",
+      "expected": {
+        "decision": "PENDING_RECONCILIATION",
+        "native_invocations": 0,
+        "native_effect": "NO_NEW_EFFECT",
+        "retained_invocation": "PRESERVED_PENDING",
+        "exact_retry": "RETAINED_PENDING_NO_REINVOKE"
+      },
+      "derivation": "HOLD-008: restart reconstructs exact retained authorization and invocation identity. This is process-local export/import, not durable storage proof."
+    },
+    {
+      "id": "HOLD-HOST-011",
+      "scenario": "Exact retry of established committed invocation.",
+      "expected": {
+        "decision": "RETAINED_RESULT",
+        "native_invocations": 0,
+        "native_effect": "NO_NEW_EFFECT",
+        "retained_invocation": "PRESERVED_ESTABLISHED",
+        "exact_retry": "RETAINED_RESULT_NO_REINVOKE"
+      },
+      "derivation": "HOLD-008: same exact invocation identity returns its established result without another call."
+    },
+    {
+      "id": "HOLD-HOST-012",
+      "scenario": "Concurrent same-actor incompatible grants from two classes, same expected revision.",
+      "expected": {
+        "decision": "ONE_GRANT_ONE_REVISION_CONFLICT",
+        "native_invocations": 0,
+        "native_effect": "NONE",
+        "retained_invocation": "NONE",
+        "exact_retry": "RETRY_LOSER_OBSERVES_CONFLICT"
+      },
+      "derivation": "HOLD-004/005: expected-revision transition serializes conflicts across classes and approvers."
+    },
+    {
+      "id": "HOLD-HOST-013",
+      "scenario": "At64 retained events, selected permission remains active.",
+      "expected": {
+        "decision": "HOLDINGS_CAPACITY_EXHAUSTED",
+        "native_invocations": 0,
+        "native_effect": "NONE",
+        "retained_invocation": "NONE",
+        "exact_retry": "PROTECTED_INTERVENTION_REQUIRED"
+      },
+      "derivation": "HOLD-005/006: replay/export survives but fresh authority and commitment stop before unretainable revocation risk."
+    },
+    {
+      "id": "HOLD-HOST-014",
+      "scenario": "Attempt to substitute an older self-consistent state into an already owned newer registry.",
+      "expected": {
+        "decision": "REFUSED_OR_WITHHELD",
+        "native_invocations": 0,
+        "native_effect": "NONE",
+        "retained_invocation": "NONE",
+        "exact_retry": "FRESH_AUTHENTICATED_SELECTION_REQUIRED"
+      },
+      "derivation": "HOLD-001/006/007: protected owned-root installation rejects rollback substitution. This local rejection does not prove real provider authentication or truthful latest-state selection."
+    },
+    {
+      "id": "HOLD-HOST-015",
+      "scenario": "Same-thread native callback attempts reentrant permission write.",
+      "expected": {
+        "decision": "WRITE_REFUSED_DURING_COMMIT",
+        "native_invocations": 1,
+        "native_effect": "ESTABLISHED_IF_NATIVE_ACCEPTS",
+        "retained_invocation": "EXACT_COMMIT_INTENT",
+        "exact_retry": "NO_REENTRANT_ADMIN_EFFECT"
+      },
+      "derivation": "HOLD-007/008: the selected host cannot allow covered conditions to change inside one commitment critical section. Reentrant path must reject or use a stronger coherent ordering; this demonstration selects rejection."
+    },
+    {
+      "id": "HOLD-HOST-016",
+      "scenario": "Public denial rendering of a protected holdings failure.",
+      "expected": {
+        "public_response": {
+          "status": "REFUSED",
+          "code": "OPERATION_NOT_ALLOWED"
+        },
+        "forbidden_details": [
+          "actor",
+          "permission",
+          "report",
+          "conflicting owner",
+          "receipt",
+          "denial details"
+        ]
+      },
+      "derivation": "HOLD-008: detailed adapter result is protected; public rendering must not reveal its inventory or reasons."
+    }
+  ],
+  "external_obligations": [
+    "actual all-writer participation",
+    "canonical identity authentication",
+    "protected latest-state selection",
+    "durable/distributed recovery",
+    "actual provider conditional acceptance and reconciliation",
+    "reader authorization and evidence custody"
+  ]
+}

@@ -1,0 +1,451 @@
+{
+  "schema": "seampoint.work-class/1.0.0-draft.1/reservation-input",
+  "specification_pin": "sha256:668b7622967767d65c382f94c7d8bca24c49f365962ea19128dece246ec1ef26",
+  "state": {
+    "schema": "seampoint.work-class/1.0.0-draft.1/reservation-state",
+    "specification_pin": "sha256:668b7622967767d65c382f94c7d8bca24c49f365962ea19128dece246ec1ef26",
+    "core": {
+      "configuration": {
+        "schema": "seampoint.work-class/1.0.0-draft.1/reservation-registry",
+        "id": "license-registry",
+        "principal": "access-card-owner",
+        "clock_source": "authority-clock",
+        "administration_provider": "organization-provider",
+        "administration_source": "budget-administration",
+        "administration_role": "budget-administrator",
+        "slots": [
+          {
+            "anchor": "license-spend",
+            "exposure_domain": "issuer-global-usd"
+          }
+        ]
+      },
+      "revision": "0",
+      "last_clock": null,
+      "budgets": [],
+      "reservations": [],
+      "effects": []
+    },
+    "receipts": []
+  },
+  "state_digest": "sha256:871ff6d251440c6d1794b5141f79a05cc141ee9c7eb8f67a5439c9cf239a61b1",
+  "event": {
+    "id": "register-license-budget",
+    "expected_revision": "0",
+    "kind": "REGISTER",
+    "clock": {
+      "source": "authority-clock",
+      "status": "AVAILABLE",
+      "instant": "2026-09-10T04:30:00Z"
+    },
+    "payload": {
+      "definition": {
+        "schema": "seampoint.work-class/1.0.0-draft.1/budget-definition",
+        "anchor": "license-spend",
+        "exposure_domain": "issuer-global-usd",
+        "principal": "access-card-owner",
+        "aggregate": {
+          "aggregate": {
+            "bound": {
+              "type_ref": "amount",
+              "value": "1000"
+            },
+            "committed_source": {
+              "contribution": {
+                "field": "amount",
+                "kind": "SUM"
+              },
+              "freshness": {
+                "kind": "MAX_AGE",
+                "seconds": "60"
+              },
+              "key_fields": [
+                "beneficiary"
+              ],
+              "provider": "ledger-provider",
+              "qualifier": {
+                "kind": "BOOLEAN",
+                "value": true
+              },
+              "source": "payments"
+            },
+            "element_type": null,
+            "id": "beneficiary-exposure",
+            "key_types": [
+              "beneficiary"
+            ],
+            "mappings": [
+              {
+                "contribution": {
+                  "field": "amount",
+                  "kind": "SUM"
+                },
+                "id": "pay",
+                "key_fields": [
+                  "beneficiary"
+                ],
+                "qualifier": {
+                  "kind": "BOOLEAN",
+                  "value": true
+                },
+                "step_ids": [
+                  "issue"
+                ]
+              }
+            ],
+            "operator": "LTE",
+            "pending_policy": "INCLUDE_ALL_RESERVED",
+            "reducer": "SUM",
+            "result_type": "amount",
+            "time": {
+              "clock_source": "authority-clock",
+              "precision": "SECOND"
+            },
+            "window": {
+              "duration_seconds": "86400",
+              "end_inclusive": true,
+              "kind": "ROLLING",
+              "start_inclusive": false
+            }
+          },
+          "schema": "seampoint.work-class/1.0.0-draft.1/aggregate-definition",
+          "types": [
+            {
+              "id": "amount",
+              "kind": "DECIMAL",
+              "nonnegative": true,
+              "unit": "USD"
+            },
+            {
+              "id": "beneficiary",
+              "kind": "IDENTITY",
+              "nonnegative": false,
+              "unit": null
+            },
+            {
+              "id": "count",
+              "kind": "INTEGER",
+              "nonnegative": true,
+              "unit": null
+            },
+            {
+              "id": "item",
+              "kind": "STRING",
+              "nonnegative": false,
+              "unit": null
+            }
+          ]
+        },
+        "contributor_classes": [
+          "card-issuance"
+        ],
+        "reservation_policy": {
+          "permit_seconds": "300",
+          "pending_across_windows": true,
+          "unexpected_effect": "BLOCK_AFFECTED_PARTITIONS",
+          "unprojectable_effect": "BLOCK_ANCHOR",
+          "settlement": {
+            "provider": "native-provider",
+            "source": "card-ledger"
+          },
+          "no_effect": {
+            "provider": "native-provider",
+            "source": "card-no-effect"
+          }
+        }
+      },
+      "authorizations": [
+        {
+          "id": "license-class-authorization",
+          "budget_digest": "sha256:9698c09131697c1c1f9fce63217774eb192ee9e6b3cfb310826102f4a97f4ba8",
+          "work_class": "card-issuance",
+          "work_class_digest": "sha256:f8af04d91c39c3038951ff15085ea9f5792f5363ef9f7be357ee1081380fd03d",
+          "envelope_digest": "sha256:c7f5201f620023e7a1a004e05ee3fe55ae7205f6e06e13f36455b0648fcadbab",
+          "principal": "access-card-owner",
+          "step": "issue",
+          "authority_definition": {
+            "schema": "seampoint.work-class/1.0.0-draft.1/authority-definition",
+            "source": {
+              "schema": "seampoint.work-class/1.0.0-draft.1/authority-source",
+              "id": "access-card-policy",
+              "revision": "r1",
+              "obligations": [
+                {
+                  "id": "issue-card",
+                  "text": "Card issuance requires the declared business authority and shared committed plus unsettled USD exposure at most 1000 over the trailing 24 hours."
+                }
+              ]
+            },
+            "work_class": {
+              "schema": "seampoint.work-class/1.0.0-draft.1/authority-work-class",
+              "id": "card-issuance",
+              "revision": "r1",
+              "types": [
+                {
+                  "id": "IDENTITY",
+                  "kind": "IDENTITY",
+                  "nonnegative": false,
+                  "unit": null
+                },
+                {
+                  "id": "STRING",
+                  "kind": "STRING",
+                  "nonnegative": false,
+                  "unit": null
+                },
+                {
+                  "id": "amount",
+                  "kind": "DECIMAL",
+                  "unit": "USD",
+                  "nonnegative": true
+                }
+              ],
+              "steps": [
+                {
+                  "id": "issue",
+                  "operation": "issue-card",
+                  "interface": "card-system",
+                  "executor_role": "card-issuer",
+                  "fields": [
+                    {
+                      "name": "amount",
+                      "type_ref": "amount"
+                    },
+                    {
+                      "name": "beneficiary",
+                      "type_ref": "IDENTITY"
+                    },
+                    {
+                      "name": "card_id",
+                      "type_ref": "IDENTITY"
+                    }
+                  ],
+                  "scope_fields": {
+                    "subjects": [
+                      "beneficiary"
+                    ],
+                    "resources": [
+                      "card_id"
+                    ]
+                  },
+                  "required_credentials": [
+                    "card-issuer-credential"
+                  ]
+                }
+              ]
+            },
+            "envelope": {
+              "schema": "seampoint.work-class/1.0.0-draft.1/authority-envelope",
+              "id": "access-card-envelope",
+              "source_digest": "sha256:387f513c8f1a30c74e4dd8278545a5b3f77b803c95fdf9f72ef4291211e1722c",
+              "work_class_digest": "sha256:f8af04d91c39c3038951ff15085ea9f5792f5363ef9f7be357ee1081380fd03d",
+              "source_obligations": [
+                "issue-card"
+              ],
+              "principal": "access-card-owner",
+              "grantor_role": "access-card-grantor",
+              "executor_role": "card-issuer",
+              "attester_role": "access-card-attester",
+              "grant_ref": "grant-1",
+              "clock_source": "authority-clock",
+              "bindings": [
+                {
+                  "id": "beneficiary-binding",
+                  "step": "issue",
+                  "field": "beneficiary",
+                  "type_ref": "IDENTITY"
+                },
+                {
+                  "id": "card-binding",
+                  "step": "issue",
+                  "field": "card_id",
+                  "type_ref": "IDENTITY"
+                }
+              ],
+              "scope": {
+                "id": "access-card-scope",
+                "subjects": [
+                  {
+                    "kind": "BINDING",
+                    "binding": "beneficiary-binding"
+                  }
+                ],
+                "resources": [
+                  {
+                    "kind": "BINDING",
+                    "binding": "card-binding"
+                  }
+                ]
+              },
+              "operations": [
+                {
+                  "step": "issue",
+                  "operation": "issue-card",
+                  "interface": "card-system"
+                }
+              ],
+              "limits": {
+                "per_action": [],
+                "shared_budgets": [
+                  "license-spend"
+                ]
+              },
+              "conditions": [
+                {
+                  "id": "issue-condition",
+                  "step": "issue",
+                  "predicate": {
+                    "kind": "BOOLEAN",
+                    "value": true
+                  }
+                }
+              ],
+              "enforcement": {
+                "mechanisms": [
+                  "ATOMIC_SHARED_RESERVATION",
+                  "AUTHORITY_BEFORE_RESERVATION"
+                ],
+                "safe_state": "NO_NEW_DISPATCH",
+                "out_of_envelope": "REFUSE"
+              },
+              "escalation": {
+                "kind": "DECLARED_NONE"
+              },
+              "revocation": {
+                "provider": "identity-provider",
+                "source": "authority-revocations",
+                "max_age_seconds": "3600"
+              },
+              "temporal_validity": {
+                "valid_from": "2026-09-01T00:00:00Z",
+                "valid_until": "2026-10-01T00:00:00Z"
+              },
+              "gate": {
+                "materiality": "LOW",
+                "reversibility": "HIGH",
+                "kind": "NONE",
+                "role": null,
+                "criteria": []
+              },
+              "limitations": []
+            }
+          },
+          "projection": [
+            {
+              "native_field": "amount",
+              "native_type": "amount",
+              "budget_field": "amount",
+              "budget_type": "amount"
+            },
+            {
+              "native_field": "beneficiary",
+              "native_type": "IDENTITY",
+              "budget_field": "beneficiary",
+              "budget_type": "beneficiary"
+            }
+          ]
+        }
+      ],
+      "history": {
+        "budget_digest": "sha256:9698c09131697c1c1f9fce63217774eb192ee9e6b3cfb310826102f4a97f4ba8",
+        "provider": "ledger-provider",
+        "source": "payments",
+        "status": "AVAILABLE",
+        "as_of": "2026-09-10T04:30:00Z",
+        "complete": true,
+        "revision": "1",
+        "journal": [
+          {
+            "sequence": "1",
+            "event": {
+              "id": "opening-800",
+              "state": "ACTIVE",
+              "occurred_at": "2026-09-10T04:00:00Z",
+              "fields": [
+                {
+                  "name": "amount",
+                  "value": {
+                    "type_ref": "amount",
+                    "value": "800"
+                  }
+                },
+                {
+                  "name": "beneficiary",
+                  "value": {
+                    "type_ref": "beneficiary",
+                    "value": "employee-7"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "evidence_ref": "complete-opening-history"
+      }
+    },
+    "administration": {
+      "act": {
+        "id": "admin-act-register-license-budget",
+        "basis": "admin-basis",
+        "actor": "budget-owner-human",
+        "principal": "access-card-owner",
+        "role": "budget-administrator",
+        "kind": "REGISTER",
+        "subject_digest": "sha256:e7a3548faa27ce40571fe058933b406e5842f219a5f3f482094be2569da36ed3",
+        "occurred_at": "2026-09-10T04:30:00Z",
+        "disposition": "ACCEPT"
+      },
+      "returned": {
+        "id": "admin-return-register-license-budget",
+        "act_digest": "sha256:a56858968cf5467273320bd2a5b191887ec6628cbdbf4844c3affd97dc16a29d",
+        "act_bytes_base64": "eyJhY3RvciI6ImJ1ZGdldC1vd25lci1odW1hbiIsImJhc2lzIjoiYWRtaW4tYmFzaXMiLCJkaXNwb3NpdGlvbiI6IkFDQ0VQVCIsImlkIjoiYWRtaW4tYWN0LXJlZ2lzdGVyLWxpY2Vuc2UtYnVkZ2V0Iiwia2luZCI6IlJFR0lTVEVSIiwib2NjdXJyZWRfYXQiOiIyMDI2LTA5LTEwVDA0OjMwOjAwWiIsInByaW5jaXBhbCI6ImFjY2Vzcy1jYXJkLW93bmVyIiwicm9sZSI6ImJ1ZGdldC1hZG1pbmlzdHJhdG9yIiwic3ViamVjdF9kaWdlc3QiOiJzaGEyNTY6ZTdhMzU0OGZhYTI3Y2U0MDU3MWZlMDU4OTMzYjQwNmU1ODQyZjIxOWE1ZjNmNDgyMDk0YmUyNTY5ZGEzNmVkMyJ9",
+        "actor": "budget-owner-human",
+        "provider": "organization-provider",
+        "source": "budget-administration",
+        "returned_at": "2026-09-10T04:30:00Z",
+        "evidence_ref": "authenticated-admin-return-register-license-budget"
+      }
+    }
+  },
+  "host_evidence": {
+    "registry_digest": "sha256:b2d07fc57b5f9c6fbf83c36ef9582ff19986586aaa2d1dcdb8f9b3d2105df9f3",
+    "selection_evidence": "selected-license-registry",
+    "administration_bases": [
+      {
+        "id": "admin-basis",
+        "registry_digest": "sha256:b2d07fc57b5f9c6fbf83c36ef9582ff19986586aaa2d1dcdb8f9b3d2105df9f3",
+        "actor": "budget-owner-human",
+        "principal": "access-card-owner",
+        "role": "budget-administrator",
+        "kind": "HUMAN",
+        "operations": [
+          "REGISTER",
+          "RELEASE"
+        ],
+        "validity": {
+          "valid_from": "2026-09-01T00:00:00Z",
+          "valid_until": "2026-10-01T00:00:00Z"
+        },
+        "at": "2026-09-10T04:30:00Z",
+        "revoked": false,
+        "provider": "organization-provider",
+        "source": "budget-administration",
+        "evidence_ref": "selected-administration-basis"
+      }
+    ],
+    "authenticated_records": [
+      {
+        "kind": "ADMIN_RETURN",
+        "record_digest": "sha256:d931de59d9cce52b3047d70b99f2770b0d488cd2dd19f0e39390baa16f710868",
+        "provider": "organization-provider",
+        "source": "budget-administration"
+      },
+      {
+        "kind": "HISTORY",
+        "record_digest": "sha256:7fbaea13975318e8edd5529d33898d41ef9822a0d764aea23893a43d524d378f",
+        "provider": "ledger-provider",
+        "source": "payments"
+      }
+    ]
+  }
+}

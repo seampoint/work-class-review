@@ -1,0 +1,14 @@
+# Remaining source and evidence limits
+
+October 7, 2026. Written before fixture construction and consumer comparison. The successor closes recognition-versus-delivery, page-activation-versus-send and caller-reported-vitals-age substitutions through the proposed timing contract. Those closures remain unverified until independent consumers reproduce the constructed artifacts.
+
+1. The prospective culture delay greater than forty-five minutes remains unproved. The inherited gate checks cultures_drawn_first or a nonempty attending reason, but supplies no attributable predicted delay. The complete source obligation remains uncovered with UNSUPPORTED residue. Recognition elapsed time cannot substitute for that prediction.
+2. The two-alert aggregate remains outside the work-class lifecycle and needs a host check before deployment. An independently valid work-class deployment does not prove the aggregate was invoked.
+3. The recognition and current-vitals provider contracts are newly authored fiction. Their authenticity, truthful event times, complete fields and current-applicable record selection are host assertions. Matching digests establish exact binding only.
+4. The conservative page timer begins with possible-send evidence. SENT, UNKNOWN or ACCEPTED can establish that premise. It does not prove delivery or attending acknowledgement. Escalation routing supplies authority workflow only; native evidence is still required to establish escalation outcome.
+5. Labs expiry stops the bundle; the old expiry-to-join representation could advance without the required native results. This correction preserves the source completion obligation and avoids a normal completion path bypassing unresolved event duties. Late native facts remain evidence without reopening work.
+6. The inherited vitals_age_seconds request field is retained for the fictional antibiotic interface but no longer proves freshness. The provider measured_at relation independently governs readiness and antibiotic decisions. Its numerical claim is reported data unless a separate source declaration supplies a checked relation.
+7. Synthetic proxy acceptance records exercise contract mechanics. No clinician, hospital, domain reviewer or actual deployment authorizer has performed these acts. Formal qualification and provider integration are not established by specimen construction.
+8. Generic first-withholding behavior belongs to the separate root-owned civilian control; this sepsis successor adds no first-withholding source rule. Additional correction, late discovery or mutable initial recognition behavior remains outside this initial contract.
+
+Independent construction completed at pin `sha256:12bc18b519d81bd47ec8477bbda96a4f673a77680e53964fc492b2d900d9bcc0`: 20 workflow requests, 49 scenario requests and 33 checkpoints. No runtime verification is claimed. The builder imports and invokes no consumer; no adapter has been called for these artifacts by the specimen author.

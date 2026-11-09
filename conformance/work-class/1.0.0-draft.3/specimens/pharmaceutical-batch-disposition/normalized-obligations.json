@@ -1,0 +1,327 @@
+{
+  "expected_coverage_rule": "Every declaration readback path is mapped to one or more justified obligations or explicitly retained as residue; SOURCE_RESIDUE and HOST_PREMISE are not silently claimed as consumer-enforced business behavior.",
+  "obligations": [
+    {
+      "id": "cdmo-actor-separation",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "03",
+      "text": "The Cedar decision actor, Alder decision actor and inventory executor are three distinct authenticated identities."
+    },
+    {
+      "id": "cdmo-approved-disposition-identity-uniqueness",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "06",
+      "text": "A separate key binds inventory provider, batch, site and immutable Cedar disposition identity/revision; request renaming, renewal, correction and retry never release or replace its occupied old identity."
+    },
+    {
+      "id": "cdmo-atomic-conditional-commit",
+      "kind": "HOST_PREMISE",
+      "source_heading": "06",
+      "text": "Provider commitment atomically checks the exact quality fence, both decision intervals/withdrawals, authorization expiry, expected inventory revision and uniqueness with update/event creation; absent coverage withholds the profile."
+    },
+    {
+      "id": "cdmo-authentic-provider-records",
+      "kind": "HOST_PREMISE",
+      "source_heading": "03",
+      "text": "The host supplies truthful independently authenticated source records, historical authority, returns and role custody; digests and titles do not supply those facts."
+    },
+    {
+      "id": "cdmo-authoritative-completion-lookup",
+      "kind": "HOST_PREMISE",
+      "source_heading": "07",
+      "text": "The provider supports authentic complete history lookup by exact request and approved-disposition identity, with consistent views and retained full candidate records."
+    },
+    {
+      "id": "cdmo-business-correction-fresh-pair",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "08",
+      "text": "A changed batch, product, destination, disposition or approval basis requires a new dossier and both fresh independent human decisions over the exact corrected noncircular context."
+    },
+    {
+      "id": "cdmo-canonical-human-subjects",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "03",
+      "text": "The host selects canonical human-subject identities across parties and resolves account aliases before exact actor-separation checks; authentication of physical-person distinctness remains external."
+    },
+    {
+      "id": "cdmo-changed-evidence-fresh-decisions",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "05",
+      "text": "An invalidating required-evidence, agreement, destination or transfer-result change makes old decisions unusable; the changed dossier needs both fresh independent decisions."
+    },
+    {
+      "id": "cdmo-closed-native-request",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "06",
+      "text": "One quantity-free native operation contains exactly the 14 selected source fields; no hidden shipment, invented quantity, approval-evidence body or caller-selected quality revision is added."
+    },
+    {
+      "id": "cdmo-complete-attributable-completion",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "07",
+      "text": "Completion is the exact full attributable generated event with all request bindings, operation identity, event identity/time, previous/resulting inventory revisions and committed quality revision."
+    },
+    {
+      "id": "cdmo-complete-current-hold-absence",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "04",
+      "text": "Current complete authoritative absence covers blocking holds at batch, product and site scope; stale, incomplete, unavailable or contradictory responses never establish absence."
+    },
+    {
+      "id": "cdmo-complete-prior-attempt-history",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "06",
+      "text": "A complete current batch/site/candidate-keyed history assertion excludes the registered candidate and blocks every other unresolved or possibly in-flight attempt; all other attempt/status/effect writers join the guarded scoped revision."
+    },
+    {
+      "id": "cdmo-correction-no-effect-or-release",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "08",
+      "text": "Correction evidence neither establishes the old effect, overwrites an event, releases claims, revives a permit nor opens a new execution opportunity."
+    },
+    {
+      "id": "cdmo-current-executor-boundary",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "03",
+      "text": "The exact executor has current session, occupancy, credentials and execution authority at proposal and dispatch; a different actor requires a new proposal."
+    },
+    {
+      "id": "cdmo-decision-authority-scope-guards",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "03",
+      "text": "Each guarded party authority-scope record binds the complete selected root/envelope/capacity reliance-subject digest and absence of applicable revocation; every selected revocation/remit writer joins commitment coordination."
+    },
+    {
+      "id": "cdmo-decision-effective-intervals",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "05",
+      "text": "Both decisions use inclusive 2026-10-06T12:00:00Z and exclusive 2026-10-07T12:00:00Z bounds, with independently attributable earlier withdrawal or invalidation."
+    },
+    {
+      "id": "cdmo-deviation-investigation-and-disposition",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "04",
+      "text": "Every deviation has attributable authorized human quality disposition, investigation and required follow-up; OPEN, UNINVESTIGATED, unresolved failures and missing evidence block without model waiver."
+    },
+    {
+      "id": "cdmo-dual-native-new-status-binding",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "07",
+      "text": "The single real new_status field must independently satisfy request equality and completion-success membership; old_status remains separately bound and no outcome-status field is invented."
+    },
+    {
+      "id": "cdmo-durable-attempt-history-and-claims",
+      "kind": "HOST_PREMISE",
+      "source_heading": "06",
+      "text": "Retain authoritative transaction/history state before connector invocation and retain occupied request/disposition claims after a possibly sent or uncertain request across restart, abandonment and expiry."
+    },
+    {
+      "id": "cdmo-exact-decision-endpoints",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "05",
+      "text": "Each human decision context includes exact inclusive/exclusive INSTANT endpoints equal to its complete envelope; provider intervals cannot widen authority and current-reliance cutoffs can shorten dispatch authorization."
+    },
+    {
+      "id": "cdmo-exact-linked-correction",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "08",
+      "text": "The correction binds original event identity/digest, expected revision, every exact old/new value, complete corrected inventory, authorizing decision, actor and separate event time; history is append-only."
+    },
+    {
+      "id": "cdmo-exact-prerequisite-record-revisions",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "04",
+      "text": "Every prerequisite binds the selected exact subject, source record revision and content; a passing different batch, specification or superseded record fails."
+    },
+    {
+      "id": "cdmo-exact-request-and-transition",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "02",
+      "text": "Bind the exact request, batch, site, product revision, customer, old/new status and expected inventory revision; create no shipment order or quantity/location/possession change."
+    },
+    {
+      "id": "cdmo-fictional-policy-and-review",
+      "kind": "SOURCE_RESIDUE",
+      "source_heading": "01",
+      "text": "The source, people, provider capabilities and selected organizational rules are fictional and provisional; neither Genezen procedures nor regulatory applicability or endorsement is established."
+    },
+    {
+      "id": "cdmo-fresh-correction-issue-identities",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "08",
+      "text": "Business corrections need both new immutable human issue ids, new act ids/digests and changed dossier revision/digest relative to original request/native/retained decisions; revision-only renewal is insufficient."
+    },
+    {
+      "id": "cdmo-high-materiality-existing-gate",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "00",
+      "text": "The HIGH materiality/LOW reversibility DECIDE execution gate selects the independently admitted Cedar human decision with exactly translated status criteria, without a third approval."
+    },
+    {
+      "id": "cdmo-historical-authorization-revision-binding",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "07",
+      "text": "The committed quality revision equals the selected coordinator observation revision in the exact authorization used by this dispatch, including late effects and restart; newer reads or other authorizations cannot replace it."
+    },
+    {
+      "id": "cdmo-historical-signer-reliance",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "03",
+      "text": "Historical signer departure is usable only under explicit selected root/capacity/channel survival terms and current applicable remit/revocation evidence within the decision interval."
+    },
+    {
+      "id": "cdmo-human-signing-authority",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "03",
+      "text": "Each independent positive human decision has complete authentic signing-time role, occupancy and party-specific remit evidence; machines supply neither decision."
+    },
+    {
+      "id": "cdmo-immutable-historical-commit-revision",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "08",
+      "text": "This correction profile forbids authorization-bound commit-revision changes and cannot supply missing/invalid historical commit data; a separate provider procedure remains outside the class."
+    },
+    {
+      "id": "cdmo-immutable-predecision-dossier",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "04",
+      "text": "The complete immutable dossier binds exact manufacturing-evidence identities/revisions/digests and excludes both decision records and their digests."
+    },
+    {
+      "id": "cdmo-independent-correction-authority",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "08",
+      "text": "A correction requires the current Custodian role, attributable return and exact current Head of Quality authorization, separate from fresh business decisions."
+    },
+    {
+      "id": "cdmo-laboratory-release-conclusions",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "04",
+      "text": "The exact authenticated batch/specification release panel supplies attributable PASS conclusions for identity, vector-genome titer, product-specific potency, endotoxin and microbiological safety under approved methods."
+    },
+    {
+      "id": "cdmo-late-historical-effect-and-conflict",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "07",
+      "text": "Late exact evidence may establish the historical effect and consume its claims without reopening; changed or additional native facts remain retained conflicts requiring investigation."
+    },
+    {
+      "id": "cdmo-later-instance-fresh-basis-and-history",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "08",
+      "text": "Later work needs a new request/dossier, both fresh decisions, conclusively established old history and current inventory prerequisites/duplicate checks; unknown effect or inventory still APPROVED blocks repeating the old transition."
+    },
+    {
+      "id": "cdmo-manufacturing-completeness",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "04",
+      "text": "The exact manufacturing record establishes every required operation and review as complete."
+    },
+    {
+      "id": "cdmo-named-record-owners",
+      "kind": "SOURCE_RESIDUE",
+      "source_heading": "03",
+      "text": "Manufacturing, laboratory, investigation, quality, inventory custody and procedure/remit owners retain their named separate duties; custody not supplied by the source remains explicit."
+    },
+    {
+      "id": "cdmo-noncircular-decision-context",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "05",
+      "text": "Both decisions bind the exhaustive shared business context and may bind their own identity; neither binds the other decision identity/digest, finished execution digest or future event."
+    },
+    {
+      "id": "cdmo-postcommit-hold-containment",
+      "kind": "SOURCE_RESIDUE",
+      "source_heading": "07",
+      "text": "A later hold preserves the original event and creates a separate named-owner protected containment alert duty; promptly supplies no numerical deadline and this specimen does not prove detection or delivery."
+    },
+    {
+      "id": "cdmo-postdispatch-executor-boundary",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "06",
+      "text": "A session end or ordinary occupancy expiry after valid dispatch alone does not cancel the in-flight attempt; covered remit revocations and quality changes still block before commit."
+    },
+    {
+      "id": "cdmo-proposal-and-dispatch-live-queries",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "06",
+      "text": "Every selected mutable prerequisite is queried for the exact proposal and dispatch instant with authentic revision and applicability; cached substitutes fail."
+    },
+    {
+      "id": "cdmo-protected-audit-evidence",
+      "kind": "HOST_PREMISE",
+      "source_heading": "10",
+      "text": "Complete signer/source authority details belong to protected internal audit interfaces; ordinary connector callers receive only the declared closed safe status/digest carriers."
+    },
+    {
+      "id": "cdmo-quality-agreement-allocation",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "02",
+      "text": "Use the exact applicable Cedar/Alder quality agreement and its responsibility allocation; Cedar owns manufacturing-output disposition and Alder retains final drug-product release."
+    },
+    {
+      "id": "cdmo-quality-agreement-changes",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "02",
+      "text": "Signed supersession or withdrawal invalidates affected pending authorization; a revision cannot retrospectively change retained events or silently move approval to a new responsibility allocation."
+    },
+    {
+      "id": "cdmo-quality-coordinator-coverage",
+      "kind": "HOST_PREMISE",
+      "source_heading": "06",
+      "text": "The authoritative quality revision covers all selected evidence, decisions, remits, agreement and holds and every relevant writer participates in affected-authorization invalidation."
+    },
+    {
+      "id": "cdmo-referral-intent-only",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "08",
+      "text": "Failed quality checks retain the Quality Review Queue intent; inventory uncertainty also names the Custodian; intent alone supplies neither delivery, resolution nor authority."
+    },
+    {
+      "id": "cdmo-regulatory-industry-integration-review",
+      "kind": "SOURCE_RESIDUE",
+      "source_heading": "09",
+      "text": "Regulatory, industry and integration review must confirm applicability, responsibilities, evidence inventory, terminology and real provider guarantees; no committed reviewer or company endorsement is inferred."
+    },
+    {
+      "id": "cdmo-request-identity-uniqueness",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "06",
+      "text": "The complete source request identity is unique across every writer and cannot be bypassed with fresh business approval or a changed dossier."
+    },
+    {
+      "id": "cdmo-scope-administrative-only",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "01",
+      "text": "Authorize only the declared administrative inventory status update; manufacturing, movement, shipment, patient administration and final drug-product release remain outside this work class."
+    },
+    {
+      "id": "cdmo-source-owner-amendment-procedures",
+      "kind": "SOURCE_RESIDUE",
+      "source_heading": "08",
+      "text": "Named owners alone amend laboratory, manufacturing, agreement and regulatory source records through separate procedures; the inventory agent cannot do so."
+    },
+    {
+      "id": "cdmo-source-successor-and-claim-limits",
+      "kind": "SOURCE_RESIDUE",
+      "source_heading": "09",
+      "text": "Source changes require explicit successor identity and reassessment; this draft establishes no source acceptance, implementation, conformance, provider validation or publication."
+    },
+    {
+      "id": "cdmo-two-independent-business-decisions",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "05",
+      "text": "Both complete attributable human decisions independently approve the same predecision dossier and exact business context; neither supplies the other party\u2019s authority."
+    },
+    {
+      "id": "cdmo-uncertain-completion-stop-retain",
+      "kind": "SELECTED_POLICY",
+      "source_heading": "07",
+      "text": "No event, missing/mismatched completion, stale/incomplete/unavailable/ambiguous history or conflicting evidence stops and retains the request, evidence and claims; no blind resend, rollback or automatic successor follows."
+    }
+  ],
+  "source_id": "pharmaceutical-batch-disposition-revision3-source",
+  "source_path": "../../review/fixtures/pharmaceutical-batch-disposition-revision3-source.md",
+  "source_revision": "revision-3-CV-TRANSFER-042",
+  "status": "DRAFT_NOT_CONSUMER_VERIFIED"
+}

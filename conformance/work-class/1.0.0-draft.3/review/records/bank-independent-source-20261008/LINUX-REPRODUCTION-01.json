@@ -1,0 +1,53 @@
+{
+  "schema": "bank-independent-source-linux-receipt/1",
+  "status": "PASS",
+  "started_at": "2026-10-08T20:13:59.373934+00:00",
+  "finished_at": "2026-10-08T20:16:17.744544+00:00",
+  "candidate_pin": "sha256:120242f6e3a9cc67348932386460144ace5924d9b02852b878093b74a7af82a3",
+  "seal_sha256": "f5947b2faeeb5d532d7495aa3673a52c7a00d04ff8de7e4e65874ffdd5c9920e",
+  "source_reproduction_report_sha256": "04e197a8f21d62e4839de5899c184aadb2a8c1e32647f1759b380c699d54bdf4",
+  "outer_process_report_sha256": "4e42d1009e114438aa8d05c6083850d3ed6b70e5df2cab52d10d71eed41652d7",
+  "wrapper_sha256": "0e96dbcd42ea30d74bc4089c46d67b0a9f65b290132d7f2e424c3d318dd7ab97",
+  "constructors_sha256": {
+    "derive_and_seal.py": "4414aa03335e8bec94ce1337898d32cd86730406da730c66ec4379cbbd8fe493",
+    "independent_authority.py": "7c68486d514ccb4a734a88687960fc76b9f6c60fd6059e25da24d0079f7ff80e",
+    "independent_common.py": "a82a91f8637fabd8b681b2bfb621ee2a6096a0f509b19d30745858ed6e435741",
+    "independent_flow.py": "a1f17558d42b0994cb3fb405651e1aa1c083d1c7c1617420fe2fcd69fa10d6bb",
+    "independent_holdings.py": "2fe35d4bde8617ff80555c62b090eb547a4e577a051ef1fe8da7659ea87183ea",
+    "independent_lifecycle.py": "4af6d9eb2f32d8903f6703f2879b0560a5db06a0dac3753db317326fb6478e50"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 130.27309431899994,
+  "python": "3.14.6",
+  "platform": "Linux-6.8.0-117-generic-aarch64-with-glibc2.36",
+  "container_image": "python@sha256:4c92ffcde4dd6f1ff72a24518f49fd4990b27134987dfa31a733badde66df9f8",
+  "architecture": "linux/arm64",
+  "network": "none",
+  "container_read_only": true,
+  "repository_mount_read_only": true,
+  "writable_scope": "Fresh retained evidence and temporary directories only",
+  "matched": 54,
+  "total": 54,
+  "metadata_matches": {
+    "EXPECTED-HASHES-01.json": true,
+    "DERIVATIONS-01.json": true
+  },
+  "guarded_source_files": 892,
+  "guarded_extracted_files": 60,
+  "guard_unchanged": true,
+  "outer_public_subtree_guard_unchanged": true,
+  "outer_public_guarded_files": 21,
+  "preexisting_bytecode_reads": [],
+  "historical_dependency_manifest_equal": false,
+  "platform_dependency_differences": [
+    "rpds/rpds.cpython-314-aarch64-linux-gnu.so",
+    "rpds/rpds.cpython-314-darwin.so"
+  ],
+  "source_or_dependency_overlay_applied": false,
+  "platform_difference": "Same public vendor tree selects its included native Linux extension instead of the historical Darwin extension. The allow-platform-overlay flag declares this native import-inventory difference; no source or dependency file was changed.",
+  "stdout_sha256": "296f5e44e8d1f60481dba30dcd312830615fa85b0a3d3ae21d43c1c7e199a8c3",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_bytes": 0,
+  "scope": "Complete portable source-only bank reproduction. No consumer executed here. Independent source seal, original constructor bytes and historical Mac dependency inventory preserved. Not a full final-export corpus run.",
+  "raw_evidence": "Full generated outputs, process logs and path guards remain internally retained; this compact record contains no raw consumer results or private host paths."
+}

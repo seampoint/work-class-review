@@ -1,0 +1,11 @@
+# CDMO source coverage
+
+The pharmaceutical batch disposition specimen retains source revisions 1 and 2 and introduces the explicit provisional revision 3 source. The normalized inventory has 53 clauses: 41 selected policy clauses, six host premises and six unresolved source clauses. The consumer-free constructors retain complete human decision evidence, authoritative-query carriers, native records and expected results. Generation does not establish conformance.
+
+The specimen's `source-coverage.json` maps each clause to concrete artifacts and focused case IDs. `correspondence-record.json` maps selected policy clauses to complete definition readback paths and records uncovered obligations and unsupported representation details. Its review remains PENDING. Synthetic accepted deployment evidence exercises admission independently of that source-review status.
+
+The exact positive transfer, current source failures at proposal and dispatch, underlying human revocation, independent-evidence admission, unavailable clocks, every missing native field, selected native mismatches, ambiguous or unavailable lookup and linked correction cases are constructed before consumer comparison. Separate host/provider judgments are recorded in `CDMO-HOST-EXPECTED-JUDGMENTS.json` and do not establish actual integration capabilities.
+
+The source-selected controls are exact human authority, noncircular dossier binding, immutable issuance identity, canonical actor separation, current executor validity at proposal/dispatch, complete candidate-excluding prior-attempt history, the complete guarded commit vector, historical authorization revision binding, stop/retain uncertainty and fresh business-correction decisions. Actual identity authentication, authoritative fact truth, complete writer mediation, conditional provider commitment, durable history and lookup remain host premises. Regulatory applicability, industry procedure fidelity, physical containment, delivery and separate source-owner procedures remain outside the admitted administrative transition.
+
+The native request retains fourteen fields. The completion retains eighteen actual fields. Decision identity and opaque revision are distinct. A new request, correction, retry or restart does not release the occupied old approved-disposition identity. Model judgments cannot satisfy an authority check.

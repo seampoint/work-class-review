@@ -1,0 +1,1863 @@
+{
+  "title": "Independent information-flow source judgments",
+  "date": "2026-10-08",
+  "status": "SOURCE_EXPECTATIONS_BEFORE_IMPLEMENTATION",
+  "case_count": 206,
+  "scope": "Finite explicit source-level judgments. New wire names, limits and refusal tokens await reviewed contract mapping. No consumer-derived expected values.",
+  "cases": [
+    {
+      "id": "FLOW-SOURCE-001",
+      "group": "Ordinary behavior and clean admission",
+      "source_clause": "Bank 03, 04; root independent selection; optional carrier rules",
+      "scenario": "Ordinary nonflow input omits every new member",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "Preserve inherited policy result and exact output shape; create no flow state or exposure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-002",
+      "group": "Ordinary behavior and clean admission",
+      "source_clause": "Bank 03, 04; root independent selection; optional carrier rules",
+      "scenario": "Ordinary nonflow input explicitly supplies empty flow bases",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "Preserve inherited policy meaning while retaining explicit empty presence in evidence and applicable carriers.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-003",
+      "group": "Ordinary behavior and clean admission",
+      "source_clause": "Bank 03, 04; root independent selection; optional carrier rules",
+      "scenario": "No flow declaration but nonempty supplied basis",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "No governed state changes or exposure; reject unrequested evidence.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-004",
+      "group": "Ordinary behavior and clean admission",
+      "source_clause": "Bank 03, 04; root independent selection; optional carrier rules",
+      "scenario": "Selected flow declaration but omitted basis",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No exposure or usable authorization; missing required basis does not default to clean.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-005",
+      "group": "Ordinary behavior and clean admission",
+      "source_clause": "Bank 03, 04; root independent selection; optional carrier rules",
+      "scenario": "Selected flow declaration but explicit empty basis",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No exposure or usable authorization; empty does not satisfy the declaration.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-006",
+      "group": "Ordinary behavior and clean admission",
+      "source_clause": "Bank 03, 04; root independent selection; optional carrier rules",
+      "scenario": "Initialize customer context from complete protected clean admission",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "Retain independently selected initial-state provenance before any subsequent content delivery.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-007",
+      "group": "Ordinary behavior and clean admission",
+      "source_clause": "Bank 03, 04; root independent selection; optional carrier rules",
+      "scenario": "Initialize from agent assertion of empty history only",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Create no admitted clean context or exposure; missing host evidence stays missing.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-008",
+      "group": "Ordinary behavior and clean admission",
+      "source_clause": "Bank 03, 04; root independent selection; optional carrier rules",
+      "scenario": "Initialize clean context with admitted restricted initial prompt",
+      "expected_judgment": "ALLOW_RESTRICTED",
+      "expected_state_and_delivery": "Initial state includes the prompt's restrictions and roots; it is not eligible as the clean customer context.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-009",
+      "group": "Ordinary behavior and clean admission",
+      "source_clause": "Bank 03, 04; root independent selection; optional carrier rules",
+      "scenario": "Initialize nominally clean context with reporting-derived memory",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Refuse clean admission before public/customer content is produced.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-010",
+      "group": "Ordinary behavior and clean admission",
+      "source_clause": "Bank 03, 04; root independent selection; optional carrier rules",
+      "scenario": "Initialize nominally clean context with reporting retrieval index",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Refuse clean admission; index reachable state is not independent merely because no query was run.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-011",
+      "group": "Ordinary behavior and clean admission",
+      "source_clause": "Bank 03, 04; root independent selection; optional carrier rules",
+      "scenario": "Initialize nominally clean context with reporting-derived tool state",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Refuse clean admission; tool state participates in context provenance.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-012",
+      "group": "Ordinary behavior and clean admission",
+      "source_clause": "Bank 03, 04; root independent selection; optional carrier rules",
+      "scenario": "Initialize nominally clean context with reporting cache or checkpoint",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Refuse clean admission; restoration cannot reset delivered history.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-013",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "Investigation Owner reads selected decision for exact case/purpose",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "Commit reporting restriction and exact root provenance before protected content/existence becomes reachable.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-014",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "Preparation Agent reads selected package for preparation",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "Commit complete inherited restrictions before delivering exact admitted revision.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-015",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "Human Review Officer receives package in protected review interface",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "Review interface is itself admitted recipient; restriction history precedes content exposure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-016",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "Submission Agent reads approved package for governed submission",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "Commit reporting origin and restrictions before delivery; filing authority remains separate.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-017",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "BSA Officer reads case for selected oversight purpose",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "Retain exact case/purpose/route attribution and restrictions.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-018",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "Records Custodian reads case into protected reconciliation workspace",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "Retain protected custody provenance and all inherited restrictions.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-019",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "Access Administrator requests reporting content solely under administrative role",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No reporting content or existence-sensitive refusal reaches that actor's unauthorized route.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-020",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "Customer Communication Agent requests reporting decision",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No protected delivery; detail remains on protected internal route.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-021",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "Customer Communication Reviewer requests report assessment",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Ordinary content-review role grants no reporting access.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-022",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "Customer directly queries report status or existence",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No report existence/status detail is disclosed; public response uses independent constant route.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-023",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "Correct reporting role requests another case",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No delivery; exact case mismatch cannot be repaired by a broad role name.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-024",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "Correct case and role requests unrelated purpose",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No delivery; no automatic secondary use is selected.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-025",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "Correct case/purpose but unadmitted route",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No protected content goes to the new route; endpoint spelling alone grants no authority.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-026",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "Read remit revoked before exposure",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No exposure under old admission; already committed restriction history remains retained if union occurred.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-027",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "Read remit expires exactly at attempted exposure",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Exclusive end blocks delivery even without a provider revision event.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-028",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "Read remit withdrawn after established exposure",
+      "expected_judgment": "RETAIN",
+      "expected_state_and_delivery": "Historical read remains; context retains restrictions despite loss of future read authority.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-029",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "Independent ordinary transaction provider supplies customer facts",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "Retain transaction origin and separate customer privacy/contact restrictions before delivery.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-030",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "Report-derived cache supplies identical transaction text",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Do not admit as independent customer origin; text equality does not change provenance.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-031",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "Source classified restricted but caller marks it unrestricted",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No downgraded delivery; trusted provider/host classification governs.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-032",
+      "group": "Mediated reads and exact current authority",
+      "source_clause": "Bank 01, 02, 03",
+      "scenario": "Correct role but read exceeds selected context ceiling",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No source bytes, existence-sensitive error or partial result exposed; no lower-labelled retry.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-033",
+      "group": "Read claims, order and replay",
+      "source_clause": "Bank 03, 05; root read/replay; architecture finding 5",
+      "scenario": "Restriction state write fails before commit",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No content delivery or first exposure; authoritative state remains unchanged.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-034",
+      "group": "Read claims, order and replay",
+      "source_clause": "Bank 03, 05; root read/replay; architecture finding 5",
+      "scenario": "Restriction union commits and delivery completes",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "Retain fresh claim and source identity; context revision and history show restrictions before exposure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-035",
+      "group": "Read claims, order and replay",
+      "source_clause": "Bank 03, 05; root read/replay; architecture finding 5",
+      "scenario": "Union commits but process stops before attempted delivery",
+      "expected_judgment": "RETAIN",
+      "expected_state_and_delivery": "Keep restrictions and pending claim; restart cannot infer that exposure occurred or blindly deliver under old access.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-036",
+      "group": "Read claims, order and replay",
+      "source_clause": "Bank 03, 05; root read/replay; architecture finding 5",
+      "scenario": "Union commits and provider definitively proves no exposure",
+      "expected_judgment": "RETAIN",
+      "expected_state_and_delivery": "Keep accumulated restrictions; fresh delivery still requires fresh current admission under an explicitly safe claim rule.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-037",
+      "group": "Read claims, order and replay",
+      "source_clause": "Bank 03, 05; root read/replay; architecture finding 5",
+      "scenario": "Partial protected result delivered then read fails",
+      "expected_judgment": "RETAIN",
+      "expected_state_and_delivery": "Keep full applicable restrictions and possible/delivered claim; failure does not clean context.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-038",
+      "group": "Read claims, order and replay",
+      "source_clause": "Bank 03, 05; root read/replay; architecture finding 5",
+      "scenario": "Existence-sensitive provider error delivered",
+      "expected_judgment": "RETAIN",
+      "expected_state_and_delivery": "Treat the protected result as exposure and retain restrictions.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-039",
+      "group": "Read claims, order and replay",
+      "source_clause": "Bank 03, 05; root read/replay; architecture finding 5",
+      "scenario": "Tool result state becomes reachable before full body",
+      "expected_judgment": "RETAIN",
+      "expected_state_and_delivery": "Restrictions must already be committed; do not wait for final successful return.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-040",
+      "group": "Read claims, order and replay",
+      "source_clause": "Bank 03, 05; root read/replay; architecture finding 5",
+      "scenario": "Exact read transition replay after current revocation",
+      "expected_judgment": "REPLAY_ONLY",
+      "expected_state_and_delivery": "Return original protected transition evidence under current replay-read authorization; do not fetch or deliver body again.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-041",
+      "group": "Read claims, order and replay",
+      "source_clause": "Bank 03, 05; root read/replay; architecture finding 5",
+      "scenario": "Exact read transition replay at history capacity",
+      "expected_judgment": "REPLAY_ONLY",
+      "expected_state_and_delivery": "Preserve current state and original receipt; no new revision or delivery.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-042",
+      "group": "Read claims, order and replay",
+      "source_clause": "Bank 03, 05; root read/replay; architecture finding 5",
+      "scenario": "Changed source revision under reused read claim",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "No state change or exposure; replay conflict cannot select a new body.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-043",
+      "group": "Read claims, order and replay",
+      "source_clause": "Bank 03, 05; root read/replay; architecture finding 5",
+      "scenario": "Changed content identity under reused claim",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "No state change or exposure; digest equality must be recomputed from complete body.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-044",
+      "group": "Read claims, order and replay",
+      "source_clause": "Bank 03, 05; root read/replay; architecture finding 5",
+      "scenario": "Changed destination context under reused claim",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "No state change or exposure; one claim cannot deliver into another context.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-045",
+      "group": "Read claims, order and replay",
+      "source_clause": "Bank 03, 05; root read/replay; architecture finding 5",
+      "scenario": "New read claim after old uncertain delivery",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Do not infer a safe fresh delivery; retain original uncertainty and restrictions pending explicit reconciliation.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-046",
+      "group": "Read claims, order and replay",
+      "source_clause": "Bank 03, 05; root read/replay; architecture finding 5",
+      "scenario": "Two concurrent valid reads target same prior revision",
+      "expected_judgment": "ORDER_AND_RETRY",
+      "expected_state_and_delivery": "One expected-revision transition commits; stale other transition refuses unchanged and re-admission against latest state preserves both unions.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-047",
+      "group": "Read claims, order and replay",
+      "source_clause": "Bank 03, 05; root read/replay; architecture finding 5",
+      "scenario": "Prior state digest matches caller but latest host selection differs",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No delivery from stale state; self-consistent historical state is not current nonrollback evidence.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-048",
+      "group": "Read claims, order and replay",
+      "source_clause": "Bank 03, 05; root read/replay; architecture finding 5",
+      "scenario": "Crash before union commit then restart",
+      "expected_judgment": "RETAIN",
+      "expected_state_and_delivery": "Reconstruct authoritative prior state; no source exposure is established and no implicit read occurs.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-049",
+      "group": "Read claims, order and replay",
+      "source_clause": "Bank 03, 05; root read/replay; architecture finding 5",
+      "scenario": "Crash after exposure before outcome receipt write",
+      "expected_judgment": "RETAIN",
+      "expected_state_and_delivery": "Retain durable intent and restrictions; delivery remains possible/uncertain and is not blindly repeated.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-050",
+      "group": "Read claims, order and replay",
+      "source_clause": "Bank 03, 05; root read/replay; architecture finding 5",
+      "scenario": "Read transition evidence requested by unauthorized replay reader",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Historical admission grants no present access to protected replay bodies.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-051",
+      "group": "Monotone state and immutable provenance",
+      "source_clause": "Bank 03; root stable restrictions",
+      "scenario": "Second read adds different reporting/customer restriction",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "State union retains both restrictions and all attributed roots; no earlier entry is replaced.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-052",
+      "group": "Monotone state and immutable provenance",
+      "source_clause": "Bank 03; root stable restrictions",
+      "scenario": "Second read repeats identical immutable restriction meaning",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "Restriction set stays unique while complete fresh delivered origin/claim remains retained.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-053",
+      "group": "Monotone state and immutable provenance",
+      "source_clause": "Bank 03; root stable restrictions",
+      "scenario": "Second read uses same restriction id with different principal scope",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "No delivery or merged state; same spelling cannot reinterpret immutable meaning.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-054",
+      "group": "Monotone state and immutable provenance",
+      "source_clause": "Bank 03; root stable restrictions",
+      "scenario": "Second read uses same restriction id with different case scope",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "No delivery or merged state; scopes remain exact.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-055",
+      "group": "Monotone state and immutable provenance",
+      "source_clause": "Bank 03; root stable restrictions",
+      "scenario": "Policy revision removes accumulated catalogue entry",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No outgoing exposure under missing meaning; context history retains original restriction.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-056",
+      "group": "Monotone state and immutable provenance",
+      "source_clause": "Bank 03; root stable restrictions",
+      "scenario": "Policy revision reuses label for less restrictive meaning",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No outgoing exposure; current catalogue cannot weaken historical meaning by string substitution.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-057",
+      "group": "Monotone state and immutable provenance",
+      "source_clause": "Bank 03; root stable restrictions",
+      "scenario": "Current policy explicitly changes recipient entitlement",
+      "expected_judgment": "ALLOW_IF_CURRENT",
+      "expected_state_and_delivery": "Historical restriction meaning remains; current outgoing permission is recalculated without deleting history.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-058",
+      "group": "Monotone state and immutable provenance",
+      "source_clause": "Bank 03; root stable restrictions",
+      "scenario": "Permission revocation after read",
+      "expected_judgment": "RETAIN",
+      "expected_state_and_delivery": "Remove future access eligibility when selected; preserve all information restrictions already accumulated.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-059",
+      "group": "Monotone state and immutable provenance",
+      "source_clause": "Bank 03; root stable restrictions",
+      "scenario": "Agent deletes visible labels or source identifiers",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Missing/inconsistent provenance cannot produce unrestricted artifact or state; no delivery.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-060",
+      "group": "Monotone state and immutable provenance",
+      "source_clause": "Bank 03; root stable restrictions",
+      "scenario": "Context state rehashed after deleting old read",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "Complete reconstruction fails; new outer digest cannot authenticate altered history.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-061",
+      "group": "Monotone state and immutable provenance",
+      "source_clause": "Bank 03; root stable restrictions",
+      "scenario": "Context events reordered and all hashes resealed",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "Reconstruction detects impossible prior revision/order; no new authority or exposure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-062",
+      "group": "Monotone state and immutable provenance",
+      "source_clause": "Bank 03; root stable restrictions",
+      "scenario": "Retained source body substituted with equal-looking text/new origin",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "Immutable identity and complete origin links must reconstruct; no clean substitution.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-063",
+      "group": "Monotone state and immutable provenance",
+      "source_clause": "Bank 03; root stable restrictions",
+      "scenario": "Source label is unknown or retired",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No fresh outgoing exposure; retain historical state and require explicitly supported resolution.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-064",
+      "group": "Monotone state and immutable provenance",
+      "source_clause": "Bank 03; root stable restrictions",
+      "scenario": "New source correction changes an already admitted root",
+      "expected_judgment": "RETAIN",
+      "expected_state_and_delivery": "Historical root remains immutable; selected current source checks may invalidate fresh use without rewriting past delivery.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-065",
+      "group": "Artifacts, summaries, handoffs and independent selection",
+      "source_clause": "Bank 03, 04; root independent selection",
+      "scenario": "Summary of reporting context to entitled reporting workspace",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "Summary descriptor inherits full producer restrictions and root provenance; recipient import commits union before delivery.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-066",
+      "group": "Artifacts, summaries, handoffs and independent selection",
+      "source_clause": "Bank 03, 04; root independent selection",
+      "scenario": "Summary of reporting context to customer",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No customer exposure even if summary omits explicit SAR words.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-067",
+      "group": "Artifacts, summaries, handoffs and independent selection",
+      "source_clause": "Bank 03, 04; root independent selection",
+      "scenario": "Compaction of reporting context",
+      "expected_judgment": "ALLOW_RESTRICTED",
+      "expected_state_and_delivery": "Compacted state preserves complete restrictions/roots; no clean revision is created.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-068",
+      "group": "Artifacts, summaries, handoffs and independent selection",
+      "source_clause": "Bank 03, 04; root independent selection",
+      "scenario": "Handoff to new reporting agent with exact role/case/purpose",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "Receiving context inherits full sending restrictions before instructions, files or artifacts are reachable.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-069",
+      "group": "Artifacts, summaries, handoffs and independent selection",
+      "source_clause": "Bank 03, 04; root independent selection",
+      "scenario": "Handoff to nominally fresh customer agent",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "New conversation cannot receive reporting-derived instructions/artifact as clean input.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-070",
+      "group": "Artifacts, summaries, handoffs and independent selection",
+      "source_clause": "Bank 03, 04; root independent selection",
+      "scenario": "Derived calculation contains only nonsecret-looking number",
+      "expected_judgment": "ALLOW_RESTRICTED",
+      "expected_state_and_delivery": "Its descriptor retains complete producer restrictions; apparent harmlessness grants no release.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-071",
+      "group": "Artifacts, summaries, handoffs and independent selection",
+      "source_clause": "Bank 03, 04; root independent selection",
+      "scenario": "Copied file from reporting context",
+      "expected_judgment": "ALLOW_RESTRICTED",
+      "expected_state_and_delivery": "Copy preserves exact content identity, producer snapshot, restrictions and roots.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-072",
+      "group": "Artifacts, summaries, handoffs and independent selection",
+      "source_clause": "Bank 03, 04; root independent selection",
+      "scenario": "Tool arguments derived from restricted context",
+      "expected_judgment": "ALLOW_IF_RECIPIENT_ENTITLED",
+      "expected_state_and_delivery": "Tool route must be independently admitted before any arguments arrive.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-073",
+      "group": "Artifacts, summaries, handoffs and independent selection",
+      "source_clause": "Bank 03, 04; root independent selection",
+      "scenario": "Old clean artifact sent from now-restricted producer context",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Sender-current union blocks customer route despite historical clean descriptor.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-074",
+      "group": "Artifacts, summaries, handoffs and independent selection",
+      "source_clause": "Bank 03, 04; root independent selection",
+      "scenario": "Same clean artifact selected by independent customer request",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "Admitted clean trigger, selection, artifact and current customer authority permit customer path.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-075",
+      "group": "Artifacts, summaries, handoffs and independent selection",
+      "source_clause": "Bank 03, 04; root independent selection",
+      "scenario": "Same clean artifact selected by reporting agent request",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Selection/forwarding instructions carry reporting restrictions even when stored artifact bytes are independent.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-076",
+      "group": "Artifacts, summaries, handoffs and independent selection",
+      "source_clause": "Bank 03, 04; root independent selection",
+      "scenario": "Independent trigger but reporting-derived artifact selection",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "One clean part cannot erase restricted selection provenance.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-077",
+      "group": "Artifacts, summaries, handoffs and independent selection",
+      "source_clause": "Bank 03, 04; root independent selection",
+      "scenario": "Independent artifact and selection but report-derived work trigger",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Trigger provenance restricts surrounding operation; no customer disclosure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-078",
+      "group": "Artifacts, summaries, handoffs and independent selection",
+      "source_clause": "Bank 03, 04; root independent selection",
+      "scenario": "Independent trigger/selection but imported report-derived transcript",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Reachable context fails clean admission before public output.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-079",
+      "group": "Artifacts, summaries, handoffs and independent selection",
+      "source_clause": "Bank 03, 04; root independent selection",
+      "scenario": "Clean artifact transported through reporting-derived wrapper",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Wrapper/instructions/metadata inherit restrictions; artifact equality alone cannot admit transfer.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-080",
+      "group": "Artifacts, summaries, handoffs and independent selection",
+      "source_clause": "Bank 03, 04; root independent selection",
+      "scenario": "Fresh receiving context imports released compensation artifact",
+      "expected_judgment": "ALLOW_RESTRICTED",
+      "expected_state_and_delivery": "Import preserves compensation provenance/restrictions; release does not make future unrestricted context.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-081",
+      "group": "Artifacts, summaries, handoffs and independent selection",
+      "source_clause": "Bank 03, 04; root independent selection",
+      "scenario": "Historical descriptor reconstructed after later unrelated read",
+      "expected_judgment": "RETAIN",
+      "expected_state_and_delivery": "Original artifact provenance is unchanged; new sending authorization still includes current sender restrictions.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-082",
+      "group": "Recipient surfaces and protected diagnostics",
+      "source_clause": "Bank 02, 05; root refusal/disclosure",
+      "scenario": "Entitled human receives exact case content through protected review UI",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "UI route and user purpose admitted before exposure; review evidence remains protected.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-083",
+      "group": "Recipient surfaces and protected diagnostics",
+      "source_clause": "Bank 02, 05; root refusal/disclosure",
+      "scenario": "Unentitled external evaluator receives reporting prompt",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Model participation creates no reporting permission; zero protected prompt exposure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-084",
+      "group": "Recipient surfaces and protected diagnostics",
+      "source_clause": "Bank 02, 05; root refusal/disclosure",
+      "scenario": "Entitled evaluator receives exact protected request",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "Record evaluator as recipient/custody hop before prompt arguments arrive.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-085",
+      "group": "Recipient surfaces and protected diagnostics",
+      "source_clause": "Bank 02, 05; root refusal/disclosure",
+      "scenario": "Unentitled log sink receives complete reporting error",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No protected error/detail reaches sink; preserve detail only on admitted internal route.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-086",
+      "group": "Recipient surfaces and protected diagnostics",
+      "source_clause": "Bank 02, 05; root refusal/disclosure",
+      "scenario": "Entitled internal log sink receives detailed refusal",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "Retain complete diagnostic with inherited reporting restrictions and origin.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-087",
+      "group": "Recipient surfaces and protected diagnostics",
+      "source_clause": "Bank 02, 05; root refusal/disclosure",
+      "scenario": "Customer response copies internal refusal reason",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No reporting detail, case identity or existence is exposed through public failure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-088",
+      "group": "Recipient surfaces and protected diagnostics",
+      "source_clause": "Bank 02, 05; root refusal/disclosure",
+      "scenario": "Restricted agent generates generic harmless customer refusal",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Whole-context rule still applies; only independent host constant route may produce public response.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-089",
+      "group": "Recipient surfaces and protected diagnostics",
+      "source_clause": "Bank 02, 05; root refusal/disclosure",
+      "scenario": "Independent host constant route with independently admitted customer destination",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "Send fixed public bytes without protected reasons, source identifiers or restricted trigger input; retain internal detail separately.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-090",
+      "group": "Recipient surfaces and protected diagnostics",
+      "source_clause": "Bank 02, 05; root refusal/disclosure",
+      "scenario": "Host constant route supplied report case identifier as template input",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No dynamic protected input allowed; constant response exception is not a declassification path.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-091",
+      "group": "Recipient surfaces and protected diagnostics",
+      "source_clause": "Bank 02, 05; root refusal/disclosure",
+      "scenario": "Host constant route supplied destination selected by reporting context",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Public routing must come independently from admitted request state.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-092",
+      "group": "Recipient surfaces and protected diagnostics",
+      "source_clause": "Bank 02, 05; root refusal/disclosure",
+      "scenario": "Connector entitled but final recipient is not",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Admitting intermediary does not authorize onward disclosure to customer.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-093",
+      "group": "Recipient surfaces and protected diagnostics",
+      "source_clause": "Bank 02, 05; root refusal/disclosure",
+      "scenario": "Final recipient entitled but connector is not",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No connector argument exposure; final entitlement cannot clear intermediaries.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-094",
+      "group": "Recipient surfaces and protected diagnostics",
+      "source_clause": "Bank 02, 05; root refusal/disclosure",
+      "scenario": "Authorized destination redirects to unmodelled recipient",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No redirected disclosure under old scope; new recipient/hop requires independent admission.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-095",
+      "group": "Recipient surfaces and protected diagnostics",
+      "source_clause": "Bank 02, 05; root refusal/disclosure",
+      "scenario": "Internal handoff recipients share role name but wrong case scope",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No handoff exposure; role spelling cannot substitute for exact case entitlement.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-096",
+      "group": "Recipient surfaces and protected diagnostics",
+      "source_clause": "Bank 02, 05; root refusal/disclosure",
+      "scenario": "Protected audit export to declared custodian",
+      "expected_judgment": "ALLOW",
+      "expected_state_and_delivery": "Exact export destination and custody purpose must be admitted; exported artifact retains restrictions.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-097",
+      "group": "Recipient surfaces and protected diagnostics",
+      "source_clause": "Bank 02, 05; root refusal/disclosure",
+      "scenario": "Protected referral routed to ordinary customer service queue",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Queue identity, metadata and referral existence are protected disclosures.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-098",
+      "group": "Recipient surfaces and protected diagnostics",
+      "source_clause": "Bank 02, 05; root refusal/disclosure",
+      "scenario": "Duplicate-collision response exposes report token to customer",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No collision/status metadata reaches public route; detailed collision remains protected.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-099",
+      "group": "Recipient surfaces and protected diagnostics",
+      "source_clause": "Bank 02, 05; root refusal/disclosure",
+      "scenario": "Unmediated manual route is declared in boundary inventory",
+      "expected_judgment": "COVERAGE_GAP",
+      "expected_state_and_delivery": "Record route as uncovered; do not claim enforcement over its actual exposure or treat declaration as mediation proof.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-100",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Legitimate compensation analysis without external release",
+      "expected_judgment": "ALLOW_INTERNAL",
+      "expected_state_and_delivery": "Internal read/analysis retain compensation restrictions; no external send is authorized.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-101",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Exact midpoint artifact plus Director release and separate send authority",
+      "expected_judgment": "ALLOW_ONE_DISCLOSURE",
+      "expected_state_and_delivery": "Retain one exact exposure claim; allow only consultant-01/portal/engagement; producer context remains restricted.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-102",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Exact compensation artifact with model PASS but no release",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No external exposure; model judgment grants no content release authority.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-103",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Exact artifact with ordinary message approval but no release",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No external exposure; approval does not substitute for distinct release.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-104",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Exact artifact with manager request but no Director release",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No external exposure; manager's internal purpose does not supply release remit.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-105",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Release valid but ordinary send authority missing",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No external exposure; release is supplementary evidence only.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-106",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Release body or subject differs by whitespace",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Exact artifact binding fails; no normalization or semantic-equivalence substitution.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-107",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Release subject changed only",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Fresh exact release chain required before exposure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-108",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Release body includes employee name or personal salary",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Outside Director's selected midpoint remit and exact artifact; no exposure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-109",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Release adds attachment",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Empty inventory changed; no exposure under original release.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-110",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Release substitutes full compensation table",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "One midpoint permission grants no table export or source access.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-111",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Release names other consultant",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Recipient identity mismatch; fresh policy and exact release required.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-112",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Release changes authenticated portal",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Channel/destination mismatch; no exposure under original release.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-113",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Release changes engagement purpose",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Purpose mismatch; no external exposure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-114",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Release uses different source-table revision",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Source provenance/current dependency mismatch; fresh exact release required.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-115",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Release uses new policy revision under old signed subject",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Selected exact policy changed; original subject cannot authorize fresh disclosure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-116",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Release moves to another work instance",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Instance is part of exact subject; no reuse.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-117",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Release moves to another step occurrence",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Occurrence is part of exact subject; no reuse.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-118",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Release omits one inherited restriction",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Unreleased restriction still needs recipient entitlement; no silent subset default.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-119",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Release selects more restrictions than signer remit permits",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No expansion through signed content; policy/remit bounds remain independent.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-120",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Compensation release presented as reporting-to-customer exception",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Bank prohibition remains; authentic act cannot create SAR release policy.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-121",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Released artifact later forwarded to another recipient",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Original release grants no forwarding or second-recipient permission.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-122",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Consultant requests original compensation table",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Specific disclosure does not grant read access to source records.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-123",
+      "group": "Compensation release positive and exact mutations",
+      "source_clause": "Compensation 01 through 04; HUMAN binding options",
+      "scenario": "Producer sends different artifact after exact released disclosure",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Producer context remains restricted; prior release does not lower future outputs.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-124",
+      "group": "Human binding and assessment coexistence",
+      "source_clause": "HUMAN binding options; AUTH-008/009; ASSESS-004/005",
+      "scenario": "Supplementary release HUMAN requirement uses locally computed complete subject",
+      "expected_judgment": "ALLOW_IF_ALL_CURRENT",
+      "expected_state_and_delivery": "Admit distinct ordinary fixed-issuance leaf and attributable act; release supplies no outer gate replacement.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-125",
+      "group": "Human binding and assessment coexistence",
+      "source_clause": "HUMAN binding options; AUTH-008/009; ASSESS-004/005",
+      "scenario": "Release binding replaced by literal matching digest",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "No authority or exposure; computed preimage must be locally derived from admitted bodies.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-126",
+      "group": "Human binding and assessment coexistence",
+      "source_clause": "HUMAN binding options; AUTH-008/009; ASSESS-004/005",
+      "scenario": "Release binding replaced by copied proposal digest field",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "No authority or exposure; native payload need not carry governance digest.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-127",
+      "group": "Human binding and assessment coexistence",
+      "source_clause": "HUMAN binding options; AUTH-008/009; ASSESS-004/005",
+      "scenario": "Release digest supplied without artifact/source/context bodies",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "No authority or exposure; detached matching digest is not complete evidence.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-128",
+      "group": "Human binding and assessment coexistence",
+      "source_clause": "HUMAN binding options; AUTH-008/009; ASSESS-004/005",
+      "scenario": "Release leaf has null record id",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "Ordinary fixed issuance rule remains; assessment-specific null exception cannot spread.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-129",
+      "group": "Human binding and assessment coexistence",
+      "source_clause": "HUMAN binding options; AUTH-008/009; ASSESS-004/005",
+      "scenario": "Release wrapper record id differs from admitted act id",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "No authority or exposure; exact issuance/DECISION_ACT correspondence required.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-130",
+      "group": "Human binding and assessment coexistence",
+      "source_clause": "HUMAN binding options; AUTH-008/009; ASSESS-004/005",
+      "scenario": "Release lacks attributable authenticated human return",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No usable release or exposure; caller assertion cannot establish signed act.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-131",
+      "group": "Human binding and assessment coexistence",
+      "source_clause": "HUMAN binding options; AUTH-008/009; ASSESS-004/005",
+      "scenario": "Release signed outside Director's authentic signing remit",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No usable release; ordinary act-time authorization remains mandatory.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-132",
+      "group": "Human binding and assessment coexistence",
+      "source_clause": "HUMAN binding options; AUTH-008/009; ASSESS-004/005",
+      "scenario": "Release accepted act paired with business disposition declining release",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No exposure; authentic evidence can establish refusal rather than permission.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-133",
+      "group": "Human binding and assessment coexistence",
+      "source_clause": "HUMAN binding options; AUTH-008/009; ASSESS-004/005",
+      "scenario": "Assessment review selected as outer gate plus separate valid release",
+      "expected_judgment": "ALLOW_IF_ALL_CURRENT",
+      "expected_state_and_delivery": "Keep assessment review as gate and require both complete independent evidence chains.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-134",
+      "group": "Human binding and assessment coexistence",
+      "source_clause": "HUMAN binding options; AUTH-008/009; ASSESS-004/005",
+      "scenario": "Release attempts to replace assessment outer gate",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "No authority or exposure; selected assessment contract requires its review gate.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-135",
+      "group": "Human binding and assessment coexistence",
+      "source_clause": "HUMAN binding options; AUTH-008/009; ASSESS-004/005",
+      "scenario": "Assessment PASS/approved but release withdrawn",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No exposure; content assessment cannot waive withdrawal.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-136",
+      "group": "Human binding and assessment coexistence",
+      "source_clause": "HUMAN binding options; AUTH-008/009; ASSESS-004/005",
+      "scenario": "Release effective but assessment rejects required content",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No exposure; release cannot manufacture assessment success.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-137",
+      "group": "Human binding and assessment coexistence",
+      "source_clause": "HUMAN binding options; AUTH-008/009; ASSESS-004/005",
+      "scenario": "Same person has explicit remit for both separate acts with no separation policy",
+      "expected_judgment": "ALLOW_IF_ALL_CURRENT",
+      "expected_state_and_delivery": "Do not invent actor separation from requirement names; distinct authentic acts and all conditions still required.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-138",
+      "group": "Human binding and assessment coexistence",
+      "source_clause": "HUMAN binding options; AUTH-008/009; ASSESS-004/005",
+      "scenario": "One attributable act is reused as both release and assessment review",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Distinct source-selected requirements need distinct attributable acts; no one-act substitution.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-139",
+      "group": "Human binding and assessment coexistence",
+      "source_clause": "HUMAN binding options; AUTH-008/009; ASSESS-004/005",
+      "scenario": "Leaf computed subject contains finished outer envelope or future event",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "Reject circular/unsupported construction; no authority or exposure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-140",
+      "group": "Human binding and assessment coexistence",
+      "source_clause": "HUMAN binding options; AUTH-008/009; ASSESS-004/005",
+      "scenario": "Leaf computed subject omits current trigger/selection provenance",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "Exact subject incomplete; no authority or exposure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-141",
+      "group": "Human binding and assessment coexistence",
+      "source_clause": "HUMAN binding options; AUTH-008/009; ASSESS-004/005",
+      "scenario": "Approval evidence processed in inaccessible protected host control path",
+      "expected_judgment": "ALLOW_IF_ALL_CURRENT",
+      "expected_state_and_delivery": "No sender context update is inferred while evidence truly remains unreachable; original snapshot can remain current.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-142",
+      "group": "Human binding and assessment coexistence",
+      "source_clause": "HUMAN binding options; AUTH-008/009; ASSESS-004/005",
+      "scenario": "Approval evidence imported into sender before exposure",
+      "expected_judgment": "REFUSE_OLD_CHAIN",
+      "expected_state_and_delivery": "Record the new read and restrictions first; context revision changes and old release subject is invalid for fresh exposure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-143",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "Exposure occurs exactly at release valid_from",
+      "expected_judgment": "ALLOW_IF_ALL_CURRENT",
+      "expected_state_and_delivery": "Inclusive start permits the one disclosure; all other current conditions still apply.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-144",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "Exposure occurs one second before release valid_from",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No exposure; release not effective yet.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-145",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "Exposure occurs exactly at release valid_until",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Exclusive end blocks exposure even with unchanged writer revisions.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-146",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "Authorization duration extends beyond release end",
+      "expected_judgment": "CLIP",
+      "expected_state_and_delivery": "Derived authorization end is no later than release end or any earlier source/remit/entitlement/permit end.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-147",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "Director remit revoked before first possible exposure",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Keep pending/historical evidence but prevent exposure under old current authorization.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-148",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "Director remit later regranted while same release unused/current/unwithdrawn/unexpired",
+      "expected_judgment": "ALLOW_IF_ALL_CURRENT",
+      "expected_state_and_delivery": "Fresh current checks may restore reliance; historical signing remains and no permanent invalidation is invented.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-149",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "Director remit regranted after exact release withdrawal",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Remit restoration does not undo separate release withdrawal; new authorized release policy/act required.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-150",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "Director remit regranted after possible exposure consumed release",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No second disclosure or replay reset; restore permission does not erase exposure history.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-151",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "Director or authorized HR Head withdraws exact release before exposure",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Current effectiveness blocks pending disclosure; retain immutable original act and withdrawal.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-152",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "Unauthorized actor asserts withdrawal",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "Do not alter authoritative release effectiveness from unaccepted act; current authentic source evidence remains required.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-153",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "Current selector names superseding release",
+      "expected_judgment": "REFUSE_OLD_CHAIN",
+      "expected_state_and_delivery": "Old immutable release is not current; new exact chain needed.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-154",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "Current selector agrees but independent effectiveness is false",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Selection cannot override withdrawal/effectiveness assertion.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-155",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "Current selection names act but wrong computed subject",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No reliance; exact immutable issuance and complete subject must both match.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-156",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "Consultant designation withdrawn before exposure",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No disclosure; release alone grants no persistent recipient/contact authority.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-157",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "Compensation table corrected before exposure",
+      "expected_judgment": "REFUSE_OLD_CHAIN",
+      "expected_state_and_delivery": "Fresh source/provenance dependency and release needed; old content cannot rely on stale selected revision.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-158",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "New restricted read added to sender before exposure",
+      "expected_judgment": "REFUSE_OLD_CHAIN",
+      "expected_state_and_delivery": "Commit union first; old context revision/subject/fence cannot authorize send.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-159",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "Current policy removes release permission before exposure",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No disclosure even with authentic historical release; original context remains restricted.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-160",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "Release withdrawal ordered after established disclosure",
+      "expected_judgment": "RETAIN",
+      "expected_state_and_delivery": "Historical authorized disclosure and consumed claim remain; no recall or retrospective erasure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-161",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "Source or recipient change ordered after established disclosure",
+      "expected_judgment": "RETAIN",
+      "expected_state_and_delivery": "Historical exact facts remain at original boundary; subsequent disclosures need fresh current authority.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-162",
+      "group": "Current release conditions, expiry and regrant",
+      "source_clause": "Compensation 03, 05; root disclosure; HOLD-004/006 distinctions",
+      "scenario": "Current clock unavailable with otherwise well-formed evidence",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No fresh exposure; retain pending/historical evidence without substituting machine time.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-163",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Connector receives protected arguments then rejects business operation",
+      "expected_judgment": "RETAIN_DISCLOSURE",
+      "expected_state_and_delivery": "Record connector exposure and consumed covered release/hop despite rejected execution; do not report no disclosure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-164",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Connector receives arguments then reports business NOT_SENT",
+      "expected_judgment": "RETAIN_DISCLOSURE",
+      "expected_state_and_delivery": "NOT_SENT may describe onward/business execution only; connector exposure remains established or possible.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-165",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Connector receives arguments then returns unknown business result",
+      "expected_judgment": "RETAIN_UNCERTAIN",
+      "expected_state_and_delivery": "Keep exposure claim, intent, provenance and restrictions; no blind reinvocation.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-166",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Final recipient receives exact content with established exposure evidence",
+      "expected_judgment": "RETAIN",
+      "expected_state_and_delivery": "Consume selected one-disclosure allowance and preserve exact historical boundary independently of later business completion.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-167",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Pre-exposure intent write fails",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "No connector arguments exposed; authoritative exposure state unchanged.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-168",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Intent retained but crash before first possible exposure",
+      "expected_judgment": "RETAIN_PENDING",
+      "expected_state_and_delivery": "Do not infer completed exposure or blindly invoke; reconstruct retained claim and obtain fresh current checks under safe recovery rule.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-169",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Crash after possible exposure before receipt persistence",
+      "expected_judgment": "RETAIN_UNCERTAIN",
+      "expected_state_and_delivery": "Keep durable intent and assume possible disclosure; old release cannot authorize a new send.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-170",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Exact successful disclosure claim replay",
+      "expected_judgment": "REPLAY_ONLY",
+      "expected_state_and_delivery": "Return original protected evidence under present replay access; no second connector call or exposure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-171",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Changed invocation under reused disclosure claim",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "Replay conflict; no fresh exposure or overwritten intent.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-172",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Fresh claim tries to reuse consumed release act",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "One-disclosure allowance remains consumed across invocation ids, contexts and restarts.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-173",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Fresh context tries same consumed release issuance",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Global/source-selected release consumption cannot be reset by context-local history.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-174",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Restart reconstructs unused pending release and complete state",
+      "expected_judgment": "RETAIN_PENDING",
+      "expected_state_and_delivery": "Recompute historical evidence at retained clocks; no old authorization is treated as fresh current permission.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-175",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Restart after current release withdrawal",
+      "expected_judgment": "REFUSE_NEW_EXPOSURE",
+      "expected_state_and_delivery": "Historical successful decisions remain; no new disclosure under withdrawn release.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-176",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Restart with trimmed exposure history and rehashed state",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "Reconstruction/latest protected checkpoint detects missing retained claim; no authority or new exposure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-177",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Provider takes admitted custody then delays onward delivery",
+      "expected_judgment": "ALLOW_CUSTODY_ONLY",
+      "expected_state_and_delivery": "Record guarantee ending at exact admitted custody transfer unless provider also participates in later boundary checks.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-178",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Provider checks final-recipient current authority at later first exposure",
+      "expected_judgment": "ALLOW_IF_ALL_CURRENT",
+      "expected_state_and_delivery": "Later disclosure has its own current fence, exact hop and consumption accounting.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-179",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Release withdrawn after custody but before separately governed onward exposure",
+      "expected_judgment": "REFUSE_ONWARD",
+      "expected_state_and_delivery": "Earlier custody remains historical; later unfulfilled transfer is blocked by current withdrawal.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-180",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Delayed onward route lacks provider participation in current checks",
+      "expected_judgment": "COVERAGE_GAP",
+      "expected_state_and_delivery": "Do not claim authority remains current at final delivery; claim ends at earlier custody transfer.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-181",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Business no-effect proof presented as proof connector never received content",
+      "expected_judgment": "REFUSE_INFERENCE",
+      "expected_state_and_delivery": "Retain disclosure/uncertainty; business evidence cannot erase recipient exposure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-182",
+      "group": "Disclosure claims, custody, uncertain results and restart",
+      "source_clause": "Root disclosure/read replay; Compensation 04, 05; ASSESS-006",
+      "scenario": "Historical replay at later time with revoked original signer remit",
+      "expected_judgment": "REPLAY_ONLY",
+      "expected_state_and_delivery": "Reconstruct original historical result without rewriting it; present replay access remains independently required.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-183",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Fresh read would exceed selected event-history ceiling",
+      "expected_judgment": "LIMIT_REFUSE",
+      "expected_state_and_delivery": "No new source exposure or pruning; prior complete state remains available for reconstruction/export/replay.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-184",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Fresh import would exceed selected root-provenance ceiling",
+      "expected_judgment": "LIMIT_REFUSE",
+      "expected_state_and_delivery": "No import exposure; do not drop origins to fit.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-185",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "New restriction union would exceed selected restriction ceiling",
+      "expected_judgment": "LIMIT_REFUSE",
+      "expected_state_and_delivery": "No protected delivery; never replace full set with truncated array.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-186",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Artifact descriptor exceeds selected canonical-byte ceiling",
+      "expected_judgment": "LIMIT_REFUSE",
+      "expected_state_and_delivery": "No outgoing authorization or exposure; do not hash-only substitute absent body.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-187",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Complete authority exceeds inherited 1048576-byte bound",
+      "expected_judgment": "LIMIT_REFUSE",
+      "expected_state_and_delivery": "Phase-2 LIMIT_EXCEEDED after earlier admission faults; no authorization/exposure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-188",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Independent release leaf exceeds inherited 262144-byte bound",
+      "expected_judgment": "LIMIT_REFUSE",
+      "expected_state_and_delivery": "Phase-2 LIMIT_EXCEEDED; new flow profile does not enlarge ordinary human input.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-189",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Source plus holdings projection exceeds combined 64-member bound",
+      "expected_judgment": "LIMIT_REFUSE",
+      "expected_state_and_delivery": "No permit/dispatch authorization; adding flow does not silently enlarge bound.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-190",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Seventeen independent decisions declared",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "Existing 16-decision bound applies; no second gate/profile workaround.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-191",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Exhausted context with exact historical replay",
+      "expected_judgment": "REPLAY_ONLY",
+      "expected_state_and_delivery": "No fresh event or exposure; preserve complete existing state and receipt.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-192",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Exhausted context used for fresh outgoing operation requiring retention",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Do not authorize exposure that cannot durably retain intent/current changes; explicit intervention remains required.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-193",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Malformed schema plus missing current release",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "Phase 1 closed shape wins; do not report a current-policy refusal.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-194",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Known nominal type incompatibility plus unknown release reference",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "Phase-1 TYPE_INVALID wins before phase-2 references.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-195",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Missing complete context body plus expired release",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "Phase-2 missing-body/dependency failure wins before current expiry.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-196",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Wrong local computed subject plus rejected human act",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "Phase-3 BINDING_MISMATCH wins before phase-4 act disposition.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-197",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Conflicting selected human acts plus missing attributable return",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Phase-4 ACT_CONFLICT precedes missing other act/return evidence.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-198",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Missing exact current query plus false effectiveness",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Phase-5 inventory admission wins before policy interpretation; absent evidence never supplies false/true default.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-199",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Unavailable clock plus malformed directly checkable source body",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "Earlier body admission fault wins; missing clock hides no shape/dependency/application/act issue.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-200",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Unavailable clock plus otherwise complete expired-current claims",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Sole CLOCK_UNAVAILABLE and empty failed checks; no current clock-dependent tests run.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-201",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Valid sources carry multiple independent current failures",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Retain sorted unique union of all failed policy reasons and exact checks; no array-order-dependent first failure.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-202",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Unusable/conflicting current source group plus profile comparison",
+      "expected_judgment": "REFUSE",
+      "expected_state_and_delivery": "Emit inherited source usability reason; do not compare invented profile value or duplicate changed-dependency reason.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-203",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Omitted flow member survives proposal to dispatch and restart",
+      "expected_judgment": "ALLOW_IF_ALL_CURRENT",
+      "expected_state_and_delivery": "Keep exact omission; retain inherited carrier bytes without invented empty members.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-204",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Explicit empty flow member survives proposal to dispatch and restart",
+      "expected_judgment": "ALLOW_IF_ALL_CURRENT",
+      "expected_state_and_delivery": "Keep explicit []; digest and complete authority basis retain presence wherever required.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-205",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Explicit empty flow member in withheld separation evidence",
+      "expected_judgment": "RETAIN",
+      "expected_state_and_delivery": "Retain complete authority basis where selected presence requires it; no normalization to omission.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    },
+    {
+      "id": "FLOW-SOURCE-206",
+      "group": "Finite limits and deterministic admission order",
+      "source_clause": "Root design; AUTHORITY-CHECKS; AUTH-008; HOLD-005/007; ASSESS-001/006",
+      "scenario": "Dispatch refresh changes immutable artifact or context body",
+      "expected_judgment": "ADMISSION_REFUSE",
+      "expected_state_and_delivery": "New chain/proposal required; only explicitly permitted current evidence may refresh.",
+      "wire_mapping": "PENDING_REVIEWED_CONTRACT"
+    }
+  ]
+}

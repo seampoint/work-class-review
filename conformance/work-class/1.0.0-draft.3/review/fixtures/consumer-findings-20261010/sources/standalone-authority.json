@@ -1,0 +1,252 @@
+{
+  "envelope": {
+    "attester_role": "organization-attester",
+    "bindings": [
+      {
+        "field": "document_id",
+        "id": "document",
+        "step": "index-dossier",
+        "type_ref": "t.identity"
+      },
+      {
+        "field": "workspace_id",
+        "id": "workspace",
+        "step": "index-dossier",
+        "type_ref": "t.identity"
+      }
+    ],
+    "clock_source": "synthetic-clock",
+    "conditions": [],
+    "enforcement": {
+      "mechanisms": [
+        "AUTHORITY_BEFORE_RESERVATION"
+      ],
+      "out_of_envelope": "REFUSE",
+      "safe_state": "NO_NEW_DISPATCH"
+    },
+    "escalation": {
+      "kind": "DECLARED_NONE"
+    },
+    "executor_role": "clerk",
+    "gate": {
+      "criteria": [],
+      "kind": "NONE",
+      "materiality": "LOW",
+      "reversibility": "HIGH",
+      "role": null
+    },
+    "grant_ref": "grant-index-dossier",
+    "grantor_role": "records-owner",
+    "id": "authority-index-dossier",
+    "limitations": [],
+    "limits": {
+      "per_action": [],
+      "shared_budgets": []
+    },
+    "operations": [
+      {
+        "interface": "records-system",
+        "operation": "index-dossier",
+        "step": "index-dossier"
+      }
+    ],
+    "principal": "synthetic-records-office",
+    "revocation": {
+      "max_age_seconds": "0",
+      "provider": "synthetic-authority-provider",
+      "source": "synthetic-authority-ledger"
+    },
+    "schema": "seampoint.work-class/1.0.0-draft.3/authority-envelope",
+    "scope": {
+      "id": "scope-index-dossier",
+      "resources": [
+        {
+          "binding": "document",
+          "kind": "BINDING"
+        }
+      ],
+      "subjects": [
+        {
+          "binding": "workspace",
+          "kind": "BINDING"
+        }
+      ]
+    },
+    "source_digest": "sha256:644f627886c59ccb166423d4ed7a3ad07ffce1e20c1fbb39cca129ec79fe550e",
+    "source_obligations": [
+      "completion-policy",
+      "ordered-work",
+      "permit-duration"
+    ],
+    "temporal_validity": {
+      "valid_from": "2026-10-09T00:00:00Z",
+      "valid_until": null
+    },
+    "work_class_digest": "sha256:7c03bc34a34fa0a9f0feab04b546a807da68076d880db55d019943321a44123d"
+  },
+  "schema": "seampoint.work-class/1.0.0-draft.3/authority-definition",
+  "source": {
+    "id": "synthetic-records-procedure",
+    "obligations": [
+      {
+        "id": "completion-policy",
+        "text": "Each operation retains stopped work and looks up its original result."
+      },
+      {
+        "id": "ordered-work",
+        "text": "Handle the r\u00e9sum\u00e9 by performing index-dossier, then seal-dossier."
+      },
+      {
+        "id": "permit-duration",
+        "text": "Use a 45-second permit for every operation."
+      }
+    ],
+    "revision": "r1",
+    "schema": "seampoint.work-class/1.0.0-draft.3/authority-source"
+  },
+  "work_class": {
+    "id": "synthetic-records-work",
+    "revision": "r1",
+    "schema": "seampoint.work-class/1.0.0-draft.3/authority-work-class",
+    "steps": [
+      {
+        "completion": {
+          "effect_provider": "synthetic-records-provider",
+          "effect_record_type": "record-operation",
+          "effect_source": "synthetic-records-ledger",
+          "evidence_bindings": [
+            {
+              "evidence_field": "document_id",
+              "request_field": "document_id"
+            },
+            {
+              "evidence_field": "workspace_id",
+              "request_field": "workspace_id"
+            }
+          ],
+          "failure_values": [
+            {
+              "type_ref": "t.status",
+              "value": "FAILED"
+            }
+          ],
+          "no_effect_provider": "synthetic-records-provider",
+          "no_effect_record_type": "record-operation-no-effect",
+          "no_effect_source": "synthetic-records-ledger",
+          "route_label_field": null,
+          "route_label_type_ref": null,
+          "status_field": "status",
+          "status_type_ref": "t.status",
+          "success_values": [
+            {
+              "type_ref": "t.status",
+              "value": "SUCCEEDED"
+            }
+          ],
+          "terminal_policy": "LEGACY_NONTERMINAL"
+        },
+        "exclusive_keys": [],
+        "executor_role": "clerk",
+        "fields": [
+          {
+            "name": "document_id",
+            "type_ref": "t.identity"
+          },
+          {
+            "name": "workspace_id",
+            "type_ref": "t.identity"
+          }
+        ],
+        "id": "index-dossier",
+        "interface": "records-system",
+        "operation": "index-dossier",
+        "quantity_mode": "NONE",
+        "required_credentials": [],
+        "scope_fields": {
+          "resources": [
+            "document_id"
+          ],
+          "subjects": [
+            "workspace_id"
+          ]
+        }
+      },
+      {
+        "completion": {
+          "effect_provider": "synthetic-records-provider",
+          "effect_record_type": "record-operation",
+          "effect_source": "synthetic-records-ledger",
+          "evidence_bindings": [
+            {
+              "evidence_field": "document_id",
+              "request_field": "document_id"
+            },
+            {
+              "evidence_field": "workspace_id",
+              "request_field": "workspace_id"
+            }
+          ],
+          "failure_values": [
+            {
+              "type_ref": "t.status",
+              "value": "FAILED"
+            }
+          ],
+          "no_effect_provider": "synthetic-records-provider",
+          "no_effect_record_type": "record-operation-no-effect",
+          "no_effect_source": "synthetic-records-ledger",
+          "route_label_field": null,
+          "route_label_type_ref": null,
+          "status_field": "status",
+          "status_type_ref": "t.status",
+          "success_values": [
+            {
+              "type_ref": "t.status",
+              "value": "SUCCEEDED"
+            }
+          ],
+          "terminal_policy": "LEGACY_NONTERMINAL"
+        },
+        "exclusive_keys": [],
+        "executor_role": "clerk",
+        "fields": [
+          {
+            "name": "document_id",
+            "type_ref": "t.identity"
+          },
+          {
+            "name": "workspace_id",
+            "type_ref": "t.identity"
+          }
+        ],
+        "id": "seal-dossier",
+        "interface": "records-system",
+        "operation": "seal-dossier",
+        "quantity_mode": "NONE",
+        "required_credentials": [],
+        "scope_fields": {
+          "resources": [
+            "document_id"
+          ],
+          "subjects": [
+            "workspace_id"
+          ]
+        }
+      }
+    ],
+    "types": [
+      {
+        "id": "t.identity",
+        "kind": "IDENTITY",
+        "nonnegative": false,
+        "unit": null
+      },
+      {
+        "id": "t.status",
+        "kind": "STRING",
+        "nonnegative": false,
+        "unit": null
+      }
+    ]
+  }
+}

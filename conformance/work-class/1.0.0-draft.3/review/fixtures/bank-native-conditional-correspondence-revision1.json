@@ -1,0 +1,748 @@
+{
+  "author": "Independent source review; no consumer or observed results read",
+  "guide_version": "1.7 April2026",
+  "limits": [
+    "These rows explain selected semantic families and mutually exclusive indicator branches. They are not a generated inventory of every optional XSD leaf.",
+    "No source fact is inferred from successful schema admission. Source completeness and substantive filing judgments need bank review.",
+    "The first controlled gateway is a terminal synthetic sink; none of these bytes authorize actual FinCEN transmission."
+  ],
+  "not_checked": [
+    "XML/XSD execution",
+    "real provider acceptance",
+    "legal compliance",
+    "bank source completeness",
+    "industry review"
+  ],
+  "path_convention": "Element paths use local names. Party[33] is the party whose ActivityPartyTypeCode is33, not positional indexing. Alternative/extra occurrence paths describe omitted families; the integrating serializer must retain exact actual XPath/count checks.",
+  "prefixes": {
+    "fc2": "www.fincen.gov/base"
+  },
+  "rows": [
+    {
+      "applicability_predicate": "Package is corrected/amended or continuing",
+      "applies_to_package": "INITIAL",
+      "family": "Prior filing identity",
+      "fields": [
+        "Activity/EFilingPriorDocumentNumber"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.2 Activity; 4.3 ActivityAssociation",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-001",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "bank-case-source/revision-2; serializer/revision-1",
+      "source_value_or_unknown_marker": "INITIAL",
+      "wire_action": "OMIT"
+    },
+    {
+      "applicability_predicate": "Package is corrected/amended",
+      "applies_to_package": "CORRECT_AMEND",
+      "family": "Prior filing identity",
+      "fields": [
+        "Activity/EFilingPriorDocumentNumber"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.2 Activity; 4.3 ActivityAssociation",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-002",
+      "selected_outcome": "APPLICABLE",
+      "source_record_revision": "synthetic-prior-accepted-filing/revision-1",
+      "source_value_or_unknown_marker": "31000000000001",
+      "wire_action": "EMIT exact prior BSA identity"
+    },
+    {
+      "applicability_predicate": "Package is corrected/amended",
+      "applies_to_package": "INITIAL",
+      "family": "Initial versus amended indicator",
+      "fields": [
+        "Activity/ActivityAssociation/CorrectsAmendsPriorReportIndicator"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.3 ActivityAssociation",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-003",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "bank-case-source/revision-2; serializer/revision-1",
+      "source_value_or_unknown_marker": "INITIAL",
+      "wire_action": "OMIT amend; EMIT InitialReportIndicator=Y"
+    },
+    {
+      "applicability_predicate": "Package is initial",
+      "applies_to_package": "CORRECT_AMEND",
+      "family": "Initial versus amended indicator",
+      "fields": [
+        "Activity/ActivityAssociation/InitialReportIndicator"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.3 ActivityAssociation",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-004",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "bank-native-serialization/revision-1",
+      "source_value_or_unknown_marker": "CORRECT_AMEND",
+      "wire_action": "OMIT initial; EMIT CorrectsAmendsPriorReportIndicator=Y"
+    },
+    {
+      "applicability_predicate": "Selected report is continuing activity",
+      "applies_to_package": "BOTH",
+      "family": "Continuing report",
+      "fields": [
+        "Activity/ActivityAssociation/ContinuingActivityReportIndicator",
+        "Activity/SuspiciousActivity/CumulativeTotalViolationAmountText"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.3 ActivityAssociation; 4.7 SuspiciousActivity",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-005",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "bank-case-source/revision-2; bank-native-serialization/revision-1",
+      "source_value_or_unknown_marker": "INITIAL or CORRECT_AMEND; no continuing branch",
+      "wire_action": "OMIT both"
+    },
+    {
+      "applicability_predicate": "Two or more institutions jointly file",
+      "applies_to_package": "BOTH",
+      "family": "Joint filing",
+      "fields": [
+        "Activity/ActivityAssociation/JointReportIndicator"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.3 ActivityAssociation",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-006",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "bank-case-source/revision-2",
+      "source_value_or_unknown_marker": "One fictional bank; joint filings excluded",
+      "wire_action": "OMIT"
+    },
+    {
+      "applicability_predicate": "Subject is an individual",
+      "applies_to_package": "BOTH",
+      "family": "Individual subject names",
+      "fields": [
+        "Party[33]/PartyName/RawIndividualFirstName",
+        "Party[33]/PartyName/FirstNameUnknownIndicator",
+        "Party[33]/PartyName/RawIndividualMiddleName",
+        "Party[33]/PartyName/RawIndividualNameSuffixText"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6.1 PartyName",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-007",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "MRB-CDD-074/revision-4",
+      "source_value_or_unknown_marker": "Entity Maple Example Trading LLC",
+      "wire_action": "OMIT individual-only names and unknown first-name flag; EMIT entity legal name"
+    },
+    {
+      "applicability_predicate": "Subject is an individual",
+      "applies_to_package": "BOTH",
+      "family": "Individual birth date",
+      "fields": [
+        "Party[33]/IndividualBirthDateText",
+        "Party[33]/BirthDateUnknownIndicator"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6 Party",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-008",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "MRB-CDD-074/revision-4",
+      "source_value_or_unknown_marker": "Entity",
+      "wire_action": "OMIT date and unknown-date flag"
+    },
+    {
+      "applicability_predicate": "Subject is an individual",
+      "applies_to_package": "BOTH",
+      "family": "Individual gender",
+      "fields": [
+        "Party[33]/MaleGenderIndicator",
+        "Party[33]/FemaleGenderIndicator",
+        "Party[33]/UnknownGenderIndicator"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6 Party",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-009",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "MRB-CDD-074/revision-4",
+      "source_value_or_unknown_marker": "Entity",
+      "wire_action": "OMIT all gender flags"
+    },
+    {
+      "applicability_predicate": "Subject is an individual with applicable corroborative-statement disposition",
+      "applies_to_package": "BOTH",
+      "family": "Corroborative statement",
+      "fields": [
+        "Party[33]/AdmissionConfessionNoIndicator",
+        "Party[33]/AdmissionConfessionYesIndicator"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6 Party",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-010",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "MRB-CDD-074/revision-4",
+      "source_value_or_unknown_marker": "Entity; no confession established",
+      "wire_action": "OMIT both individual flags"
+    },
+    {
+      "applicability_predicate": "All critical subject information except account/TIN linkage is unavailable",
+      "applies_to_package": "BOTH",
+      "family": "All critical information unavailable",
+      "fields": [
+        "Party[33]/AllCriticalSubjectInformationUnavailableIndicator"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6 Party",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-011",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "MRB-CDD-074/revision-4",
+      "source_value_or_unknown_marker": "Known entity name, address and EIN",
+      "wire_action": "OMIT"
+    },
+    {
+      "applicability_predicate": "Subject legal name is unknown",
+      "applies_to_package": "BOTH",
+      "family": "Unknown entity legal name",
+      "fields": [
+        "Party[33]/PartyName/EntityLastNameUnknownIndicator"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6.1 PartyName",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-012",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "MRB-CDD-074/revision-4",
+      "source_value_or_unknown_marker": "Maple Example Trading LLC",
+      "wire_action": "OMIT; EMIT RawEntityIndividualLastName"
+    },
+    {
+      "applicability_predicate": "Alternative name is known",
+      "applies_to_package": "BOTH",
+      "family": "Alternative names",
+      "fields": [
+        "Party[33]/PartyName[PartyNameTypeCode=A]"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6.1 PartyName",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-013",
+      "selected_outcome": "UNKNOWN_OMITTED",
+      "source_record_revision": "MRB-CDD-074/revision-4",
+      "source_value_or_unknown_marker": "NOT_SUPPLIED",
+      "wire_action": "OMIT alternate-name occurrences; do not invent alias"
+    },
+    {
+      "applicability_predicate": "Corresponding subject address component is unknown",
+      "applies_to_package": "BOTH",
+      "family": "Unknown address flags",
+      "fields": [
+        "Party[33]/Address/CityUnknownIndicator",
+        "Party[33]/Address/CountryCodeUnknownIndicator",
+        "Party[33]/Address/StateCodeUnknownIndicator",
+        "Party[33]/Address/StreetAddressUnknownIndicator",
+        "Party[33]/Address/ZIPCodeUnknownIndicator"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6.2 Address",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-014",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "MRB-CDD-074/revision-4",
+      "source_value_or_unknown_marker": "Known Chicago, US, IL, 200 Example Avenue, 60601",
+      "wire_action": "OMIT unknown flags; EMIT known address components"
+    },
+    {
+      "applicability_predicate": "Subject phone is known",
+      "applies_to_package": "BOTH",
+      "family": "Subject phone",
+      "fields": [
+        "Party[33]/PhoneNumber"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6.3 PhoneNumber",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-015",
+      "selected_outcome": "UNKNOWN_OMITTED",
+      "source_record_revision": "MRB-CDD-074/revision-4",
+      "source_value_or_unknown_marker": "NOT_SUPPLIED",
+      "wire_action": "OMIT subject PhoneNumber"
+    },
+    {
+      "applicability_predicate": "Extension is known",
+      "applies_to_package": "BOTH",
+      "family": "Phone extension",
+      "fields": [
+        "Party[35]/PhoneNumber/PhoneNumberExtensionText",
+        "Party[8]/PhoneNumber/PhoneNumberExtensionText"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6.3 PhoneNumber",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-016",
+      "selected_outcome": "UNKNOWN_OMITTED",
+      "source_record_revision": "MRB-INSTITUTION-01/revision-1; MRB-CONTACT-01/revision-1",
+      "source_value_or_unknown_marker": "Extension NOT_SUPPLIED; base phone2025550100",
+      "wire_action": "OMIT extension; retain known base phone"
+    },
+    {
+      "applicability_predicate": "Email or website is known",
+      "applies_to_package": "BOTH",
+      "family": "Subject email and website",
+      "fields": [
+        "Party[33]/ElectronicAddress"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6.7 ElectronicAddress",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-017",
+      "selected_outcome": "UNKNOWN_OMITTED",
+      "source_record_revision": "MRB-CDD-074/revision-4",
+      "source_value_or_unknown_marker": "Email and website NOT_SUPPLIED",
+      "wire_action": "OMIT ElectronicAddress occurrences"
+    },
+    {
+      "applicability_predicate": "Occupation/business description or NAICS is known",
+      "applies_to_package": "BOTH",
+      "family": "Occupation and business classification",
+      "fields": [
+        "Party[33]/PartyOccupationBusiness/OccupationBusinessText",
+        "Party[33]/PartyOccupationBusiness/NAICSCode"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6.6 PartyOccupationBusiness",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-018",
+      "selected_outcome": "UNKNOWN_OMITTED",
+      "source_record_revision": "MRB-CDD-074/revision-4",
+      "source_value_or_unknown_marker": "Business occupation and NAICS NOT_SUPPLIED",
+      "wire_action": "OMIT PartyOccupationBusiness; do not infer business type from entity name"
+    },
+    {
+      "applicability_predicate": "Subject TIN is unknown",
+      "applies_to_package": "BOTH",
+      "family": "Unknown tax identifier",
+      "fields": [
+        "Party[33]/PartyIdentification/TINUnknownIndicator"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6.4 PartyIdentification",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-019",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "MRB-CDD-074/revision-4",
+      "source_value_or_unknown_marker": "Known EIN987654321",
+      "wire_action": "OMIT unknown TIN flag; EMIT exact EIN/type"
+    },
+    {
+      "applicability_predicate": "A non-tax form of identification is known",
+      "applies_to_package": "BOTH",
+      "family": "Non-tax form of identification",
+      "fields": [
+        "Party[33]/PartyIdentification[IdentificationPresentUnknownIndicator]/PartyIdentificationNumberText",
+        "Party[33]/PartyIdentification[IdentificationPresentUnknownIndicator]/PartyIdentificationTypeCode",
+        "Party[33]/PartyIdentification[IdentificationPresentUnknownIndicator]/OtherIssuerCountryText",
+        "Party[33]/PartyIdentification[IdentificationPresentUnknownIndicator]/OtherIssuerStateText"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6.4 PartyIdentification",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-020",
+      "selected_outcome": "UNKNOWN_WITH_REQUIRED_INDICATOR",
+      "source_record_revision": "MRB-CDD-074/revision-4",
+      "source_value_or_unknown_marker": "All non-tax identification information NOT_SUPPLIED",
+      "wire_action": "EMIT separate PartyIdentification/IdentificationPresentUnknownIndicator=Y; OMIT fabricated document number/type/issuer"
+    },
+    {
+      "applicability_predicate": "Selected account is closed",
+      "applies_to_package": "BOTH",
+      "family": "Account closure",
+      "fields": [
+        "Party[33]/PartyAccountAssociation/Party[41]/Account/AccountClosedIndicator"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6.9 Account",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-021",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "MRB-CDD-074/revision-4",
+      "source_value_or_unknown_marker": "Account account-074 remains active",
+      "wire_action": "OMIT closure flag; retain exact account number"
+    },
+    {
+      "applicability_predicate": "A resignation, suspension/bar or termination is established",
+      "applies_to_package": "BOTH",
+      "family": "Relationship end and disciplinary action",
+      "fields": [
+        "Party[33]/PartyAssociation/ResignedIndicator",
+        "Party[33]/PartyAssociation/SuspendedBarredIndicator",
+        "Party[33]/PartyAssociation/TerminatedIndicator",
+        "Party[33]/PartyAssociation/ActionTakenDateText"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6.8 PartyAssociation",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-022",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "MRB-CDD-074/revision-4",
+      "source_value_or_unknown_marker": "Active customer relationship; no listed action established",
+      "wire_action": "OMIT action flags/date; EMIT CustomerIndicator=Y and RelationshipContinuesIndicator=Y"
+    },
+    {
+      "applicability_predicate": "Subject has no relationship to institution",
+      "applies_to_package": "BOTH",
+      "family": "No relationship",
+      "fields": [
+        "Party[33]/PartyAssociation/NoRelationshipToInstitutionIndicator"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6.8 PartyAssociation",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-023",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "MRB-CDD-074/revision-4",
+      "source_value_or_unknown_marker": "Active customer",
+      "wire_action": "OMIT no-relationship flag"
+    },
+    {
+      "applicability_predicate": "Another enumerated relationship is known",
+      "applies_to_package": "BOTH",
+      "family": "Other simultaneous institutional relationships",
+      "fields": [
+        "Party[33]/PartyAssociation/AccountantIndicator",
+        "Party[33]/PartyAssociation/AgentIndicator",
+        "Party[33]/PartyAssociation/AttorneyIndicator",
+        "Party[33]/PartyAssociation/BorrowerIndicator",
+        "Party[33]/PartyAssociation/DirectorIndicator",
+        "Party[33]/PartyAssociation/EmployeeIndicator",
+        "Party[33]/PartyAssociation/OfficerIndicator",
+        "Party[33]/PartyAssociation/OwnerShareholderIndicator",
+        "Party[33]/PartyAssociation/OtherRelationshipIndicator"
+      ],
+      "gap": "The selected source supplies customer relationship but no exhaustive negative statement about other relationship types. Bank review must confirm completeness or supply applicable relationships.",
+      "guide_reference": {
+        "section": "4.6.8 PartyAssociation",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-024",
+      "selected_outcome": "SOURCE_DECISION_INSUFFICIENT",
+      "source_record_revision": "MRB-CDD-074/revision-4",
+      "source_value_or_unknown_marker": "Only active customer relationship supplied",
+      "wire_action": "OMIT from current bytes; do not assert other relationships false"
+    },
+    {
+      "applicability_predicate": "A branch participated and is identified",
+      "applies_to_package": "BOTH",
+      "family": "Branch where activity occurred",
+      "fields": [
+        "Party[34]/PartyAssociation/Party[46]"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6 Party; 4.6.8 PartyAssociation",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-025",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "MRB-INSTITUTION-01/revision-1",
+      "source_value_or_unknown_marker": "No branch participated",
+      "wire_action": "OMIT branch party/subtree; EMIT Party[34]/NoBranchActivityInvolvedIndicator=Y"
+    },
+    {
+      "applicability_predicate": "Account-holding institution is outside US",
+      "applies_to_package": "BOTH",
+      "family": "Foreign institution",
+      "fields": [
+        "Party[41]/NonUSFinancialInstitutionIndicator"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6.9 Account",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-026",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "MRB-INSTITUTION-01/revision-1",
+      "source_value_or_unknown_marker": "US institution",
+      "wire_action": "OMIT foreign-institution flag"
+    },
+    {
+      "applicability_predicate": "A law-enforcement contact occurred",
+      "applies_to_package": "BOTH",
+      "family": "Law-enforcement contact",
+      "fields": [
+        "Activity/Party[18]",
+        "Activity/Party[19]",
+        "Activity/Party[19]/ContactDateText"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6 Party; ActivityPartyTypeCode; ContactDateText",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-027",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "MRB-CONTACT-01/revision-1",
+      "source_value_or_unknown_marker": "No law-enforcement contact occurred",
+      "wire_action": "OMIT contact parties/date; no inference that later immediate-attention duty is waived"
+    },
+    {
+      "applicability_predicate": "A loss amount is established",
+      "applies_to_package": "BOTH",
+      "family": "Financial institution loss",
+      "fields": [
+        "Party[34]/LossToFinancialAmountText"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.6 Party",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-028",
+      "selected_outcome": "UNKNOWN_OMITTED",
+      "source_record_revision": "MRB-CDD-074/revision-4; bank-native-serialization/revision-1",
+      "source_value_or_unknown_marker": "No loss to bank established",
+      "wire_action": "OMIT loss amount; do not substitute0"
+    },
+    {
+      "applicability_predicate": "Total report amount is unknown",
+      "applies_to_package": "BOTH",
+      "family": "Unknown total amount",
+      "fields": [
+        "Activity/SuspiciousActivity/AmountUnknownIndicator"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.7 SuspiciousActivity",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-029",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "MRB-TXN-081/revision-1; MRB-TXN-082/revision-1; MRB-TXN-083/revision-1",
+      "source_value_or_unknown_marker": "Known aggregate USD84000; individual amounts unknown",
+      "wire_action": "OMIT unknown total flag; EMIT TotalSuspiciousAmountText=84000; narrative retains unknown individual amounts"
+    },
+    {
+      "applicability_predicate": "No financial amount is involved",
+      "applies_to_package": "BOTH",
+      "family": "No amount involved",
+      "fields": [
+        "Activity/SuspiciousActivity/NoAmountInvolvedIndicator"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.7 SuspiciousActivity",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-030",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "MRB-TXN-081/revision-1; MRB-TXN-082/revision-1; MRB-TXN-083/revision-1",
+      "source_value_or_unknown_marker": "Known aggregate USD84000",
+      "wire_action": "OMIT no-amount flag"
+    },
+    {
+      "applicability_predicate": "Officer selects additional activity classifications",
+      "applies_to_package": "BOTH",
+      "family": "Extra activity classifications",
+      "fields": [
+        "Activity/SuspiciousActivity/SuspiciousActivityClassification[other-than-selected]"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.7 SuspiciousActivityClassification",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-031",
+      "selected_outcome": "NOT_SELECTED",
+      "source_record_revision": "MRB-DECISION-074/revision-1",
+      "source_value_or_unknown_marker": "Selected Other suspicious activities: Unresolved business purpose of outgoing transfers",
+      "wire_action": "OMIT additional classifications; retain exact selected class/description"
+    },
+    {
+      "applicability_predicate": "IP involvement is supplied for this selected branch",
+      "applies_to_package": "BOTH",
+      "family": "IP address",
+      "fields": [
+        "Activity/ActivityIPAddress"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.8 ActivityIPAddress",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-032",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "bank-native-serialization/revision-1",
+      "source_value_or_unknown_marker": "No IP record in selected branch",
+      "wire_action": "OMIT whole family"
+    },
+    {
+      "applicability_predicate": "Cyber event is supplied for this selected branch",
+      "applies_to_package": "BOTH",
+      "family": "Cyber event",
+      "fields": [
+        "Activity/CyberEventIndicators"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.9 CyberEventIndicators",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-033",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "bank-native-serialization/revision-1",
+      "source_value_or_unknown_marker": "No cyber indicator in selected branch",
+      "wire_action": "OMIT whole family"
+    },
+    {
+      "applicability_predicate": "An applicable attribute is supplied",
+      "applies_to_package": "BOTH",
+      "family": "Market, commodity, instrument detail or CUSIP",
+      "fields": [
+        "Activity/AssetsAttribute"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.11 AssetsAttribute",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-034",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "bank-native-serialization/revision-1",
+      "source_value_or_unknown_marker": "No market, commodity or CUSIP in selected branch; no extra instrument description supplied",
+      "wire_action": "OMIT AssetsAttribute; retain selected deposit-account and funds-transfer Assets"
+    },
+    {
+      "applicability_predicate": "Another involved asset category is selected",
+      "applies_to_package": "BOTH",
+      "family": "Additional asset categories",
+      "fields": [
+        "Activity/Assets[other-than-selected]"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.10 Assets",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-035",
+      "selected_outcome": "NOT_SELECTED",
+      "source_record_revision": "bank-native-serialization/revision-1",
+      "source_value_or_unknown_marker": "Deposit-account and funds-transfer categories only",
+      "wire_action": "OMIT other Assets occurrences"
+    },
+    {
+      "applicability_predicate": "Selected report contains attachment",
+      "applies_to_package": "BOTH",
+      "family": "Attachments",
+      "fields": [
+        "Activity/ActivitySupportDocument"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.5 ActivitySupportDocument",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-036",
+      "selected_outcome": "NOT_APPLICABLE",
+      "source_record_revision": "bank-case-source/revision-2; bank-native-serialization/revision-1",
+      "source_value_or_unknown_marker": "Exact empty attachment inventory",
+      "wire_action": "OMIT attachments; batch attachment counts0; retain supporting manifest internally"
+    },
+    {
+      "applicability_predicate": "Selected case contains additional report activities or subjects",
+      "applies_to_package": "BOTH",
+      "family": "Additional activities and subjects",
+      "fields": [
+        "Activity[additional]",
+        "Activity/Party[33][additional]"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.1 EFilingBatchXML; 4.2 Activity",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-037",
+      "selected_outcome": "NOT_SELECTED",
+      "source_record_revision": "bank-case-source/revision-2; bank-native-serialization/revision-1",
+      "source_value_or_unknown_marker": "One report activity and one selected entity subject",
+      "wire_action": "OMIT additional occurrences; retain counts ActivityCount1 and PartyCount1"
+    },
+    {
+      "applicability_predicate": "Narrative requires multiple segments",
+      "applies_to_package": "BOTH",
+      "family": "Additional narrative segments",
+      "fields": [
+        "Activity/ActivityNarrativeInformation[additional]"
+      ],
+      "gap": null,
+      "guide_reference": {
+        "section": "4.12 ActivityNarrativeInformation",
+        "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf"
+      },
+      "id": "BANK-NATIVE-OMISSION-038",
+      "selected_outcome": "NOT_SELECTED",
+      "source_record_revision": "bank-native-serialization/revision-1",
+      "source_value_or_unknown_marker": "One narrative segment",
+      "wire_action": "OMIT extra narrative segments; retain sequence1"
+    }
+  ],
+  "sources": [
+    {
+      "path": "conformance/work-class/1.0.0-draft.3/review/fixtures/bank-native-serialization-revision1-source.md",
+      "raw_sha256": "sha256:128fb87c7bd5a6be1430d9af2638299685bc9b368182fc837c06ab0af6a59059"
+    },
+    {
+      "path": "runs/2026-10-08-overnight/bank/references/XMLUserGuide_FinCENSAR-v1.7.txt",
+      "raw_sha256": "sha256:a4174ff181520da74699fc31cb4b853301fdf0452c09e812701f594c190fecc6"
+    }
+  ],
+  "status": "SOURCE_SELECTED_OMISSIONS_WITH_EXPLICIT_GAP"
+}
