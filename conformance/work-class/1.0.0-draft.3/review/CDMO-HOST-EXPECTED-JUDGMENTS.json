@@ -1,0 +1,533 @@
+{
+  "status": "SOURCE_AND_CONTRACT_DERIVED_BEFORE_EXECUTION",
+  "source": "fixtures/pharmaceutical-batch-disposition-revision3-source.md",
+  "requirements": [
+    "LIFE-009B",
+    "HOST-004"
+  ],
+  "consumer_results_consulted": false,
+  "scope": "Fictional single-batch conditional provider and process-local reference hosts. These outcomes do not establish real writer coverage or durable recovery.",
+  "provider_cases": [
+    {
+      "id": "unchanged-vector",
+      "mutation": {
+        "kind": "NONE"
+      },
+      "expected": {
+        "committed": true,
+        "event_count": 1,
+        "write_roots_unchanged_on_refusal": false
+      }
+    },
+    {
+      "id": "changed-revision-alder-authority-scope",
+      "mutation": {
+        "kind": "REVISION",
+        "requirement_id": "alder-authority-scope"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "changed-revision-alder-decision-record",
+      "mutation": {
+        "kind": "REVISION",
+        "requirement_id": "alder-decision-record"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "changed-revision-alder-decision-withdrawal",
+      "mutation": {
+        "kind": "REVISION",
+        "requirement_id": "alder-decision-withdrawal"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "new-record-alder-decision-withdrawal",
+      "mutation": {
+        "kind": "STATUS",
+        "requirement_id": "alder-decision-withdrawal"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "changed-revision-batch-hold",
+      "mutation": {
+        "kind": "REVISION",
+        "requirement_id": "batch-hold"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "new-record-batch-hold",
+      "mutation": {
+        "kind": "STATUS",
+        "requirement_id": "batch-hold"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "changed-revision-cedar-authority-scope",
+      "mutation": {
+        "kind": "REVISION",
+        "requirement_id": "cedar-authority-scope"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "changed-revision-cedar-decision-record",
+      "mutation": {
+        "kind": "REVISION",
+        "requirement_id": "cedar-decision-record"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "changed-revision-cedar-decision-withdrawal",
+      "mutation": {
+        "kind": "REVISION",
+        "requirement_id": "cedar-decision-withdrawal"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "new-record-cedar-decision-withdrawal",
+      "mutation": {
+        "kind": "STATUS",
+        "requirement_id": "cedar-decision-withdrawal"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "changed-revision-current-quality-gate",
+      "mutation": {
+        "kind": "REVISION",
+        "requirement_id": "current-quality-gate"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "changed-revision-deviations-evidence",
+      "mutation": {
+        "kind": "REVISION",
+        "requirement_id": "deviations-evidence"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "changed-revision-dossier",
+      "mutation": {
+        "kind": "REVISION",
+        "requirement_id": "dossier"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "changed-revision-inventory-state",
+      "mutation": {
+        "kind": "REVISION",
+        "requirement_id": "inventory-state"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "changed-revision-laboratory-evidence",
+      "mutation": {
+        "kind": "REVISION",
+        "requirement_id": "laboratory-evidence"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "changed-revision-manufacturing-evidence",
+      "mutation": {
+        "kind": "REVISION",
+        "requirement_id": "manufacturing-evidence"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "changed-revision-prior-attempt-history",
+      "mutation": {
+        "kind": "REVISION",
+        "requirement_id": "prior-attempt-history"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "changed-revision-product-hold",
+      "mutation": {
+        "kind": "REVISION",
+        "requirement_id": "product-hold"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "new-record-product-hold",
+      "mutation": {
+        "kind": "STATUS",
+        "requirement_id": "product-hold"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "changed-revision-quality-agreement",
+      "mutation": {
+        "kind": "REVISION",
+        "requirement_id": "quality-agreement"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "changed-revision-site-hold",
+      "mutation": {
+        "kind": "REVISION",
+        "requirement_id": "site-hold"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "new-record-site-hold",
+      "mutation": {
+        "kind": "STATUS",
+        "requirement_id": "site-hold"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "changed-revision-specification-evidence",
+      "mutation": {
+        "kind": "REVISION",
+        "requirement_id": "specification-evidence"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "coordinator-changed",
+      "mutation": {
+        "kind": "COORDINATOR"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "source-omitted",
+      "mutation": {
+        "kind": "OMIT"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "source-reordered",
+      "mutation": {
+        "kind": "REORDER"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "source-coordinates-changed",
+      "mutation": {
+        "kind": "COORDINATES"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "authorization-exclusive-end",
+      "mutation": {
+        "kind": "EXPIRED"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "inventory-revision-changed",
+      "mutation": {
+        "kind": "INVENTORY"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "other-unresolved-attempt",
+      "mutation": {
+        "kind": "PRIOR_UNRESOLVED"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "fresh-keys-with-other-unresolved-attempt",
+      "mutation": {
+        "kind": "PRIOR_FRESH_KEYS"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "request-key-occupied",
+      "mutation": {
+        "kind": "REQUEST_KEY"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "disposition-key-occupied",
+      "mutation": {
+        "kind": "DISPOSITION_KEY"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "conditional-commit-failure",
+      "mutation": {
+        "kind": "FAIL_COMMIT"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "cedar-withdrawn",
+      "mutation": {
+        "kind": "CEDAR_WITHDRAWN"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "alder-withdrawn",
+      "mutation": {
+        "kind": "ALDER_WITHDRAWN"
+      },
+      "expected": {
+        "committed": false,
+        "event_count": 0,
+        "write_roots_unchanged_on_refusal": true
+      }
+    },
+    {
+      "id": "candidate-own-progress",
+      "mutation": {
+        "kind": "OWN_PROGRESS"
+      },
+      "expected": {
+        "committed": true,
+        "event_count": 1,
+        "write_roots_unchanged_on_refusal": false
+      }
+    },
+    {
+      "id": "executor-session-ended-after-dispatch",
+      "mutation": {
+        "kind": "SESSION_ENDED"
+      },
+      "expected": {
+        "committed": true,
+        "event_count": 1,
+        "write_roots_unchanged_on_refusal": false
+      }
+    },
+    {
+      "id": "hold-after-commit",
+      "mutation": {
+        "kind": "LATER_HOLD"
+      },
+      "expected": {
+        "committed": true,
+        "event_count": 1,
+        "write_roots_unchanged_on_refusal": false,
+        "retained_event": true,
+        "containment_intents": 1
+      }
+    }
+  ],
+  "host_cases": [
+    {
+      "id": "commit-failure-before-proposal",
+      "expected": {
+        "roots_unchanged": true,
+        "invocations": 0
+      }
+    },
+    {
+      "id": "one-invocation-and-no-repeat",
+      "expected": {
+        "invocations": 1,
+        "commits": 1,
+        "repeat_invoked": false
+      }
+    },
+    {
+      "id": "connector-throws-and-no-repeat",
+      "expected": {
+        "invocations": 1,
+        "commits": 0,
+        "repeat_invoked": false
+      }
+    },
+    {
+      "id": "wrong-connector-binding",
+      "expected": {
+        "invocations": 0,
+        "commits": 0,
+        "withheld": true
+      }
+    },
+    {
+      "id": "expired-authorization",
+      "expected": {
+        "invocations": 0,
+        "commits": 0,
+        "withheld": true
+      }
+    },
+    {
+      "id": "unavailable-clock",
+      "expected": {
+        "invocations": 0,
+        "commits": 0,
+        "withheld": true
+      }
+    },
+    {
+      "id": "parallel-invocation-requests",
+      "expected": {
+        "invocations": 1,
+        "commits": 1
+      }
+    }
+  ]
+}

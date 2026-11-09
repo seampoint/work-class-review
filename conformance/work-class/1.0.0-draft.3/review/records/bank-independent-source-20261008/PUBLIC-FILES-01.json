@@ -1,0 +1,36 @@
+{
+  "schema": "bank-independent-source-public-files/1",
+  "at": "2026-10-08T20:20:32.235509+00:00",
+  "files": {
+    "COMPARISON-01.json": "3eea45caa7989dcfac92b3df9ce59fd3b592b6e4ccfa85773010845dc1f0fa3a",
+    "DERIVATIONS-01.json": "b489d214e921b4f57807b560ade5f9743b6cd7108b158f651e46e78ea8b6d194",
+    "EXPECTED-HASHES-01.json": "d77335b8dcabec59714338fb4f1dca84a5db24ce36011605179c0fb565835096",
+    "INPUT-FREEZE-01.json": "824cf785b7b713cb2c4976f5281bae57ad2dc31bd03d11da49cf1be8ce02b9d1",
+    "INTEGRITY-01.json": "8360672d82475e167dbeba5a9ae8dffa72872a20a4a48c7cd2859d64536a7681",
+    "LINUX-DEPENDENCIES-01.json": "d403e168a2ca534a9e726db1a7413c0555355796fdf55f785859fc72bdc2f282",
+    "LINUX-REPRODUCTION-01.json": "0b103ce7d86377ef49bd9c5075f91531bb0420ebc6ac1016bb806b3bbd3b0d03",
+    "MECHANICAL-DEPENDENCIES-01.json": "40bdf03138617b8c9ef3bc6d38dfeeb79b050472211bec69725b5e66940110c1",
+    "PACKAGING-01.json": "52e72c7fac830fbceb9f7f2ccf3a3fd82660f82a41c8ed9aea7d886ad26c825c",
+    "PROVENANCE-01.md": "44bf728852760fe2f962d49e291b63a29f387e7e768ef5ad480d70258c146164",
+    "README.md": "b5a11708c0be89cc0753a8713a0460c5617ca14a31c15f0788bc9d80e7fe6a88",
+    "REPRODUCTION-01.json": "066ecf31b6c227fdb693efa0af2d6115a3bf10109f94c2c3dca85d27b7d986d6",
+    "REPRODUCTION-DEPENDENCIES-01.json": "4c45157b068bf33e318d616df8b9aeb762fcec25c21f367f053d57b7f4078f69",
+    "SEAL-01.json": "f5947b2faeeb5d532d7495aa3673a52c7a00d04ff8de7e4e65874ffdd5c9920e",
+    "derive_and_seal.py": "4414aa03335e8bec94ce1337898d32cd86730406da730c66ec4379cbbd8fe493",
+    "independent-lifecycle-notes.md": "92ea297695c8bd6b73fba1ca64fc5e6bd369c2e5c6e5665e185b863c7681b5e6",
+    "independent_authority.py": "7c68486d514ccb4a734a88687960fc76b9f6c60fd6059e25da24d0079f7ff80e",
+    "independent_common.py": "a82a91f8637fabd8b681b2bfb621ee2a6096a0f509b19d30745858ed6e435741",
+    "independent_flow.py": "a1f17558d42b0994cb3fb405651e1aa1c083d1c7c1617420fe2fcd69fa10d6bb",
+    "independent_holdings.py": "2fe35d4bde8617ff80555c62b090eb547a4e577a051ef1fe8da7659ea87183ea",
+    "independent_lifecycle.py": "4af6d9eb2f32d8903f6703f2879b0560a5db06a0dac3753db317326fb6478e50",
+    "reproduce.py": "0e96dbcd42ea30d74bc4089c46d67b0a9f65b290132d7f2e424c3d318dd7ab97"
+  },
+  "self_excluded": "This inventory excludes only itself. Sealed constructor and metadata identities remain in the original seal and PACKAGING-01.json.",
+  "private_path_email_credential_pattern_hits": [],
+  "bytecode_cache_files": [],
+  "post_linux_adaptations": [
+    "Added compact Linux source/dependency receipts after its unchanged21file outerguard completed.",
+    "Appended separately completed postseal consumer receipt metadata to the unsealed compact comparison record.",
+    "Updated README result narrative; no constructor, wrapper, original seal or sealed metadata changed."
+  ]
+}

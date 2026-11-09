@@ -1,0 +1,1 @@
+{"candidate_pin":"sha256:fd52d69dd3c3546bff2cec9d46fb8d6b942fd57b77b0a3ab8377a592e80d00b6","case_ids":["D2-065","D2-066","D2-076","D2-077","D2-094","D2-120"],"count":"6","implementation_output_used":false,"remaining_exact_vector_gaps":["D2-058","D2-071"],"source":"Specification.md WCS2-001/WCS2-002 and lifecycle digest preimages only"}

@@ -1,0 +1,55 @@
+{
+  "schema": "bank-independent-source-packaging/1",
+  "seal_sha256": "f5947b2faeeb5d532d7495aa3673a52c7a00d04ff8de7e4e65874ffdd5c9920e",
+  "candidate_pin": "sha256:120242f6e3a9cc67348932386460144ace5924d9b02852b878093b74a7af82a3",
+  "exact_copies": {
+    "DERIVATIONS-01.json": "b489d214e921b4f57807b560ade5f9743b6cd7108b158f651e46e78ea8b6d194",
+    "EXPECTED-HASHES-01.json": "d77335b8dcabec59714338fb4f1dca84a5db24ce36011605179c0fb565835096",
+    "INPUT-FREEZE-01.json": "824cf785b7b713cb2c4976f5281bae57ad2dc31bd03d11da49cf1be8ce02b9d1",
+    "MECHANICAL-DEPENDENCIES-01.json": "40bdf03138617b8c9ef3bc6d38dfeeb79b050472211bec69725b5e66940110c1",
+    "PROVENANCE-01.md": "44bf728852760fe2f962d49e291b63a29f387e7e768ef5ad480d70258c146164",
+    "SEAL-01.json": "f5947b2faeeb5d532d7495aa3673a52c7a00d04ff8de7e4e65874ffdd5c9920e",
+    "derive_and_seal.py": "4414aa03335e8bec94ce1337898d32cd86730406da730c66ec4379cbbd8fe493",
+    "independent-lifecycle-notes.md": "92ea297695c8bd6b73fba1ca64fc5e6bd369c2e5c6e5665e185b863c7681b5e6",
+    "independent_authority.py": "7c68486d514ccb4a734a88687960fc76b9f6c60fd6059e25da24d0079f7ff80e",
+    "independent_common.py": "a82a91f8637fabd8b681b2bfb621ee2a6096a0f509b19d30745858ed6e435741",
+    "independent_flow.py": "a1f17558d42b0994cb3fb405651e1aa1c083d1c7c1617420fe2fcd69fa10d6bb",
+    "independent_holdings.py": "2fe35d4bde8617ff80555c62b090eb547a4e577a051ef1fe8da7659ea87183ea",
+    "independent_lifecycle.py": "4af6d9eb2f32d8903f6703f2879b0560a5db06a0dac3753db317326fb6478e50"
+  },
+  "published_sources": {
+    "bank-controlled-gateway-integration-revision1-source.md": {
+      "path": "conformance/work-class/1.0.0-draft.3/review/fixtures/bank-controlled-gateway-integration-revision1-source.md",
+      "sha256": "c7f4379b1d10c254695595afd72000d5f5139f67e361f8a45dba0aaa8be7bade"
+    },
+    "bank-information-flow-revision2-source.md": {
+      "path": "conformance/work-class/1.0.0-draft.3/review/fixtures/bank-information-flow-revision2-source.md",
+      "sha256": "3fd3b91cbb218d58f1404b34a3d295f060534056bf73bfdaba2b7a4c33545cb3"
+    },
+    "bank-native-conditional-correspondence-revision1.json": {
+      "path": "conformance/work-class/1.0.0-draft.3/review/fixtures/bank-native-conditional-correspondence-revision1.json",
+      "sha256": "a208346deb54b68dd849a54898357bfc7bc139a4d56b21ae1d63c63db0b18053"
+    },
+    "bank-native-serialization-revision1-source.md": {
+      "path": "conformance/work-class/1.0.0-draft.3/review/fixtures/bank-native-serialization-revision1-source.md",
+      "sha256": "128fb87c7bd5a6be1430d9af2638299685bc9b368182fc837c06ab0af6a59059"
+    },
+    "bank-sar-filing-and-customer-communication-revision2-source.md": {
+      "path": "conformance/work-class/1.0.0-draft.3/review/fixtures/bank-sar-filing-and-customer-communication-revision2-source.md",
+      "sha256": "ffb1b8acb43c7844578599ec41850e30d9a6053d6f1652bee2f001eb13672568"
+    }
+  },
+  "case_directory": "conformance/work-class/1.0.0-draft.3/cases/bank-source",
+  "contract_directory": "library/work-class-specification/1.0.0-draft.3",
+  "vendor_directory": "conformance/work-class/1.0.0-draft.3/python/vendor",
+  "adaptations": [
+    "Metadata originally under expected/ is copied to this record root with identical bytes and hashes.",
+    "No complete input or expected-result bodies are copied; the wrapper extracts input-only bodies after original complete-case hash checks.",
+    "The five already-public fictional sources are copied from review/fixtures to each fresh reproduction work directory after hash checks.",
+    "All sealed constructors are unchanged. Explicit input/contract/vendor/output roots replace their historical default location assumptions.",
+    "The wrapper omits --seal, preserving original seal chronology and author identities.",
+    "Compact integrity, comparison and reproduction receipts are new postseal packaging records, not replacements for original sealed metadata."
+  ],
+  "metadata_sanitization": "None. Exact copied sealed artifacts contain no inspected private paths, email or credential patterns. /root/... strings identify source-author agents, not SSD filesystem locations.",
+  "consumer_comparison": "Pending separate fresh consumer runs; source equivalence is not consumer execution."
+}

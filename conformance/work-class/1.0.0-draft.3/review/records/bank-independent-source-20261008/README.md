@@ -1,0 +1,33 @@
+# Independent bank source expectations
+
+This package retains the exact six constructors, seal, input freeze, complete expected-output hash inventory, derivations, provenance notes and mechanical dependency inventory of a fresh independent successor covering all 54 bank cases. It includes no duplicate complete input or expected-result bodies. The original author-derived case provenance remains unchanged.
+
+The successor seal SHA-256 is `f5947b2faeeb5d532d7495aa3673a52c7a00d04ff8de7e4e65874ffdd5c9920e`, created October 8, 2026 at 19:59:42 UTC. Its candidate pin is `sha256:120242f6e3a9cc67348932386460144ace5924d9b02852b878093b74a7af82a3`. Fresh source authors received only the frozen input-only records, selected normative files and five fictional sources. They read neither consumer, existing expected results, runtime actuals nor result-derived constructors before sealing. Supplied prior states and retained proofs were legitimate inputs whose histories were reconstructed from the source formulas. Each new output is a complete result, including next states, receipts and digests.
+
+`INTEGRITY-01.json` records verification of six constructors, 35 normative files, five frozen and five published source copies, five sealed metadata files, two provenance notes, all 54 input and expected hashes, all 54 original complete-case hashes and exact input extractions, and 39 recorded imported mechanical dependencies. `COMPARISON-01.json` records two distinct postseal checks: all 54 independently derived complete expectations equal the original author-derived expectations; separately, fresh Python and TypeScript runs each match all 54 complete results against both expectation sets, and all 54 cross-language results match with unchanged guards. Compact runtime receipt hashes and chronology accompany the original source-equivalence receipt. Full raw consumer runs remain internally retained.
+
+`REPRODUCTION-01.json` records the complete portable source-only run: all 54 output hashes, the expected inventory and derivations match their sealed bytes; exit 0 in 120.755574 seconds on CPython 3.14.6/macOS. The run guards 889 source files and 60 extracted input/source files, with no bytecode-cache reads. All 76 actual immutable source/resource reads and all 39 imported dependency hashes match the preceding guard. `REPRODUCTION-DEPENDENCIES-01.json` separates the original imported-module inventory from the 20 additional schema-resource reads. The local run used the historical macOS binary; a Linux run needs its own actual dependency receipt.
+
+`LINUX-REPRODUCTION-01.json` records a separate native ARM64 Linux source-only pass: all 54 hashes, inventory and derivations match; exit 0 in 130.273094 seconds on official CPython 3.14.6, with network disabled, the container and repository read-only, and only evidence/temp storage writable. Its 892 source and 60 extracted input/source guards and outer 21-file public-package guard remained unchanged, with no bytecode-cache reads. `LINUX-DEPENDENCIES-01.json` preserves the historical inventory and records the actual included Linux native extension. No source or dependency overlay was applied. This is a source reproduction, separate from full final-export corpus verification.
+
+## Reproduce
+
+From the repository or prepared review-package root, run:
+
+```sh
+python3 -B conformance/work-class/1.0.0-draft.3/review/records/bank-independent-source-20261008/reproduce.py --repository-root . --work-root runs/bank-independent-source-reproduction
+```
+
+Use a fresh work directory. The recorded local arrangement uses CPython 3.14.6 and the package's vendored Python dependencies. The wrapper verifies each original complete-case hash before extracting only `id`, `operation`, `input` and `requirements`. Input serialization uses `ensure_ascii=False`, two-space indentation and a terminal newline, matching every original input-freeze hash. It copies the five already-public fictional sources from `review/fixtures`, verifies all normative files against the seal, and invokes the unchanged constructor with all four roots explicit and without `--seal`.
+
+The source-only child may read the selected constructors, extracted inputs/sources, normative files, generated output and vendored mechanical dependencies. It refuses reads of other project files, including consumers and original complete cases. Isolated Python startup disables site packages; a fresh work-local cache prefix and disabled bytecode writes prevent existing bytecode from replacing the guarded source. The wrapper guards its public source inputs, the complete dependency tree and extracted input/source files, and records actual imported dependency hashes and supplementary resource reads. Generated outputs, logs and reports remain in the fresh work directory with a retention note. The wrapper compares all 54 regenerated output hashes and the regenerated expected inventory and derivations with the sealed records.
+
+The historical mechanical dependency inventory includes a macOS CPython 3.14 `rpds` binary. A Linux reproduction needs a compatible platform dependency arrangement. Supply its directory with `--vendor-root` and explicitly permit recorded native-binary differences with `--allow-platform-overlay`. Python source dependencies must retain their recorded hashes. The new actual binary hash is reported separately and is never described as matching the historical macOS binary. Other dependency or constructor changes require new evidence.
+
+## Packaging and limits
+
+`PACKAGING-01.json` records exact copy hashes, public source locations and every packaging adaptation. Sealed metadata originally under `expected/` resides at this record root with identical bytes. Constructors are unmodified. `/root/...` author strings in the sealed records identify source-author agents, not private SSD paths. No privacy sanitization was required for the copied sealed files. Bytecode caches are excluded because they can retain environment-specific filenames.
+
+The package makes this bank family's source construction reproducible. It does not claim complete source regeneration for the rest of the exported corpus. Full raw comparison and historical consumer runs remain retained internally; compact receipts do not reproduce those historical processes. Source fidelity, real bank or regulator acceptance, provider authenticity, all-writer coordination and production deployment remain separate. This package changes no publication, adoption or license decision.
+
+Not checked: actual industry source acceptance, real provider custody, production deployment and legal sufficiency.

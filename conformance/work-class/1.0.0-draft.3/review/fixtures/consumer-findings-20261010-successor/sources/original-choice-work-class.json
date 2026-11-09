@@ -1,0 +1,443 @@
+{
+  "choices": [
+    {
+      "label_type_ref": "t.route",
+      "label_values": [
+        {
+          "type_ref": "t.route",
+          "value": "REVISE"
+        },
+        {
+          "type_ref": "t.route",
+          "value": "ACCEPT"
+        }
+      ],
+      "step_id": "assess-case"
+    }
+  ],
+  "deadlines": [],
+  "fanouts": [],
+  "id": "synthetic-records-work",
+  "limits": {
+    "maximum_activations": "5",
+    "maximum_active_obligations": "0",
+    "maximum_actuations": "5",
+    "maximum_fanout_objects": "0",
+    "maximum_proposals": "5"
+  },
+  "loops": [
+    {
+      "back_edge_from_step_id": "revise-case",
+      "entry_step_id": "assess-case",
+      "id": "review-loop",
+      "maximum_passes": "2",
+      "member_step_ids": [
+        "assess-case",
+        "revise-case"
+      ]
+    }
+  ],
+  "objects": [],
+  "occurrence_limits": [
+    {
+      "maximum": "2",
+      "step_id": "assess-case"
+    },
+    {
+      "maximum": "1",
+      "step_id": "publish-case"
+    },
+    {
+      "maximum": "2",
+      "step_id": "revise-case"
+    }
+  ],
+  "parallel_blocks": [],
+  "participants": [
+    {
+      "id": "clerk-1",
+      "kind": "AGENT",
+      "role": "clerk"
+    }
+  ],
+  "profile": "CHOICE_LOOPS",
+  "relationships": [
+    {
+      "from": "assess-case",
+      "kind": "LABEL",
+      "label": {
+        "type_ref": "t.route",
+        "value": "REVISE"
+      },
+      "to": "revise-case"
+    },
+    {
+      "from": "assess-case",
+      "kind": "LABEL",
+      "label": {
+        "type_ref": "t.route",
+        "value": "ACCEPT"
+      },
+      "to": "publish-case"
+    },
+    {
+      "from": "revise-case",
+      "kind": "SEQUENCE",
+      "to": "assess-case"
+    },
+    {
+      "from": "publish-case",
+      "kind": "SEQUENCE",
+      "to": "zz-complete"
+    }
+  ],
+  "revision": "r1",
+  "root": "assess-case",
+  "schema": "seampoint.work-class/1.0.0-draft.3/work-class-definition",
+  "shared_budgets": [],
+  "source": {
+    "id": "synthetic-assess-case",
+    "obligations": [
+      "completion-policy",
+      "ordered-work",
+      "permit-duration",
+      "structural-limits"
+    ],
+    "revision": "r1"
+  },
+  "specification_pin": "sha256:552bc40d5b810942c07fdfe2a1cbcadcbd6319926bb40eeda97e6c260819d379",
+  "steps": [
+    {
+      "authority_requirements": [
+        "authority-assess-case"
+      ],
+      "completion": {
+        "additional_fields": [],
+        "effect_provider": "synthetic-records-provider",
+        "effect_record_type": "record-operation",
+        "effect_source": "synthetic-records-ledger",
+        "event_time_identity": {
+          "field": "event_time",
+          "type_ref": "t.instant"
+        },
+        "evidence_bindings": [
+          {
+            "evidence_field": "document_id",
+            "request_field": "document_id"
+          },
+          {
+            "evidence_field": "workspace_id",
+            "request_field": "workspace_id"
+          }
+        ],
+        "failure_values": [
+          {
+            "type_ref": "t.status",
+            "value": "FAILED"
+          }
+        ],
+        "lookup": {
+          "key_projection": [
+            {
+              "field": "document_id",
+              "type_ref": "t.identity"
+            },
+            {
+              "field": "workspace_id",
+              "type_ref": "t.identity"
+            }
+          ],
+          "namespace": "assess-case",
+          "provider": "synthetic-records-provider",
+          "record_type": "original-record-operation",
+          "source": "synthetic-records-ledger"
+        },
+        "no_effect_provider": "synthetic-records-provider",
+        "no_effect_record_type": "record-operation-no-effect",
+        "no_effect_source": "synthetic-records-ledger",
+        "provider_record_identity": {
+          "field": "record_id",
+          "type_ref": "t.identity"
+        },
+        "route_label_field": "decision",
+        "route_label_type_ref": "t.route",
+        "status_field": "status",
+        "status_type_ref": "t.status",
+        "success_values": [
+          {
+            "type_ref": "t.status",
+            "value": "SUCCEEDED"
+          }
+        ],
+        "terminal_policy": "STOP_RETAIN"
+      },
+      "exclusive_keys": [],
+      "executor_role": "clerk",
+      "failure_behavior": "STOP",
+      "fields": [
+        {
+          "name": "document_id",
+          "type_ref": "t.identity"
+        },
+        {
+          "name": "workspace_id",
+          "type_ref": "t.identity"
+        }
+      ],
+      "id": "assess-case",
+      "interface": "records-system",
+      "kind": "OPERATION",
+      "operation": "assess-case",
+      "permit_seconds": "45",
+      "prior_actor_separations": [],
+      "prior_effect_bindings": [],
+      "quantity_mode": "NONE",
+      "required_credentials": [],
+      "scope_fields": {
+        "resources": [
+          "document_id"
+        ],
+        "subjects": [
+          "workspace_id"
+        ]
+      },
+      "shared_budgets": []
+    },
+    {
+      "authority_requirements": [
+        "authority-publish-case"
+      ],
+      "completion": {
+        "additional_fields": [],
+        "effect_provider": "synthetic-records-provider",
+        "effect_record_type": "record-operation",
+        "effect_source": "synthetic-records-ledger",
+        "event_time_identity": {
+          "field": "event_time",
+          "type_ref": "t.instant"
+        },
+        "evidence_bindings": [
+          {
+            "evidence_field": "document_id",
+            "request_field": "document_id"
+          },
+          {
+            "evidence_field": "workspace_id",
+            "request_field": "workspace_id"
+          }
+        ],
+        "failure_values": [
+          {
+            "type_ref": "t.status",
+            "value": "FAILED"
+          }
+        ],
+        "lookup": {
+          "key_projection": [
+            {
+              "field": "document_id",
+              "type_ref": "t.identity"
+            },
+            {
+              "field": "workspace_id",
+              "type_ref": "t.identity"
+            }
+          ],
+          "namespace": "publish-case",
+          "provider": "synthetic-records-provider",
+          "record_type": "original-record-operation",
+          "source": "synthetic-records-ledger"
+        },
+        "no_effect_provider": "synthetic-records-provider",
+        "no_effect_record_type": "record-operation-no-effect",
+        "no_effect_source": "synthetic-records-ledger",
+        "provider_record_identity": {
+          "field": "record_id",
+          "type_ref": "t.identity"
+        },
+        "route_label_field": null,
+        "route_label_type_ref": null,
+        "status_field": "status",
+        "status_type_ref": "t.status",
+        "success_values": [
+          {
+            "type_ref": "t.status",
+            "value": "SUCCEEDED"
+          }
+        ],
+        "terminal_policy": "STOP_RETAIN"
+      },
+      "exclusive_keys": [],
+      "executor_role": "clerk",
+      "failure_behavior": "STOP",
+      "fields": [
+        {
+          "name": "document_id",
+          "type_ref": "t.identity"
+        },
+        {
+          "name": "workspace_id",
+          "type_ref": "t.identity"
+        }
+      ],
+      "id": "publish-case",
+      "interface": "records-system",
+      "kind": "OPERATION",
+      "operation": "publish-case",
+      "permit_seconds": "45",
+      "prior_actor_separations": [],
+      "prior_effect_bindings": [],
+      "quantity_mode": "NONE",
+      "required_credentials": [],
+      "scope_fields": {
+        "resources": [
+          "document_id"
+        ],
+        "subjects": [
+          "workspace_id"
+        ]
+      },
+      "shared_budgets": []
+    },
+    {
+      "authority_requirements": [
+        "authority-revise-case"
+      ],
+      "completion": {
+        "additional_fields": [],
+        "effect_provider": "synthetic-records-provider",
+        "effect_record_type": "record-operation",
+        "effect_source": "synthetic-records-ledger",
+        "event_time_identity": {
+          "field": "event_time",
+          "type_ref": "t.instant"
+        },
+        "evidence_bindings": [
+          {
+            "evidence_field": "document_id",
+            "request_field": "document_id"
+          },
+          {
+            "evidence_field": "workspace_id",
+            "request_field": "workspace_id"
+          }
+        ],
+        "failure_values": [
+          {
+            "type_ref": "t.status",
+            "value": "FAILED"
+          }
+        ],
+        "lookup": {
+          "key_projection": [
+            {
+              "field": "document_id",
+              "type_ref": "t.identity"
+            },
+            {
+              "field": "workspace_id",
+              "type_ref": "t.identity"
+            }
+          ],
+          "namespace": "revise-case",
+          "provider": "synthetic-records-provider",
+          "record_type": "original-record-operation",
+          "source": "synthetic-records-ledger"
+        },
+        "no_effect_provider": "synthetic-records-provider",
+        "no_effect_record_type": "record-operation-no-effect",
+        "no_effect_source": "synthetic-records-ledger",
+        "provider_record_identity": {
+          "field": "record_id",
+          "type_ref": "t.identity"
+        },
+        "route_label_field": null,
+        "route_label_type_ref": null,
+        "status_field": "status",
+        "status_type_ref": "t.status",
+        "success_values": [
+          {
+            "type_ref": "t.status",
+            "value": "SUCCEEDED"
+          }
+        ],
+        "terminal_policy": "STOP_RETAIN"
+      },
+      "exclusive_keys": [],
+      "executor_role": "clerk",
+      "failure_behavior": "STOP",
+      "fields": [
+        {
+          "name": "document_id",
+          "type_ref": "t.identity"
+        },
+        {
+          "name": "workspace_id",
+          "type_ref": "t.identity"
+        }
+      ],
+      "id": "revise-case",
+      "interface": "records-system",
+      "kind": "OPERATION",
+      "operation": "revise-case",
+      "permit_seconds": "45",
+      "prior_actor_separations": [],
+      "prior_effect_bindings": [],
+      "quantity_mode": "NONE",
+      "required_credentials": [],
+      "scope_fields": {
+        "resources": [
+          "document_id"
+        ],
+        "subjects": [
+          "workspace_id"
+        ]
+      },
+      "shared_budgets": []
+    },
+    {
+      "authority_requirements": [],
+      "completion": null,
+      "exclusive_keys": [],
+      "executor_role": null,
+      "failure_behavior": null,
+      "fields": [],
+      "id": "zz-complete",
+      "interface": null,
+      "kind": "TERMINAL",
+      "operation": null,
+      "permit_seconds": null,
+      "prior_actor_separations": [],
+      "prior_effect_bindings": [],
+      "required_credentials": [],
+      "scope_fields": null,
+      "shared_budgets": []
+    }
+  ],
+  "types": [
+    {
+      "id": "t.identity",
+      "kind": "IDENTITY",
+      "nonnegative": false,
+      "unit": null
+    },
+    {
+      "id": "t.instant",
+      "kind": "INSTANT",
+      "nonnegative": false,
+      "unit": null
+    },
+    {
+      "id": "t.route",
+      "kind": "STRING",
+      "nonnegative": false,
+      "unit": null
+    },
+    {
+      "id": "t.status",
+      "kind": "STRING",
+      "nonnegative": false,
+      "unit": null
+    }
+  ]
+}

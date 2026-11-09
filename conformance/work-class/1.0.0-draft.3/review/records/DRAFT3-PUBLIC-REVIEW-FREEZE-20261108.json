@@ -1,0 +1,87 @@
+{
+  "adoption": "DRAFT_NOT_ADOPTED",
+  "aggregate_differential": {
+    "accepted_unresolved": 6,
+    "different": 0,
+    "reconstruction_of_historical_matrix": true,
+    "report_sha256": "d3093384f84e1447c091484f3f437ccc8ac7849b16a33b300d3a35cd088f14ab",
+    "sealed": 260,
+    "slices": {
+      "corrected-limits": 64,
+      "corrected-pending": 360,
+      "limits": 320,
+      "main": 42000,
+      "pending": 360,
+      "sealed": 260
+    },
+    "total": 43364
+  },
+  "candidate_pin": "sha256:fd52d69dd3c3546bff2cec9d46fb8d6b942fd57b77b0a3ab8377a592e80d00b6",
+  "case_index_sha256": "364cdbc395a98404d1108e43a7cecf35c7047f24edaa54017dfb7fc8f1f569e6",
+  "claim_ceiling": "APPARATUS_ONLY",
+  "full_verification": {
+    "complete_result_differences": 0,
+    "corpora": {
+      "python": {
+        "passed": 2484,
+        "sha256": "9110db20ceecf35d37e29c46eeac7fe9ed3c129f80704e8cd57d4e366b825ad6"
+      },
+      "typescript": {
+        "passed": 2484,
+        "sha256": "bb0c3c4fdda977bdf62ba6b14b0b859d19bdf49630513ea77d0b7eb7e08a5665"
+      }
+    },
+    "python_unit_tests": 259,
+    "report_sha256": "e7c24f9beeb46db680fca75094652ae976b810d7455e2d2d37e6b9e09a4901f1",
+    "specimen_checks": 205,
+    "stages": 17,
+    "typescript_unit_tests": 290
+  },
+  "guarded_files": 4588,
+  "independent_review_hashes": {
+    "DRAFT3-FINAL-SPECIFICATION-INDEPENDENT-REVIEW-20261109.md": "44f3177b18decde1ff23877bb7100aac5ae429866639ff1aae40142a539de488",
+    "DRAFT3-WORK-RECOVERY-CORRECTION-REVIEW-20261109.md": "a7d78ff086a34aae6931cfe0f8eb218e5e035c529358b47b23a608684bb80383",
+    "DRAFT3-WORK-RECOVERY-SUPERSESSION-REVIEW-20261109.md": "f558817f4a90fb9e2c4ded975ae66686df31f5c4a9c581307cbec4f75fe5e797"
+  },
+  "isolated_export_reproduction": {
+    "all_scope_report_sha256": "c19648ba870a4abfd1d14c3daedf2ce06f8084e90b18de0da0a0359e3030a38b",
+    "input_scope": "specification_and_apparatus",
+    "mode": "Exact executable and test inputs of release. Final administrative documents receive a separate inventory and privacy check.",
+    "preview_archive_sha256": "b9e29155e78440934fea70614c49cc2f6b5b651c95864588d99ccd61bcc979fa",
+    "preview_manifest_sha256": "9a70fd5ad41d747d626c9b1160e88a18679b5121baf84ef1cba58c42a95235af",
+    "preview_source_commit": "9a9aade3416294466b2be5d9728111ab668a126f"
+  },
+  "prepared_utc": "2026-11-09T18:24:44.758100+00:00",
+  "private_evidence_retention": {
+    "manifest_sha256": "0eacd7ea39202b1870c17ab669645068eb455c7d10369d03deaadbc0e7ca461e",
+    "package": "20261109-specification-recovery-successor-01",
+    "receipt_sha256": "4b6f6b1a22c448c40e4d8edbd47debed9a017b251725792f71c3431bdb352976"
+  },
+  "qualification": "NOT_QUALIFIED",
+  "remaining_evidence_limits": [
+    "No dedicated RELEASED-target LEAVE replay in the selected cases",
+    "Cross-language transfer covers selected reservation states",
+    "Reconstructed historical matrix rather than byte-for-byte historic input replay",
+    "Synthetic policy and local provider/host premises"
+  ],
+  "reservation_state_transfer": {
+    "by_receiving_event_and_replay": {
+      "DISPOSE:True": 154,
+      "RENEW:False": 14,
+      "RESERVE:False": 48,
+      "RESERVE:True": 12
+    },
+    "directions": 228,
+    "native_processes": 456,
+    "pairs": 114
+  },
+  "source_guard_sha256": "f25879a96ccd69d82ddb4e4f93c96163da814d370ca8106a02d7806c28c4e5f5",
+  "status": "DEVELOPMENT_VERIFIED_NOT_QUALIFYING",
+  "suite_sha256": "a768361794a33d70be0808dbe1f119d0828e612f011d5532e19c7917b8d76eee",
+  "tested_implementation_commit": "5ca062f047e1358997355b765316ae9e1b6b3cbf",
+  "work_recovery_supplement": {
+    "cases": 12,
+    "complete_native_comparisons": 24,
+    "expected_bytes_sha256": "7059f391633fb65aae13c818bca36476b56a21097225f6d05fcacff5a69a9dcc"
+  }
+}

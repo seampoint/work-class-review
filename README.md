@@ -1,37 +1,19 @@
-# Work-Class Governance Specification: review candidate
+# Work-class Specification Draft 3
 
-Open technical-review snapshot of `seampoint.work-class/1.0.0-draft.2`, frozen at pin `sha256:5442ee3b55675d849e388981487b806c0be29f686df6df8520b488508f86ceec`. Claim ceiling `APPARATUS_ONLY`: see [CLAIM-CARD.md](CLAIM-CARD.md).
+Specification-only public review snapshot for `seampoint.work-class/1.0.0-draft.3`, pin `sha256:fd52d69dd3c3546bff2cec9d46fb8d6b942fd57b77b0a3ab8377a592e80d00b6`. See [LICENSE.md](LICENSE.md) for rights and path boundaries. The specification remains a draft, and the conformance evidence covers development verification.
 
-## Start here
+Start with the [reviewer packet](conformance/work-class/1.0.0-draft.3/review/records/REVIEWER-PACKAGE-20261108.md) and [freeze](conformance/work-class/1.0.0-draft.3/review/records/DRAFT3-PUBLIC-REVIEW-FREEZE-20261108.md). This package contains 138 requirements, 34 manifested contract files, 2484 indexed cases and 12 specimen artifact-index families. The preparation record binds the tested implementation separately from this package's source commit, avoiding a self-referential commit claim.
 
-The [FAQ](FAQ.md) covers scope, evidence, dispute handling, and human review.
+## Reproduce
 
-1. [Preprint](conformance/work-class/1.0.0-draft.2/review/paper/preprint.pdf), with [Markdown](conformance/work-class/1.0.0-draft.2/review/paper/preprint.md) and [TeX](conformance/work-class/1.0.0-draft.2/review/paper/preprint.tex) sources: the argument, architecture, evidence and limits.
-2. [Reviewer packet](conformance/work-class/1.0.0-draft.2/review/REVIEWER-PACKET-20260914.md): what the candidate is, what changed in draft 2, the evidence and the known gaps.
-3. [Specification](library/work-class-specification/1.0.0-draft.2/README.md).
-4. The four application specimens under [conformance/work-class/1.0.0-draft.2/specimens/](conformance/work-class/1.0.0-draft.2/specimens/), each with its own README and claim boundary.
-5. The [freeze record](conformance/work-class/1.0.0-draft.2/review/FREEZE.json) and the [independent review round](conformance/work-class/1.0.0-draft.2/review/records/FREEZE-REVIEW-20260913.md).
+Use Node.js 24.10.0 and CPython 3.14.8. Install locked dependencies with `npm ci --ignore-scripts` and `npm ci --ignore-scripts --prefix conformance/work-class/1.0.0-draft.3/typescript`. Python dependencies are vendored; their native binaries have platform limits recorded in their notices. Current evidence applies to its recorded platform only.
 
-## Rights and review
+Run `python3 -B scripts/verify-review-package.py --out runs/reviewer-all --scope all` from the package root. This validates the complete emitted inventory and explicit evidence overlay, checks schemas and corpus, runs both consumers against every frozen expected result, compares complete results, runs units/type checking and specimen checks. It does not regenerate every historical source judgment, reproduce private reviews, qualify a host or test every platform. `--scope inventory`, `support`, `corpus` or `specimens` selects a smaller scope; smaller scopes do not imply all-scope success. Use a fresh output directory each time. Optional `--case-id` selects corpus cases and is not a full-corpus pass.
 
-The normative specification uses the [Community Specification License 1.0](LICENSE-SPECIFICATION.md). The conformance apparatus and reference code use [Apache 2.0](LICENSE-CODE). The paper uses [Creative Commons Attribution 4.0](LICENSE-PAPER). [LICENSE.md](LICENSE.md) defines the path boundaries; [Scope.md](Scope.md) and [Notices.md](Notices.md) record the Necessary Claims scope and current patent disclosure.
+Each indexed fresh process has a 600-second and 32 MiB per-channel bound. Outer corpus limits are 21,600 seconds per consumer. Limits are reproduction allowances, not performance claims. Reports preserve commands, exits and before/after emitted inventories. Set `WORK_CLASS_CHILD_CAPTURE_DIR` to a fresh directory to retain native child streams. The bank native XML check has separately declared dependencies in its native-format folder. Host integration and live-provider duties require separate evidence.
 
-This phase requests technical findings, not contributed text or code. See [CONTRIBUTING.md](CONTRIBUTING.md).
+The canonical suite retains its exact original bytes. The [reviewer evidence overlay](conformance/work-class/1.0.0-draft.3/suite/reviewer-evidence-overlay-20261108.json) accounts for included and explicitly omitted internal evidence with original hashes. [OMITTED-REFERENCES.md](OMITTED-REFERENCES.md) identifies excluded provenance targets. Complete frozen cases and expectations are included; private planning, correspondence, Git history and raw historical run archives are not. A hash identifies retained evidence; it does not promise a public download or reproduce a review.
 
-## Verify
+The aggregate specimen command covers eleven families and the verifier also runs the information-flow supplement. The bank source constructor has separate [instructions](conformance/work-class/1.0.0-draft.3/review/records/bank-independent-source-20261008/README.md); its reproduction does not regenerate other families.
 
-Requires Node.js 24.10.0 and CPython 3.14.6. The Python consumer includes native `rpds` extensions for macOS arm64 and Linux x86_64. Those are the recorded versions for a passing run. A failure on another Node or Python version is not a specification defect; match the recorded versions before reporting a verify failure.
-
-```sh
-npm ci --ignore-scripts
-npm ci --ignore-scripts --prefix conformance/work-class/1.0.0-draft.2/typescript
-bash scripts/verify.sh first-run
-```
-
-The pass runs the corpus check, both reference consumers over all cases with every result compared across languages, the four specimen verifiers, the TypeScript consumer's typecheck and unit tests, and the pin-currency control. Reports go to the ignored `runs/` directory by default; set `WORK_CLASS_RUNS` to another directory.
-
-## Reporting findings
-
-Cite the pin, the document and paragraph, the exact input, the rule, the expected result and the practical effect. Say whether the finding is a specification gap, an implementation defect, an evidence gap or a host obligation.
-
-[REVIEWER-SNAPSHOT.md](REVIEWER-SNAPSHOT.md) records what this snapshot contains and what it deliberately leaves out.
+Claim limits remain APPARATUS_ONLY, DRAFT_NOT_ADOPTED and NOT_QUALIFIED. Fictional policies have no real-process-owner acceptance. Reference-consumer results do not establish complete mediation, truthful observations, production durability or mission assurance.

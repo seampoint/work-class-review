@@ -9,7 +9,7 @@ The Python reference consumer includes these vendored packages:
 - `rpds-py` 2026.6.3, MIT License
 - `tzdata` 2025.1, Apache License 2.0
 
-Their complete license texts remain in the corresponding `.dist-info` directories under `conformance/work-class/1.0.0-draft.2/python/vendor/`.
+Their complete license texts remain in the corresponding `.dist-info` directories under `conformance/work-class/1.0.0-draft.2/python/vendor/` and `conformance/work-class/1.0.0-draft.3/python/vendor/`.
 
 The Node package locks retrieve:
 
@@ -25,3 +25,7 @@ The Node package locks retrieve:
 Those packages are not copied into the reviewer snapshot. Their versions, sources, integrity hashes and declared licenses are recorded in the package locks.
 
 The Community Specification License 1.0 text is Copyright 2020 Joint Development Foundation and licensed under Creative Commons Attribution 4.0 International.
+
+The optional bank native XML verifier requires `xmlschema` 4.3.2 and `elementpath` 5.1.4, both under the MIT License. These distributions are installed separately from `requirements-native.txt` and are not copied into the review package.
+
+The draft 3 bank specimen includes 22 unmodified FinCEN and imported upstream XML schema files. Their source URLs, hashes and upstream notices remain in `specimens/bank-sar-filing/native-format/schema-inventory.json` and the schema files. Their inclusion grants no new rights under Seampoint's licenses.

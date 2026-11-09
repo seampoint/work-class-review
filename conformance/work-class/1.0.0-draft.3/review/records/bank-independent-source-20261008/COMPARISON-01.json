@@ -1,0 +1,439 @@
+{
+  "schema": "bank-independent-expectation-equivalence/1",
+  "status": "PASS",
+  "at": "2026-10-08T20:00:40.485176+00:00",
+  "candidate_pin": "sha256:120242f6e3a9cc67348932386460144ace5924d9b02852b878093b74a7af82a3",
+  "seal_sha256": "f5947b2faeeb5d532d7495aa3673a52c7a00d04ff8de7e4e65874ffdd5c9920e",
+  "original_report_sha256": "e02105da731ef8d7bb1a3524b4fc1b3644664db854323c0b3fa2830eeec7daa9",
+  "matched": 54,
+  "total": 54,
+  "guard_unchanged": true,
+  "scope": "Fresh independently constructed complete expected outputs compared with the original authored corpus only after the new seal. This is expectation equivalence, not a fresh consumer execution. Original authored provenance and historical chronology remain unchanged.",
+  "comparison_rows": [
+    {
+      "id": "C3-BANK-001",
+      "operation": "holdings-step",
+      "independent_expected_sha256": "b9967bb516f0697e47a0f97ee01cbff25c080c9e8442bf3844ff65cf27d869f9",
+      "original_complete_case_sha256": "0fa5aa3d3738c1da166f6972a92ab5f0a9ab5e863282fed5e9c8da5d9b722ce2",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-002",
+      "operation": "evaluate",
+      "independent_expected_sha256": "c5add47d6bd88c6fbcb6ea1e149d212d03d151437540e90181a52c066ff59263",
+      "original_complete_case_sha256": "afffbd2bc4535011dba5a4228e3d58ab15cfcc7d86de6813c646da3324a51296",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-003",
+      "operation": "evaluate",
+      "independent_expected_sha256": "c445ebda88718e096dc74bb8c8b066f05bd1a6a8e76d0f8d47cd0f22c8a07395",
+      "original_complete_case_sha256": "4d7997ea061c33eabde3c342adfd8c8b5f7c3915ac4cbd97f3ce0272ee84055d",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-004",
+      "operation": "evaluate",
+      "independent_expected_sha256": "2224e96499d75c52a88a0c9af391131fb5a88357b5a1b333ba6cc643b8d05501",
+      "original_complete_case_sha256": "ac69d6bad546d649de618f738c703a93f491b61e7645da01fdc05d3cabecd98d",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-005",
+      "operation": "holdings-step",
+      "independent_expected_sha256": "1663c33dd668ed6487c28164db4c09c87e8fe94866f74e1d0805840508a46752",
+      "original_complete_case_sha256": "3e63cea58e45c760e58d350bf5e1625917b21cb1761affcb2dba4e53e0e09422",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-006",
+      "operation": "evaluate",
+      "independent_expected_sha256": "1af3e4e19945baae183d8ffdfba60fa25077989723b271286b2def19e39e9d1b",
+      "original_complete_case_sha256": "288cb377b69bfb1146f15848cbec7bba6be91620601826e899dafdc490b459a8",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-007",
+      "operation": "holdings-step",
+      "independent_expected_sha256": "af2a47a433ca098d0f08721e6ec1dcb52d360e94f83fac6431ccf2a20d19c165",
+      "original_complete_case_sha256": "eb81092eb221b7d3d0b549e39b19f1850477e8c41a09fca2e4f41cc137125c45",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-008",
+      "operation": "evaluate",
+      "independent_expected_sha256": "92279f37f036e3d23947f10785e732b3e2123ebb1b64a4cdc59c9a2bbb5ee72d",
+      "original_complete_case_sha256": "73af137bf25fcc61b3d7ce3297a1a9e65a062f11d65735f0f006f4ffc19550ca",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-009",
+      "operation": "holdings-step",
+      "independent_expected_sha256": "deafd4278640a59d2f5e4d2659b07ab6c0c90765bc3346d0109783ca0aebe977",
+      "original_complete_case_sha256": "a1ded8035df877af00b6f609c120b93ac5c9b72ef87315880590bc7e1499a668",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-010",
+      "operation": "flow-step",
+      "independent_expected_sha256": "f0dd2caf3bfcdec7bad63cdd6c450107cd5d50229159ebcab0503d6183b93f79",
+      "original_complete_case_sha256": "f13413658ed73b518247292c4142d2f52f6e683ac6f66f207845e7359a27ada7",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-011",
+      "operation": "flow-step",
+      "independent_expected_sha256": "9c6b4ebd115feb48eb5eb187ded32a63598704f52b6ed4ef3a309e81536c1a51",
+      "original_complete_case_sha256": "9a2bdcaefe451f226949861727b3d70e5a8b1af339cd4d2cc26ab4da9a4fb7ec",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-012",
+      "operation": "flow-step",
+      "independent_expected_sha256": "0b93a0c07636edf77df12faea90525a09b445fb04d0f1478e848fccb99ae40fb",
+      "original_complete_case_sha256": "c9c9bb9a15dd85389b1e12d21ef79db57123625e9b0aeeee358d78e454bff997",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-013",
+      "operation": "flow-step",
+      "independent_expected_sha256": "13cf5a8096d347552e59d6dadd7550e77774f185cf54c8b13dfed3d19f2f6388",
+      "original_complete_case_sha256": "0d9067d47e213c7e55e2ece099a64472b7fe09a4819a97c7b1869c4bfbc033ec",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-014",
+      "operation": "flow-step",
+      "independent_expected_sha256": "88c12f3c4be8aca69838d3a84633615e9b2e7efbef85037d26b88818fad9f650",
+      "original_complete_case_sha256": "4a5086d42c7eaee94c23cb0e5007c2a11d208d4686fa3d52518d22eefd1401ac",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-015",
+      "operation": "flow-step",
+      "independent_expected_sha256": "46fb96edfcca0c0674451221d7a88411eea93729ee5c281daf22bf780ea4d2da",
+      "original_complete_case_sha256": "7b3f3fc38929a5d2e95633195b50343edca0c77f134a2cc8e196bc76cc8aea13",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-016",
+      "operation": "evaluate",
+      "independent_expected_sha256": "7b894af8371e19857a5fab38402796fb82ef572b5b1a27a1c91624ac7378e1b5",
+      "original_complete_case_sha256": "ebc4d1075faa675d27faf6c23ca6ee1fd8778fa7e65d8420e9246db25215e472",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-017",
+      "operation": "deploy",
+      "independent_expected_sha256": "d72b2c1dc72da3ddb5a797bdc0b4f0cc045d5df0a40977420de90a013ddd1245",
+      "original_complete_case_sha256": "cef345067086f62dd93684984a7146ddf4d5d51583d230f959252255e406587e",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-018",
+      "operation": "step",
+      "independent_expected_sha256": "f9e57826854290aea8d8830db882917ffbf8e157fdbef1318af05d1bdfb45ca5",
+      "original_complete_case_sha256": "0f43a5fad0f1dc4278d2bb5da10dd63b8e51b14f3daee9fed1b49f940d0853da",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-019",
+      "operation": "step",
+      "independent_expected_sha256": "3544e95ebaf24027d7e09f4e26a0f406c996af8c5b7fba83af68ccfafeb59854",
+      "original_complete_case_sha256": "96a425ba65d4d41c7c6698857716899b922bbda41854cf6e6573135b1ae89721",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-020",
+      "operation": "step",
+      "independent_expected_sha256": "a01534ec38928b199bd5db9694c727092bef0d42db31cfb4311e32ec6dc66282",
+      "original_complete_case_sha256": "23eac26892d4a5446291e55c85c6e206210cea4c0ba2fa7d4d964a786159bffd",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-021",
+      "operation": "flow-step",
+      "independent_expected_sha256": "f30383ddf041f4fee772cefa28d5996dab8c37b518abe640d10c677904e0bacb",
+      "original_complete_case_sha256": "73033fb441dd62055b45b82f49532095226a03d8b18cdddc305e774569c878a1",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-022",
+      "operation": "step",
+      "independent_expected_sha256": "06fee8ca8f0dda1c7f263629f0fef65b4bcb2cf9cc9c5a7349c9166c53181443",
+      "original_complete_case_sha256": "9d4ed026754cec8d872e5a4835c677a298b3642c28aca1211b5a00752838efa9",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-023",
+      "operation": "step",
+      "independent_expected_sha256": "c642fa82f9dfe58bd75b91490cb4a50215e9c3ca6e0980fed462c1cda36c6702",
+      "original_complete_case_sha256": "f484ed6b8c075c373c9ad21c49fa68229b8f5c9ea0fd0550b4ddb5e7ec936165",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-024",
+      "operation": "step",
+      "independent_expected_sha256": "6caaca6ffb6263d7ed95edeec36a42d9ed0606ecc3ef66832b99f2fdd0be30f2",
+      "original_complete_case_sha256": "2de803cca3b45341d3af5b28af9d186a804f85157157424a31dd0af615898cd4",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-025",
+      "operation": "flow-step",
+      "independent_expected_sha256": "295f3e125ed84385370f61688ab7eb6a5901973d286d9222741f01625955a56e",
+      "original_complete_case_sha256": "d38b886d3e1b4b214e5705c042617899132c7b589d0ec452dfd25c0f77dc5f5a",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-026",
+      "operation": "flow-step",
+      "independent_expected_sha256": "93d847d87df8a6dbe45b8df035b4ebf9dabfe8331cb401905ff7ed08dd8408f3",
+      "original_complete_case_sha256": "d9553e27202c9b61123b4b313686416a6af5b3dc920ac77898450d53d4a9a4e4",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-027",
+      "operation": "flow-step",
+      "independent_expected_sha256": "d9f6ff61be6e79e8cd5321e326524b62e4f2cd1ab74881cb1d72e74a00c54321",
+      "original_complete_case_sha256": "f30ef7bc59d346c4c85d1460c439a5eaa93c2ef68a51835d83d1893aa5eb0553",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-028",
+      "operation": "evaluate",
+      "independent_expected_sha256": "c8c7a3655234e7647d5512292b16627e22a15db53996db40f1d3cdbc4a483b75",
+      "original_complete_case_sha256": "ee4fc1e9f802bc480d1a3069146a43074dac1435c7c5581f640d6d66c9f100cd",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-029",
+      "operation": "deploy",
+      "independent_expected_sha256": "8d17a5fff595235d53ab3f4264b46371ee57c15c404b226d691777e6dacfa3e2",
+      "original_complete_case_sha256": "185c90629e97c7d3b6f63041ff86948757c239e93cbc1b18987134a33fe63c33",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-030",
+      "operation": "step",
+      "independent_expected_sha256": "9fc479c0f89c34904114b8673331279f3fdfc54ced60bf1df28ff4f4bef70995",
+      "original_complete_case_sha256": "2a736e9d3586e7d70de65626480ba80296e528785915c5a56c7558e9cd4704f4",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-031",
+      "operation": "step",
+      "independent_expected_sha256": "8ecba5d58b5f947a11bb1b850e87ab00467610999953ad88709317993b5864d4",
+      "original_complete_case_sha256": "a8cc757d5eb6ac3f96dfbb22911d4fab02e6912190036fc9e351b6e5b474cd45",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-032",
+      "operation": "step",
+      "independent_expected_sha256": "622238e7c9b05152b9f4dadae8d2ac69dfdad96ff6f673e2668616b227a135dd",
+      "original_complete_case_sha256": "aada5c6df48bad91c593986fe96883499d4ed4ee00c73cd7fe8df885abdaaecf",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-033",
+      "operation": "step",
+      "independent_expected_sha256": "6eb4323fe32c113018b0ccaf80ce44de5a55079c68642e5fecd152265ba98ba7",
+      "original_complete_case_sha256": "269fda41df5df3b0ec5f3112adf683fd9eab3ac7fdb5c34a419665455a1e1b0f",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-034",
+      "operation": "flow-step",
+      "independent_expected_sha256": "6695bd87c1156b99d627313b9ce9a230969effd309148bb426dca14af539bf53",
+      "original_complete_case_sha256": "cdbb6fc0f205a9e23b8fa9988adfa8c0062eadf326115f61a757a561d2dfa780",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-035",
+      "operation": "step",
+      "independent_expected_sha256": "9d2f22b2d19753114dbbbcf2e8e7a2ea9da1df22ebe30874d130944c6cc64cc2",
+      "original_complete_case_sha256": "71927f3ad941d825b513c1c8d7de27a9a2f9df11d668186d739bf2750b06a297",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-036",
+      "operation": "step",
+      "independent_expected_sha256": "bd33b11a7ee2af1a91ccad89eade517faba1537ff72704d57506695948ec9817",
+      "original_complete_case_sha256": "c5639d18784c0aa07286363b66d74bb527d6174126b9f7826956f3315b467acc",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-037",
+      "operation": "step",
+      "independent_expected_sha256": "54d0d3db60a3d691562f268f3a1b85cf5f9b7f09b6c6c4bcf3121f5b38bd10f5",
+      "original_complete_case_sha256": "3ff3a60e175b23d4adca383725242538cd92d1f453abe99daf83ee6fe4748805",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-038",
+      "operation": "evaluate",
+      "independent_expected_sha256": "b44624437bdf9c482af54942ef9db9921b0418fdac2874bf9da318b702f1c9c2",
+      "original_complete_case_sha256": "941e8d3caf68695a172f28ded476226e60d93981d95124d12ea265c33035aa1f",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-039",
+      "operation": "evaluate",
+      "independent_expected_sha256": "cc31718b92fd770917a23c357fc423a1513193b765d8eec57c526c462e508487",
+      "original_complete_case_sha256": "1b6326697b004ff22dd247ba3e44479accb96c1bea4e1ba1ca655e985e73eda0",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-040",
+      "operation": "evaluate",
+      "independent_expected_sha256": "9f6b4e1c37ee1e2e9d0c2f703ffba17d6cd5e498548f3c3242c0ee3b7615ec88",
+      "original_complete_case_sha256": "c0d970dc7a3db3055af8ebc5ae60092dc25a03d88dfadc3907ee221c69915a6d",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-041",
+      "operation": "flow-step",
+      "independent_expected_sha256": "fdf64e7deb00658eaf9ebe78a8238bef558ecc35ba0ad14c3913c64ca7d32f6a",
+      "original_complete_case_sha256": "7274367455f45d0438614e5d748ff34ae50f72ce5fb71ec7bcf6b0ffebe5e621",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-042",
+      "operation": "flow-step",
+      "independent_expected_sha256": "02cd82f19f4e4188f871d115b67987e21fa19b89d469b731e9910653ca7d2c39",
+      "original_complete_case_sha256": "c07e580eeeaa23769585de35fb46528a745dba2c7cf6119c36b59ec819aab4c1",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-043",
+      "operation": "flow-step",
+      "independent_expected_sha256": "e84b9bcc103b8cca045a8d4bc20abe8a411e278deec417afc6f4f452549eea7a",
+      "original_complete_case_sha256": "a28bbabed3f6d79883a2c5117aa58ce837e77a073d19ff08e7162ff750e02299",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-044",
+      "operation": "flow-step",
+      "independent_expected_sha256": "f64750f9fc2e5542912d08bcf5d4eadc27d580450bae1a91504b664216f7a048",
+      "original_complete_case_sha256": "e6681643724d06d57fc798a0696bb3ac35e1164eda28ec0316ef657cc5999af4",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-045",
+      "operation": "flow-step",
+      "independent_expected_sha256": "08a0ab4e7849b0efdb198beb6d1b07e25e35ecadd80e381c06f19b53bba020d8",
+      "original_complete_case_sha256": "e7db1f2697e9554ba5d2093b8c59d541209bce63def8bae663806e61ddc7362f",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-046",
+      "operation": "flow-step",
+      "independent_expected_sha256": "3b3895238c3bfc5dea99f8e51b91b3804b06ec9721d60312b4f4c001bbb06edb",
+      "original_complete_case_sha256": "8d2ef804194f633feba72953645c7b67ea4cef523eadf5f646f617c4e0a42264",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-047",
+      "operation": "deploy",
+      "independent_expected_sha256": "a98cefdbecbd20b5f514e0fbd3f02fd1e10878db6501d5890741c43021e77b7e",
+      "original_complete_case_sha256": "cb47d42a7e0f95c02fcfed3d2b755eed3152c34e24ff4c1565951000f9239e9c",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-048",
+      "operation": "step",
+      "independent_expected_sha256": "39af22d0a4ee668bc20be15e2772e70f998b4ef56cee8f271a3a78f934ff107e",
+      "original_complete_case_sha256": "6563387d5b26ce6183e3ade2d024b97c17f30479617d499941143a6bc994186a",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-049",
+      "operation": "step",
+      "independent_expected_sha256": "2643f15f63cdee8205108d9bf814a70643e67605f0168264a4c7698b4f4ff44f",
+      "original_complete_case_sha256": "83cd7bc70ee017bd2e63300f95a2a5987f30a49057a3bed78c177b3f2ac7be67",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-050",
+      "operation": "step",
+      "independent_expected_sha256": "59d0b75af6e320cd2dd6603968f3c9102f9c88b585c953706955608de3a7df99",
+      "original_complete_case_sha256": "f3d60786660ef5913cff10468c79c5fae130eb4a40d10bd20c594f5b38153d70",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-051",
+      "operation": "flow-step",
+      "independent_expected_sha256": "ad8e76cea7366527b07e80e194226237c9126d7d961f32bf66b6c7997dbbfdaf",
+      "original_complete_case_sha256": "47896a946582e35f4d5fcc09cf25465f90662af04bac6e9123327bd268bac50a",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-052",
+      "operation": "step",
+      "independent_expected_sha256": "ad6a2cdfb267e7beb345734d36c772c9475e0a0adb2ca93b6c66f95b51f24979",
+      "original_complete_case_sha256": "6c25a6d94433381f83569d20f94e7360f89648f426b805b0aaaab5d025db903c",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-053",
+      "operation": "step",
+      "independent_expected_sha256": "ada8401f9cbab68d7dbda03d0adfac8fa86fdb22fad1696d678a2858204ee903",
+      "original_complete_case_sha256": "a95e9ce77c713306a870510a45cf52cc366064c2053f674ea73442b9c46d354d",
+      "complete_expected_equal": true
+    },
+    {
+      "id": "C3-BANK-054",
+      "operation": "step",
+      "independent_expected_sha256": "1ec5d6eebfaee5656927e905b102a4577848364c7ccc555c76603442bca644e3",
+      "original_complete_case_sha256": "d3f456bad02f5f46564ad5b03586fd752fbbed00975d872427561728b951f232",
+      "complete_expected_equal": true
+    }
+  ],
+  "raw_evidence": "Original full comparison and historical consumer runs retained internally; not included in this compact receipt.",
+  "separate_fresh_postseal_consumer_receipts": {
+    "python": {
+      "report_sha256": "18cf8240890da7db85ed9d66b63c24874c779d70c57aabe969d3dc12ee8729dd",
+      "started_at_utc": "2026-10-08T20:05:03.603710+00:00",
+      "completed_at_utc": "2026-10-08T20:16:28.680731+00:00",
+      "exit_code": 0,
+      "guards_unchanged": true,
+      "counts": {
+        "selected": 54,
+        "actual_rows": 54,
+        "old_expected_matches": 54,
+        "new_sealed_expected_matches": 54
+      },
+      "scope": "Fresh-process public runner after independent source seal;600-second case budget,32MiB output cap; no production latency or provider claim."
+    },
+    "typescript": {
+      "report_sha256": "f431e9d70b941be402c51d1e0fa7714b1c1a3076a46e5d7cb63cc34d90fe8d38",
+      "started_at_utc": "2026-10-08T20:05:03.600256+00:00",
+      "completed_at_utc": "2026-10-08T20:07:37.640195+00:00",
+      "exit_code": 0,
+      "guards_unchanged": true,
+      "counts": {
+        "selected": 54,
+        "actual_rows": 54,
+        "old_expected_matches": 54,
+        "new_sealed_expected_matches": 54
+      },
+      "scope": "Fresh-process public runner after independent source seal;600-second case budget,32MiB output cap; no production latency or provider claim."
+    },
+    "cross_language": {
+      "report_sha256": "9bec7547cebab84444b16e3302f9e50c1809f132f516da0711ed3e63bb6c658e",
+      "created_at_utc": "2026-10-08T20:16:51.153079+00:00",
+      "status": "PASS",
+      "counts": {
+        "selected": 54,
+        "complete_actual_matches": 54
+      },
+      "guards_unchanged": true,
+      "language_guard_currency": {
+        "python": true,
+        "typescript": true
+      },
+      "scope": "Complete fresh actual comparison after separately frozen source expectations; original author provenance remains unchanged."
+    }
+  },
+  "consumer_receipt_scope": "New compact metadata added after the separate source-equivalence comparison and Linux source proof. Original source authorship/seal chronology unchanged. Full raw consumer runs retained internally."
+}

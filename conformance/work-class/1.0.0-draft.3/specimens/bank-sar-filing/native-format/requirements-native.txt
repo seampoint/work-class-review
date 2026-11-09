@@ -1,0 +1,2 @@
+xmlschema==4.3.2
+elementpath==5.1.4

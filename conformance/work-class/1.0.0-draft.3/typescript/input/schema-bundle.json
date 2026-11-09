@@ -1,0 +1,57 @@
+{
+  "identity": "seampoint.work-class.schema-bundle/1.0.0-draft.3",
+  "status": "DRAFT_NOT_ADOPTED",
+  "resolution": "Map each exact URI to the listed candidate-relative file. Any other URI is unresolved. No network or undeclared filesystem access is permitted.",
+  "schemas": [
+    {
+      "uri": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/aggregate.schema.json",
+      "path": "aggregate.schema.json",
+      "sha256": "cd4d2a33fdcaa6dd3bf149897d142e7caa30171b737030b0889c31e9d3a50f19"
+    },
+    {
+      "uri": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/authority.schema.json",
+      "path": "authority.schema.json",
+      "sha256": "34ad9117a404f4a897e13b41cb207a08ed9083a376ec76ef245f59962b9ce5b3"
+    },
+    {
+      "uri": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/boundary.schema.json",
+      "path": "boundary.schema.json",
+      "sha256": "c00374abcb13a15dc46465bf98e7e4db8cd89395a02353e7507cc862d436ae66"
+    },
+    {
+      "uri": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/evidence.schema.json",
+      "path": "evidence.schema.json",
+      "sha256": "e075425300ec36e50f138136beb83cb7c9244629e57b2dea7a384b46a001d0d8"
+    },
+    {
+      "uri": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/holdings.schema.json",
+      "path": "holdings.schema.json",
+      "sha256": "799e2f0a183091a819d76c81fbc6411747fe89acdf5ff19c3ca998f77bf36557"
+    },
+    {
+      "uri": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/information-flow.schema.json",
+      "path": "information-flow.schema.json",
+      "sha256": "1e509c772b71766ca8e026ffb60087132ec034a8bb380ecb8abe708df48a55b4"
+    },
+    {
+      "uri": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/lifecycle.schema.json",
+      "path": "lifecycle.schema.json",
+      "sha256": "94599d11bdf301dd216f6cc1693e27060928a77e1466e59a7e4110b1642101d5"
+    },
+    {
+      "uri": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/protocol.schema.json",
+      "path": "protocol.schema.json",
+      "sha256": "d664ee014b90effe8b9dea4faa29c62a2eb3a6907a071bf559132569126f5603"
+    },
+    {
+      "uri": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/reservation.schema.json",
+      "path": "reservation.schema.json",
+      "sha256": "001793d3542daf652484368cff516048153a28c6542bd78060d76fa3290dbbfd"
+    },
+    {
+      "uri": "https://schemas.seampoint.com/work-class/1.0.0-draft.3/work-class.schema.json",
+      "path": "work-class.schema.json",
+      "sha256": "979c97ac3205c1d994c951f7adfff53e3a74188ce6cf925b464617412876b2f5"
+    }
+  ]
+}

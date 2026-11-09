@@ -1,0 +1,274 @@
+{
+  "base_case_count": 27,
+  "case_count": 28,
+  "complete_result_oracles": 25,
+  "derivation": "Successor reconstruction of the existing 28 source-derived controls. Only the two static WorkClass specification_pin fields change. The three static authority specimens are byte-identical. Six lifecycle projection stimuli and their refusal bodies are reconstructed through the existing manual repository fixture builders at the current pin. Digest and readback expectations follow the contract. All request, expected and row bytes are sealed before either native adapter runs. No adapter response supplies an expected value. These reconstructed copies do not add an independent source-fidelity assessment.",
+  "portable_oracle_producer": {
+    "changes": "Successor seal field names and description. Import the separately sealed source-only projection module instead of the consumer test module. Source construction order and expectation rules are unchanged.",
+    "derived_from_predecessor_sha256": "5c2d3e46f98c14daa0f343bc99ca8327e86cd7b2f806979a131489ebae6e04be",
+    "path": "verify-derivation.py",
+    "sha256": "0e11a74777327ef9b46f50b15f08c9aa370c08d16db05605fed52881336c5743"
+  },
+  "predecessor": {
+    "case_rows_sha256": "b7c915c61ae4473af0b6bef9343a6b30e1c3ba6908f716f49f8c8187235d305e",
+    "manifest_sha256": "019f0bacbb77aa1c0a3f8720bf1f57eca339e55f219c35e32114f9ec76fcb4e4",
+    "original_sealed_inputs_sha256": "cc8ae6298ec5383ca11e54b28ca100ac6c6a62197752d24faffa8dccba950afa",
+    "provenance_sha256": "9b9f5bc10e841e2b3e1faf02df2e60e972aae24bab15162017c0542f070e6ee3",
+    "specification_pin": "sha256:9dfc713f7783d83409c9177794604b257c4cc2910d04c385df26e9f80d3da806",
+    "verifier_sha256": "977d6aaf6fd723ab2a3add2c28539254ba3b936260ef4c5ee93ad0e1099e77ba"
+  },
+  "selected_disposition_oracles": 3,
+  "source_deltas": [
+    {
+      "changed_json_pointers": [],
+      "path": "sources/legacy-authority-authority-index-dossier.json",
+      "predecessor_sha256": "09e627e2e2149784bef08d40a06c787bb8f22b1a66e633c9b02b1bfb9b392fe6",
+      "source_policy_unchanged": true,
+      "successor_sha256": "09e627e2e2149784bef08d40a06c787bb8f22b1a66e633c9b02b1bfb9b392fe6"
+    },
+    {
+      "changed_json_pointers": [],
+      "path": "sources/legacy-authority-authority-seal-dossier.json",
+      "predecessor_sha256": "f7f8d7efb7b469aba90bccd09b086fde2b0f0f0e54422396e4a797bff15f7cf3",
+      "source_policy_unchanged": true,
+      "successor_sha256": "f7f8d7efb7b469aba90bccd09b086fde2b0f0f0e54422396e4a797bff15f7cf3"
+    },
+    {
+      "changed_json_pointers": [
+        "/specification_pin"
+      ],
+      "path": "sources/legacy-work-class.json",
+      "predecessor_sha256": "13c41a29c66786e64960c3abd7a99048b0f8d679ca8d287834a8e25a996629ac",
+      "source_policy_unchanged": true,
+      "successor_sha256": "0f6341210509ea91491b13295437aa3394b8298018e9a8e1fb381cd5f1629ac5"
+    },
+    {
+      "changed_json_pointers": [
+        "/specification_pin"
+      ],
+      "path": "sources/original-choice-work-class.json",
+      "predecessor_sha256": "1e692f10dff66e4af5ce20056edb3927a77677b8bd783d8f279d5396fbd9bd24",
+      "source_policy_unchanged": true,
+      "successor_sha256": "681d61f2089653a7b63390afb14b0315483b417e60983b2fbab267140ddb817f"
+    },
+    {
+      "changed_json_pointers": [],
+      "path": "sources/standalone-authority.json",
+      "predecessor_sha256": "30f796b4da834ba8e4cf1ad30e3f1a4821ef6573690c0134a986e7a5775d772c",
+      "source_policy_unchanged": true,
+      "successor_sha256": "30f796b4da834ba8e4cf1ad30e3f1a4821ef6573690c0134a986e7a5775d772c"
+    }
+  ],
+  "source_only_projection_constructor": {
+    "construction_modules": [
+      {
+        "bytes": 3214,
+        "path": "conformance/work-class/1.0.0-draft.3/review/corpus_common.py",
+        "sha256": "48e8b0cf902cec4bf05e948c703102c5a4c5cb79c3bb40fbd08ea91f9eb114c2"
+      },
+      {
+        "bytes": 21482,
+        "path": "conformance/work-class/1.0.0-draft.3/review/fixture_factory.py",
+        "sha256": "c333820dfe104f53ac186ef83214f9a0348e8801cc96950020a1962315f64f3a"
+      },
+      {
+        "bytes": 14502,
+        "path": "conformance/work-class/1.0.0-draft.3/review/authority_fixture.py",
+        "sha256": "83d0f647b195a4370a66df2e677a1b1437095eade7cffd7078ad8f97cc571f48"
+      },
+      {
+        "bytes": 39945,
+        "path": "conformance/work-class/1.0.0-draft.3/review/lifecycle_factory.py",
+        "sha256": "a2f9ec37eafbc6696db577e4a90edfbddc53f3e902e42929e7e8de5eb2f73293"
+      },
+      {
+        "bytes": 13868,
+        "path": "conformance/work-class/1.0.0-draft.3/review/equipment_observation_fixture.py",
+        "sha256": "d177e183948205c0b8b048a05afafb15d18b52484af84a4d5ac5322ac2cbe5a7"
+      },
+      {
+        "bytes": 9107,
+        "path": "conformance/work-class/1.0.0-draft.3/review/equipment_dispatch_fixture.py",
+        "sha256": "90c7eb78baee54e6b0b1c85ae38fef8fc6a66111c790d21892a2fd484e8b52c7"
+      },
+      {
+        "bytes": 21621,
+        "path": "conformance/work-class/1.0.0-draft.3/review/reservation_fixture.py",
+        "sha256": "70f61d51b9f89b62c33b65c6db5cada28d3ef458c808f35e4c8a9a5a2e18a243"
+      },
+      {
+        "bytes": 9819,
+        "path": "conformance/work-class/1.0.0-draft.3/review/lifecycle_budget_fixture.py",
+        "sha256": "434f5e6e240334c37d38184a2ccae0646c3c21653710b60f216679848c3bee3b"
+      },
+      {
+        "bytes": 26804,
+        "path": "conformance/work-class/1.0.0-draft.3/review/equipment_completion_fixture.py",
+        "sha256": "cca33342dc4035339d21bc16537c1bd57254f9f9734626cc3ec8b97d98b4cdd2"
+      }
+    ],
+    "consumer_or_implementation_imports": false,
+    "extracted_function_text_sha256": "6ee4967a33e5832a898e98a6c7cb10f5c899c9899878a058d125079edbb85169",
+    "extracted_functions": [
+      "no_quantity",
+      "legacy_carrier",
+      "legacy_keys",
+      "projection_proposal_inputs"
+    ],
+    "path": "projection_source.py",
+    "repository_source": "conformance/work-class/1.0.0-draft.3/python/tests/test_authoring_consumer_regressions.py",
+    "repository_source_sha256": "80f0af0a93e2a77306667a20a65947d6b7a3b66a3b2a1161a92b0192edf93c34",
+    "sha256": "5249dd4cbd7594d6011d89a3d75f2a39a498922512fa179644828c3998028e52"
+  },
+  "sources": [
+    {
+      "bytes": 12695,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/python/tests/test_authoring_consumer_regressions.py",
+      "role": "repository_oracle_source",
+      "sha256": "80f0af0a93e2a77306667a20a65947d6b7a3b66a3b2a1161a92b0192edf93c34"
+    },
+    {
+      "bytes": 4651,
+      "repository_path": "library/work-class-specification/1.0.0-draft.3/contract-manifest.json",
+      "role": "repository_oracle_source",
+      "sha256": "552bc40d5b810942c07fdfe2a1cbcadcbd6319926bb40eeda97e6c260819d379"
+    },
+    {
+      "bytes": 21121,
+      "repository_path": "library/work-class-specification/1.0.0-draft.3/Specification.md",
+      "role": "repository_oracle_source",
+      "sha256": "f1cdb0c9598ec6de5fe9260f75f8dea944555d88a51d723167b1d92a64bc6c96"
+    },
+    {
+      "bytes": 24782,
+      "repository_path": "library/work-class-specification/1.0.0-draft.3/PROTOCOL.md",
+      "role": "repository_oracle_source",
+      "sha256": "b1242edcb3c706c1bf2d7af60ab77840b850358d4a345451feba19e73827e81b"
+    },
+    {
+      "bytes": 143974,
+      "repository_path": "library/work-class-specification/1.0.0-draft.3/LIFECYCLE.md",
+      "role": "repository_oracle_source",
+      "sha256": "ad079a1f60cf57fe59415e677c7eb2119d302a21d806767217032236688e1399"
+    },
+    {
+      "bytes": 66444,
+      "repository_path": "library/work-class-specification/1.0.0-draft.3/COMPOSITION.md",
+      "role": "repository_oracle_source",
+      "sha256": "e09c7bfd324700b8304a9144d02971f9a37f33d79d9566e745aea2e244cdd288"
+    },
+    {
+      "bytes": 14502,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/review/authority_fixture.py",
+      "role": "repository_oracle_source",
+      "sha256": "83d0f647b195a4370a66df2e677a1b1437095eade7cffd7078ad8f97cc571f48"
+    },
+    {
+      "bytes": 39945,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/review/lifecycle_factory.py",
+      "role": "repository_oracle_source",
+      "sha256": "a2f9ec37eafbc6696db577e4a90edfbddc53f3e902e42929e7e8de5eb2f73293"
+    },
+    {
+      "bytes": 26804,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/review/equipment_completion_fixture.py",
+      "role": "repository_oracle_source",
+      "sha256": "cca33342dc4035339d21bc16537c1bd57254f9f9734626cc3ec8b97d98b4cdd2"
+    },
+    {
+      "bytes": 13868,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/review/equipment_observation_fixture.py",
+      "role": "repository_oracle_source",
+      "sha256": "d177e183948205c0b8b048a05afafb15d18b52484af84a4d5ac5322ac2cbe5a7"
+    },
+    {
+      "bytes": 9107,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/review/equipment_dispatch_fixture.py",
+      "role": "repository_oracle_source",
+      "sha256": "90c7eb78baee54e6b0b1c85ae38fef8fc6a66111c790d21892a2fd484e8b52c7"
+    },
+    {
+      "bytes": 21482,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/review/fixture_factory.py",
+      "role": "repository_oracle_source",
+      "sha256": "c333820dfe104f53ac186ef83214f9a0348e8801cc96950020a1962315f64f3a"
+    },
+    {
+      "bytes": 3214,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/review/corpus_common.py",
+      "role": "repository_oracle_source",
+      "sha256": "48e8b0cf902cec4bf05e948c703102c5a4c5cb79c3bb40fbd08ea91f9eb114c2"
+    },
+    {
+      "bytes": 21621,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/review/reservation_fixture.py",
+      "role": "repository_oracle_source",
+      "sha256": "70f61d51b9f89b62c33b65c6db5cada28d3ef458c808f35e4c8a9a5a2e18a243"
+    },
+    {
+      "bytes": 9819,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/review/lifecycle_budget_fixture.py",
+      "role": "repository_oracle_source",
+      "sha256": "434f5e6e240334c37d38184a2ccae0646c3c21653710b60f216679848c3bee3b"
+    },
+    {
+      "bytes": 4398,
+      "path": "sources/legacy-authority-authority-index-dossier.json",
+      "role": "successor_source_specimen",
+      "sha256": "09e627e2e2149784bef08d40a06c787bb8f22b1a66e633c9b02b1bfb9b392fe6"
+    },
+    {
+      "bytes": 4391,
+      "path": "sources/legacy-authority-authority-seal-dossier.json",
+      "role": "successor_source_specimen",
+      "sha256": "f7f8d7efb7b469aba90bccd09b086fde2b0f0f0e54422396e4a797bff15f7cf3"
+    },
+    {
+      "bytes": 6011,
+      "path": "sources/legacy-work-class.json",
+      "role": "successor_source_specimen",
+      "sha256": "0f6341210509ea91491b13295437aa3394b8298018e9a8e1fb381cd5f1629ac5"
+    },
+    {
+      "bytes": 11210,
+      "path": "sources/original-choice-work-class.json",
+      "role": "successor_source_specimen",
+      "sha256": "681d61f2089653a7b63390afb14b0315483b417e60983b2fbab267140ddb817f"
+    },
+    {
+      "bytes": 6854,
+      "path": "sources/standalone-authority.json",
+      "role": "successor_source_specimen",
+      "sha256": "30f796b4da834ba8e4cf1ad30e3f1a4821ef6573690c0134a986e7a5775d772c"
+    },
+    {
+      "bytes": 4572,
+      "path": "projection_source.py",
+      "role": "source_only_projection_constructor",
+      "sha256": "5249dd4cbd7594d6011d89a3d75f2a39a498922512fa179644828c3998028e52"
+    }
+  ],
+  "specification_pin": "sha256:552bc40d5b810942c07fdfe2a1cbcadcbd6319926bb40eeda97e6c260819d379",
+  "tested_consumer_sources": [
+    {
+      "bytes": 39486,
+      "path": "conformance/work-class/1.0.0-draft.3/typescript/work-class.ts",
+      "sha256": "50f77679fd8d80810872c84b3640b206787879507d136d4a2047fa8c6317f33f"
+    },
+    {
+      "bytes": 12155,
+      "path": "conformance/work-class/1.0.0-draft.3/typescript/work-class.test.ts",
+      "sha256": "76240b0435ff7d440cc6a9e4e965c3234d01a9246592cd82f05b57a9bc7d39dc"
+    },
+    {
+      "bytes": 24940,
+      "path": "conformance/work-class/1.0.0-draft.3/python/implementation/work_class.py",
+      "sha256": "b139df632706590caa5cef4419bf417a9f77727d64bd4546c62d26de1e5500cc"
+    },
+    {
+      "bytes": 12695,
+      "path": "conformance/work-class/1.0.0-draft.3/python/tests/test_authoring_consumer_regressions.py",
+      "sha256": "80f0af0a93e2a77306667a20a65947d6b7a3b66a3b2a1161a92b0192edf93c34"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "identity": "seampoint.work-class.case-index/1.0.0-draft.3/development",
+  "candidate_pin": "sha256:5b52536e34c0d1b06173e4aec67e3847ec6f50964aedb6b49dea4ae1f4c1d516",
+  "status": "DEVELOPMENT_NOT_QUALIFYING",
+  "implementation_or_output_consulted": false,
+  "count": "5",
+  "cases": [
+    {"execution_target": "ADAPTER", "id": "C3-QTY-001", "operation": "validate", "path": "cases/quantity-mode/C3-QTY-001.json", "requirements": ["WCD-001"], "sha256": "effe1fff67fb579fac830c347cec07780fea5c4ce3faf9466ab471dcaf39e631"},
+    {"execution_target": "ADAPTER", "id": "C3-QTY-002", "operation": "validate", "path": "cases/quantity-mode/C3-QTY-002.json", "requirements": ["WCD-001"], "sha256": "4936e10fa6dc8a5199b0d25d24908cd46033fbb398c950a0fe477d1eb634a452"},
+    {"execution_target": "ADAPTER", "id": "C3-QTY-003", "operation": "validate", "path": "cases/quantity-mode/C3-QTY-003.json", "requirements": ["WCD-001"], "sha256": "0e8a65dd930f9f30e729c9a0559d5fdbcb4fefb4bb78bada893cf4e0fba5785c"},
+    {"execution_target": "ADAPTER", "id": "C3-QTY-004", "operation": "validate", "path": "cases/quantity-mode/C3-QTY-004.json", "requirements": ["WCD-001"], "sha256": "317021d7cb5a9395891dc805c8e3c3660a69697b187a827560b286a96112f0d3"},
+    {"execution_target": "ADAPTER", "id": "C3-QTY-005", "operation": "validate", "path": "cases/quantity-mode/C3-QTY-005.json", "requirements": ["WCD-001"], "sha256": "15e85a715d380b0cb78e2ea1c2c4f72b8e111149783c91e63165987efbb0a19c"}
+  ]
+}

@@ -38,7 +38,7 @@ A later decision may open a contribution process. That requires published contri
 
 ## Claims
 
-[CLAIM-CARD.md](CLAIM-CARD.md) sets what may be claimed. Consumer agreement, a passing suite and agent review do not raise a ceiling.
+[CLAIMS.md](CLAIMS.md) sets what may be claimed. Consumer agreement, a passing suite and agent review do not raise a ceiling.
 
 ## Publication
 

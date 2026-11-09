@@ -1,0 +1,190 @@
+{
+  "status": "RETAINED_UNMODIFIED_UPSTREAM_BYTES",
+  "retrieved_date": "2026-10-08",
+  "files": [
+    {
+      "path": "schemas/BSA_XML_2.0.xsd",
+      "sha256": "9efc3447b452f60b19f6b0c8253ae7638ac5a332ae14126e45eacee8f70a0d3a",
+      "bytes": 431258,
+      "uris": [
+        "https://www.fincen.gov/base/BSA_XML_2.0.xsd",
+        "https://www.fincen.gov/sites/default/files/schema/base/BSA_XML_2.0.xsd"
+      ]
+    },
+    {
+      "path": "schemas/CVEGenerated/CVEnumISM25X.xsd",
+      "sha256": "b0f07e4764adefd4a8093a5d25193447a73bb90486d6ab55829d30d95a7f8bed",
+      "bytes": 8629,
+      "uris": [
+        "https://www.fincen.gov/system/files/schema/base/Schema/ISM/CVEGenerated/CVEnumISM25X.xsd"
+      ]
+    },
+    {
+      "path": "schemas/CVEGenerated/CVEnumISMAtomicEnergyMarkings.xsd",
+      "sha256": "aae264ebfdf10e19661229582e182d34ef4ee2c423ed7eb03958f98cbbfaf427",
+      "bytes": 4167,
+      "uris": [
+        "https://www.fincen.gov/system/files/schema/base/Schema/ISM/CVEGenerated/CVEnumISMAtomicEnergyMarkings.xsd"
+      ]
+    },
+    {
+      "path": "schemas/CVEGenerated/CVEnumISMClassificationAll.xsd",
+      "sha256": "13c5294e4650b0817c1d7bb92922e6122ad50d954c0b8b2e7795615aca96ab4d",
+      "bytes": 2448,
+      "uris": [
+        "https://www.fincen.gov/system/files/schema/base/Schema/ISM/CVEGenerated/CVEnumISMClassificationAll.xsd"
+      ]
+    },
+    {
+      "path": "schemas/CVEGenerated/CVEnumISMCompliesWith.xsd",
+      "sha256": "209bbc4e79bcff1f21d9c897fef5a16ca5678447b105bf7095398e90fe969446",
+      "bytes": 3461,
+      "uris": [
+        "https://www.fincen.gov/system/files/schema/base/Schema/ISM/CVEGenerated/CVEnumISMCompliesWith.xsd"
+      ]
+    },
+    {
+      "path": "schemas/CVEGenerated/CVEnumISMDissem.xsd",
+      "sha256": "b52fabb3d2635a2af2a76f768ceb1477f798b40d1858d85f48bc73491e49363c",
+      "bytes": 4461,
+      "uris": [
+        "https://www.fincen.gov/system/files/schema/base/Schema/ISM/CVEGenerated/CVEnumISMDissem.xsd"
+      ]
+    },
+    {
+      "path": "schemas/CVEGenerated/CVEnumISMExemptFrom.xsd",
+      "sha256": "5e7a6770f0541c9fecc5230ab2eed83b3c186aeb243f466dee7a9fe6b68cffd4",
+      "bytes": 2571,
+      "uris": [
+        "https://www.fincen.gov/system/files/schema/base/Schema/ISM/CVEGenerated/CVEnumISMExemptFrom.xsd"
+      ]
+    },
+    {
+      "path": "schemas/CVEGenerated/CVEnumISMNonIC.xsd",
+      "sha256": "39b70155ccaf87dd0fd1d4a391dc8a1a2fac4e642ccf0c75cd4b8a58edd1ca7b",
+      "bytes": 4397,
+      "uris": [
+        "https://www.fincen.gov/system/files/schema/base/Schema/ISM/CVEGenerated/CVEnumISMNonIC.xsd"
+      ]
+    },
+    {
+      "path": "schemas/CVEGenerated/CVEnumISMNonUSControls.xsd",
+      "sha256": "b645e28d10299ff4fab42217fb7d2f48bb9291109d80c28c194beefe316b8a15",
+      "bytes": 2358,
+      "uris": [
+        "https://www.fincen.gov/system/files/schema/base/Schema/ISM/CVEGenerated/CVEnumISMNonUSControls.xsd"
+      ]
+    },
+    {
+      "path": "schemas/CVEGenerated/CVEnumISMNotice.xsd",
+      "sha256": "1c80b80f34e94145a3ddfe7a5b04a954694307d46a3de405ae9919486a3c6ffd",
+      "bytes": 6254,
+      "uris": [
+        "https://www.fincen.gov/system/files/schema/base/Schema/ISM/CVEGenerated/CVEnumISMNotice.xsd"
+      ]
+    },
+    {
+      "path": "schemas/CVEGenerated/CVEnumISMPocType.xsd",
+      "sha256": "f229b9ea72da0fc92788d1360d175e97adff127bd68bf63d2e07140348e52577",
+      "bytes": 3424,
+      "uris": [
+        "https://www.fincen.gov/system/files/schema/base/Schema/ISM/CVEGenerated/CVEnumISMPocType.xsd"
+      ]
+    },
+    {
+      "path": "schemas/CVEGenerated/CVEnumISMSAR.xsd",
+      "sha256": "0f6a4a09d792f4ff4d19a48742c0b538b9b0e85534c115227f2a5c591d89eec9",
+      "bytes": 2886,
+      "uris": [
+        "https://www.fincen.gov/system/files/schema/base/Schema/ISM/CVEGenerated/CVEnumISMSAR.xsd"
+      ]
+    },
+    {
+      "path": "schemas/CVEGenerated/CVEnumISMSCIControls.xsd",
+      "sha256": "ab0949fe1f700b9206e28348c80bca8edd7a12dba2f7edac9032b10ea9224495",
+      "bytes": 7167,
+      "uris": [
+        "https://www.fincen.gov/system/files/schema/base/Schema/ISM/CVEGenerated/CVEnumISMSCIControls.xsd"
+      ]
+    },
+    {
+      "path": "schemas/EFL_BatchAcknowledgementSchema.xsd",
+      "sha256": "9727d7748a3b2a72eabcb9047dfdb73591473ebeee8f8c48cb5f4fe68e106cdb",
+      "bytes": 3047,
+      "uris": [
+        "https://www.fincen.gov/sites/default/files/schema/base/EFL_BatchAcknowledgementSchema.xsd"
+      ]
+    },
+    {
+      "path": "schemas/EFL_SARXBatchSchema.xsd",
+      "sha256": "d893df240f1cd93f2f06b890bee492cb28876ae83c21b35826792742767c05b1",
+      "bytes": 70354,
+      "uris": [
+        "https://www.fincen.gov/sites/default/files/schema/base/EFL_SARXBatchSchema.xsd"
+      ]
+    },
+    {
+      "path": "schemas/IC-ISM.xsd",
+      "sha256": "e9e0a37e520f114ef0f6c50925218c74ba513bc600b4bcf93278eac207048073",
+      "bytes": 70916,
+      "uris": [
+        "https://www.fincen.gov/system/files/schema/base/Schema/ISM/IC-ISM.xsd"
+      ]
+    },
+    {
+      "path": "schemas/MESSAGES.xsd",
+      "sha256": "0d4b9f740eca6961173d8562b563a23570b359668be6f541a80b4cd50fac9524",
+      "bytes": 9372,
+      "uris": [
+        "https://bsaefiling.fincen.gov/resources/MESSAGES.xsd"
+      ]
+    },
+    {
+      "path": "schemas/fincen-codes-response-01.xml",
+      "sha256": "5276f73b228743907274dca58d25badcfc3dc4facd7cd5c0ad4dcf3e71c75fa9",
+      "bytes": 340733,
+      "uris": [
+        "https://www.fincen.gov/codes"
+      ]
+    },
+    {
+      "path": "schemas/parent-ISMCAT/CVEGenerated/CVEnumISMCATFGIOpen.xsd",
+      "sha256": "6fcac1b1df703f0fef1fec750d2ea018710499b599f29696f767b912719a1c5a",
+      "bytes": 72655,
+      "uris": [
+        "https://www.fincen.gov/system/files/schema/base/Schema/ISMCAT/CVEGenerated/CVEnumISMCATFGIOpen.xsd"
+      ]
+    },
+    {
+      "path": "schemas/parent-ISMCAT/CVEGenerated/CVEnumISMCATFGIProtected.xsd",
+      "sha256": "73da907efe525d2a16534127c3811863474a5fc482c5a10376cecf73f7fe615c",
+      "bytes": 72691,
+      "uris": [
+        "https://www.fincen.gov/system/files/schema/base/Schema/ISMCAT/CVEGenerated/CVEnumISMCATFGIProtected.xsd"
+      ]
+    },
+    {
+      "path": "schemas/parent-ISMCAT/CVEGenerated/CVEnumISMCATOwnerProducer.xsd",
+      "sha256": "059aaa9ba17980d3ac99eff990a48b68b56b2c6375b257e33ef8c9fbc50e55f6",
+      "bytes": 72927,
+      "uris": [
+        "https://www.fincen.gov/system/files/schema/base/Schema/ISMCAT/CVEGenerated/CVEnumISMCATOwnerProducer.xsd"
+      ]
+    },
+    {
+      "path": "schemas/parent-ISMCAT/CVEGenerated/CVEnumISMCATRelTo.xsd",
+      "sha256": "744a310464c1657731be735760892083522249364be27a3a2e0b4f237221b417",
+      "bytes": 72620,
+      "uris": [
+        "https://www.fincen.gov/system/files/schema/base/Schema/ISMCAT/CVEGenerated/CVEnumISMCATRelTo.xsd"
+      ]
+    }
+  ],
+  "guide": {
+    "version": "1.7 April2026",
+    "url": "https://bsaefiling.fincen.gov/resources/XMLUserGuide_FinCENSAR.pdf",
+    "sha256": "b4b23f39d5c07fb353f4bd56956bf3fcbcbfdf2255086c6f016b512280ee6b2d"
+  },
+  "resolution_note": "The ACK imports https://www.fincen.gov/base/BSA_XML_2.0.xsd, which returned404. That exact URI is explicitly mapped to the retained official sites/default/files base schema for the same namespace. No upstream bytes are edited. Relative ISM imports use the retained closed dependency inventory. No network fallback is allowed.",
+  "rights": "Upstream notices remain in each file. This inventory supplies no new license grant or provider endorsement."
+}

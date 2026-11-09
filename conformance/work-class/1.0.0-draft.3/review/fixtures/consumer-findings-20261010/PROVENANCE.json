@@ -1,0 +1,177 @@
+{
+  "additional_case": {
+    "expected_basis": "COMPOSITION 2.1 and 2.4 require a unique exact typed label map. An undeclared route value with unchanged cardinality and correct type is DEFINITION_INVALID. PROTOCOL retains the complete static validation refusal status/code/path.",
+    "expected_derived_before_native_replay": true,
+    "mutation": {
+      "after": "ESCALATE",
+      "before": "REVISE",
+      "path": "/relationships/0/label/value"
+    },
+    "name": "route-domain-mismatch",
+    "original_row_sha256": "03356562257d93fea4b5244d978636eaa85a423aedaf020ef47e2d19c679eaf2",
+    "source_path": "sources/original-choice-work-class.json"
+  },
+  "case_count": 28,
+  "complete_result_oracles": 25,
+  "derivation": "The source specimens and repository fixture builders produced the original 27 requests and expectations before repaired adapter execution. Their request, expected and case-row bytes remain unchanged. The appended route-domain-mismatch request replaces only the first route label value REVISE with ESCALATE in the original choice source, retaining its type, both cardinalities, uniqueness, targets and source order. COMPOSITION 2.1 and 2.4 independently determine its complete DEFINITION_INVALID refusal. That request and expected body were sealed before native replay. The original 27-row aggregate and original sealed-input identity remain recorded separately from the current 28-row aggregate. No adapter response supplied an expected value.",
+  "original_case_count": 27,
+  "portable_oracle_producer": {
+    "changes": "Paths resolve the retained source specimens and repository fixture builders. The first 27 generated requests, expectations and rows must match their original presealed aggregate. The appended unique correctly typed route-domain mismatch must match its separately presealed row; the current aggregate binds all 28 rows.",
+    "derived_from_original_producer_sha256": "2c3427c86e5dfbae21a0a08e548ae939911a63df8f1a53a799b10d606f25d3aa",
+    "path": "verify-derivation.py",
+    "sha256": "5c2d3e46f98c14daa0f343bc99ca8327e86cd7b2f806979a131489ebae6e04be"
+  },
+  "selected_disposition_oracles": 3,
+  "sources": [
+    {
+      "bytes": 6789,
+      "retained_in_original_evidence": true,
+      "role": "original_oracle_producer",
+      "sha256": "2c3427c86e5dfbae21a0a08e548ae939911a63df8f1a53a799b10d606f25d3aa",
+      "source_name": "prepare-public-probes.py"
+    },
+    {
+      "bytes": 12695,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/python/tests/test_authoring_consumer_regressions.py",
+      "role": "repository_oracle_source",
+      "sha256": "80f0af0a93e2a77306667a20a65947d6b7a3b66a3b2a1161a92b0192edf93c34"
+    },
+    {
+      "bytes": 11210,
+      "path": "sources/original-choice-work-class.json",
+      "role": "source_specimen",
+      "sha256": "1e692f10dff66e4af5ce20056edb3927a77677b8bd783d8f279d5396fbd9bd24"
+    },
+    {
+      "bytes": 6011,
+      "path": "sources/legacy-work-class.json",
+      "role": "source_specimen",
+      "sha256": "13c41a29c66786e64960c3abd7a99048b0f8d679ca8d287834a8e25a996629ac"
+    },
+    {
+      "bytes": 4398,
+      "path": "sources/legacy-authority-authority-index-dossier.json",
+      "role": "source_specimen",
+      "sha256": "09e627e2e2149784bef08d40a06c787bb8f22b1a66e633c9b02b1bfb9b392fe6"
+    },
+    {
+      "bytes": 4391,
+      "path": "sources/legacy-authority-authority-seal-dossier.json",
+      "role": "source_specimen",
+      "sha256": "f7f8d7efb7b469aba90bccd09b086fde2b0f0f0e54422396e4a797bff15f7cf3"
+    },
+    {
+      "bytes": 6854,
+      "path": "sources/standalone-authority.json",
+      "role": "source_specimen",
+      "sha256": "30f796b4da834ba8e4cf1ad30e3f1a4821ef6573690c0134a986e7a5775d772c"
+    },
+    {
+      "bytes": 4651,
+      "repository_path": "library/work-class-specification/1.0.0-draft.3/contract-manifest.json",
+      "role": "repository_oracle_source",
+      "sha256": "9dfc713f7783d83409c9177794604b257c4cc2910d04c385df26e9f80d3da806"
+    },
+    {
+      "bytes": 20752,
+      "repository_path": "library/work-class-specification/1.0.0-draft.3/Specification.md",
+      "role": "repository_oracle_source",
+      "sha256": "6ce62d8db3a5ca1fb2b5cfbca364133502ac1565094d41a0e88f70c1ec7cb53c"
+    },
+    {
+      "bytes": 24782,
+      "repository_path": "library/work-class-specification/1.0.0-draft.3/PROTOCOL.md",
+      "role": "repository_oracle_source",
+      "sha256": "b1242edcb3c706c1bf2d7af60ab77840b850358d4a345451feba19e73827e81b"
+    },
+    {
+      "bytes": 132856,
+      "repository_path": "library/work-class-specification/1.0.0-draft.3/LIFECYCLE.md",
+      "role": "repository_oracle_source",
+      "sha256": "65ec413820bb9a895ce034e0f8952570f9caddb00a84e4469066bab06f3ff065"
+    },
+    {
+      "bytes": 66444,
+      "repository_path": "library/work-class-specification/1.0.0-draft.3/COMPOSITION.md",
+      "role": "repository_oracle_source",
+      "sha256": "e09c7bfd324700b8304a9144d02971f9a37f33d79d9566e745aea2e244cdd288"
+    },
+    {
+      "bytes": 14502,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/review/authority_fixture.py",
+      "role": "repository_oracle_source",
+      "sha256": "83d0f647b195a4370a66df2e677a1b1437095eade7cffd7078ad8f97cc571f48"
+    },
+    {
+      "bytes": 39945,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/review/lifecycle_factory.py",
+      "role": "repository_oracle_source",
+      "sha256": "a2f9ec37eafbc6696db577e4a90edfbddc53f3e902e42929e7e8de5eb2f73293"
+    },
+    {
+      "bytes": 26635,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/review/equipment_completion_fixture.py",
+      "role": "repository_oracle_source",
+      "sha256": "6f5d53560d713da378910a9b9b05990b020902ef233c970fead45303256ede22"
+    },
+    {
+      "bytes": 13868,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/review/equipment_observation_fixture.py",
+      "role": "repository_oracle_source",
+      "sha256": "d177e183948205c0b8b048a05afafb15d18b52484af84a4d5ac5322ac2cbe5a7"
+    },
+    {
+      "bytes": 9107,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/review/equipment_dispatch_fixture.py",
+      "role": "repository_oracle_source",
+      "sha256": "90c7eb78baee54e6b0b1c85ae38fef8fc6a66111c790d21892a2fd484e8b52c7"
+    },
+    {
+      "bytes": 21482,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/review/fixture_factory.py",
+      "role": "repository_oracle_source",
+      "sha256": "c333820dfe104f53ac186ef83214f9a0348e8801cc96950020a1962315f64f3a"
+    },
+    {
+      "bytes": 3214,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/review/corpus_common.py",
+      "role": "repository_oracle_source",
+      "sha256": "48e8b0cf902cec4bf05e948c703102c5a4c5cb79c3bb40fbd08ea91f9eb114c2"
+    },
+    {
+      "bytes": 21621,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/review/reservation_fixture.py",
+      "role": "repository_oracle_source",
+      "sha256": "70f61d51b9f89b62c33b65c6db5cada28d3ef458c808f35e4c8a9a5a2e18a243"
+    },
+    {
+      "bytes": 9819,
+      "repository_path": "conformance/work-class/1.0.0-draft.3/review/lifecycle_budget_fixture.py",
+      "role": "repository_oracle_source",
+      "sha256": "434f5e6e240334c37d38184a2ccae0646c3c21653710b60f216679848c3bee3b"
+    }
+  ],
+  "specification_pin": "sha256:9dfc713f7783d83409c9177794604b257c4cc2910d04c385df26e9f80d3da806",
+  "tested_consumer_sources": [
+    {
+      "bytes": 39486,
+      "path": "conformance/work-class/1.0.0-draft.3/typescript/work-class.ts",
+      "sha256": "50f77679fd8d80810872c84b3640b206787879507d136d4a2047fa8c6317f33f"
+    },
+    {
+      "bytes": 12155,
+      "path": "conformance/work-class/1.0.0-draft.3/typescript/work-class.test.ts",
+      "sha256": "76240b0435ff7d440cc6a9e4e965c3234d01a9246592cd82f05b57a9bc7d39dc"
+    },
+    {
+      "bytes": 24940,
+      "path": "conformance/work-class/1.0.0-draft.3/python/implementation/work_class.py",
+      "sha256": "b139df632706590caa5cef4419bf417a9f77727d64bd4546c62d26de1e5500cc"
+    },
+    {
+      "bytes": 12695,
+      "path": "conformance/work-class/1.0.0-draft.3/python/tests/test_authoring_consumer_regressions.py",
+      "sha256": "80f0af0a93e2a77306667a20a65947d6b7a3b66a3b2a1161a92b0192edf93c34"
+    }
+  ]
+}

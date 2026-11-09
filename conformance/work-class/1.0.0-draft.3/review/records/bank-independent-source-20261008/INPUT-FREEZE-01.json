@@ -1,0 +1,394 @@
+{
+  "at": "2026-10-08T19:44:02.484544+00:00",
+  "candidate_pin": "sha256:120242f6e3a9cc67348932386460144ace5924d9b02852b878093b74a7af82a3",
+  "cases": [
+    {
+      "id": "C3-BANK-001",
+      "operation": "holdings-step",
+      "input_path": "inputs/C3-BANK-001.json",
+      "input_sha256": "1cc8d66f789aa5d4f55a2abf20cc6697c577df3480a13959e6e9587967862363",
+      "original_complete_case_sha256": "0fa5aa3d3738c1da166f6972a92ab5f0a9ab5e863282fed5e9c8da5d9b722ce2"
+    },
+    {
+      "id": "C3-BANK-002",
+      "operation": "evaluate",
+      "input_path": "inputs/C3-BANK-002.json",
+      "input_sha256": "72e742039b2160b2fa9b96cc26a76c66c1b09bed75b50b0b7b0ea0f25be3d158",
+      "original_complete_case_sha256": "afffbd2bc4535011dba5a4228e3d58ab15cfcc7d86de6813c646da3324a51296"
+    },
+    {
+      "id": "C3-BANK-003",
+      "operation": "evaluate",
+      "input_path": "inputs/C3-BANK-003.json",
+      "input_sha256": "ef2b210d32d7d84de8bbf5db3fac5e9aebd1f993cc9c85e1412ff81c237aec8c",
+      "original_complete_case_sha256": "4d7997ea061c33eabde3c342adfd8c8b5f7c3915ac4cbd97f3ce0272ee84055d"
+    },
+    {
+      "id": "C3-BANK-004",
+      "operation": "evaluate",
+      "input_path": "inputs/C3-BANK-004.json",
+      "input_sha256": "5241dab69a648d223541886857610177b9824e7d1dc60cab1170cde265358173",
+      "original_complete_case_sha256": "ac69d6bad546d649de618f738c703a93f491b61e7645da01fdc05d3cabecd98d"
+    },
+    {
+      "id": "C3-BANK-005",
+      "operation": "holdings-step",
+      "input_path": "inputs/C3-BANK-005.json",
+      "input_sha256": "96cafd988ac6bc2a5444077978976c4c18278e65841265873047c20e17854c2b",
+      "original_complete_case_sha256": "3e63cea58e45c760e58d350bf5e1625917b21cb1761affcb2dba4e53e0e09422"
+    },
+    {
+      "id": "C3-BANK-006",
+      "operation": "evaluate",
+      "input_path": "inputs/C3-BANK-006.json",
+      "input_sha256": "dac28f2cc09695b5b4c0a6880a52e0bc72d739af96e6b8ed1b09b56cbf1b6dfb",
+      "original_complete_case_sha256": "288cb377b69bfb1146f15848cbec7bba6be91620601826e899dafdc490b459a8"
+    },
+    {
+      "id": "C3-BANK-007",
+      "operation": "holdings-step",
+      "input_path": "inputs/C3-BANK-007.json",
+      "input_sha256": "29f69cdcd60112d1f4ae59d4b4e2356eb77156de80203083293689af508b6d17",
+      "original_complete_case_sha256": "eb81092eb221b7d3d0b549e39b19f1850477e8c41a09fca2e4f41cc137125c45"
+    },
+    {
+      "id": "C3-BANK-008",
+      "operation": "evaluate",
+      "input_path": "inputs/C3-BANK-008.json",
+      "input_sha256": "4a9d7bf0542b39525fa7781d023b6d3dd86b200b22758b0bf00211557c8d4dfb",
+      "original_complete_case_sha256": "73af137bf25fcc61b3d7ce3297a1a9e65a062f11d65735f0f006f4ffc19550ca"
+    },
+    {
+      "id": "C3-BANK-009",
+      "operation": "holdings-step",
+      "input_path": "inputs/C3-BANK-009.json",
+      "input_sha256": "60933d9b95b4642a3ecccd6fc1a166cbbac7a591f9960a8c8632e5ce69fe363d",
+      "original_complete_case_sha256": "a1ded8035df877af00b6f609c120b93ac5c9b72ef87315880590bc7e1499a668"
+    },
+    {
+      "id": "C3-BANK-010",
+      "operation": "flow-step",
+      "input_path": "inputs/C3-BANK-010.json",
+      "input_sha256": "75c9bfb092923fe4c69bf9162440e67342e7307b94f41665839368e6e82fbe7a",
+      "original_complete_case_sha256": "f13413658ed73b518247292c4142d2f52f6e683ac6f66f207845e7359a27ada7"
+    },
+    {
+      "id": "C3-BANK-011",
+      "operation": "flow-step",
+      "input_path": "inputs/C3-BANK-011.json",
+      "input_sha256": "969c25e7d62705e767b607c0fdcf89862943fdcb4c1c3d528b1acb604988b697",
+      "original_complete_case_sha256": "9a2bdcaefe451f226949861727b3d70e5a8b1af339cd4d2cc26ab4da9a4fb7ec"
+    },
+    {
+      "id": "C3-BANK-012",
+      "operation": "flow-step",
+      "input_path": "inputs/C3-BANK-012.json",
+      "input_sha256": "1d2e20709956c38823e784932f50079787932aa5ffe7ba0ebb68a016c44536cf",
+      "original_complete_case_sha256": "c9c9bb9a15dd85389b1e12d21ef79db57123625e9b0aeeee358d78e454bff997"
+    },
+    {
+      "id": "C3-BANK-013",
+      "operation": "flow-step",
+      "input_path": "inputs/C3-BANK-013.json",
+      "input_sha256": "a5073a3dcdecab2799e1429c5a66d444127d722d150e76cc9453121067383e38",
+      "original_complete_case_sha256": "0d9067d47e213c7e55e2ece099a64472b7fe09a4819a97c7b1869c4bfbc033ec"
+    },
+    {
+      "id": "C3-BANK-014",
+      "operation": "flow-step",
+      "input_path": "inputs/C3-BANK-014.json",
+      "input_sha256": "af2134c0e23d186eadde94027c14d4169c64f1cb39d2e1e6f2ed4aade1e3fcb1",
+      "original_complete_case_sha256": "4a5086d42c7eaee94c23cb0e5007c2a11d208d4686fa3d52518d22eefd1401ac"
+    },
+    {
+      "id": "C3-BANK-015",
+      "operation": "flow-step",
+      "input_path": "inputs/C3-BANK-015.json",
+      "input_sha256": "12023d6e542189510ef52ece48c09809af617244cdb90e074b75b43ee3f74825",
+      "original_complete_case_sha256": "7b3f3fc38929a5d2e95633195b50343edca0c77f134a2cc8e196bc76cc8aea13"
+    },
+    {
+      "id": "C3-BANK-016",
+      "operation": "evaluate",
+      "input_path": "inputs/C3-BANK-016.json",
+      "input_sha256": "c47a11360ad9265bae000d3b196349b2f16d57640baffba0519d611996780526",
+      "original_complete_case_sha256": "ebc4d1075faa675d27faf6c23ca6ee1fd8778fa7e65d8420e9246db25215e472"
+    },
+    {
+      "id": "C3-BANK-017",
+      "operation": "deploy",
+      "input_path": "inputs/C3-BANK-017.json",
+      "input_sha256": "5e505e89dc65ff2a9961623a7e7777ba996e3e4f04273b17fbbb326c9920b460",
+      "original_complete_case_sha256": "cef345067086f62dd93684984a7146ddf4d5d51583d230f959252255e406587e"
+    },
+    {
+      "id": "C3-BANK-018",
+      "operation": "step",
+      "input_path": "inputs/C3-BANK-018.json",
+      "input_sha256": "f73b50bee65677506bb01ff1480032376ef7425edcbcfe3441109668973cc41d",
+      "original_complete_case_sha256": "0f43a5fad0f1dc4278d2bb5da10dd63b8e51b14f3daee9fed1b49f940d0853da"
+    },
+    {
+      "id": "C3-BANK-019",
+      "operation": "step",
+      "input_path": "inputs/C3-BANK-019.json",
+      "input_sha256": "8e1f1da692e45c8c0a8031b5c9e2225c5b74dfcdf210e24fe35b69faa6204e0a",
+      "original_complete_case_sha256": "96a425ba65d4d41c7c6698857716899b922bbda41854cf6e6573135b1ae89721"
+    },
+    {
+      "id": "C3-BANK-020",
+      "operation": "step",
+      "input_path": "inputs/C3-BANK-020.json",
+      "input_sha256": "a0de5ab8cc3dee2b771f52f6d52d762d3e5a03ce60946fe35451e49db9213a09",
+      "original_complete_case_sha256": "23eac26892d4a5446291e55c85c6e206210cea4c0ba2fa7d4d964a786159bffd"
+    },
+    {
+      "id": "C3-BANK-021",
+      "operation": "flow-step",
+      "input_path": "inputs/C3-BANK-021.json",
+      "input_sha256": "5194d0b76dcefd2113c853ec7e306ffb7df6c1240408ac1bc8b70bbf5eb7eae8",
+      "original_complete_case_sha256": "73033fb441dd62055b45b82f49532095226a03d8b18cdddc305e774569c878a1"
+    },
+    {
+      "id": "C3-BANK-022",
+      "operation": "step",
+      "input_path": "inputs/C3-BANK-022.json",
+      "input_sha256": "7e8504ea333c8d6fcf873e0089494edcc3d0c934857a09ff84e4f31644f2bd29",
+      "original_complete_case_sha256": "9d4ed026754cec8d872e5a4835c677a298b3642c28aca1211b5a00752838efa9"
+    },
+    {
+      "id": "C3-BANK-023",
+      "operation": "step",
+      "input_path": "inputs/C3-BANK-023.json",
+      "input_sha256": "4a4b84c4a1af2aecc728fc008b9fb344b243c645cd7073f63678663746ea32c3",
+      "original_complete_case_sha256": "f484ed6b8c075c373c9ad21c49fa68229b8f5c9ea0fd0550b4ddb5e7ec936165"
+    },
+    {
+      "id": "C3-BANK-024",
+      "operation": "step",
+      "input_path": "inputs/C3-BANK-024.json",
+      "input_sha256": "07f71eeda76006c7adc8fe81a83f5746778e1a7457fdbb7559deed478ec8dc56",
+      "original_complete_case_sha256": "2de803cca3b45341d3af5b28af9d186a804f85157157424a31dd0af615898cd4"
+    },
+    {
+      "id": "C3-BANK-025",
+      "operation": "flow-step",
+      "input_path": "inputs/C3-BANK-025.json",
+      "input_sha256": "67c2777879cef0e2c28784cc274042d46fca432c24886643a767d1f81a4caac0",
+      "original_complete_case_sha256": "d38b886d3e1b4b214e5705c042617899132c7b589d0ec452dfd25c0f77dc5f5a"
+    },
+    {
+      "id": "C3-BANK-026",
+      "operation": "flow-step",
+      "input_path": "inputs/C3-BANK-026.json",
+      "input_sha256": "e9477793b01e6c939b4e4e02fc31a8af6c77d889a9348ace861fbdfe6872e892",
+      "original_complete_case_sha256": "d9553e27202c9b61123b4b313686416a6af5b3dc920ac77898450d53d4a9a4e4"
+    },
+    {
+      "id": "C3-BANK-027",
+      "operation": "flow-step",
+      "input_path": "inputs/C3-BANK-027.json",
+      "input_sha256": "0781267c24afd200248e6be74e379f631474611f1601c28a367a60f06cac54d0",
+      "original_complete_case_sha256": "f30ef7bc59d346c4c85d1460c439a5eaa93c2ef68a51835d83d1893aa5eb0553"
+    },
+    {
+      "id": "C3-BANK-028",
+      "operation": "evaluate",
+      "input_path": "inputs/C3-BANK-028.json",
+      "input_sha256": "7c9d41edc668bc07a651834030c2adaacdf133fb51a317853e5bd888298e94ec",
+      "original_complete_case_sha256": "ee4fc1e9f802bc480d1a3069146a43074dac1435c7c5581f640d6d66c9f100cd"
+    },
+    {
+      "id": "C3-BANK-029",
+      "operation": "deploy",
+      "input_path": "inputs/C3-BANK-029.json",
+      "input_sha256": "cdd682aa6a65fe8765835cafc3ef96638aa4684ae916cdddafc37636db2eb8f0",
+      "original_complete_case_sha256": "185c90629e97c7d3b6f63041ff86948757c239e93cbc1b18987134a33fe63c33"
+    },
+    {
+      "id": "C3-BANK-030",
+      "operation": "step",
+      "input_path": "inputs/C3-BANK-030.json",
+      "input_sha256": "f9121e751862d89b7366437cd979609e8f1de99b67304acd2f2d2a720deb04ab",
+      "original_complete_case_sha256": "2a736e9d3586e7d70de65626480ba80296e528785915c5a56c7558e9cd4704f4"
+    },
+    {
+      "id": "C3-BANK-031",
+      "operation": "step",
+      "input_path": "inputs/C3-BANK-031.json",
+      "input_sha256": "8a37ad81db55a450cde8ec411ca166c8e4dc0ac68eaaffdd33eb2d9574b3baca",
+      "original_complete_case_sha256": "a8cc757d5eb6ac3f96dfbb22911d4fab02e6912190036fc9e351b6e5b474cd45"
+    },
+    {
+      "id": "C3-BANK-032",
+      "operation": "step",
+      "input_path": "inputs/C3-BANK-032.json",
+      "input_sha256": "db2bece4354b8d47b155e13a087f1bba6235950b8ac8c71f2c32a0fe829ce1c5",
+      "original_complete_case_sha256": "aada5c6df48bad91c593986fe96883499d4ed4ee00c73cd7fe8df885abdaaecf"
+    },
+    {
+      "id": "C3-BANK-033",
+      "operation": "step",
+      "input_path": "inputs/C3-BANK-033.json",
+      "input_sha256": "e4d49a0debdcab4fea89893b0713ae6a09b6d0074727b63fe8da81505e0e9d22",
+      "original_complete_case_sha256": "269fda41df5df3b0ec5f3112adf683fd9eab3ac7fdb5c34a419665455a1e1b0f"
+    },
+    {
+      "id": "C3-BANK-034",
+      "operation": "flow-step",
+      "input_path": "inputs/C3-BANK-034.json",
+      "input_sha256": "aa3c4adde7ab1059ae9ce9b2bb815b1f1c8fa9f84d8a4e50e0dbc5c4ba587a79",
+      "original_complete_case_sha256": "cdbb6fc0f205a9e23b8fa9988adfa8c0062eadf326115f61a757a561d2dfa780"
+    },
+    {
+      "id": "C3-BANK-035",
+      "operation": "step",
+      "input_path": "inputs/C3-BANK-035.json",
+      "input_sha256": "9507d5225deee80bdb486f08bf8c1ac9d9de467b489289807d8ad62d8da34289",
+      "original_complete_case_sha256": "71927f3ad941d825b513c1c8d7de27a9a2f9df11d668186d739bf2750b06a297"
+    },
+    {
+      "id": "C3-BANK-036",
+      "operation": "step",
+      "input_path": "inputs/C3-BANK-036.json",
+      "input_sha256": "6c36051162d0403282a5f2af1620f8d85843afa2ab31aa7c77edc234a111859f",
+      "original_complete_case_sha256": "c5639d18784c0aa07286363b66d74bb527d6174126b9f7826956f3315b467acc"
+    },
+    {
+      "id": "C3-BANK-037",
+      "operation": "step",
+      "input_path": "inputs/C3-BANK-037.json",
+      "input_sha256": "095ed5e375eb9667beb91d5ff378940bbcbd703ebf8da4ebdfc335035531c789",
+      "original_complete_case_sha256": "3ff3a60e175b23d4adca383725242538cd92d1f453abe99daf83ee6fe4748805"
+    },
+    {
+      "id": "C3-BANK-038",
+      "operation": "evaluate",
+      "input_path": "inputs/C3-BANK-038.json",
+      "input_sha256": "c0d851d61683384b6d3eed5e0cfdb8b5f75d935c5cfafc3c10e0380637e064c0",
+      "original_complete_case_sha256": "941e8d3caf68695a172f28ded476226e60d93981d95124d12ea265c33035aa1f"
+    },
+    {
+      "id": "C3-BANK-039",
+      "operation": "evaluate",
+      "input_path": "inputs/C3-BANK-039.json",
+      "input_sha256": "9a224e0c5c0a3e6fbe97ef2ceba7567b1a57d55dae4d05cd31fdc296b0c12a9f",
+      "original_complete_case_sha256": "1b6326697b004ff22dd247ba3e44479accb96c1bea4e1ba1ca655e985e73eda0"
+    },
+    {
+      "id": "C3-BANK-040",
+      "operation": "evaluate",
+      "input_path": "inputs/C3-BANK-040.json",
+      "input_sha256": "5aa82daf6f131a3cd9b3269c921af4233f76633dd1a456f70867a57db71254b0",
+      "original_complete_case_sha256": "c0d970dc7a3db3055af8ebc5ae60092dc25a03d88dfadc3907ee221c69915a6d"
+    },
+    {
+      "id": "C3-BANK-041",
+      "operation": "flow-step",
+      "input_path": "inputs/C3-BANK-041.json",
+      "input_sha256": "99a131c2744bcee2fde1e07dfe74963d46cebc82b435e9806c7cba09ef8e7958",
+      "original_complete_case_sha256": "7274367455f45d0438614e5d748ff34ae50f72ce5fb71ec7bcf6b0ffebe5e621"
+    },
+    {
+      "id": "C3-BANK-042",
+      "operation": "flow-step",
+      "input_path": "inputs/C3-BANK-042.json",
+      "input_sha256": "cb7602393c5af9cbe10253a125b9a8d302ec7a20d5a4b95f416975afe0e39992",
+      "original_complete_case_sha256": "c07e580eeeaa23769585de35fb46528a745dba2c7cf6119c36b59ec819aab4c1"
+    },
+    {
+      "id": "C3-BANK-043",
+      "operation": "flow-step",
+      "input_path": "inputs/C3-BANK-043.json",
+      "input_sha256": "40fa98ba00d22010de9989f074d5ed0d9bf3e3052100b4e33dd99fe1ef7a8365",
+      "original_complete_case_sha256": "a28bbabed3f6d79883a2c5117aa58ce837e77a073d19ff08e7162ff750e02299"
+    },
+    {
+      "id": "C3-BANK-044",
+      "operation": "flow-step",
+      "input_path": "inputs/C3-BANK-044.json",
+      "input_sha256": "0abb354bc3a8d3d34c4908cf539bae6c373556bc402216abf1c598ecfcba2f58",
+      "original_complete_case_sha256": "e6681643724d06d57fc798a0696bb3ac35e1164eda28ec0316ef657cc5999af4"
+    },
+    {
+      "id": "C3-BANK-045",
+      "operation": "flow-step",
+      "input_path": "inputs/C3-BANK-045.json",
+      "input_sha256": "5639e916752aeb7f057ff52d5381126d6f6695e173a0bdd23f05c146c0e2e394",
+      "original_complete_case_sha256": "e7db1f2697e9554ba5d2093b8c59d541209bce63def8bae663806e61ddc7362f"
+    },
+    {
+      "id": "C3-BANK-046",
+      "operation": "flow-step",
+      "input_path": "inputs/C3-BANK-046.json",
+      "input_sha256": "dc30bf5f33fdc79dcb4818902680f03efe929c0036de72ccad75135fb8b6b750",
+      "original_complete_case_sha256": "8d2ef804194f633feba72953645c7b67ea4cef523eadf5f646f617c4e0a42264"
+    },
+    {
+      "id": "C3-BANK-047",
+      "operation": "deploy",
+      "input_path": "inputs/C3-BANK-047.json",
+      "input_sha256": "dd5094ef22130c6d87793791bdaead851b0bdc3f5c898039691c7a1a219f0832",
+      "original_complete_case_sha256": "cb47d42a7e0f95c02fcfed3d2b755eed3152c34e24ff4c1565951000f9239e9c"
+    },
+    {
+      "id": "C3-BANK-048",
+      "operation": "step",
+      "input_path": "inputs/C3-BANK-048.json",
+      "input_sha256": "5e50a54760fe64b84dcf1671c514773e37f9a79baac3e47c5d90871ea24a6149",
+      "original_complete_case_sha256": "6563387d5b26ce6183e3ade2d024b97c17f30479617d499941143a6bc994186a"
+    },
+    {
+      "id": "C3-BANK-049",
+      "operation": "step",
+      "input_path": "inputs/C3-BANK-049.json",
+      "input_sha256": "e5b7542778d9a0b2150fbf6eabd0010b90373d7cda5036eb5ba0452cdf086a58",
+      "original_complete_case_sha256": "83cd7bc70ee017bd2e63300f95a2a5987f30a49057a3bed78c177b3f2ac7be67"
+    },
+    {
+      "id": "C3-BANK-050",
+      "operation": "step",
+      "input_path": "inputs/C3-BANK-050.json",
+      "input_sha256": "34f682f904fb272dc38dff8f3db7e26685469ebdaa138d57afa7a0287bcd223d",
+      "original_complete_case_sha256": "f3d60786660ef5913cff10468c79c5fae130eb4a40d10bd20c594f5b38153d70"
+    },
+    {
+      "id": "C3-BANK-051",
+      "operation": "flow-step",
+      "input_path": "inputs/C3-BANK-051.json",
+      "input_sha256": "d923be231268018d3b00b5316a1d23e40441ec1679c4727da8dd6a605dd95e9d",
+      "original_complete_case_sha256": "47896a946582e35f4d5fcc09cf25465f90662af04bac6e9123327bd268bac50a"
+    },
+    {
+      "id": "C3-BANK-052",
+      "operation": "step",
+      "input_path": "inputs/C3-BANK-052.json",
+      "input_sha256": "d1801f6aa59172bcb4996620b30afc67fddddf78a9b943aa9385d339a3f4363e",
+      "original_complete_case_sha256": "6c25a6d94433381f83569d20f94e7360f89648f426b805b0aaaab5d025db903c"
+    },
+    {
+      "id": "C3-BANK-053",
+      "operation": "step",
+      "input_path": "inputs/C3-BANK-053.json",
+      "input_sha256": "bc2434b8c25a06378425a242e822c12564638f53405f557f960c3b3d750268ca",
+      "original_complete_case_sha256": "a95e9ce77c713306a870510a45cf52cc366064c2053f674ea73442b9c46d354d"
+    },
+    {
+      "id": "C3-BANK-054",
+      "operation": "step",
+      "input_path": "inputs/C3-BANK-054.json",
+      "input_sha256": "fc3ee38c2c035e554e416b5803e2640084b44be8e4ed1ec8e95220cfa6c560f8",
+      "original_complete_case_sha256": "d3f456bad02f5f46564ad5b03586fd752fbbed00975d872427561728b951f232"
+    }
+  ],
+  "sources": {
+    "bank-controlled-gateway-integration-revision1-source.md": "c7f4379b1d10c254695595afd72000d5f5139f67e361f8a45dba0aaa8be7bade",
+    "bank-information-flow-revision2-source.md": "3fd3b91cbb218d58f1404b34a3d295f060534056bf73bfdaba2b7a4c33545cb3",
+    "bank-native-conditional-correspondence-revision1.json": "a208346deb54b68dd849a54898357bfc7bc139a4d56b21ae1d63c63db0b18053",
+    "bank-native-serialization-revision1-source.md": "128fb87c7bd5a6be1430d9af2638299685bc9b368182fc837c06ab0af6a59059",
+    "bank-sar-filing-and-customer-communication-revision2-source.md": "ffb1b8acb43c7844578599ec41850e30d9a6053d6f1652bee2f001eb13672568"
+  },
+  "excluded": "Existing expected results, derivation assertions, consumer implementations, runtime actuals and result-derived builders are excluded. Prior states and retained proofs inside each legitimate transition input are necessarily preserved.",
+  "scope": "Fresh complete expected outputs from selected public contract and synthetic business sources; no change to original authored bank corpus or its provenance.",
+  "retention": "Retain exact input/source freeze, independent oracle construction and comparisons as selected overnight development evidence."
+}

@@ -1,0 +1,143 @@
+{
+  "claim_ceiling": "APPARATUS_ONLY",
+  "files": [
+    {
+      "path": "AGGREGATES.md",
+      "sha256": "8793b6853695bb6f552b0101384f9adcb3d4e05f514424d681f7fc8f5e8dc5a2"
+    },
+    {
+      "path": "ASSESSMENTS.md",
+      "sha256": "35d92203bade97e712284939f12f3200791abbfec38cd3cdcc5e11232d9bcb7e"
+    },
+    {
+      "path": "AUTHORITY-CHECKS.md",
+      "sha256": "72564c0379955c64656da37db32d87518fc25f1aa435ce6042f8c96538eba9e0"
+    },
+    {
+      "path": "AUTHORITY.md",
+      "sha256": "c349af53ce11d3b930d6dfa4b302528f403b8478c272f43f1cd78cafb17e90fe"
+    },
+    {
+      "path": "COMPLETION-AND-REFERRALS.md",
+      "sha256": "df482ecc2249fc3419d1d0e93900684c0f830aa785778d54b705eba32e16f24b"
+    },
+    {
+      "path": "COMPOSITION.md",
+      "sha256": "e09c7bfd324700b8304a9144d02971f9a37f33d79d9566e745aea2e244cdd288"
+    },
+    {
+      "path": "EXCLUSIVE-KEY-HISTORY.md",
+      "sha256": "fec3f4cbdec47f349f0e1c005cd41d8105b2403e0c5bb6a804b3e1c040f4c846"
+    },
+    {
+      "path": "EXTERNAL-DEPENDENCIES.md",
+      "sha256": "da06ef6f851174fdedf6a8d5747dd5752ee4a50df4e59595fdde2a066664a163"
+    },
+    {
+      "path": "HOLDINGS.md",
+      "sha256": "19cd462d0407a1c3244c77e6efd292c77bfe19304a448187c420202d440813c2"
+    },
+    {
+      "path": "INDEPENDENT-HUMAN-DECISIONS.md",
+      "sha256": "b9fb9f0e54f482d9fe104715cab038caa2b99859b457b751aed550c846ad3a88"
+    },
+    {
+      "path": "INFORMATION-FLOW.md",
+      "sha256": "57bc47f79aadc967f0574abb5bd869af0957054d58670530883ad5cc4deb150e"
+    },
+    {
+      "path": "LIFECYCLE.md",
+      "sha256": "ad079a1f60cf57fe59415e677c7eb2119d302a21d806767217032236688e1399"
+    },
+    {
+      "path": "OBSERVATIONS-AND-DISPATCH.md",
+      "sha256": "90b8b39e60e191e5aa279fc57126643dea88b2f0a26c07c32a98de7980ac5767"
+    },
+    {
+      "path": "PROTOCOL.md",
+      "sha256": "b1242edcb3c706c1bf2d7af60ab77840b850358d4a345451feba19e73827e81b"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f26af38b9e0a75a2c02a166df04925ccbd9b1da43263d7b50045a04d739e06ce"
+    },
+    {
+      "path": "RECOVERY.md",
+      "sha256": "5501d1b4ae9910c0d749a45145c691e33c7623a341dc0b664484a199013fa49a"
+    },
+    {
+      "path": "RESERVATION-RECORDS.md",
+      "sha256": "32638709a02498c8be0b1da3b75bae7c09343c60653a0077797a17d59252a37f"
+    },
+    {
+      "path": "RESERVATIONS.md",
+      "sha256": "7226f09805f648857d4b0fb646a0e08ed230277ebcea9686bb8ebc4356e5f14c"
+    },
+    {
+      "path": "SCOPE-AND-BOUNDARY.md",
+      "sha256": "fe020152916718a81e28bd7e7ee85d08958cccd5d7c8b1e5a3848ad56761bece"
+    },
+    {
+      "path": "SOURCE-CORRECTIONS.md",
+      "sha256": "5d1124611dcd989a86941dfd38f19dc8b839f442a2b988da922e0b51119f6f6a"
+    },
+    {
+      "path": "Specification.md",
+      "sha256": "f1cdb0c9598ec6de5fe9260f75f8dea944555d88a51d723167b1d92a64bc6c96"
+    },
+    {
+      "path": "TIMING.md",
+      "sha256": "14cf1727fa8f47bf26f09057654fb6cc6bf8d25608ecbc8f798dc4f49b92a7a8"
+    },
+    {
+      "path": "aggregate.schema.json",
+      "sha256": "cd4d2a33fdcaa6dd3bf149897d142e7caa30171b737030b0889c31e9d3a50f19"
+    },
+    {
+      "path": "authority.schema.json",
+      "sha256": "34ad9117a404f4a897e13b41cb207a08ed9083a376ec76ef245f59962b9ce5b3"
+    },
+    {
+      "path": "boundary.schema.json",
+      "sha256": "c00374abcb13a15dc46465bf98e7e4db8cd89395a02353e7507cc862d436ae66"
+    },
+    {
+      "path": "evidence.schema.json",
+      "sha256": "e075425300ec36e50f138136beb83cb7c9244629e57b2dea7a384b46a001d0d8"
+    },
+    {
+      "path": "holdings.schema.json",
+      "sha256": "799e2f0a183091a819d76c81fbc6411747fe89acdf5ff19c3ca998f77bf36557"
+    },
+    {
+      "path": "information-flow.schema.json",
+      "sha256": "1e509c772b71766ca8e026ffb60087132ec034a8bb380ecb8abe708df48a55b4"
+    },
+    {
+      "path": "lifecycle.schema.json",
+      "sha256": "94599d11bdf301dd216f6cc1693e27060928a77e1466e59a7e4110b1642101d5"
+    },
+    {
+      "path": "protocol.schema.json",
+      "sha256": "d664ee014b90effe8b9dea4faa29c62a2eb3a6907a071bf559132569126f5603"
+    },
+    {
+      "path": "requirements.json",
+      "sha256": "269ce093959826d2f673e5ff1bceca28b9af093ba6065c0ec83ccea049ff4ecc"
+    },
+    {
+      "path": "reservation.schema.json",
+      "sha256": "001793d3542daf652484368cff516048153a28c6542bd78060d76fa3290dbbfd"
+    },
+    {
+      "path": "schema-bundle.json",
+      "sha256": "6421eee2afab72e75d181c51c4c9fe3bee2b39368cb5a8bdbb78e4c6c62aa129"
+    },
+    {
+      "path": "work-class.schema.json",
+      "sha256": "979c97ac3205c1d994c951f7adfff53e3a74188ce6cf925b464617412876b2f5"
+    }
+  ],
+  "identity": "seampoint.work-class/1.0.0-draft.3",
+  "status": "DRAFT_NOT_ADOPTED"
+}
